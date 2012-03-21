@@ -1,0 +1,67 @@
+Template: PageTemplate {
+	pageTitle = "Administration HAmAC";
+	useToolTip = true;
+}
+
+SubMenu1: SubMenu {
+	ctrl = pageAdministrationSubMenuCtrl;
+}
+
+
+Conditional2: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminDroits;
+}
+
+PageAdminDroits1: PageAdminDroits {
+}
+
+
+Conditional6: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isDRHFermetures;
+}
+
+PageAdminPeriodeFermeture1: PageAdminPeriodeFermeture {
+}
+
+Conditional7: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminCET;
+}
+
+PageAdminCET1: PageAdminCET {
+}
+
+CondIsAdminDivers: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminDivers;
+}
+
+PageAdminDivers1: PageAdminDivers {
+}
+
+CondIsAdminIsJrti: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminJrti;
+}
+
+PageAdminJrti1: PageAdminJrti {
+}
+
+CondIsAdminOutils: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminOutils;
+}
+
+PageAdminOutils1: PageAdminOutils {
+}
+
+CondIsAdminSuivi: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminSuivi;
+}
+
+PageAdminSuivi1: PageAdminSuivi {
+}
+
+
+CondIsAdminParametres: WOConditional {
+	condition = pageAdministrationSubMenuCtrl.isAdminParametres;
+}
+
+PageAdminParametres1: PageAdminParametres {
+}

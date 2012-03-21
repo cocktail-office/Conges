@@ -1,0 +1,151 @@
+<style type="text/css">
+.calendrier {
+	border: 1px solid #123fa9;
+}
+
+.calendrier td {
+	border: 1px solid grey;
+}
+
+.calendrier th {
+	vertical-align: top;
+}
+
+.blanc .vert {
+	text-align: center;
+}
+
+.blanc {
+	background-color: white;
+}
+
+.vert {
+	background-color: green;
+}
+
+.gris {
+	background-color: darkgrey;
+	color: #222;
+}
+
+.grisClair {
+	background-color: lightgrey;
+}
+</style>
+
+<script type = "text/javascript">
+	
+	function cocher(caseACocher) {
+		etatSuivant = caseACocher.checked;
+		couleur(caseACocher, etatSuivant);
+	
+		autresCaseACocher = getCheckboxesById(caseACocher.id);
+		for (i=0; i<autresCaseACocher.length; i++) {
+			autreCaseACocher = autresCaseACocher[i];
+			if (autreCaseACocher != caseACocher) {
+				autreCaseACocher.checked = etatSuivant;
+				couleur(autreCaseACocher, etatSuivant);
+			}			
+		}
+	}
+
+	/* change la couleur de fond d'une case à cocher selon son etat */
+	function couleur(caseACocher, checked) {
+		classe = 'blanc';
+		if (checked == true) {
+			classe = 'vert';
+		}
+		caseACocher.parentNode.parentNode.className = classe;
+	}
+
+	 /* Retourne tout les elements du documents dont l'id est myId 
+	 Si l'id est null, on retourne tout. On ne retourne par les
+	 elements disabled */
+	function getCheckboxesById(myId) {
+		var tabRetour = new Array();
+	  var tabTmp = new Array();
+	  tabTmp = document.getElementsByTagName("input");
+	  j=0;
+	  for (i=0; i<tabTmp.length; i++) {
+	  	if (tabTmp[i].type == 'checkbox') {
+		  	var anId = tabTmp[i].id;
+			  if (tabTmp[i].disabled == false &&(myId == null || myId == anId)) {
+		    	tabRetour[j] = tabTmp[i];
+		      j++;
+		    }
+	    }
+	  }
+	  return tabRetour;
+	} 
+
+	/* mettre le meme état checked de toutes les cases à cocher */
+	function toutes(checked) {
+		toutesCasesACocher = getCheckboxesById(null);
+		for (i=0; i<toutesCasesACocher.length; i++) {
+			// ne pas toucher aux filtres
+			if (toutesCasesACocher[i].className != 'filtre') {
+				toutesCasesACocher[i].checked = checked;
+				couleur(toutesCasesACocher[i], checked);
+			}
+		}
+	}
+	
+	/* mettre le meme état checked de toutes les semaines paires ou impaires */
+	function paires(paire, checked) {
+		toutesCasesACocher = getCheckboxesById(null);
+		for (i=0; i<toutesCasesACocher.length; i++) {
+			// ne pas toucher aux filtres
+			if (toutesCasesACocher[i].className != 'filtre') {
+				id = toutesCasesACocher[i].id;
+				index = id.lastIndexOf('_');
+				idclean = id;
+				if (index != -1) {
+					idclean = id.substr(0, id.lastIndexOf('_')); 
+				}
+				
+				// suppresion du 0 initial s'il existe
+				if (idclean.substr(0,1) == '0') {
+					idclean = idclean.substr(1, idclean.length);
+				}
+				
+				nb = parseInt(idclean);
+				if ((paire == true && nb%2 == 0)||(paire == false && nb%2 == 1)) {
+					toutesCasesACocher[i].checked = checked;
+					couleur(toutesCasesACocher[i], checked);
+				}
+			}
+		}
+	}
+
+</script>
+
+	<table class="calendrier">
+		<tr>
+			<webobject name = "RepMois">
+		
+				<th>
+					<webobject name = "MoisItem"/>
+					
+					<table class="semaine">
+						<webobject name = "RepSemaines">
+							<tr>
+								<webobject name = "TdSemaineItem">
+									<label>
+										<webobject name = "ChkSemaineItem"/>
+										<webobject name = "SemaineItem"/>
+									</label>
+								</webobject>
+							</tr>				
+						</webobject>
+					</table>
+					
+				</th>
+		
+			</webobject>
+		</tr>
+	</table>
+	
+	
+	<label><input type="checkbox" onchange = "toutes(this.checked);" id="cocheToutes" class="filtre"/> toutes / aucune</label>
+	<label><input type="checkbox" onchange = "paires(true, this.checked);" id="cochePaires" class="filtre"/> paires</label>
+	<label><input type="checkbox" onchange = "paires(false, this.checked);" id="cocheImpaires" class="filtre"/> impaires</label>

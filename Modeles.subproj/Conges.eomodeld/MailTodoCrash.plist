@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            columnName = "MTC_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DTC_KEY"; }; 
+            name = mtcKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MTC_MESSAGE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DTC_MESSAGE"; }; 
+            name = mtcMessage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "MTC_REQ"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DTC_REQ"; }; 
+            name = mtcReq; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (mtcKey); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOMailTodoCrash"; 
+    classProperties = (mtcKey, mtcReq, mtcMessage); 
+    externalName = "CONGES.MAIL_TODO_CRASH"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CONGES.DB_MAIL_CRASH"; }; 
+    name = MailTodoCrash; 
+    primaryKeyAttributes = (mtcKey); 
+}

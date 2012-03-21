@@ -1,0 +1,63 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = VARCHAR2; 
+            name = annee; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 8; 
+        }, 
+        {
+            columnName = "OID_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = oidStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOStructureAutorisee"; 
+    classProperties = (structure, annee, dCreation, dModification); 
+    externalName = "CONGES.CNG_STRUCTURE_AUTORISEE"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (structure); 
+        "_nameInObjectStore" = "CONGES.CNG_STRUCTURE_AUTORISEE"; 
+    }; 
+    name = StructureAutorisee; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidStructure; }); 
+            name = structure; 
+        }
+    ); 
+}

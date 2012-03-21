@@ -1,0 +1,32 @@
+<webobject name = "CondShowTransparentDiv">
+<!--  l'ouverture de la div transparente  -->
+  <webobject name = "StrOpenDivTransp"/>
+</webobject>
+<webobject name = "DivJour">
+  <div class = "lJour">
+    <webobject name = "StrJourLibelle"/>
+  </div>
+  <div class = "nJour">
+    <webobject name = "LnkPopupSaisieConges"/>
+  </div>
+  <webobject name = "DivVac">&nbsp;</webobject>
+  <webobject name = "DivDureeJour">
+    <webobject name = "StrDureeJour"/>
+  </webobject>
+  <div class = "nSem">
+  	<webobject name = "CondIsSemaineModifiable"><webobject name = "StrPrefixeGras"/></webobject>
+    <webobject name = "LnkCngPopupAssocier"/>
+  	<webobject name = "CondIsSemaineModifiable"><webobject name = "StrSuffixeGras"/></webobject>
+    <webobject name = "CondShowToolTip">
+      <webobject name = "CondIsNotHoraireAssocie">
+        <webobject name = "ToolTipHoraire">
+          <webobject name = "ImgLoupe"/>
+        </webobject>
+      </webobject>
+    </webobject>
+  </div>
+</webobject>
+<webobject name = "CondShowTransparentDiv">
+<!--  la fermeture de la div transparente -->
+  <webobject name = "StrCloseDivTransp"/>
+</webobject>

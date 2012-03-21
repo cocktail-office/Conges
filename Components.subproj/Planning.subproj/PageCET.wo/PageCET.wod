@@ -1,0 +1,130 @@
+CetEtat1: CetEtat {
+	individu = affAnn.individu;
+	isModificationAutorisee = false;
+	dateDebutAnnee = affAnn.dateDebutAnnee;
+}
+
+CngInfoBox1: CngInfoBox {
+	
+}
+
+CondIsSaisieDemandeAutorisee: WOConditional {
+	condition = isSaisieDemandeAutorisee;
+}
+
+CondIsLinkNoteCETExists: WOConditional {
+	condition = isLinkNoteCETExists;
+}
+
+CRINote1: CRINote {
+}
+
+
+RepNoteCetUrl: WORepetition {
+	list = arrNoteCetUrl;
+	item = urlItem;
+}
+
+LnkUrlItem: WOHyperlink {
+	href = urlItem;
+	string = urlItemLibelle;
+	target = "_new";
+	title = "Ouvrir le fichier";
+}
+
+CondIsDemandeEpargneCetPasEncoreFaite: WOConditional {
+	condition = planning.affectationAnnuelle.cetFactory.isEpargneCetDemandeNonFaite;
+}
+
+CondNotIsDemandeAcceptee: WOConditional {
+	condition = planning.affectationAnnuelle.cetFactory.isAdminDemandeAcceptee;
+	negate = true;
+}
+
+CondIsDemandeEpargneCetFaite: WOConditional {
+	condition = planning.affectationAnnuelle.cetFactory.isEpargneCetDemandeNonFaite;
+	negate = true;
+}
+
+CetRecapDemande1: CetRecapDemande {
+	affAnn = affAnn;
+}
+
+CngPdfBoxDemandeEpargneCet: CngPdfBoxLink  {
+	printLabel = "Demande CET";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de votre demande relative au CET";
+	ctrl = ctrlDemandeEpargneCet;
+}
+
+
+FormDemandeEpargneCet: WOForm {
+	name = "FormDemandeEpargneCet";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+BtnNeFaitRien: WOSubmitButton {
+	value = "BOUTON CACHE NE FAIT RIEN";
+	action = neFaitRien;
+	style = "visibility:hidden;display:none";
+	name = "BtnNeFaitRien";
+}
+
+CondShowBtnValiderDemande: WOConditional {
+	condition = showBtnValiderDemande;
+}
+
+BtnDoValiderDemande: WOSubmitButton {
+	action = doValiderDemande;
+	name = "BtnDoValiderDemande";
+	value = "CONFIRMER ET ENREGISTRER";
+	title = "Enregistrer votre d&eacute;cision (l'impression de la demande au format PDF sera alors disponible)";
+	class = "bouton";
+}
+
+CondShowFormulaireDemandeOptionCetAncienSysteme: WOConditional {
+	condition = showFormulaireDemandeOptionCetAncienSysteme;
+}
+
+CondShowFormulairesRegimePerenne: WOConditional {
+	condition = showFormulairesRegimePerenne;
+}
+
+CondShowFormulaireDemandeEpargneCet: WOConditional {
+	condition = showFormulaireDemandeEpargneCet;
+}
+
+CondShowFormulaireDemandeOptionCet: WOConditional {
+	condition = showFormulaireDemandeOptionCet;
+}
+
+CetOptionAncienSysteme1: CetOptionAncienSysteme {
+	affAnn = affAnn;
+	disabled = false;
+	isRenoncement = isRenoncementAncienSysteme;
+	optionIndemnisationJourSelected = demandeIndemnisationJourAncienSysteme;
+	optionMaintienMinuteSelected = demandeMaintienMinuteAncienSysteme;
+	optionTransfertRafpJourSelected = demandeRafpJourAncienSysteme;
+	isSelectedOptionIndemnisation = isDemandeIndemnisationJourSelectedAncienSysteme;
+	isSelectedOptionTransfertRafp = isDemandeTransfertRafpJourSelectedAncienSysteme;
+}
+
+CetEpargne1: CetEpargne {
+	planning = lePlanning;
+	epargneSelected = demandeEpargneJour;
+	maintienJourObligatoire = demandeMaintienForceJour;
+	isDisabled = false;
+	transfertAncienCetMinutes = transfertAncienSystemeMinutes;
+}
+
+CetOption1: CetOption {
+	affAnn = affAnn;
+	disabled = false;
+	epargneJour = demandeEpargneJour;
+	optionIndemnisationJourSelected = demandeIndemnisationJour;
+	optionMaintienJourSelected = demandeMaintienJour;
+	optionTransfertRafpJourSelected = demandeRafpJour;
+	isSelectedOptionMaintien = isDemandeMaintienJourSelected;
+	isSelectedOptionIndemnisation = isDemandeIndemnisationJourSelected;
+	transfertAncienCetMinutes = transfertAncienSystemeMinutes;
+}

@@ -1,0 +1,57 @@
+PageTemplate1: PageTemplate {
+	pageTitle = "Association d'horaires";
+	isPopup = true;
+	useToolTip = true;
+}
+
+FormAssociation: WOForm {
+	name = "FormAssoHoraire";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+PopUpHoraires: WOPopUpButton {
+	displayString = unHoraire.nomQuotite;
+	item = unHoraire;
+	list = horaires;
+	selection = horaireSelectionne;
+	noSelectionString = "";
+	onchange = "FormAssoHoraire.submit();";
+}
+CondUnHoraireSelectionne: WOConditional {
+	condition = isUnHoraireSelectionne;
+}
+
+TipHoraire: CRIToolTip {
+	htmlText = horaireSelectionne.toStringHtml;
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+ButtonValider: WOSubmitButton {
+	alt = "Valider";
+	value = "Valider";
+	action = validerSaisiePlanning;
+	class = "bouton";
+}
+
+ButtonAnnuler: WOSubmitButton {
+	alt = "Annuler";
+	value = "Annuler";
+	action = annuler;
+	class = "bouton";
+	onclick="window.close(); return false;";
+}
+
+CalendrierSemaineACocher1: CalendrierSemaineACocher {
+	planning = lePlanning;
+	arraySemainesDisponibles = arraySemaineDisponibles;
+	arraySemainesSelectionnees = arraySemainesSelectionnees;
+	horaire = horaireSelectionne;
+}

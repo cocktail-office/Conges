@@ -1,0 +1,54 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ADR_ADRESSE1"; 
+            externalType = VARCHAR2; 
+            name = adrAdresse1; 
+            valueClassName = NSString; 
+            width = 60; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ADR_ADRESSE2"; 
+            externalType = VARCHAR2; 
+            name = adrAdresse2; 
+            valueClassName = NSString; 
+            width = 40; 
+        }, 
+        {
+            columnName = "ADR_ORDRE"; 
+            externalType = NUMBER; 
+            name = adrOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CODE_POSTAL"; 
+            externalType = VARCHAR2; 
+            name = codePostal; 
+            valueClassName = NSString; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = VILLE; 
+            externalType = VARCHAR2; 
+            name = ville; 
+            valueClassName = NSString; 
+            width = 60; 
+        }
+    ); 
+    attributesUsedForLocking = (adrOrdre); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOAdresse"; 
+    classProperties = (codePostal, ville, adrAdresse1, adrAdresse2); 
+    externalName = "GRHUM.ADRESSE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (adrOrdre, codePostal, ville, adrAdresse1, adrAdresse2); 
+        "_nameInObjectStore" = ADRESSE; 
+    }; 
+    name = Adresse; 
+    primaryKeyAttributes = (adrOrdre); 
+}

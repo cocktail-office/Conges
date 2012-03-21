@@ -1,0 +1,115 @@
+CngInfoBox1: CngInfoBox {
+}
+
+StrParamAppLockHorairesTypes: WOString {
+	value = strParamAppLockHorairesTypes;
+}
+
+Form1: WOForm {
+	action = annuler;
+	multipleSubmit = true;
+}
+
+Browser1: WOBrowser {
+	displayString = displayUnTypeHoraire;
+	item = unTypeHoraire;
+	list = lesTypesHoraires;
+	multiple = false;
+	onChange = "this.form.submit();";
+	selections = lesTypesHorairesSelectionnes;
+	size = 10;
+}
+
+Conditional9: WOConditional {
+	condition = lesTypesHorairesSelectionnes.count;
+}
+
+SubmitButton6: WOSubmitButton {
+	value = "Supprimer";
+	action = supprimer;
+	class = "bouton";
+}
+
+Conditional3: WOConditional {
+	condition = isModeCreation;
+	negate = true;
+}
+
+TimeFieldModifTypeHor: CRITimeField {
+	fieldValue = unTypeHoraireSelectionne.dureeHeures;
+	fieldName = "duree";
+	limit24h = false;
+}
+
+Conditional4: WOConditional {
+	condition = isModeCreation;
+}
+
+TimeFieldCreatTypeHor: CRITimeField {
+	fieldValue = totalNewHoraire;
+	fieldName = "duree";
+	limit24h = false;
+}
+
+Conditional5: WOConditional {
+	condition = isModeCreation;
+	negate = true;
+}
+
+CheckBox1: WOCheckBox {
+	checked = unTypeHoraireSelectionne.isHorsNorme;
+	onChange = "btnEnregistrer.click();";
+}
+
+CheckBox2: WOCheckBox {
+	checked = unTypeHoraireSelectionne.isTypeSemaineHaute;
+	onChange = "btnEnregistrer.click();";
+}
+
+Conditional6: WOConditional {
+	condition = isModeCreation;
+}
+
+CheckBox4: WOCheckBox {
+	checked = isHorsNormeNewHoraire;
+}
+
+CheckBox3: WOCheckBox {
+	checked = isSemHauteNewHoraire;
+}
+
+Conditional8: WOConditional {
+	condition = isModeCreation;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = enregistrer;
+	value = "Ajouter";
+	class = "bouton";
+}
+
+SubmitButton5: WOSubmitButton {
+	action = annuler;
+	value = "Annuler";
+	class = "bouton";
+}
+
+Conditional10: WOConditional {
+	negate = true;
+	condition = isModeCreation;
+}
+
+BoutonValiderProfil: WOSubmitButton {
+
+	value = "BOUTON CACHE ENREGISTRER";
+	action = enregistrer;
+
+	style = "visibility:hidden;display:none";
+	name = "btnEnregistrer";
+}
+
+SubmitButton7: WOSubmitButton {
+	value = "Ajouter un nouvel horaire";
+	class = "bouton";
+	action = ajouter;
+}

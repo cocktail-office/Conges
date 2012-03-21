@@ -1,0 +1,209 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/Application.java, 
+           src/fr/univlr/cri/conges/CRIWOUtilConfig.java, 
+           src/fr/univlr/cri/conges/DAAgenda.java, 
+           src/fr/univlr/cri/conges/DAGepeto.java, 
+           src/fr/univlr/cri/conges/DirectAction.java, 
+           src/fr/univlr/cri/conges/LREOUtilities.java, 
+           src/fr/univlr/cri/conges/Session.java, 
+           src/fr/univlr/cri/conges/Version.java, 
+           src/fr/univlr/cri/conges/VersionOracleDbConges.java, 
+           src/fr/univlr/cri/conges/YCRIWebPage.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsAlerte.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsDroit.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsHoraire.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsJour.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsMenu.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsOccupation.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsPlanning.java, 
+           src/fr/univlr/cri/conges/constantes/ConstsTypeOccupation.java, 
+           src/fr/univlr/cri/conges/eos/factory/FactoryDroitPasDeMailCds.java, 
+           src/fr/univlr/cri/conges/eos/factory/FactoryPeriodeFermeture.java, 
+           src/fr/univlr/cri/conges/eos/factory/FactoryRepartValidation.java, 
+           src/fr/univlr/cri/conges/eos/factory/FactoryTypeHoraire.java, 
+           src/fr/univlr/cri/conges/eos/factory/FactoryVacanceScolaire.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderAbsencesGepeto.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderAlerte.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderCET.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderCETTransaction.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderDroitPasDeMailCds.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderMessage.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderRepartValidation.java, 
+           src/fr/univlr/cri/conges/eos/finder/conges/FinderStructureAutorisee.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderAffectation.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderCompte.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderContratAvenant.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderElementCarriere.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderGrhumParametres.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderIndividu.java, 
+           src/fr/univlr/cri/conges/eos/finder/ghrum/FinderStructure.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderAffectationAnnuelle.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderAnnulationPeriodeFermeture.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderOccupation.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderPeriodeAffectationAnnuelle.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderPeriodeFermeture.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderTypeHoraire.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderTypeOccupation.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderVIndividuConges.java, 
+           src/fr/univlr/cri/conges/eos/finder/planning/FinderVacanceScolaire.java, 
+           src/fr/univlr/cri/conges/eos/metier/YCRIDateGenericRecord.java, 
+           src/fr/univlr/cri/conges/eos/metier/YCRIGenericRecord.java, 
+           src/fr/univlr/cri/conges/eos/modele/YCRIDateGenericRecord.java, 
+           src/fr/univlr/cri/conges/eos/modele/YCRIGenericRecord.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EOAlerte.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EOCET.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EOCETTransaction.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EODroit.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EODroitPasDeMailCds.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EOMessage.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EORepartValidation.java, 
+           src/fr/univlr/cri/conges/eos/modele/conges/EOStructureAutorisee.java, 
+           src/fr/univlr/cri/conges/eos/modele/grhum/EOAffectation.java, 
+           src/fr/univlr/cri/conges/eos/modele/grhum/EOIndividu.java, 
+           src/fr/univlr/cri/conges/eos/modele/grhum/EORepartition.java, 
+           src/fr/univlr/cri/conges/eos/modele/grhum/EOStructure.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOAffectationAnnuelle.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOAnnulationPeriodeFermeture.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOCalculAffectationAnnuelle.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOHoraire.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOOccupation.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOPeriodeAffectationAnnuelle.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOPeriodeFermeture.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOPlanningHebdomadaire.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOTypeHoraire.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOTypeOccupation.java, 
+           src/fr/univlr/cri/conges/eos/modele/planning/EOVacanceScolaire.java, 
+           src/fr/univlr/cri/conges/objects/Absence.java, 
+           src/fr/univlr/cri/conges/objects/GenericPlanningExtension.java, 
+           src/fr/univlr/cri/conges/objects/HoraireHebdomadaire.java, 
+           src/fr/univlr/cri/conges/objects/HoraireJournalier.java, 
+           src/fr/univlr/cri/conges/objects/Jour.java, 
+           src/fr/univlr/cri/conges/objects/JourReliquatCongesNode.java, 
+           src/fr/univlr/cri/conges/objects/Jrti.java, 
+           src/fr/univlr/cri/conges/objects/Mois.java, 
+           src/fr/univlr/cri/conges/objects/Planning.java, 
+           src/fr/univlr/cri/conges/objects/PlanningCalcul.java, 
+           src/fr/univlr/cri/conges/objects/PlanningContraintes.java, 
+           src/fr/univlr/cri/conges/objects/PlanningHtml.java, 
+           src/fr/univlr/cri/conges/objects/Responsabilite.java, 
+           src/fr/univlr/cri/conges/objects/Semaine.java, 
+           src/fr/univlr/cri/conges/objects/finder/FinderClasse.java, 
+           src/fr/univlr/cri/conges/objects/finder/FinderResponsabilite.java, 
+           src/fr/univlr/cri/conges/objects/finder/FinderSemaine.java, 
+           src/fr/univlr/cri/conges/objects/occupations/AutorisationdAbsence.java, 
+           src/fr/univlr/cri/conges/objects/occupations/CongesCompensateurs.java, 
+           src/fr/univlr/cri/conges/objects/occupations/CongespourCet.java, 
+           src/fr/univlr/cri/conges/objects/occupations/DecesMaladieTresGrave.java, 
+           src/fr/univlr/cri/conges/objects/occupations/HeuresSupplementaires.java, 
+           src/fr/univlr/cri/conges/objects/occupations/MariageouPacs.java, 
+           src/fr/univlr/cri/conges/objects/occupations/Naissance.java, 
+           src/fr/univlr/cri/conges/objects/occupations/Occupation.java, 
+           src/fr/univlr/cri/conges/objects/occupations/PeriodeFermetureDecalee.java, 
+           src/fr/univlr/cri/conges/objects/occupations/PreparationConcoursCata.java, 
+           src/fr/univlr/cri/conges/objects/occupations/PreparationConcoursCatb.java, 
+           src/fr/univlr/cri/conges/objects/occupations/PreparationConcoursCatc.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/AbsencePourEnseignement.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/AbsencePourFormation.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/ActivitePolitiqueMunicipale.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/AutorisationdAbsenceaTitreSyndical.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/ConcoursAutresMinisteres.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/ConcoursEducationNationale.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongeAnnuel.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongedeFormationProfessionnelle.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongedeLongueDuree.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongedeLongueMaladie.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongedeMaternite.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongedePaternite.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongepourAccidentduTravail.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/CongepourAdoption.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/FetesReligieuses.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/FormationSyndicale.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/MaladieOrdinaire.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/ReunionConseilMunicipalGeneralRegional.java, 
+           src/fr/univlr/cri/conges/objects/occupations/poubelle/SoinsEnfantMalade.java, 
+           src/fr/univlr/cri/conges/print/CngPdfBoxCtrl.java, 
+           src/fr/univlr/cri/conges/print/GenericSixPrint.java, 
+           src/fr/univlr/cri/conges/print/PrintConsts.java, 
+           src/fr/univlr/cri/conges/print/PrintDemandeCET.java, 
+           src/fr/univlr/cri/conges/print/PrintHoraires.java, 
+           src/fr/univlr/cri/conges/print/PrintListeCET.java, 
+           src/fr/univlr/cri/conges/print/PrintListeTransactionCET.java, 
+           src/fr/univlr/cri/conges/print/PrintServiceDemiJournees.java, 
+           src/fr/univlr/cri/conges/print/PrintSituationCET.java, 
+           src/fr/univlr/cri/conges/utils/DateCtrlConges.java, 
+           src/fr/univlr/cri/conges/utils/FixedCalendar.java, 
+           src/fr/univlr/cri/conges/utils/TimeCtrl.java
+        );
+        FRAMEWORKS = 
+        (
+           CRIWebApp3.framework, 
+           CRIWebExt3.framework, 
+           JavaEOAccess.framework, 
+           JavaEOControl.framework, 
+           JavaFoundation.framework, 
+           JavaJDBCAdaptor.framework, 
+           JavaWOExtensions.framework, 
+           JavaWebObjects.framework, 
+           JavaXML.framework, 
+           ServeurPlanningFwk.framework
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        (
+           CustomInfo.plist, 
+           Makefile, 
+           Makefile.postamble, 
+           Makefile.preamble
+        );
+        SUBPROJECTS = 
+        (
+           Components.subproj, 
+           CongesDataCenter.subproj, 
+           Modeles.subproj, 
+           Resources.subproj, 
+           Threads.subproj, 
+           WebServerResources.subproj, 
+           YCRIFwk.subproj
+        );
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           CustomInfo.plist, 
+           Properties
+        );
+        WO_COMPONENTS = 
+        ();
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    LOCALIZABLE_FILES = 
+    {};
+    MAKEFILEDIR = "$(MAKEFILEPATH)/java_makefiles";
+    NEXTSTEP_BUILDTOOL = /bin/gnumake;
+    NEXTSTEP_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    NEXTSTEP_JAVA_COMPILER = /usr/bin/javac;
+    NEXTSTEP_OBJCPLUS_COMPILER = /usr/bin/cc;
+    PBPROJECTTYPEVERSION = 4.0;
+    PDO_UNIX_BUILDTOOL = $NEXT_ROOT/Developer/bin/make;
+    PDO_UNIX_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    PDO_UNIX_JAVA_COMPILER = "$(JDKBINDIR)/javac";
+    PDO_UNIX_OBJCPLUS_COMPILER = "$(NEXTDEV_BIN)/gcc";
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsApplication;
+    PROJECTVERSION = 2.8;
+    WINDOWS_BUILDTOOL = $NEXT_ROOT/Developer/Executables/make;
+    WINDOWS_INSTALLDIR = "$(LOCAL_LIBRARY_DIR)/WebObjects/Applications";
+    WINDOWS_JAVA_COMPILER = "$(JDKBINDIR)/javac.exe";
+    WINDOWS_OBJCPLUS_COMPILER = "$(DEVDIR)/gcc";
+}

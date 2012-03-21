@@ -1,0 +1,32 @@
+{
+    OccupationsEditables = {
+        class = EOFetchSpecification; 
+        entityName = TypeOccupation; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = congeLegal; 
+                    selectorName = isEqualTo; 
+                    value = {class = NSNumber; value = 0; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = horaireForce; 
+                    selectorName = isEqualTo; 
+                    value = {class = NSNumber; value = 0; }; 
+                }
+            ); 
+        }; 
+    }; 
+    OccupationsToutes = {
+        class = EOFetchSpecification; 
+        entityName = TypeOccupation; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        prefetchingRelationshipKeyPaths = (); 
+    }; 
+}

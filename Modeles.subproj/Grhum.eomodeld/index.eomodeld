@@ -1,0 +1,70 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOAbsenceGepeto"; 
+            name = AbsencesGepeto; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOAdresse"; 
+            name = Adresse; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOAffectation"; 
+            name = Affectation; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOElementCarriere"; 
+            name = ElementCarriere; 
+        }, 
+        {className = "fr.univlr.cri.conges.eos.modele.grhum.EOEnfant"; name = Enfant; }, 
+        {className = "fr.univlr.cri.conges.eos.modele.grhum.EOGrade"; name = Grade; }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOIndividu"; 
+            name = Individu; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOIndividuInfosPeriodes"; 
+            name = IndividuInfosPeriodes; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOIndividu"; 
+            name = IndividuPrsId; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EORepartEnfant"; 
+            name = RepartEnfant; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EORepartPersonneAdresse"; 
+            name = RepartPersonneAdresse; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EORepartition"; 
+            name = Repartition; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOStructure"; 
+            name = Structure; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOVPersonnelActuel"; 
+            name = VPersonnelActuel; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOVPersonnelNonEns"; 
+            name = VPersonnelNonEns; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOVService"; 
+            name = VService; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.grhum.EOContrat"; 
+            name = Contrat; 
+        }
+    ); 
+    userInfo = {modelId = "CONGES_GRHUM"; }; 
+}

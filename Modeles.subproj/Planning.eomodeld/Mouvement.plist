@@ -1,0 +1,78 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MOUVEMENT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = mouvementLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "MOUVEMENT_MINUTES"; 
+            externalType = NUMBER; 
+            name = mouvementMinutes; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MOUVEMENT_TYPE"; 
+            externalType = NUMBER; 
+            name = mouvementType; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOMouvement"; 
+    classProperties = (
+        dCreation, 
+        dModification, 
+        mouvementLibelle, 
+        mouvementMinutes, 
+        mouvementType, 
+        toAffectationAnnuelle
+    ); 
+    externalName = "CONGES.PLNG_MOUVEMENT"; 
+    name = Mouvement; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffAnn; }); 
+            name = toAffectationAnnuelle; 
+        }
+    ); 
+}

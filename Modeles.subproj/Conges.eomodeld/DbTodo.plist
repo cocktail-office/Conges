@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            columnName = "DTO_KEY"; 
+            externalType = NUMBER; 
+            name = dtoKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DTO_REQ"; 
+            externalType = VARCHAR2; 
+            name = dtoReq; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (dtoKey); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EODbTodo"; 
+    classProperties = (dtoKey, dtoReq); 
+    externalName = "CONGES.DB_TODO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CONGES_NEW.DB_TODO"; }; 
+    name = DbTodo; 
+    primaryKeyAttributes = (dtoKey); 
+}

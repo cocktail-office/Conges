@@ -1,0 +1,42 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/ycrifwk/YCRIApplication.java, 
+           src/fr/univlr/cri/ycrifwk/eos/finder/FinderParametre.java, 
+           src/fr/univlr/cri/ycrifwk/eos/metier/Parametre.java, 
+           src/fr/univlr/cri/ycrifwk/eos/modele/EOParametre.java, 
+           src/fr/univlr/cri/ycrifwk/utils/UtilDate.java, 
+           src/fr/univlr/cri/ycrifwk/utils/UtilDb.java, 
+           src/fr/univlr/cri/ycrifwk/utils/UtilException.java, 
+           src/fr/univlr/cri/ycrifwk/utils/UtilLog.java, 
+           src/fr/univlr/cri/ycrifwk/utils/UtilMisc.java, 
+           src/fr/univlr/cri/ycrifwk/utils/UtilString.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        (
+           Components.subproj
+        );
+        WOAPP_RESOURCES = 
+        ();
+        WO_COMPONENTS = 
+        ();
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

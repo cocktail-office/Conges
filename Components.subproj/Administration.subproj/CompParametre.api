@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CompParametre" wocomponentcontent="false">    <binding name="parametre"/>
+        <validation message="'parametre' is a required binding.">
+            <unbound name="parametre"/>
+        </validation>
+        <binding name="anneeUniv"/>
+    <binding name="size"/>
+        <binding name="maxLength"/>
+    <binding name="popupValueList"/>
+    </wo>
+</wodefinitions>

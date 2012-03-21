@@ -1,0 +1,122 @@
+<webobject name = "FormAnneeUniv">
+	<table align = "center">
+		<tr>
+			<td align="center">
+				<span title="Selectionnez l'ann&eacute;e universitaire sur laquelle vous allez faire des modifications">
+				<b>Ann&eacute;e universitaire :	<webobject name="PopUpLesAnneeUniv"/></b>
+				</span>
+				<br>
+				<font class="textNote">Les param&egrave;tres suivis de (a) sont annualis&eacute;s</font>
+			</td>
+		</tr>
+	</table>
+</webobject>
+
+
+<webobject name = "FormParametreParametre">
+
+	<webobject name = "BtnDoUpdateAllParametresHidden"/>
+
+	<table align = "center">
+		
+		<tr>
+			<td align="center">
+				<table>
+					<caption>Param&egrave;tres g&eacute;n&eacute;raux</caption>
+					<tr>
+						<td>
+							<span title="Le nombre d'heure qu'un agent a 100% doit faire pour commencer a gagner des cong&eacute;s">Heures dues : <webobject name = "CompParametreHeuresDues"/></span>
+						</td>
+						<td>
+							<span title="Apres cette date, les reliquats ne sont plus utilisables. Leur bascule vers le CET sera possible">Date max reliquat : <webobject name = "CompParametreDateMaxReliquat"/></span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title="Les absences sur le planning pr&eacute;visionnel ne sont l&agrave; que pour information ...">
+								<label><webobject name = "CompParametreAutoriserSaisieAbsenceSurPlanningPrevisionnel"/>
+								Autoriser la saisie d'absences sur le planning pr&eacute;visionnel</label>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title="Autoriser la saisie d'absence sur le pr&eacute;visionnel dans le cas ou ce dernier est &agrave; nouveau ouvert en cours d'ann&eacute;e (changement quotit&eacute;, dates ...)">
+								<label><webobject name = "CompParametreAutoriserSaisieAbsenceSurPlanningPrevisionnelEnCoursDAnnee"/>
+								Autoriser la saisie d'absences sur le planning pr&eacute;visionnel (en cours d'ann&eacute;e)</label>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span title="La base de conversion des heures en jours (pour affichage uniquement)">
+							Pour affichage, dur&eacute;e type d'un jour : <webobject name = "CompParametreDureeJourConversion"/></span>
+						</td>
+						<td>
+							<span title="Nombre maximum de droits &agrave; cong&eacute;s : au del&agrave;, l'agent devra r&eacute;duire son nombre d'heures associ&eacute;es">
+							Heures cong&eacute;s; maximum autoris&eacute;s : <webobject name = "CompParametreHeuresCongesMaxi"/>h00</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span title="Nombre cycles hebdomadaires hauts que l'agent peut associer sur son planning">
+							Nombre maximum de semaines hautes associables : <webobject name = "CompParametreNbreSemainesHautesMaxi"/></span>
+						</td>
+						<td>
+							<span title="Valeur pour les agents ayant un passe droit sur ce param&egrave;tre">
+							Pour ceux qui ont un droit sp&eacute;cifique : <webobject name = "CompParametreNbreSemainesHautesMaxiDepassement"/></span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title = "Il s'agit du premier jour du planning. La fin sera le m&ecirc;me jour &agrave; j-1 l'ann&eacute;e suivante.">
+								Date de d&eacute;but des plannings
+								<webobject name = "CompParametreDebutAnneeUniversitaire"/>
+								<font class="textNote">Format : JJ/MM</font>
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span title="Permettre aux agents d'acc&eacute;der &agrave; l'onglet CET">
+							<label><webobject name = "CompParametreShowCet"/> Afficher l'onglet CET</label></span>
+						</td>
+						<td>
+							<span title="Permettre aux agents de saisir la pause RTT de 20 minutes dans leurs horaires">
+							<label><webobject name = "CompParametreShowPause"/> Prise en compte de la pause RTT</label></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span title="Permettre aux agents d'imprimer la demande pour garde d'enfant malade (pour ceux qui en ont)">
+							<label><webobject name = "CompParametreShowDemandeGardeEnfant"/> Afficher l'&eacute;dition de garde d'enfant malade</label></span>
+						</td>
+						<td>
+							<span title="Permettre aux agents d'imprimer une demande papier en plus de la demande &eacute;lectronique de cong&eacute;">
+							<label><webobject name = "CompParametreShowDemandeCongesPapier"/> Proposer l'&eacute;dition papier de saisie d'absence</label></span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span title = "Il s'agit du premier jour du planning. La fin sera le m&ecirc;me jour &agrave; j-1 l'ann&eacute;e suivante.">
+								Niveau de validation des plannings : 	<webobject name = "CompParametreValidationPlanningNiveau"/><br>
+								<font class="textNote">
+								- 0 : validation par les responsables<br>
+								- 1 : validation par les DRH
+								</font>
+							</span>
+						</td>
+						<td title = "Liste des demandes : le nombre d'ann&eacute;es universitaires en arri&egrave;re &agrave; remonter pour affichage (on masque alors les anciennes)">
+							Visibilit&eacute; des alertes : <webobject name = "CompParametreAlerteNbAnneesAnterieuresVisibles"/> ann&eacute;e(s) en arri&egrave;re<br>
+							<font class="textNote">
+								mettre &quot;0&quot; pour ne voir que l'ann&eacute;e en cours, un chiffre n&eacute;gatif pour les voir toutes.
+							</font>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+  <webobject name = "BtnDoUpdateAllParametres"/>
+</webobject>

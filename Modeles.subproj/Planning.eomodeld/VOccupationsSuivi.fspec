@@ -1,0 +1,115 @@
+{
+    fetchVOccupationSuivi = {
+        class = EOFetchSpecification; 
+        entityName = VOccupationsSuivi; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = toStructure; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = toStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = toComposante; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = toComposante; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dteDebutAnnee; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = dteDebutAnnee; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = nomUsuel; 
+                    selectorName = "isLike:"; 
+                    value = {"_key" = nomUsuel; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = prenom; 
+                    selectorName = "isLike:"; 
+                    value = {"_key" = prenom; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteDebut; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dteDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteDebut; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dteFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteDebut; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dteFin; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteFin; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dteFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteDebut; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dteDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteFin; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dteFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteDebut; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dteDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dteFin; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dteFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }
+                    ); 
+                }
+            ); 
+        }; 
+    }; 
+}

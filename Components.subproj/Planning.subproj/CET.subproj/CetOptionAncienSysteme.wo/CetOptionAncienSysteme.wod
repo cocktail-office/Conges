@@ -1,0 +1,130 @@
+CondNotIsSelectedRenoncement: WOConditional {
+	condition = isSelectedRenoncement;
+	negate = true;
+}
+
+BtnDoRenoncer: WOSubmitButton {
+	action = doRenoncer;
+	name = "BtnDoRenoncer";
+	value = "TRANSFERT VERS LE CET PERENNE";
+	title = "Cliquer pour transferer l'ensemble de vos jours vers le r&eacute;gime p&eacute;renne";
+	escapeHTML = false;
+	class = "bouton";
+	disabled = isSelectedRenoncement;
+}
+
+BtnDoNePasRenoncer: WOSubmitButton {
+	action = doNePasRenoncer;
+	name = "BtnDoNePasRenoncer";
+	value = "MAINTIEN DANS ANCIEN CET";
+	title = "Cliquer pour ne pas renoncer &agrave; l'ancien r&eacute;gime CET";
+	escapeHTML = false;
+	class = "bouton";
+	disabled = isSelectedRenoncement;
+}
+
+CondIsSelectedRenoncement: WOConditional {
+	condition = isSelectedRenoncement;
+}
+
+LnkDoUnSelectRenoncement: WOHyperlink {
+	action = doUnSelectRenoncement;
+	string = "Changer d'avis";
+	title = "Revenir sur ma d&eacute;cision de renoncer ou pas ...";
+}
+
+CondIsRenoncement: WOConditional {
+	condition = isRenoncement;
+}
+
+CondNotIsRenoncement: WOConditional {
+	condition = isRenoncement;
+	negate = true;
+}
+
+CondIsDroitOptionAncienRegimeApresRenoncementPossible: WOConditional {
+	condition = affAnn.cetFactory.isDroitOptionAncienRegimeApresRenoncementPossible;
+}
+
+CondNotIsDroitOptionAncienRegimeApresRenoncementPossible: WOConditional {
+	condition = affAnn.cetFactory.isDroitOptionAncienRegimeApresRenoncementPossible;
+	negate = true;
+}
+
+StrOptionTotalJour: WOString {
+	value = optionTotalJour;
+	numberformat = "0.00";
+}
+
+PopUpIndemnisationJour: WOPopUpButton {
+	list = optionIndemnisationJourList;
+	item = optionIndemnisationJourItem;
+	selection = optionIndemnisationJourSelected;
+	disabled = disabledPopUpIndemnisationJour;
+}
+
+CondShowBtnDoSelectIndemnisation: WOConditional {
+	condition = showBtnDoSelectIndemnisation;
+}
+
+BtnDoSelectIndemnisation: WOSubmitButton {
+	action = doSelectIndemnisation;
+	name = "BtnDoSelectIndemnisation";
+	value = "VALIDER";
+	title = "Cliquer pour choisir cette valeur de jours &agrave; vous faire indemniser";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+CondShowLnkDoUnSelectIndemnisation: WOConditional {
+	condition = showLnkDoUnSelectIndemnisation;
+}
+
+LnkDoUnSelectIndemnisation: WOHyperlink {
+	action = doUnSelectIndemnisation;
+	string = "modifier";
+	title = "Modifier la valeur des jours a se faire indemniser";
+}
+
+CondShowPopUpTransfertRafp: WOConditional {
+	condition = showPopUpTransfertRafp;
+}
+
+PopUpTransfertRafp: WOPopUpButton {
+	list = optionTransfertRafpJourList;
+	item = optionTransfertRafpJourItem;
+	selection = optionTransfertRafpJourSelected;
+	disabled = disabledPopUpTransfertRafp;
+}
+
+CondShowBtnDoSelectTransfertRafp: WOConditional {
+	condition = showBtnDoSelectTransfertRafp;
+}
+
+BtnDoSelectTransfertRafp: WOSubmitButton {
+	action = doSelectTransfertRafp;
+	name = "BtnDoSelectTransfertRafp";
+	value = "VALIDER";
+	title = "Cliquer pour choisir cette valeur de jours &agrave; transferer en RAFP";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+CondShowLnkDoUnSelectTransfertRafp: WOConditional {
+	condition = showLnkDoUnSelectTransfertRafp;
+}
+
+LnkDoUnSelectTransfertRafp: WOHyperlink {
+	action = doUnSelectTransfertRafp;
+	string = "modifier";
+	title = "Modifier la valeur des jours &agrave; transferer en RAFP";
+}
+
+CondShowStrMaintien: WOConditional {
+	condition = showStrMaintien;
+}
+
+StrOptionMaintienJourSelected: WOString {
+	value =  optionMaintienJourSelected;
+	numberformat = "0.00";
+}

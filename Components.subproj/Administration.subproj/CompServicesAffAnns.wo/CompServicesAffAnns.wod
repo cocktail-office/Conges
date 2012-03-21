@@ -1,0 +1,132 @@
+FormCompServicesAffAnnsNew: WOForm {
+	name = "FormCompServicesAffAnnsNew";
+}
+
+PopUpAnneeUniv: WOPopUpButton {
+	item = anneeUnivItem;
+	list = anneeUnivList;
+	onChange = "this.form.submit();";
+	selection = anneeUnivSelected;
+}
+
+StrComposanteCount: WOString {
+	value = composantesDisplayGroup.displayedObjects.count;
+}
+
+StrServiceCount: WOString {
+	value = servicesDisplayGroup.displayedObjects.count;
+}
+
+StrAffAnnCount: WOString {
+	value = affAnnsDisplayGroup.displayedObjects.count;
+}
+
+RepComposante: WORepetition {
+	list = composantesDisplayGroup.displayedObjects;
+	item = composanteItem;
+}
+
+CondIsTheComposanteSelected: WOConditional {
+	condition = isTheComposanteSelected;
+}
+
+LnkComposanteItem: WOHyperlink {
+	action = doComposanteSelection;
+	string = composanteItem.libelleCourt;
+	disabled = isTheComposanteSelected;
+	title = "cliquer pour afficher les services de cette composante";
+}
+
+RepService: WORepetition {
+	list = servicesDisplayGroup.displayedObjects;
+	item = serviceItem;
+}
+
+CondIsTheServiceSelected: WOConditional {
+	condition = isTheServiceSelected;
+}
+
+LnkServiceItem: WOHyperlink {
+	action = doServiceSelection;
+	string = serviceItem.libelleCourt;
+	disabled = isTheServiceSelected;
+	title = "cliquer pour afficher les plannings associ&eacute;s sur l'ann&eacute;e universtaire selectionn&eacute;e";
+}
+
+RepAffAnn: WORepetition {
+	list = affAnnsDisplayGroup.displayedObjects;
+	item = affAnnItem;
+}
+
+CondIsTheAffAnnSelected: WOConditional {
+	condition = isTheAffAnnSelected;
+}
+
+LnkAffAnnItem: WOHyperlink {
+	action = doAffAnnSelection;
+	string = affAnnItem.individu.nomComplet;
+	disabled = isTheAffAnnSelected;
+	title = "Cliquer pour s&eacute;lectionner le planning";
+}
+
+StrBaliseSelectedOpen: WOString {
+	value = "<b>";
+	escapeHTML = "false";
+}
+
+StrBaliseSelectedClose: WOString {
+	value = "</b>";
+	escapeHTML = "false";
+}
+
+TFSearchString: WOTextField {
+	value = searchString;
+	class = "searchField";
+}
+
+BtnDoSearch: WOSubmitButton {
+	action = doSearch;
+	name = "BtnDoSearch";
+	class = "bouton";
+	value = "Rechercher";
+}
+
+CondSearchListCount: WOConditional {
+	condition = searchList.count;
+}
+
+RepSearchList: WORepetition {
+	list = searchList;
+	item = searchItem;
+}
+
+LnkSearchItemAffAnn: WOHyperlink {
+	action = doSearchItemSelectionAffAnn;
+	title = "Cliquer pour s&eacute;lectionner ce planning";
+}
+
+LnkSearchItemService: WOHyperlink {
+	action = doSearchItemSelectionService;
+	title = "Cliquer pour s&eacute;lectionner ce service";
+}
+
+LnkSearchItemComposante: WOHyperlink {
+	action = doSearchItemSelectionComposante;
+	title = "Cliquer pour s&eacute;lectionner cette composante";
+}
+
+StrSearchItemNomUsuel: WOString {
+	value = searchItem.nomUsuel;
+}
+
+StrSearchItemPrenom: WOString {
+	value = searchItem.prenom;
+}
+
+StrSearchItemService: WOString {
+	value = searchItem.toStructure.libelleCourt;
+}
+
+StrSearchItemComposante: WOString {
+	value = searchItem.toStructure.toComposante.libelleCourt;
+}

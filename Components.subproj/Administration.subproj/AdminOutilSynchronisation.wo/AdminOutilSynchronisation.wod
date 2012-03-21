@@ -1,0 +1,54 @@
+InfoTotalAffAnn: CngInfoBox {
+}
+
+InfoSynchro: CngInfoBox {
+}
+
+InfoArret: CngInfoBox {
+}
+
+CondShowLastTotalAffAnn: WOConditional {
+	condition = shouldShowLastTotalAffAnn;
+}
+
+StrTotalAffAnn: WOString {
+	value = lastTotalAffAnn;
+}
+
+StrTotalPeriode: WOString {
+	value = lastTotalPeriode;
+}
+
+StrLastMessage: WOString {
+	value = lastMessage;
+	escapeHTML = false;
+}
+
+FormOutilSynchronisation: WOForm {
+	name = "FormOutilSynchronisation";
+	action = neFaitRien;
+	multipleSubmit="true";
+}
+
+PopUpLesAnneeUniv: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	onChange = "FormOutilSynchronisation.submit();return false;";
+	selection = lAnneeUnivSelectionnee;
+}
+
+BtnSync: WOSubmitButton {
+	title = "Pour le service autorise selectionne, creer les plannings manquants";
+	value = "Synchroniser les affectations";
+	action = synchroniser;
+	class = "bouton";
+}
+
+BtnArreterApplication: WOSubmitButton {
+	title = "Arreter l'application";
+	value = "STOP";
+	action = arreterApplication;
+	class = "bouton";
+	escapeHTML = false;
+}

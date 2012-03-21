@@ -1,0 +1,39 @@
+{
+    attributes = (
+        {
+            columnName = "DTC_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DTO_KEY"; }; 
+            name = dtcKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTC_MESSAGE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DTO_REQ"; }; 
+            name = dtcMessage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "DTC_REQ"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DTO_REQ"; }; 
+            name = dtcReq; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (dtcKey); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EODbTodoCrash"; 
+    classProperties = (dtcKey, dtcReq, dtcMessage); 
+    externalName = "CONGES.DB_TODO_CRASH"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CONGES_NEW.DB_TODO_CRASH"; }; 
+    name = DbTodoCrash; 
+    primaryKeyAttributes = (dtcKey); 
+}

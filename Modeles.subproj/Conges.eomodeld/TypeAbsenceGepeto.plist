@@ -1,0 +1,41 @@
+{
+    attributes = (
+        {
+            columnName = "ABS_TYPE_CODE"; 
+            externalType = VARCHAR2; 
+            name = absTypeCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "OID_TYP_OCC"; 
+            externalType = NUMBER; 
+            name = oidTypOcc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (absTypeCode); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOTypeAbsenceGepeto"; 
+    classProperties = (absTypeCode, toTypeOccupation); 
+    externalName = "CONGES.CNG_TYPE_ABS_GEPETO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (toTypeOccupation); 
+        "_nameInObjectStore" = "CNG_TYPE_ABSENCE_GEPETO"; 
+    }; 
+    name = TypeAbsenceGepeto; 
+    primaryKeyAttributes = (absTypeCode); 
+    relationships = (
+        {
+            destination = TypeOccupation; 
+            internalInfo = {"_nameInObjectStore" = typeOccupation; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidTypOcc; }); 
+            name = toTypeOccupation; 
+        }
+    ); 
+}

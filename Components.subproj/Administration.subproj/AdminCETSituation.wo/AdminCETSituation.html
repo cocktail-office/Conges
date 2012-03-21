@@ -1,0 +1,125 @@
+<style>
+.tableSituation tr.listboxLine td.nom {
+	text-align: left;
+}
+
+.tableSituation tr.listboxLine {
+	text-align: right;
+}
+</style>
+
+<webobject name = "CRINavBarCet"/>
+
+<table class="listboxBorder" width="100%" cellspacing="0" cellpadding="1" border="0">
+	<tr>
+		<td>
+			<table class = border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tr class = "listboxHeader">
+					<th width = "1%">
+						<webobject name = "FormRefreshCetDg">
+							<webobject name = "BtnDoRefreshCetDg"/>
+						</webobject>
+					</th>
+					<th width = "25%">
+						<webobject name = "FormOnlyPersonnelActuel">
+							<input name = "vide" value = "vide" type = "hidden"/>
+							<webobject name = "ChkIsOnlyPersonnelActuel"/> <font class="textNote">personnel actuel seulement</font>
+						</webobject>
+					</th>
+					<th width = "25%">
+						<webobject name = "FormSearchSituationCet">
+							Agent : <webobject name = "TFSearchStringSituationCet"/>
+						</webobject>
+					</th>
+					<th width = "25%">
+						<webobject name = "CondHasResult">
+						
+							<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+							<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+						</webobject>	
+					</th>
+					<th width = "25%">
+						<webobject name = "CondHasResult">
+							<webobject name="FormDateArret">
+								Date arr&ecirc;t :
+								<webobject name="DatePickerArret"/>
+								<webobject name="BtnEcrireDansLePdf"/>
+							</webobject>
+							<webobject name="CngPdfBoxSituation"/>
+							<webobject name = "ImgWarning"/>
+							ATTENTION : &eacute;dition assez gourmande, soyez patient (compter 5 &agrave; 10 sec. par agent)
+						</webobject>
+					</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<font class="textNote">NOTE : Les valeurs num&eacute;riques indiqu&eacute;es sont des jours &agrave; 7h00</font>
+
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+	<tr>
+		<td>
+		
+			<table class = "tableSituation" border="0" cellpadding="2" cellspacing="1" width="100%">
+			
+			
+				<tr class="listboxHeader">
+			
+					<th rowspan = "3">Agent</th>
+					<th colspan = "2">Ancien r&eacute;gime</th>
+					<th colspan = "4">R&eacute;gime p&eacute;renne</th>
+			
+				</tr> 
+			
+				<tr class="listboxHeader">
+			
+					<th colspan = "2">Solde</th>
+					<th colspan = "2">en d&eacute;but d'ann&eacute;e</th>
+					<th colspan = "2">en fin d'ann&eacute;e</th>
+							
+				</tr>
+			
+			
+				<tr class="listboxHeader">
+			
+					<th>j/7h00</th>
+					<th>heures</th>
+					<th>j/7h00</th>
+					<th>heures</th>
+					<th>j/7h00</th>
+					<th>heures</th>
+							
+				</tr>
+	
+	
+				<webobject name = "RepCet">
+				
+				<tr class="listboxLine">
+				
+					<td class="nom"><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrAgent"/></webobject></webobject></td>
+					<td><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrSoldeAncienRegimeEnJour7h00CetItem"/></webobject></webobject></td>
+					<td><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrSoldeAncienRegimeEnHeuresCetItem"/></webobject></webobject></td>
+					<td><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrSoldeRegimePerenneDebutAnneeEnJour7h00CetItem"/></webobject></webobject></td>
+					<td><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrSoldeRegimePerenneDebutAnneeEnHeuresCetItem"/></webobject></webobject></td>
+					<td><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrSoldeRegimePerenneFinAnneeEnJour7h00CetItem"/></webobject></webobject></td>
+					<td><webobject name = "LnkDoSelectCetItem"><webobject name = "BoldContainer1"><webobject name = "StrSoldeRegimePerenneFinAnneeEnHeuresCetItem"/></webobject></webobject></td>
+				
+				</tr>
+				
+				</webobject>
+				
+			</table>
+			
+		</td>
+	</tr>
+</table>
+
+
+<webobject name = "CondIsCetSelected">
+	<br>
+	Situation actuelle de <webobject name = "StrIndividuSelected"/>
+	<webobject name = "CetEtat1"/>
+</webobject>
+				

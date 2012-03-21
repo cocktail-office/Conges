@@ -1,0 +1,69 @@
+<webobject name="CompServicesAffAnns1"/>
+
+<webobject name = "CondIsSelectedAffAnn">
+		
+	<br>
+	<b>Effacer ce planning : <webobject name = "StrSelectedAffAnn"/> (oid=<webobject name = "StrSelectedAffAnnOid"/>)</b>
+	<webobject name="LnkDeleteSelectedAffAnn"><webobject name = "ImgDeleteAffAnn"/></webobject>
+
+
+
+	<br/>
+	<br/>
+	
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+  	<tbody>
+  		<tr>
+				<td>
+     			<table cellpadding="2" cellspacing="0">
+						<tr class="listboxHeader">
+							<th><font class="subTitle">Ce planning est associ&eacute; au(x) affectation(s) RH suivante(s)</font></th>
+						</tr>
+						<webobject name = "RepPeriodes">
+						<tr class="listboxLine">
+							<td>
+								<webobject name = "StrAffectionPourPeriode"/>
+							</td>
+						</tr>
+						</webobject>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</webobject>
+		
+<webobject name = "CondAffAnnASupprimer">
+	
+	<br/>
+	<br/>
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+  	<tbody>
+  		<tr>
+				<td>
+     			<table cellpadding="2" cellspacing="0">
+						<tr class="listboxHeader">
+							<th colspan = "2">
+								<font class="textError">
+									Attention, l'application a detect&eacute; des plannings qui ne devraient pas exister
+								</font>
+							</th>
+						</tr>
+						<webobject name = "RepAffAnnASuppimer">
+						<tr class="listboxLine">
+							<td>
+								<webobject name = "StrAffAnnASupprimer"/>
+							</td>
+							<td>
+								<webobject name="LnkDeleteAffAnn"><webobject name = "ImgDeleteAffAnn"/></webobject>
+							</td>
+						</tr>
+						</webobject>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</webobject>

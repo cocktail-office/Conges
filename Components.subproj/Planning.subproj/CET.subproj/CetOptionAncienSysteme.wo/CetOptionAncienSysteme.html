@@ -1,0 +1,80 @@
+<webobject name = "CondNotIsSelectedRenoncement">
+	<font class="title">D&eacute;cision &agrave; prendre sur vos <webobject name = "StrOptionTotalJour"/> j. de  l'ancien r&eacute;gime</font><br/><br/>
+	Voulez vous renoncer &agrave; votre compte CET &quot;ancien syst&egrave;me&quot; 
+	et basculer les jours vers le r&eacute;gime p&eacute;renne ?<br/><br/>
+	<webobject name = "BtnDoRenoncer"/>&nbsp;&nbsp;&nbsp;&nbsp;
+	<webobject name = "BtnDoNePasRenoncer"/>
+	
+</webobject>
+
+
+<webobject name = "CondIsSelectedRenoncement">
+
+	<webobject name = "CondIsRenoncement">
+		<font class="title">Je renonce &agrave; l'ancien r&eacute;gime et transf&egrave;re<br/>
+		mes <webobject name = "StrOptionTotalJour"/>j. vers le r&eacute;gime p&eacute;renne</font>
+	</webobject>
+	
+	<webobject name = "CondNotIsRenoncement">
+	
+		<webobject name = "CondIsDroitOptionAncienRegimeApresRenoncementPossible">
+			<font class="title">Je maintiens les <webobject name = "StrOptionTotalJour"/>j.</font> mon CET ancien r&eacute;gime :<br/>
+			et exercice mon droit d'option comme suit :
+		</webobject>
+		
+		<webobject name = "CondNotIsDroitOptionAncienRegimeApresRenoncementPossible">
+			<font class="title">Je maintiens les <webobject name = "StrOptionTotalJour"/>j.</font> mon CET ancien r&eacute;gime
+		</webobject>
+		
+	</webobject>
+	
+	<br/>	
+	<webobject name = "LnkDoUnSelectRenoncement"/><br/><br/>
+		
+	<webobject name = "CondNotIsRenoncement">
+		<webobject name = "CondIsDroitOptionAncienRegimeApresRenoncementPossible">
+			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+				<tr>
+					<td>
+						<table border="0" cellpadding="2" cellspacing="1">
+							<tr class = "listboxHeader">
+								<th>Rubrique</th>
+								<th>j. &agrave; 7h00</th>
+								<th/>
+							</tr>
+				
+							<tr class="listboxLine">
+								<td>Indemnisation</td>
+								<td align="right"><webobject name = "PopUpIndemnisationJour"/></td>
+								<td>
+									<webobject name = "CondShowBtnDoSelectIndemnisation"><webobject name = "BtnDoSelectIndemnisation"/></webobject>
+									<webobject name = "CondShowLnkDoUnSelectIndemnisation"><webobject name = "LnkDoUnSelectIndemnisation"/></webobject>
+								</td>
+							</tr>
+							
+							<webobject name = "CondShowPopUpTransfertRafp">
+								<tr class="listboxLine">
+									<td>Transfert en RAFP</td>
+									<td align="right"><webobject name = "PopUpTransfertRafp"/></td>
+									<td>
+										<webobject name = "CondShowBtnDoSelectTransfertRafp"><webobject name = "BtnDoSelectTransfertRafp"/></webobject>
+										<webobject name = "CondShowLnkDoUnSelectTransfertRafp"><webobject name = "LnkDoUnSelectTransfertRafp"/></webobject>
+									</td>
+								</tr>
+							</webobject>
+						
+							<webobject name = "CondShowStrMaintien">
+								<tr class="listboxLine">		
+									<td>Maintien en CET ancien syst&egrave;me</td>
+									<td align="right"><webobject name = "StrOptionMaintienJourSelected"/></td>
+									<td/>
+								</tr>
+							</webobject>		
+						</table>
+					</td>
+				</tr>
+			</table>
+		</webobject>
+	</webobject>
+
+</webobject>

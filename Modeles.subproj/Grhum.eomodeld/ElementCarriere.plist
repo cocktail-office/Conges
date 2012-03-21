@@ -1,0 +1,108 @@
+{
+    attributes = (
+        {
+            columnName = "C_GRADE"; 
+            externalType = VARCHAR2; 
+            name = cGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "D_EFFET_ELEMENT"; 
+            externalType = DATE; 
+            name = dEffetElement; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_ELEMENT"; 
+            externalType = DATE; 
+            name = dFinElement; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_CARRIERE"; 
+            externalType = NUMBER; 
+            name = noSeqCarriere; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_ELEMENT"; 
+            externalType = NUMBER; 
+            name = noSeqElement; 
+            precision = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noDossierPers, noSeqCarriere, noSeqElement); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOElementCarriere"; 
+    classProperties = (
+        noDossierPers, 
+        noSeqCarriere, 
+        noSeqElement, 
+        toIndividu, 
+        toGrade, 
+        cGrade, 
+        dEffetElement, 
+        dFinElement, 
+        temValide
+    ); 
+    externalName = "GRHUM.ELEMENT_CARRIERE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noDossierPers, 
+            noSeqCarriere, 
+            noSeqElement, 
+            cGrade, 
+            dEffetElement, 
+            dFinElement, 
+            toGrade, 
+            toIndividu, 
+            temValide
+        ); 
+    }; 
+    name = ElementCarriere; 
+    primaryKeyAttributes = (noDossierPers, noSeqCarriere, noSeqElement); 
+    relationships = (
+        {
+            destination = Grade; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cGrade; sourceAttribute = cGrade; }); 
+            name = toGrade; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }
+    ); 
+    restrictingQualifier = "temValide='O'"; 
+}

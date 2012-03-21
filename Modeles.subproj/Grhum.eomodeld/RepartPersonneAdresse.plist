@@ -1,0 +1,36 @@
+{
+    attributes = (
+        {
+            columnName = "ADR_ORDRE"; 
+            externalType = NUMBER; 
+            name = adrOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (persId, adrOrdre); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EORepartPersonneAdresse"; 
+    classProperties = (toAdresse); 
+    externalName = "GRHUM.REPART_PERSONNE_ADRESSE"; 
+    externalQuery = "RPA_PRINCIPAL = 'O' AND RPA_VALIDE = 'O'"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartPersonneAdresse; 
+    primaryKeyAttributes = (persId, adrOrdre); 
+    relationships = (
+        {
+            destination = Adresse; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = adrOrdre; sourceAttribute = adrOrdre; }); 
+            name = toAdresse; 
+        }
+    ); 
+}

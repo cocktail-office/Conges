@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<six:template version="1.0" xmlns:six="http://www.univ-lr.fr/CRI/Apps/SIX">
+  <six:title>Liste des horaires hebdomadaires</six:title>
+  <six:main-file>CongesHoraires.xslt</six:main-file>
+</six:template>

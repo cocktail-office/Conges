@@ -1,0 +1,291 @@
+	<webobject name = "CondHasErreurHoraire">
+    <center>
+      <webobject name = "CngAvertissement1">
+        <webobject name = "erreurHoraire"/>
+      </webobject>
+    </center>
+    <br/>
+  </webobject>
+  <webobject name = "CondShowInfoPrev">
+    <center>
+      <webobject name = "CngInfoBox1">
+        <b>Information</b> : Cliquer sur l'onglet<br>
+        &quot;Pr&eacute;visionnel&quot; pour saisir votre planning.
+      </webobject>
+    </center>
+    <br/>
+  </webobject>
+  <webobject name = "CondShowInfoHoraire">
+    <center>
+      <webobject name = "CngInfoBox1">
+        <table>
+          <tr>
+            <td>
+              <b>Information</b>: Pour saisir un horaire, veuillez successivement :<br/>
+              1. Cliquer sur le bouton &quot;Ajouter&quot;<br/>
+              2. Choisir la dur&eacute;e de votre horaire (classique ou personnalis&eacute;e)<br/>
+              3. S&eacute;lectionner votre quotit&eacute;<br/>
+              4. Saisir son contenu.
+            </td>
+          </tr>
+        </table>
+      </webobject>
+    </center>
+    <br/>
+  </webobject>
+  <webobject name = "CondUnHoraireHebdomadaireSelectionneHasNotCouleur">
+    <center>
+      <webobject name = "CngInfoBox1">
+        <b>Conseil</b>: choisissez une couleur pour distinguer<br/>
+        cet horaire parmi les autres sur le planning
+      </webobject>
+    </center>
+    <br/>
+  </webobject>
+  
+  <table>
+  	<tr>
+  		
+  		<td rowspan = "2" width="20%"/>
+  		
+  		<!-- liste des horaires -->
+  		<td valign = "top" width="1%">
+  			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+  				<tr>
+  					<td>
+              <table border="0" cellpadding="2" cellspacing="1" width="100%">
+			          <tr class = "listboxHeader">
+			          	<th colspan="2">Horaires cr&eacute;&eacute;s</th>
+			          </tr>
+                <tr>
+                  <td class="boxContents">
+	                  <webobject name = "CondShowBtnImportPrevHoraires"><webobject name = "FormImportPrevHoraires"><webobject name = "BtnImportPrevHoraires"/></webobject></webobject>
+	                  <table border="0">
+	                  	<webobject name = "RepHorairesHebdomadaires">
+	                  	<tr class="listboxLine">
+	                  		<td nowrap align="left">
+	                  			<webobject name = "CondIsTheHoraireHebdomadaireSelectionne"><webobject name = "BaliseBoldStart"/>&raquo;</webobject>
+	                  			<webobject name = "LnkDoSelectUnHoraireHebdomadaire"><webobject name = "StrUnHoraireHebdomadaireNom"/></webobject>
+	                  			<webobject name = "CondIsTheHoraireHebdomadaireSelectionne"><webobject name = "BaliseBoldEnd"/></webobject>
+	                  		</td>
+	                  	</tr>
+	                  	</webobject>
+	                  </table>
+                  </td>
+                  <webobject name="CondNotIsDisabled">
+	                 	<webobject name = "CondIsNotNouvelHoraire">
+	                		<td valign="top" class="boxContents" width="1%">
+                    		<webobject name = "FormNouvelHoraire">
+		                  		<webobject name = "ImgBtnNouvelHoraire"/>
+		                  		<webobject name = "CondShowBtnModifHoraire"><br/><webobject name = "ImgBtnModifHoraire"/></webobject>
+		                  		<webobject name = "CondShowBtnSuppHoraire"><br/><webobject name = "ImgBtnSuppHoraire"/></webobject>
+		                  		<webobject name = "CondShowBtnDupliquerHoraire"><br/><br/><webobject name = "ImgBtnDupliquerHoraire"/></webobject>
+						      			</webobject>
+                  		</td>
+    								</webobject>
+            			</webobject>
+	              </tr>
+              </table>
+            </td>
+          </tr>
+  			</table>
+  		</td>
+  		
+  		<webobject name = "CondHasSelectedHoraire">
+  		
+  		<td rowspan = "2" width="20%"/>
+	
+  		<!-- gestion de l'horaire en cours -->
+  		<td rowspan = "2" valign="top" width="1%">
+  			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+  				<tr>
+  					<td>
+              <table border="0" cellpadding="2" cellspacing="1" width="100%">
+			          
+			          <!-- titre de la boite -->
+			          <tr class = "listboxHeader">
+			          	<th colspan="10">D&eacute;tails de l'horaire</th>
+			          </tr>
+			          
+			          <!-- informations generales sur l'horaire -->
+			          <tr class = "listboxHeader">
+			          	<td colspan="10">
+			          		<webobject name = "FormTypeHoraire">
+					          <table width="100%">
+		                  <tr>
+		                    <th nowrap align="right">
+		                      <webobject name = "CondIsVoirHorairesTypes">
+		                      	Dur&eacute;es standard <webobject name = "CondNotIsTPA">(&agrave; 100%)</webobject>:
+		                      </webobject>
+		                    </th>
+		                    <td nowrap align="left">
+		                      <webobject name = "CondIsVoirHorairesTypes">
+		                        <webobject name = "PopUpTypeHoraire"/>
+		                        <webobject name = "BtnSelectionnerUnTypeHoraire"/>
+		                        &raquo;
+		                        <b><webobject name = "StrDureeHoraire"/></b>
+		                        <webobject name = "CondIsAutoriseeDureeLibre">
+		                        	<webobject name = "BtnMasquerHorairesTypes"/>
+		                        </webobject>
+		                      </webobject>
+	                      	<webobject name = "CondIsAutoriseeDureeLibre">
+				                    <webobject name = "CondIsCacherHorairesTypes">
+		                          <webobject name = "BtnMontrerHorairesTypes"/>
+				                    </webobject>
+		                       </webobject>
+		                    </td>
+		                    <th align = "right">
+		                    	<webobject name = "CondNotIsTPA">Quotit&eacute;:</webobject>
+		                    </th>
+		                    <td nowrap>
+		                    	<webobject name = "CondIsNouvelHoraire"><webobject name = "CondNotIsTPA"><webobject name = "PopUpQuotite"/></webobject></webobject>
+		                    	<webobject name = "CondIsNotNouvelHoraire"><webobject name = "CondNotIsTPA"><webobject name = "StrUneQuotiteSelectionnee"/></webobject></webobject>
+		                    	%
+		                    </td>
+		                    <th>
+		                    <webobject name = "CondIsVoirHorairesTypes">
+		                      <div style = "background-color:#fff6ac"></div>
+		                     </webobject>
+		                    </th>
+		                  </tr>
+		                </table>
+		                </webobject>
+	                </td>
+			          </tr>
+			          
+			          
+			          <!-- libelle et couleur de l'horaire -->
+			          <tr class = "listboxHeader">
+			          	<td colspan="10">
+			          		<table>
+			          			<tr>
+						          	<th>
+			                 		<webobject name = "FormSaisirUnHoraire">Libell&eacute;:&nbsp;<webobject name = "LibelleHoraire"/></webobject>
+		                    </th>
+		                    <td width = "1%">
+		                      <webobject name = "CondIsHoraireDejaEnregistre">
+		                        <webobject name = "FormCouleur">
+		                          <table>
+		                            <tr>
+		                              <th>Couleur:</th>
+		                              <td><webobject name = "CRIColorPicker1"/></td>
+		                            </tr>
+		                          </table>
+		                        </webobject>
+		                      </webobject>
+		                    </td>
+					         		</tr>
+					         	</table>
+				          </td>
+				        </tr>
+					         
+			          <!-- contenu de l'horaire -->
+			          
+                <tr class = "listboxHeader">
+                  <th>&nbsp;</th>
+                  <th colspan = "2">MATIN</th>
+                  <th colspan = "2">APRES-MIDI</th>
+                  <th>TOTAL</th>
+                  <th class = "pause">
+                    DEBUT PAUSE
+                    <br/>(<webobject name = "StrDureePauseRTT"/> mns)
+                  </th>
+                  <th>BONUS</th>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>
+                <webobject name = "RepHorairesJournaliers">
+                  <webobject name = "FormValiderHoraireJournalier">
+                    <tr class = "listboxLine">
+                      <td align = "left"><b><webobject name = "NomJour"/></b></td>
+                      <td align = "center"><webobject name = "HeureDebutAM"/></td>
+                      <td align = "center"><webobject name = "HeureFinAM"/></td>
+                      <td align = "center"><webobject name = "HeureDebutPM"/> </td>
+                      <td align = "center"><webobject name = "HeureFinPM"/></td>
+                      <td align = "center"><webobject name = "HoraireJournalierTotal"/></td>
+                      <td align = "center" class = "pause"><webobject name = "HeureDebutPause"/></td>
+                      <td align = "center"><webobject name = "StrBonus"/></td>
+	                    <td>
+	                 			<webobject name = "CondIsNouvelHoraire">
+	                      	<webobject name = "CondIsNotLundi">
+	                        	<webobject name = "LinkCopierHoraire">
+	                          	<webobject name = "ImageCopierHoraire"/>
+	                        	</webobject>
+	                      	</webobject>
+	                      </webobject>
+	                    </td>
+	                    <td>
+	                  		<webobject name = "CondIsNouvelHoraire">
+	                      	<webobject name = "LinkEffacerHoraire">
+	                        	<webobject name = "ImageEffacerHoraire"/>
+	                      	</webobject>
+	                      </webobject>
+	                    </td>
+                    </tr>
+                  </webobject>
+                </webobject>
+                <tr class = "listboxLine">
+                  <td colspan = "5">&nbsp;</td>
+                  <td align = "center">
+                    <webobject name = "TFUnHoraireHebdomadaireSelectionneTotal"/>
+                  </td>
+                  <td class = "pause">&nbsp;</td>
+                  <td align = "center">
+                    <webobject name = "TFUnHoraireHebdomadaireSelectionneTotalBonus"/>
+                  </td>
+                  <td colspan="2">&nbsp;</td>
+                </tr>
+                <webobject name = "CondIsNouvelHoraire">
+                <tr class = "listboxLine">
+                  <td colspan="10">
+                      <webobject name = "FormEnregistrementHoraire">
+                        <table width = "100%">
+                          <tr>
+                            <td align = "right"><webobject name = "ButtonEnregistrerHoraire"/></td>
+                            <td width = "10px">&nbsp;</td>
+                            <td align = "left"><webobject name = "ButtonAnnulerHoraire"/></td>
+                          </tr>
+                        </table>
+                    </webobject>
+                  </td>
+                </tr>
+              </webobject>
+      
+			    
+			        </table>
+			      </td>
+			   	</tr>
+			 	</table>
+  		</td>
+  
+			<td rowspan = "2" width="100%"/>
+  
+  		</webobject>
+  	</tr>
+  	
+  	
+  	<!-- informations sur l'horaire -->
+ 		<webobject name = "CondHasSelectedHoraire">
+ 		<tr>
+	 		<td valign = "top" width="1%">
+  			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+  				<tr>
+  					<td>
+              <table border="0" cellpadding="2" cellspacing="1" width="100%">
+			          <tr class = "listboxHeader">
+			          	<th>Contraintes &agrave; respecter</th>
+			          </tr>
+                <tr class = "listboxLine">
+                  <td align="left" nowrap><webobject name = "StrHtmlContraintesEmbaucheDebauche"/></td>
+	              </tr>
+              </table>
+            </td>
+          </tr>
+  			</table>
+  		</td>
+ 		</tr>
+ 	 	</webobject>
+ 
+ 
+  </table>
+  

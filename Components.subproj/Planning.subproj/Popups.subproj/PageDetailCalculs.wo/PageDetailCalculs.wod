@@ -1,0 +1,209 @@
+PageTemplate1: PageTemplate {
+	isPopup = true;
+	pageTitle = "Detail des calculs";
+	useToolTip = false;
+}
+
+Form1: WOForm {
+	name = "FormDetailsCalculs";
+	multipleSubmit = true;
+}
+
+StrAnnee: WOString {
+	value = lePlanning.affectationAnnuelle.annee;
+}
+
+StrType: WOString {
+	value = lePlanning.type;
+}
+
+String13: WOString {
+	value = lePlanning.affectationAnnuelle.individu.nomComplet;
+}
+
+String14: WOString {
+	value = lePlanning.heuresDues;
+}
+
+String15: WOString {
+	value = heuresTravailleesRealisees;
+}
+
+StrLePlanningCongesInitiauxEnHeures: WOString {
+	value = lePlanning.congesInitiauxEnHeures;
+}
+
+DivCongesInitiauxJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_CONGES_INITIAUX_JOURS;
+}
+
+StrLePlanningCongesRestants: WOString {
+	value = lePlanning.congesRestants;
+}
+
+DivCongesRestantsJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_CONGES_RESTANTS_JOURS;
+}
+
+CondHasRegulation: WOConditional {
+	condition = hasRegulation;
+}
+
+StrLePlanningRegularistationEnHeures: WOString {
+	value = lePlanning.regularistationEnHeures;
+}
+
+DivRegularisationJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_REGULARISATION_JOURS;
+}
+
+CondHasJrti: WOConditional {
+	condition = hasJrti;
+}
+
+StrLePlanningJrtiEnHeures: WOString {
+	value = lePlanning.jrtiEnHeures;
+}
+
+DivJrtiJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_JRTI_JOURS;
+}
+
+CondHasBlocageReliquatsCet: WOConditional {
+	condition = hasBlocageReliquatsCet;
+}
+
+StrLePlanningBlocageReliquatsCetEnHeures: WOString {
+	value = lePlanning.blocageReliquatsCetEnHeures;
+}
+
+DivBlocageReliquatsCetJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_BLOCAGE_RELIQUATS_CET_JOURS;
+}
+
+CondHasReliquatNegatif: WOConditional {
+	condition = hasReliquatNegatif;
+}
+
+CondNotHasReliquatNegatif: WOConditional {
+	condition = hasReliquatNegatif;
+	negate = true;
+}
+
+StrLePlanningReliquatInitial: WOString {
+	value = lePlanning.reliquatInitial;
+}
+
+DivReliquatsInitiauxJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_RELIQUATS_INITIAUX_JOURS;
+}
+
+StrLePlanningReliquatRestant: WOString {
+	value = strHeuresReliquatRestant;
+}
+
+DivReliquatsRestantsJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_RELIQUATS_RESTANTS_JOURS;
+}
+
+StrLePlanningCongesInitiauxSansDecompte: WOString {
+	value = lePlanning.congesInitiauxSansDecompte;
+}
+
+DivCongesTotalInitiauxJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_CONGES_TOTAL_INITIAUX_JOURS;
+}
+
+StrLePlanningTotalRestant: WOString {
+	value = lePlanning.congesGlobalRestants;
+}
+
+DivCongesTotalRestantsJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_CONGES_TOTAL_RESTANTS_JOURS;
+}
+
+CondHasDecompteLegal: WOConditional {
+	condition = hasDecompteLegal;
+}
+
+StrLePlanningDecompteLegal: WOString {
+	value = lePlanning.decompteLegal;
+}
+
+DivDecompteLegalJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_DECOMPTE_LEGAL_JOURS;
+}
+
+CondHasDechargeSyndicale: WOConditional {
+	condition = hasDechargeSyndicale;
+}
+
+StrLePlanningDechargeSyndicaleInitiauxEnHeures: WOString {
+	value = lePlanning.dechargeSyndicaleInitiauxEnHeures;
+}
+
+DivDechargeSyndicaleInitiauxEnJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_DECHARGE_SYNDICALE_INITIAUX_JOURS;
+}
+
+StrLePlanningDechargeSyndicaleRestantsEnHeures: WOString {
+	value = lePlanning.dechargeSyndicaleRestantsEnHeures;
+}
+
+DivDechargeSyndicaleRestantsJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_DECHARGE_SYNDICALE_RESTANTS_JOURS;
+}
+
+
+TxtDureeJournee: WOTextField {
+	maxlength = 5;
+	name = "inputDureeJournee";
+	onblur = onBlurInputDuree;
+	onkeydown = onKeyDownInputDuree;
+	size = 5;
+	value = dureeJournee;
+}
+
+StrDebutAnneUniv: WOString {
+	dateformat = "%d/%m/%Y";
+	value = dateDebutAnneeUniv;
+}
+
+StrFinAnneCivile: WOString {
+	dateformat = "%d/%m/%Y";
+	value = dateFinAnneeCivile;
+}
+
+StrImpotsPremierePartie: WOString {
+	value = lePlanning.calcul.nbJourTravaillesImpotsPremierePartie;
+}
+
+StrDebutAnneCivile: WOString {
+	dateformat = "%d/%m/%Y";
+	value = dateDebutAnneeCivile;
+}
+
+StrFinAnneeUniv: WOString {
+	dateformat = "%d/%m/%Y";
+	value = dateFinAnneeUniv;
+}
+
+StrImpotsDeuxiemePartie: WOString {
+	value = lePlanning.calcul.nbJourTravaillesImpotsDeuxiemePartie;
+}
+
+StrCongesLegaux: WOString {
+	value = lePlanning.calcul.nbJourCongesLegal;
+}

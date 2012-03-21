@@ -1,0 +1,148 @@
+CompServicesAffAnnsNew1: CompServicesAffAnns { 
+	affAnnSelected = affAnnSelected;
+	serviceSelected = serviceSelected;
+	composanteSelected = composanteSelected;
+	anneeUnivSelected = anneeUnivSelected;
+}
+
+FormFermetures: WOForm {
+	name = "FormFermetures";
+	multipleSubmit = true;
+	action = neFaitRien;
+}
+
+RepFermetureEtablissement: WORepetition {
+	list = fermetureEtablissementList;
+	item = fermetureItem;
+}
+
+StrFermetureItem: WOString {
+	value = fermetureItem.display;
+}
+
+CondNotIsAnnuleeFermetureComposante: WOConditional {
+	condition = isNotAnnuleeFermetureItemForComposanteSelected;
+}
+
+CondIsAnnuleeFermetureComposante: WOConditional {
+	condition = isNotAnnuleeFermetureItemForComposanteSelected;
+	negate = true;
+}
+
+CondNotIsAnnuleeFermetureService: WOConditional {
+	condition = isNotAnnuleeFermetureItemForServiceSelected;
+}
+
+CondIsAnnuleeFermetureService: WOConditional {
+	condition = isNotAnnuleeFermetureItemForServiceSelected;
+	negate = true;
+}
+
+ChkIsNotAnnuleeFermetureItemForComposanteSelected: WOCheckBox {
+	checked = isNotAnnuleeFermetureItemForComposanteSelected;
+	onclick = "this.form.submit();";
+}
+
+ChkIsNotAnnuleeFermetureItemForServiceSelected: WOCheckBox {
+	checked = isNotAnnuleeFermetureItemForServiceSelected;
+	onclick = "this.form.submit();";
+}
+
+ChkIsNotAnnuleeFermetureItemForAffAnnSelected: WOCheckBox {
+	checked = isNotAnnuleeFermetureItemForAffAnnSelected;
+	onclick = "this.form.submit();";
+}
+
+CondIsAComposanteSelected: WOConditional {
+	condition = isAComposanteSelected;
+}
+
+RepFermetureComposante: WORepetition {
+	list = fermetureComposanteList;
+	item = fermetureItem;
+}
+
+CondIsAServiceSelected: WOConditional {
+	condition = isAServiceSelected;
+}
+
+RepFermetureService: WORepetition {
+	list = fermetureServiceList;
+	item = fermetureItem;
+}
+
+CondIsAnAffAnnSelected: WOConditional {
+	condition = isAnAffAnnSelected;
+}
+
+RepFermetureAffAnn: WORepetition {
+	list = fermetureAffAnnList;
+	item = fermetureItem;
+}
+
+FormAddFermetureEtablissement: WOForm {
+	name = "FormAddFermetureEtablissement";
+	action = doAddFermetureEtablissement;
+}
+
+FormAddFermetureComposante: WOForm {
+	name = "FormAddFermetureComposante";
+	action = doAddFermetureComposante;
+}
+
+FormAddFermetureService: WOForm {
+	name = "FormAddFermetureService";
+	action = doAddFermetureService;
+}
+
+FormAddFermetureAffAnn: WOForm {
+	name = "FormAddFermetureAffAnn";
+	action = doAddFermetureAffAnn;
+}
+
+CRIDatePickerDebut: CRIDatePicker {
+	dateValue = dateDebutFermeture;
+}
+
+CRIDatePickerFin: CRIDatePicker {
+	dateValue = dateFinFermeture;
+}
+
+BtnDoAddFermetureEtablissement: WOSubmitButton {
+	name = "BtnDoAddFermetureEtablissement";
+	action = doAddFermetureEtablissement;
+	value = "Ajout a l'etablissement";
+	class = "bouton";
+	title = "Ajouter la fermeture pour tout l'etablissement";
+}
+
+BtnDoAddFermetureComposante: WOSubmitButton {
+	name = "BtnDoAddFermetureComposante";
+	action = doAddFermetureComposante;
+	value = "Ajout a la composante";
+	class = "bouton";
+	title = "Ajouter la fermeture pour la composante choisie et ses services";
+}
+
+BtnDoAddFermetureService: WOSubmitButton {
+	name = "BtnDoAddFermetureService";
+	action = doAddFermetureService;
+	value = "Ajout au service";
+	class = "bouton";
+	title = "Ajouter la fermeture pour le service choisi";
+}
+
+BtnDoAddFermetureAffAnn: WOSubmitButton {
+	name = "BtnDoAddFermetureAffAnn";
+	action = doAddFermetureAffAnn;
+	value = "Ajout au planning";
+	class = "bouton";
+	title = "Ajouter la fermeture pour le planning choisi";
+}
+
+BtnDoDelFermetureItem: WOImageButton {
+	action = doDelFermetureItem;
+	filename = "images/moins16.gif";
+	framework = "app";
+	title = "effacer cette fermeture";
+}

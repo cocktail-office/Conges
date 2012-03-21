@@ -1,0 +1,86 @@
+FormGestVacances: WOForm {
+	action = resetVacance;
+	multipleSubmit = true;
+	name = "FormGestVacances";
+}
+
+PopUpLesAnneeUniv: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	onChange = "FormGestVacances.submit();";
+	selection = lAnneeUnivSelectionnee;
+}
+
+BrwsVac: WOBrowser {
+	list = lesVacances;
+	displayString = displayUneVacance;
+	selections = lesVacancesSelectionnees;
+	item = uneVacance;
+	multiple = "false";
+	onChange = "this.form.submit();";
+}
+
+CondIsNotModeCreatVacance: WOConditional {
+	negate = true;
+	condition = isModeCreationVacance;
+}
+
+BtnAjoutVac: WOImageButton {
+
+	class = "bouton";
+	action = ajouterVacance;
+	title = "Ajouter une nouvelle periode de vacances";
+	filename = "images/plus16.gif";
+	framework = "app";
+}
+
+CondLesVacsSelectionneesCount: WOConditional {
+	condition = lesVacancesSelectionnees.count;
+}
+
+BtnSuppVac: WOImageButton {
+
+	action = supprimerVacance;
+	class = "bouton";
+	title = "Supprimer la periode de vacances selectionn&eacute;e";
+	filename = "images/moins16.gif";
+	framework = "app";
+}
+
+CondIsModeCreatVac: WOConditional {
+	condition = isModeCreationVacance;
+}
+
+DtePickerDebVac: CRIDatePicker {
+	dateValue = dateDebutVacance;
+}
+
+DtePickerFinVac: CRIDatePicker {
+	dateValue = dateFinVacance;
+}
+
+BtnEnregistrerVac: WOImageButton {
+	action = enregistrerVacance;
+
+	class = "bouton";
+	title = "Enregistrer la valeur saisie comme vacance";
+	filename = "images/valider16.gif";
+	framework = "app";
+}
+
+BtnAnnuler: WOImageButton {
+	action = annuler;
+
+	class = "bouton";
+	title = "Annuler la saisie de ces vacances";
+	filename = "images/annuler16.gif";
+	framework = "app";
+}
+
+BtnEnregistrerVacCache: WOSubmitButton {
+	value = "BOUTON CACHE ENREGISTRER";
+	action = enregistrerVacance;
+	style = "visibility:hidden;display:none";
+	name = "btnEnregistrer";
+}

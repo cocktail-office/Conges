@@ -1,0 +1,25 @@
+{
+    FermeturesEntre = {
+        class = EOFetchSpecification; 
+        entityName = VacanceScolaire; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dateDebut; 
+                    selectorName = isGreaterThanOrEqualTo; 
+                    value = {"_key" = debut; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dateFin; 
+                    selectorName = isLessThanOrEqualTo; 
+                    value = {"_key" = fin; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

@@ -1,0 +1,42 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        typeOccDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = TypeOccupation; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = congeLegal; 
+                                selectorName = isEqualTo; 
+                                value = {class = NSNumber; value = 0; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = horaireForce; 
+                                selectorName = isEqualTo; 
+                                value = {class = NSNumber; value = 0; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = OccupationsToutes; 
+            }; 
+            fetchesOnLoad = YES; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+        }; 
+    }; 
+}

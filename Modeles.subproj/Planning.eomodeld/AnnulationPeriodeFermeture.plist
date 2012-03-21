@@ -1,0 +1,112 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = OID; }; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_PER_FERMETURE"; 
+            externalType = NUMBER; 
+            name = oidPeriodeFermeture; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOAnnulationPeriodeFermeture"; 
+    classProperties = (
+        toStructure, 
+        dCreation, 
+        dModification, 
+        toAffectationAnnuelle, 
+        toComposante, 
+        toPeriodeFermeture
+    ); 
+    externalName = "CONGES.PLNG_ANN_PER_FER"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (toPeriodeFermeture, toStructure); 
+        "_nameInObjectStore" = "PLNG_ANN_PER_FER"; 
+    }; 
+    name = AnnulationPeriodeFermeture; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = toAffectationAnnuelle; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructureComposante; }); 
+            name = toComposante; 
+        }, 
+        {
+            destination = PeriodeFermeture; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidPeriodeFermeture; }); 
+            name = toPeriodeFermeture; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }
+    ); 
+}

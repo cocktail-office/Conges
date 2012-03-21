@@ -1,0 +1,57 @@
+{
+    attributes = (
+        {
+            columnName = "DTE_DEBUT_REEL"; 
+            externalType = DATE; 
+            name = dteDebutReel; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DTE_FIN_REEL"; 
+            externalType = DATE; 
+            name = dteFinReel; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DTE_JOUR"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_FIN_REEL"; }; 
+            name = dteJour; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FLG_NATURE"; 
+            externalType = VARCHAR2; 
+            name = nature; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oidAffAnn, nature, dteDebutReel, dteFinReel, noIndividu, dteJour); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOVHoraires"; 
+    classProperties = (oidAffAnn, nature, dteDebutReel, dteFinReel, noIndividu, dteJour); 
+    externalName = "CONGES.V_HORAIRES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CONGES.V_HORAIRES"; }; 
+    isReadOnly = Y; 
+    name = VHoraires; 
+    primaryKeyAttributes = (oidAffAnn, nature, dteDebutReel, dteFinReel, noIndividu, dteJour); 
+}

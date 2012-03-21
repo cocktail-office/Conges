@@ -1,0 +1,101 @@
+FormAnneeUniv: WOForm {
+	name = "FormAnneeUniv";
+	action = neFaitRien;
+}
+
+FormParametreParametre: WOForm {
+	name = "FormParametreParametre";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+BtnDoUpdateAllParametresHidden: WOSubmitButton {
+	action = doUpdateAllParametres;
+	value = "Enregister";
+	style = "visibility:hidden;display:none";
+	name = "BtnDoUpdateAllParametresHidden";
+}
+
+CompParametreHeuresDues: CompParametre {
+	anneeUniv = dateAnneeUnivSelected;
+	parametre = parametreHeuresDues;
+}
+
+CompParametreDateMaxReliquat: CompParametre {
+	anneeUniv = dateAnneeUnivSelected;
+	parametre = parametreDateMaxReliquat;
+}
+
+CompParametreAutoriserSaisieAbsenceSurPlanningPrevisionnel: CompParametre {
+	parametre = parametreAutoriserSaisieAbsenceSurPlanningPrevisionnel;
+}
+
+CompParametreAutoriserSaisieAbsenceSurPlanningPrevisionnelEnCoursDAnnee: CompParametre {
+	parametre = parametreAutoriserSaisieAbsenceSurPlanningPrevisionnelEnCoursDAnnee;
+}
+
+CompParametreDureeJourConversion: CompParametre {
+	parametre = parametreDureeJourConversion;
+}
+
+CompParametreHeuresCongesMaxi: CompParametre {
+	parametre = parametreHeuresCongesMaxi;
+}
+
+CompParametreNbreSemainesHautesMaxi: CompParametre {
+	parametre = parametreNbreSemainesHautesMaxi;
+}
+
+CompParametreNbreSemainesHautesMaxiDepassement: CompParametre {
+	parametre = parametreNbreSemainesHautesMaxiDepassement;
+}
+
+CompParametreDebutAnneeUniversitaire: CompParametre {
+	parametre = parametreDebutAnneeUniversitaire;
+	size = 5;
+	maxLength = 5;
+}
+
+CompParametreShowCet: CompParametre {
+	parametre = parametreShowCet;
+}
+
+CompParametreShowPause: CompParametre {
+	parametre = parametreShowPause;
+}
+
+CompParametreShowDemandeGardeEnfant: CompParametre {
+	parametre = parametreShowDemandeGardeEnfant;
+}
+
+CompParametreShowDemandeCongesPapier: CompParametre {
+	parametre = parametreShowDemandeCongesPapier;
+}
+
+CompParametreValidationPlanningNiveau: CompParametre {
+	parametre = parametreValidationPlanningNiveau;
+	popupValueList = parametreValidationPlanningNiveauPopupValueList;
+}
+
+
+
+CompParametreAlerteNbAnneesAnterieuresVisibles: CompParametre {
+	parametre = parametreAlerteNbAnneesAnterieuresVisibles;
+}
+
+
+PopUpLesAnneeUniv: WOPopUpButton {
+	item = strAnneeUnivItem;
+	list = strAnneeUnivArray;
+	onChange = "this.form.submit(); return false;";
+	selection = strAnneeUnivSelected;
+}
+
+BtnDoUpdateAllParametres: WOImageButton {
+	action = neFaitRien;
+	title = "Enregistrer les modifications";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+	onclick = "BtnDoUpdateAllParametresHidden.click();";
+}

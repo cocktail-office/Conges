@@ -1,0 +1,6 @@
+WebServerResources.subproj/**/*.gif
+WebServerResources.subproj/**/*.xsl
+WebServerResources.subproj/**/*.css
+WebServerResources.subproj/**/*.png
+WebServerResources.subproj/**/*.jpg
+WebServerResources.subproj/**/*.js

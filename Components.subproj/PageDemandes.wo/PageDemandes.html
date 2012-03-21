@@ -1,0 +1,126 @@
+<WEBOBJECT NAME=PageTemplate>
+
+<webobject name = "CondIsAfficherAnneeUnivList">
+	<webobject name = "FormAnneeUniv">
+		<div align="center">
+			<font class="subTitle">Ann&eacute; universitaire :	<webobject name = "PopUpAnneeUniv"/></font>
+		</div>
+	</webobject>
+</webobject>
+
+<WEBOBJECT NAME=FormDemandesAValider>
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=0>	
+	<TR>
+   	<TD>
+  		<table border=0 class="boxTitle" cellpadding="2" cellspacing="0" width=100%>
+	 			<TR><TH><font class="subTitleInverse">&nbsp;Demandes &agrave; valider</font></TH></TR>
+  		</TABLE>
+		</TD>  
+	</TR>
+	<TR>
+	<TD>
+  	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					  <tr class="listboxHeader">
+  						<TH><webobject name = "LnkSortDateDemandesAValider"></webobject></TH>
+					  	<TH><webobject name = "LnkSortDemandeurDemandesAValider"></webobject></TH>
+  	  				<TH>Service</TH>
+  	  				<TH>Demande</TH>
+  	  				<TH>Motif de la d&eacute;cision</TH>
+							<TH>Vis&eacute;e</TH>
+  				  	<TH>Accept&eacute;e</TH>
+  				  	<TH>Refus&eacute;e</TH>
+							<TH WIDTH=1%>Attente</TH>
+  				  </TR>
+  	  			<WEBOBJECT NAME="RepDemandesAValiderPourAnnee">
+  	  			<WEBOBJECT NAME="TrEtat">
+  	  				<TD width=1% NOWRAP>
+  	  					<webobject name = "AncreOid"/>
+  	  					<WEBOBJECT NAME="StrDate"></WEBOBJECT>
+  	  				</TD>
+  	  				<TD width=1% NOWRAP>
+  	  					<WEBOBJECT NAME="StrDemandeur"/>
+  	  					<webobject name = "CondIsAlerteDelegation">
+  	  						&nbsp;<webobject name = "TipDelegue"><webobject name = "ImgDelegue"/></webobject>
+  	  					</webobject>
+  	  				</TD>
+  	  				<TD width=1% NOWRAP><WEBOBJECT NAME="StrService"></WEBOBJECT></TD>
+  	  				<TD><WEBOBJECT NAME="LinkDetaillerDemande"><WEBOBJECT NAME="StrAlerteLibelle"></WEBOBJECT></WEBOBJECT></TD>
+  	  				<TD WIDTH=1%><WEBOBJECT NAME="TFAlerteCommentaire"></WEBOBJECT></TD>
+  	  				<TD width=1% align=center><WEBOBJECT NAME="CheckBoxVisee"></WEBOBJECT></TD>
+  	  				<TD width=1% align=center><WEBOBJECT NAME="CheckBoxAcceptee"></WEBOBJECT></TD>
+  	  				<TD width=1% align=center><WEBOBJECT NAME="CheckBoxRefusee"></WEBOBJECT></TD>
+  	  				<TD ALIGN=CENTER><WEBOBJECT NAME="BtnSuspendreDemande"></WEBOBJECT></TD>
+  	  			</WEBOBJECT>
+  	  			</WEBOBJECT>
+	  				<TR class="noteBox">
+	  					<TD COLSPAN=9 ALIGN=center>
+	  						<WEBOBJECT NAME="BtnEnregistreEtNeFaitRien"></WEBOBJECT><WEBOBJECT NAME="ButtonValider"></WEBOBJECT>
+	  					</TD>
+					  </TR>
+  				</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+	</TD>
+ </TR>
+</TABLE>
+</WEBOBJECT>
+<WEBOBJECT NAME="FormDemandesAViser">
+<TABLE WIDTH=100% BORDER=0 CELLSPACING=0 CELLPADDING=0>
+	<TR>
+   	<TD>
+  		<table border=0 class="boxTitle" cellpadding="2" cellspacing="0" width=100%>
+	 			<TR><TH><font class="subTitleInverse">&nbsp;Demandes&nbsp;&agrave; viser</font></TH></TR>
+  		</TABLE>
+		</TD>  
+	</TR>
+	<TR>
+	<TD>
+  	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+			<tr>
+				<td>
+					<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					  <tr class="listboxHeader">
+			  	  	<TH><webobject name = "LnkSortDateDemandesAViser"></webobject></TH>
+					  	<TH><webobject name = "LnkSortDemandeurDemandesAViser"></webobject></TH>
+  	  				<TH>Service</TH>
+			  	  	<TH>Demande</TH>
+			  	  	<TH>Motif de la d&eacute;cision</TH><TH>Accept&eacute;e</TH>
+			  	  	<TH>Refus&eacute;e</TH>
+			  	  </TR>
+			  	  <WEBOBJECT NAME="RepDemandesAViser">
+		  	  	<WEBOBJECT NAME="TrEtat">
+		  	  		<TD width=1% NOWRAP>
+  	  					<webobject name = "AncreOid"/>
+		  	  			<WEBOBJECT NAME="StrDate"></WEBOBJECT>
+		  	  		</TD>
+		  	  		<TD width=1% NOWRAP>
+		  	  			<WEBOBJECT NAME="StrDemandeur"/>
+  	  					<webobject name = "CondIsAlerteDelegation">
+  	  						&nbsp;<webobject name = "TipDelegue"><webobject name = "ImgDelegue"/></webobject>
+  	  					</webobject>	
+		  	  		</TD>
+		  	  		<TD width=1% NOWRAP><WEBOBJECT NAME="StrService"></WEBOBJECT></TD>
+		  	  		<TD><WEBOBJECT NAME="LinkDetaillerDemande"><WEBOBJECT NAME="StrAlerteLibelle"></WEBOBJECT></WEBOBJECT></TD>
+		  	  		<TD><WEBOBJECT NAME="TFAlerteCommentaire"></WEBOBJECT></TD>
+		  	  		<TD width=1% align=center><WEBOBJECT NAME="CheckBoxAcceptee"></WEBOBJECT></TD>
+		  	  		<TD width=1% align=center><WEBOBJECT NAME="CheckBoxRefusee"></WEBOBJECT></TD>
+		  	  	</WEBOBJECT>
+			  	  </WEBOBJECT>
+						<TR class="noteBox">
+				  		<TD COLSPAN=7 ALIGN=center>
+				  			<WEBOBJECT NAME="BtnEnregistreEtNeFaitRien"></WEBOBJECT><WEBOBJECT NAME="ButtonValiderDemandesAViser"></WEBOBJECT>
+				  		</TD>
+				  	</TR>
+			  	</TABLE>
+			  </TD>
+  		</TR>
+		</TABLE>
+	</TD>
+ </TR>
+</TABLE>
+</WEBOBJECT>
+</WEBOBJECT>

@@ -1,0 +1,50 @@
+<webobject name = "CngInfoBox1">
+	<p align="left">
+	Veuillez n'utiliser cet &eacute;cran uniquement dans le cas d'une mutation ou de l'arriv&eacute;e d'un agent dans l'&eacute;tablissement
+	avec un CET existant.<br><br>
+	<b>Les alimentations &quot;normales&quot; doivent se faire via le syst&egrave;me de demande et de d&eacute;cision de l'application.</b>
+	<br><br>
+	Attention, la date de valeur est tr&egrave;s importante :<br>
+	- date &lt; <webobject name = "StrDateCetDebutRegimePerenne"/> est consid&eacute;r&eacute; comme de l'ancien r&eacute;gime<br>
+	- date &gt;= <webobject name = "StrDateCetDebutRegimePerenne"/> est consid&eacute;r&eacute; comme de r&eacute;gime p&eacute;renne
+	</p>
+</webobject>
+
+
+<webobject name = "FormSearchIndividuRegularisation">
+	<webobject name = "SearchIndividuRegularisation"/><webobject name = "BtnSelectIndividuRegularisation"/>
+</webobject>
+
+<webobject name = "CondIsIndividuSelected">
+	<br>
+	<hr>
+	Situation actuelle de <webobject name = "StrIndividuSelected"/>
+	<div>
+		<webobject name = "CetEtat1"/>
+	</div>	
+
+	<br>
+	
+	<webobject name = "CondIsModeSaisieTransaction">
+		<webobject name = "FormSaisieTransaction">
+			Saisie d'une nouvelle transaction:<br>
+			DateValeur : <webobject name = "CRIDatePickerValeur"/><br>
+			Motif : <webobject name = "TFMotif"/><br>
+			Valeur : <webobject name = "TFValeur"/><br>
+			<webobject name = "BtnDoSaisieNouvelleTransaction"/>
+			<webobject name = "BtnDoAnnulerSaisieNouvelleTransaction"/>
+		</webobject>
+	</webobject>
+	
+	<webobject name = "CondNotIsModeSaisieTransaction">
+		<webobject name = "LnkSaisieNouvelle">
+			<webobject name = "ImgAjout"/>
+			<b>Saisie d'une autre transaction</b>
+		</webobject>
+	</webobject>
+	
+</webobject>
+
+<webobject name = "CondHasError">
+	<webobject name = "LayerErrorMessage"/>
+</webobject>

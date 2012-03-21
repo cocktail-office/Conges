@@ -1,0 +1,84 @@
+<style type = "text/css">
+.ulRetourLigne li {
+	display: list-item;
+}
+</style>
+
+<!-- TABLEAU RECAPITULATIF DU CET DE L'AGENT -->
+<webobject name = "CetEtat1"/>
+
+
+<webobject name = "CondIsSaisieDemandeAutorisee">
+
+	<br/>
+
+	<center>
+
+	<webobject name = "CondIsDemandeEpargneCetPasEncoreFaite">
+		<webobject name = "FormDemandeEpargneCet">
+			<webobject name = "BtnNeFaitRien"/>
+
+			<!-- FORMULAIRE D'EXERCICE DU DROIT D'OPTION ANCIEN SYSTEME -->
+			<webobject name = "CondShowFormulaireDemandeOptionCetAncienSysteme">
+				<webobject name = "CetOptionAncienSysteme1"/>
+			</webobject>
+			
+			<!-- FORMULAIRES DU REGIME PERENNE -->
+			<webobject name = "CondShowFormulairesRegimePerenne">
+		
+				<!-- FORMULAIRE D'EPARGNE -->
+				<webobject name = "CondShowFormulaireDemandeEpargneCet">
+					<br/><br/>
+					<webobject name = "CetEpargne1"/>
+				</webobject>
+				
+				<!-- FORMULAIRE D'EXERCICE DU DROIT D'OPTION REGIME PERENNE-->
+				<webobject name = "CondShowFormulaireDemandeOptionCet">
+					<br/><br/><br/>
+					<webobject name = "CetOption1"/>
+				</webobject>
+			</webobject>
+
+			<!-- BOUTON DE VALIDATION -->
+			<webobject name = "CondShowBtnValiderDemande">
+				<br/><br/>
+				<webobject name = "BtnDoValiderDemande"/>
+			</webobject>
+
+		</webobject>
+	</webobject>
+	
+	<!-- TODO : TRAITER LES ACTIONS DE NON EPARGNE -->
+	
+	<!-- INFORMATIONS D'AVANCEMENT SUR LA DEMANDE EN COURS -->
+	<webobject name = "CondIsDemandeEpargneCetFaite">
+		<webobject name = "CondNotIsDemandeAcceptee">
+			<webobject name = "CngInfoBox1">
+				<webobject name = "CetRecapDemande1"/>
+				<br/><br/>
+				<b>N'oubliez pas que cette demande doit &ecirc;tre adoss&eacute;e &agrave; une demande papier, disponible en cliquant sur le lien suivant :</b><br/><br/>
+				<webobject name = "CngPdfBoxDemandeEpargneCet"/>
+			</webobject>
+		</webobject>
+	</webobject>
+	
+	</center>
+</webobject>
+
+
+<!-- DOCUMENTATION SUR LE CET -->
+<webobject name="CondIsLinkNoteCETExists">
+	<BR><BR>
+	<CENTER>
+	<webobject name="CRINote1">
+		<TABLE WIDTH="1%">
+			<caption>Informations relatives au CET</caption>
+			<webobject name = "RepNoteCetUrl">
+			<TR>
+				<TD ALIGN="left" nowrap>&raquo; <webobject name="LnkUrlItem"/></TD>
+			</TR>
+			</webobject>
+		</TABLE>
+	</webobject>
+	</CENTER>
+</webobject>

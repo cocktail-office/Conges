@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CetEpargne" wocomponentcontent="false">    <binding name="planning"/>
+        <validation message="'affAnn' is a required binding.">
+            <unbound name="planning"/>
+        </validation>
+        <binding defaults="Boolean" name="isDisabled"/>
+        <validation message="'isDisabled' is a required binding.">
+            <unbound name="isDisabled"/>
+        </validation>
+        <binding name="epargneSelected"/>
+        <validation message="'epargneSelected' is a required binding.">
+            <unbound name="epargneSelected"/>
+        </validation>
+    <binding name="maintienJourObligatoire"/>
+        <validation message="'maintienJourObligatoire' is a required binding.">
+            <unbound name="maintienJourObligatoire"/>
+        </validation>
+    
+    <binding name="transfertAncienCetMinutes"/>
+        <validation message="'transfertMinutes' is a required binding.">
+            <unbound name="transfertAncienCetMinutes"/>
+        </validation>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,17 @@
+Template: PageTemplate {
+	pageTitle = "Administrateur : changement d'identite";
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+SearchIndividu1: SearchIndividu {
+	individuSelected = lIndividuSelectionne;
+}
+
+BtnPrendreIdentite: WOSubmitButton {
+	action = prendreIdentite;
+	class = "bouton";
+	value = "Prendre l'identite";
+}

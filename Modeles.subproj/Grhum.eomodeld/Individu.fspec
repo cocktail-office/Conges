@@ -1,0 +1,20 @@
+{
+    individuWithOID = {
+        class = EOFetchSpecification; 
+        entityName = Individu; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = oid; 
+            selectorName = isEqualTo; 
+            value = {"_key" = oid; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+    responsables = {
+        class = EOFetchSpecification; 
+        entityName = Individu; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+    }; 
+}

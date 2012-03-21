@@ -1,0 +1,17 @@
+CondIsBold: WOConditional {
+	condition = ^isBold;
+}
+
+StrTagBoldStart: WOString {
+	value = "<b>";
+	escapeHTML = false;
+}
+
+StrTagBoldEnd: WOString {
+	value = "</b>";
+	escapeHTML = false;
+}
+
+Content: WOComponentContent {
+	
+}

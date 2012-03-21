@@ -1,0 +1,91 @@
+<WEBOBJECT NAME=PageTemplate1>
+<table width="100%" height="100%">
+	<tr>
+		<td align="center" valign="bottom">
+			<h1>Cr&eacute;ation du fichier PDF <WEBOBJECT NAME=CondNotIsSixOver>en cours ...</WEBOBJECT><WEBOBJECT NAME=CondIsSixOver>termin&eacute;e !</WEBOBJECT></h1><br>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="top">
+		<table class="listboxBorder" border="0" cellpadding="1"
+			cellspacing="0" width="1%">
+			<tbody>
+				<tr>
+					<td>
+					<table border="0" cellpadding="2" cellspacing="1" width="1%">
+							<tr class="listboxHeader">
+								<Th>Op&eacute;ration</Th>
+								<Th>Etat</Th>
+								<Th>Ex&eacute;cution</th>
+							</tr>
+							<tr class="listboxLine">
+								<TD align="left" nowrap>Collecte d'informations</TD>
+								<TD align="center">
+									<WEBOBJECT NAME=CondIsDicoOver><WEBOBJECT	NAME=ImgOver></WEBOBJECT></WEBOBJECT>
+									<WEBOBJECT NAME=CondNotIsDicoOver><WEBOBJECT NAME=CondIsDicoStep><WEBOBJECT NAME=ImgStep></WEBOBJECT></WEBOBJECT>
+									<WEBOBJECT NAME=CondNotIsDicoStep><WEBOBJECT NAME=ImgNotStarted></WEBOBJECT></WEBOBJECT></WEBOBJECT>
+								</TD>
+								<TD align="right" nowrap><WEBOBJECT NAME=StrTimeExecDico></WEBOBJECT></TD>
+							</TR>
+							<tr class="listboxLine">
+								<TD align="left" nowrap>Pr&eacute;paration des donn&eacute;es</TD>
+								<TD align="center">
+									<WEBOBJECT NAME=CondIsXmlOver><WEBOBJECT	NAME=ImgOver></WEBOBJECT></WEBOBJECT>
+									<WEBOBJECT NAME=CondNotIsXmlOver>
+										<WEBOBJECT NAME=CondIsXmlStep><WEBOBJECT NAME=ImgStep></WEBOBJECT></WEBOBJECT>
+										<WEBOBJECT NAME=CondNotIsXmlStep><WEBOBJECT NAME=ImgNotStarted></WEBOBJECT></WEBOBJECT>
+									</WEBOBJECT>
+								</TD>
+								<TD align="right" nowrap><WEBOBJECT NAME=StrTimeExecXml></WEBOBJECT></TD>
+							</TR>
+							<tr class="listboxLine">
+								<TD align="left" nowrap>Production du fichier par le serveur</TD>
+								<TD align="center">
+									<WEBOBJECT NAME=CondIsSixOver><WEBOBJECT	NAME=ImgOver></WEBOBJECT></WEBOBJECT>
+									<WEBOBJECT NAME=CondNotIsSixOver>
+										<WEBOBJECT NAME=CondIsSixStep><WEBOBJECT NAME=ImgStep></WEBOBJECT></WEBOBJECT>
+										<WEBOBJECT NAME=CondNotIsSixStep><WEBOBJECT NAME=ImgNotStarted></WEBOBJECT></WEBOBJECT>
+									</WEBOBJECT>
+								</TD>
+								<TD align="right" nowrap><WEBOBJECT NAME=StrTimeExecSix></WEBOBJECT></TD>
+							</TR>
+					</TABLE>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</td>
+	</TR>
+	<WEBOBJECT NAME=CondNotIsSixOver>
+	<tr>
+		<td align="center" valign="top">
+			<h3>Merci de patienter ...</h3><br>
+		</td>
+	</tr>	
+	</WEBOBJECT>
+	<WEBOBJECT NAME=CondIsSixOver>
+	<tr>
+		<td align="center" valign="top">
+			<webobject name = "CondNotIsErrSix">
+			<webobject name = "CondHasEndingMessage">
+				<webobject name = "CRINoteEndingMessage"><webobject name = "StrEndingMessage"/></webobject><br/>
+			</webobject>
+			Le fichier PDF est pr&ecirc;t, cliquez sur son nom pour l'ouvrir<br/>
+			<webobject name = "ResultPdfNote">
+			<table>
+				<tr>
+					<td><webobject name="LnkGetPdf"><webobject name = "ImgFichierPdf"/></webobject></td>
+					<td><webobject name="LnkGetPdf"><webobject name = "StrFileName"/></webobject></td>
+				</tr>	
+			</table>
+			</webobject>
+			</webobject>
+			<webobject name = "CondIsErrSix">
+				<font class="textError">Une erreur est survenue lors du traitement par le serveur SIX</font><br/><br/>
+				<webobject name = "CRINoteErrSix"><webobject name = "StrErrSix"/></webobject>
+			</webobject>
+		</td>
+	</tr>
+	</WEBOBJECT>
+</Table>
+</WEBOBJECT>

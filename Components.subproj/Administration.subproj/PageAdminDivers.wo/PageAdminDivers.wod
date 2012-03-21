@@ -1,0 +1,19 @@
+SubMenu1: SubMenu {
+	ctrl = pageAdminDiversSubMenuCtrl;
+}
+
+CondIsMenuMessage: WOConditional {
+	condition = pageAdminDiversSubMenuCtrl.isMenuMessage;
+}
+
+PageAdminMessage1: PageAdminMessage {
+	
+}
+
+CondIsMenuVacances: WOConditional {
+	condition = pageAdminDiversSubMenuCtrl.isMenuVacances;
+}
+
+PageAdminVacances1: PageAdminFermetures {
+	
+}

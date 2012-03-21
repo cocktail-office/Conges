@@ -1,0 +1,14 @@
+{
+    TypesHoraireNormaux = {
+        class = EOFetchSpecification; 
+        entityName = TypeHoraire; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = flagHorsNorme; 
+            selectorName = isEqualTo; 
+            value = {"_key" = horsNormes; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

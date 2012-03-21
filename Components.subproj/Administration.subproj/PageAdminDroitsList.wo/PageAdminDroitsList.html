@@ -1,0 +1,72 @@
+<style>
+.tableDroitList tr.listboxLine:hover {
+	background-color: #FFFFFF;
+	color: red;
+}
+</style>
+
+<webobject name = "CRINavBarDroit"/>
+
+<webobject name = "FormDroit">
+	
+
+<table class="listboxBorder" width="100%" cellspacing="0" cellpadding="1" border="0">
+	<tr>
+		<td>
+			<table class = border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tr class = "listboxHeader">
+					<th>
+						Titulaire : <webobject name = "TFTitulaire"/>
+					</th>
+					<th>
+						Type cible : <webobject name="PopUpTypeCible"/>
+					</th>
+					<th>
+						Cible : <webobject name = "TFCible"/>
+					</th>
+					<th>
+						Niveau : <webobject name="PopUpNiveauList"/>
+					</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+	<tr>
+		<td>
+				<table class="tableDroitList" border="0" cellpadding="2" cellspacing="1" width="100%">
+					<tr class="listboxHeader">
+						<th>
+							<webobject name="LnkSortTitulaire">Titulaire</webobject>
+						</th>
+						<th>
+							Type cible
+						</th>
+						<th>
+							<webobject name="LnkSortCible">Cible</webobject>
+						</th>
+						<th>
+							<webobject name="LnkSortNiveau">Niveau</webobject>
+						</th>
+						<th><webobject name = "BtnDoDeleteSelectedDroitList"/></th>
+					</tr>
+					<webobject name="RepDroitDgDisplayedObjects">
+						<tr class="listboxLine">
+							<td align="left"><webobject name="StrDroitTitulaire"/></td>
+							<td align="left"><webobject name="StrDroitTypeCibleLibelle"/></td>
+							<td align="left"><webobject name="StrDroitCibleLibelle"/></td>
+							<td align="center"><webobject name="StrDroitNiveau"/></td>
+							<td><webobject name = "ChkDroit"/></td>
+						</tr>
+					</webobject>
+				</table>
+		</td>
+	</tr>
+</table>
+
+
+</webobject>

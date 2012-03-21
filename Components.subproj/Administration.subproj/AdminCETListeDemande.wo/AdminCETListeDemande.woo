@@ -1,0 +1,40 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        mouvementDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = Mouvement; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = mouvementType; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = mouvementType; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "toAffectationAnnuelle.dateDebutAnnee"; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = dateDebutAnnee; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = FetchMouvementPourTypeEtAnnee; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 15; 
+            selectsFirstObjectAfterFetch = NO; 
+        }; 
+    }; 
+}

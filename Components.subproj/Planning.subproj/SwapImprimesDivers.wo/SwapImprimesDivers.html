@@ -1,0 +1,39 @@
+<webobject name = "CondShowImprimeGardeEnfant">
+	<webobject name = "FormEnfant">
+	<div id="DivCongeGardeEnfant" align="center" style="border:1px solid #bbb">
+		<font class="title">Imprim&eacute; garde d'enfant</font><br/>
+		<table>
+			<tr>
+				<td align="right"><font class="textEntry">Enfant concern&eacute; :</font></td>
+				<td><webobject name = "PopUpEnfant"/></td>
+			</tr>
+			<tr>
+				<td align="right"><font class="textEntry">P&eacute;riode :</font></td>
+				<td><webobject name = "CRIDatePickerDDeb"/><webobject name = "PopUpDDebAmPm"/> 
+						au <webobject name = "CRIDatePickerDFin"/><webobject name = "PopUpDFinAmPm"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right"><font class="textEntry">Motif :</font></td>
+				<td><webobject name = "TFMotif"/></td>
+			</tr>
+			<tr>
+				<td align="right"><font class="textEntry">Nombre de demi-journ&eacute;es </font></td>
+				<td>
+					<div style="border:1px dotted #FF0; background-color: #BBFFDD; float:left">
+						<webobject name = "BtnCalculerDemiJournee"/>
+						<font class="title"><webobject name = "StrDemiJournees"/></font>
+					</div>
+				</td>
+			</tr>
+			<webobject name = "CondShowCngPdfBoxDemandeGardeEnfant">
+			<tr>
+				<td colspan = "2" align="center">
+					<webobject name = "CngPdfBoxDemandeGardeEnfant"/>
+				</td>
+			</tr>
+			</webobject>
+		</table>
+	</div>
+	</webobject>
+</webobject>

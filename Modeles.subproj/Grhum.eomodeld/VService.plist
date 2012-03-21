@@ -1,0 +1,44 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            columnName = "C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_STRUCTURE"; }; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            width = 10; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOVService"; 
+    classProperties = (toStructure, cStructureComposante, toComposante); 
+    externalName = "GRHUM.V_SERVICE"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VService; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructureComposante; }); 
+            name = toComposante; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }
+    ); 
+}

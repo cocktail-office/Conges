@@ -1,0 +1,24 @@
+CRIDefaultPage1: CRIDefaultPage {
+	useToolTip = ^useToolTip;
+	pageTitle = ^PageTitle;
+	hideFooter = true;
+}
+
+CondNotIsPopup: WOConditional {
+	condition = isPopup;
+	negate = true;
+}
+
+Menu1: Menu {
+}
+
+Contenu: WOComponentContent {
+}
+
+CondShowGenerationDuration: WOConditional {
+	condition = showGenerationDuration;
+}
+
+StrGenerationDuration: WOString {
+	value = generationDuration;
+}

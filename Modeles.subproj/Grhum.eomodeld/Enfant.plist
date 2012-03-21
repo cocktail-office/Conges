@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            columnName = "D_DECES"; 
+            externalType = VARCHAR2; 
+            name = dDeces; 
+            valueClassName = NSString; 
+            width = 1; 
+        }, 
+        {
+            columnName = "D_NAISSANCE"; 
+            externalType = DATE; 
+            name = dNaissance; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_ENFANT"; 
+            externalType = NUMBER; 
+            name = noEnfant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = NOM; 
+            externalType = VARCHAR2; 
+            name = nom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = SEXE; 
+            externalType = VARCHAR2; 
+            name = sexe; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noEnfant); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOEnfant"; 
+    classProperties = (dDeces, dNaissance, nom, prenom, sexe, temValide); 
+    externalName = "GRHUM.ENFANT"; 
+    fetchSpecificationDictionary = {}; 
+    name = Enfant; 
+    primaryKeyAttributes = (noEnfant); 
+    restrictingQualifier = "temValide = 'O' and dDeces = nil"; 
+}

@@ -1,0 +1,57 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CON_CAR"; 
+            externalType = VARCHAR2; 
+            name = conCar; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEBUT"; 
+            externalType = DATE; 
+            name = dDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN"; 
+            externalType = DATE; 
+            name = dFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noDossierPers); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOVPersonnelNonEns"; 
+    classProperties = (conCar, dDebut, dFin, toIndividu, noDossierPers); 
+    externalName = "GRHUM.V_PERSONNEL_NON_ENS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (conCar, dDebut, dFin); 
+        "_nameInObjectStore" = "V_PERSONNEL_ENS"; 
+    }; 
+    isReadOnly = Y; 
+    name = VPersonnelNonEns; 
+    primaryKeyAttributes = (noDossierPers); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }
+    ); 
+}

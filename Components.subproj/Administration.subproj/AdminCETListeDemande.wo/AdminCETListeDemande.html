@@ -1,0 +1,276 @@
+<style type = "text/css">
+.tableListeDemandeCet tr td {
+	text-align: right;
+	white-space: nowrap;
+}
+.tableListeDemandeCet tr td.nom {
+	text-align: left;
+}
+.tableListeDemandeCet tr td.date {
+	text-align: center;
+}
+.credit {
+	color: green;
+	font-weight: bold;
+}
+.debit {
+	color: red;
+	font-weight: bold;
+}
+.maintien {
+	color: blue;
+	font-weight: bold;
+}
+.soldeInitial {
+	color: grey;
+	font-weight: bold;
+}
+.soldeFinal {
+	color: black;
+	font-weight: bold;
+}
+</style>
+
+<webobject name = "CRINavBarMouvement"/>
+
+
+
+<table class="listboxBorder" width="100%" cellspacing="0" cellpadding="1" border="0">
+	<tr>
+		<td>
+			<table class = border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tr class = "listboxHeader">
+					<th width = "1%">
+						<webobject name = "FormRefreshMouvementDg">
+							<webobject name = "BtnDoRefreshMouvementDg"/>
+						</webobject>
+					</th>
+					<th width = "33%">
+						<webobject name = "FormLesAnneeUniv">
+							Ann&eacute;e universitaire : <webobject name = "PopUpLesAnneeUniv"/>
+						</webobject>
+					</th>
+					<th width = "33%">
+						<webobject name = "FormSearch">
+							Agent : <webobject name = "TFSearchString"/>
+						</webobject>
+					</th>
+					<th width = "33%">
+						<webobject name = "CondHasResult">
+							<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+							<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+						</webobject>	
+					</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+
+<webobject name = "FormAdminCETListeDemande">
+
+<input name = "vide" value = "vide" type = "hidden"/>
+
+<font class="textNote">NOTE : Les valeurs num&eacute;riques indiqu&eacute;es sont des jours &agrave; 7h00</font>
+
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+	<tr>
+		<td>
+		
+<table class = "tableListeDemandeCet" border="0" cellpadding="2" cellspacing="1" width="100%">
+
+	<tr class="listboxHeader">
+
+		<th rowspan = "3">Agent</th>
+
+		<th rowspan = "3">Date<br>demande</th>
+
+		<th colspan = "6">CET ancien r&eacute;gime</th>
+
+		<th colspan = "7">CET r&eacute;gime p&eacute;renne</th>
+
+		<th colspan = "4">&Eacute;tat de la d&eacute;cision</th>
+
+		<th rowspan = "3"></th>
+				
+	</tr>
+	
+	<tr class="listboxHeader">
+	
+		<th rowspan = "2">Solde<br/>initial</th>	
+
+		<th colspan = "3">Droit d'option</th>
+
+		<th rowspan = "2">Transfert<br/>p&eacute;renne</th>	
+		<th rowspan = "2">Solde<br/>final</th>	
+
+		<th rowspan = "2" title = "Reliquat de cong&eacute;s de l'ann&eacute;e N-1">Reliquat<br/>initial</th>
+		
+		<th rowspan = "2">&Eacute;pargne</th>	
+
+		<th rowspan = "2">Solde<br/>initial</th>	
+	
+		<th colspan = "4">Droit d'option</th>
+	
+		<th rowspan = "2">Solde<br/>final</th>	
+		
+		<th rowspan = "2">Accept&eacute;e &agrave;<br/>l'identique</th>	
+		
+		<th colspan = "2">Proposition diff&eacute;rente<br/>de la demande</th>
+
+	</tr>
+
+	<tr class="listboxHeader">
+			
+			<th>Maintien</th>	
+			<th>Indemn.</th>	
+			<th>RAFP</th>	
+	
+			<th>Maintien&gt;20</th>	
+			<th>Indemn.</th>	
+			<th>RAFP</th>	
+			<th></th>
+			
+			<th>1.Imprim&eacute;</th>
+			<th>2.Agent OK</th>
+		
+	</tr>
+
+
+	<webobject name = "RepMouvement">
+	
+	<webobject name = "TrAffAnnItem">
+		
+		<td class = "nom"><webobject name = "StrAgentDemandeur"/></td>
+		<td class = "date"><webobject name = "StrDateDemande"/></td>
+		
+		<td class = "soldeInitial"><webobject name = "StrDemandeSoldeAncienRegimeInitial"/></td>
+		<td class = "maintien"><webobject name = "StrDemandeMaintienCetAncienRegime"/></td>
+		<td class = "debit"><webobject name = "StrDemandeIndemnisationAncienRegime"/></td>
+		<td class = "debit"><webobject name = "StrDemandeTransfertRafpAncienRegime"/></td>
+		<td class = "credit"><webobject name = "StrDemandeTransfertRegimePerenne"/></td>
+		<td class = "soldeFinal"><webobject name = "StrDemandeSoldeAncienRegimeFinal"/></td>
+
+		<td><webobject name = "StrReliquatInitialEnJour7h00"/></td>
+		
+		<td class = "credit">
+			<webobject name = "CondIsShowDemande">
+				<webobject name = "StrikeDemande">
+					<webobject name = "StrDemandeEpargne"/>
+				</webobject>
+			</webobject>
+			<webobject name = "CondIsShowDecisionEpargne">
+				<webobject name = "StrDecisionEpargne"/>
+			</webobject>
+			<webobject name = "CondShowBtnToSaisieDecisionAutreEpargne">
+				<webobject name = "BtnToSaisieDecisionAutreEpargne"/>	
+			</webobject>
+			<webobject name = "CondShowTFEpargneDecisionEnJour7h00">
+				<webobject name = "TFEpargneDecisionEnJour7h00"/>
+				<webobject name = "BtnDoValiderSaisieDecisionAutreEpargneAffAnnSelected"/>
+				<webobject name = "BtnDoAnnulerSaisieEnCours"/>
+			</webobject>
+			<webobject name = "CondShowBtnDoSupprimerDecision">
+				<webobject name = "BtnDoSupprimerDecision"/>	
+			</webobject>
+		</td>
+
+		<td class = "soldeInitial"><webobject name = "StrDemandeSoldePerenneInitial"/></td>
+		<td class = "maintien">
+			<webobject name = "CondIsShowDemandeDroitOption">
+				<webobject name = "StrikeDemande">
+					<webobject name = "StrDemandeMaintienCet"/>
+				</webobject>
+			</webobject>
+			<webobject name = "CondShowTFDroitOptionDecisionEnJour7h00">
+				(max <webobject name = "StrMaintienDecisionEnJour7h00Max"/>)
+				<webobject name = "TFMaintienDecisionEnJour7h00"/>
+			</webobject>
+			<webobject name = "CondIsShowDecisionDroitOption">
+				<webobject name = "StrDecisionMaintienCet"/>
+			</webobject>
+		</td>
+		<td class = "debit">
+			<webobject name = "CondIsShowDemandeDroitOption">
+				<webobject name = "StrikeDemande">
+					<webobject name = "StrDemandeIndemnisation"/>
+				</webobject>
+			</webobject>
+			<webobject name = "CondShowTFDroitOptionDecisionEnJour7h00">
+				<webobject name = "TFIndemnisationDecisionEnJour7h00"/>
+			</webobject>
+			<webobject name = "CondIsShowDecisionDroitOption">
+				<webobject name = "StrDecisionIndemnisation"/>
+			</webobject>
+		</td>
+		<td class = "debit">
+			<webobject name = "CondIsShowDemandeDroitOption">
+				<webobject name = "StrikeDemande">
+					<webobject name = "StrDemandeTransfertRafp"/>
+				</webobject>
+			</webobject>
+			<webobject name = "CondShowTFDroitOptionDecisionEnJour7h00">
+				<webobject name = "TFTransfertRafpDecisionEnJour7h00"/>
+			</webobject>
+			<webobject name = "CondIsShowDecisionDroitOption">
+				<webobject name = "StrDecisionTransfertRafp"/>
+			</webobject>
+		</td>
+		<td>
+			<webobject name = "CondShowBtnToSaisieDecisionDroitOption">
+				<webobject name = "BtnToSaisieDecisionDroitOption"/>	
+			</webobject>
+			<webobject name = "CondShowTFDroitOptionDecisionEnJour7h00">
+				(total <webobject name = "StrTotalDecisionDroitOption"/>)
+				<webobject name = "BtnDoValiderSaisieDecisionAutreDroitOptionAffAnnSelected"/>
+				<webobject name = "BtnDoAnnulerSaisieEnCours"/>
+			</webobject>
+			<webobject name = "CondShowBtnDoValiderSaisieDecisionAutreDroitOptionNonFaisableAffAnnSelected">
+				<webobject name = "BtnDoValiderSaisieDecisionAutreDroitOptionNonFaisableAffAnnSelected"/>
+			</webobject>
+		</td>
+		<td class = "soldeFinal">
+			<b>
+			<webobject name = "CondIsShowDemande">
+				<webobject name = "StrikeDemande">
+					<webobject name = "StrDemandeSoldePerenneFinal"/>
+				</webobject>
+			</webobject>
+			<webobject name = "CondIsShowDecisionDroitOption">
+				<webobject name = "StrDecisionSoldePerenneFinal"/>
+			</webobject>
+			</b>
+		</td>
+
+		<td><webobject name = "ChkIsAdminDemandeAccepteeALIdentique"/></td>
+		<td>
+			<webobject name = "CondIsAdminDemandeAutreEpargneSaisie">
+				<webobject name = "CngPdfBoxReformulation"/>
+			</webobject>
+		</td>
+		<td><webobject name = "ChkIsAdminDemandeAccepteeDecisionDifferente"/></td>
+		
+		<td>
+			<webobject name = "CondIsShowBtnDoSupprimerDemandeEtDecisionAffAnnItem">
+				<webobject name = "BtnDoSupprimerDemandeEtDecisionAffAnnItem"/>
+			</webobject>
+		</td>
+		
+	</webobject>
+	
+	</webobject>
+
+
+ 
+</table>
+
+		</td>
+	</tr>
+</table>
+
+</webobject>
+
+<webobject name = "CondHasError">
+	<webobject name = "LayerErrorMessage"/>
+</webobject>

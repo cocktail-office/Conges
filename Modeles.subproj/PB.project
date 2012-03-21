@@ -1,0 +1,85 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        ();
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           Conges.eomodeld, 
+           "Conges.eomodeld~/Alerte.plist", 
+           "Conges.eomodeld~/CET.plist", 
+           "Conges.eomodeld~/CETTransaction.plist", 
+           "Conges.eomodeld~/DbTodo.plist", 
+           "Conges.eomodeld~/DbTodoCrash.plist", 
+           "Conges.eomodeld~/DbTodoDone.plist", 
+           "Conges.eomodeld~/Droit.plist", 
+           "Conges.eomodeld~/DroitPasDeMailCds.plist", 
+           "Conges.eomodeld~/MailTodo.plist", 
+           "Conges.eomodeld~/MailTodoCrash.plist", 
+           "Conges.eomodeld~/MailTodoDone.plist", 
+           "Conges.eomodeld~/Message.plist", 
+           "Conges.eomodeld~/Parametre.plist", 
+           "Conges.eomodeld~/RepartValidation.plist", 
+           "Conges.eomodeld~/StructureAutorisee.plist", 
+           "Conges.eomodeld~/TypeAbsenceGepeto.plist", 
+           "Conges.eomodeld~/VAlerte.plist", 
+           "Conges.eomodeld~/index.eomodeld", 
+           Grhum.eomodeld, 
+           "Grhum.eomodeld~/AbsencesGepeto.plist", 
+           "Grhum.eomodeld~/Adresse.plist", 
+           "Grhum.eomodeld~/Affectation.plist", 
+           "Grhum.eomodeld~/ElementCarriere.plist", 
+           "Grhum.eomodeld~/Grade.plist", 
+           "Grhum.eomodeld~/Individu.plist", 
+           "Grhum.eomodeld~/IndividuInfosPeriodes.plist", 
+           "Grhum.eomodeld~/IndividuPrsId.plist", 
+           "Grhum.eomodeld~/RepartPersonneAdresse.plist", 
+           "Grhum.eomodeld~/Repartition.plist", 
+           "Grhum.eomodeld~/Structure.plist", 
+           "Grhum.eomodeld~/VPersonnelActuel.plist", 
+           "Grhum.eomodeld~/VPersonnelNonEns.plist", 
+           "Grhum.eomodeld~/VService.plist", 
+           "Grhum.eomodeld~/index.eomodeld", 
+           Planning.eomodeld, 
+           "Planning.eomodeld~/AffectationAnnuelle.plist", 
+           "Planning.eomodeld~/AnnulationPeriodeFermeture.plist", 
+           "Planning.eomodeld~/CalculAffAnn.plist", 
+           "Planning.eomodeld~/Horaire.plist", 
+           "Planning.eomodeld~/Occupation.plist", 
+           "Planning.eomodeld~/PeriodeAffectationAnnuelle.plist", 
+           "Planning.eomodeld~/PeriodeFermeture.plist", 
+           "Planning.eomodeld~/PlanningHebdomadaire.plist", 
+           "Planning.eomodeld~/TypeHoraire.plist", 
+           "Planning.eomodeld~/TypeOccupation.plist", 
+           "Planning.eomodeld~/VHoraires.plist", 
+           "Planning.eomodeld~/VIndividuConges.plist", 
+           "Planning.eomodeld~/VOccupations.plist", 
+           "Planning.eomodeld~/VOccupationsFer.plist", 
+           "Planning.eomodeld~/VOccupationsOcc.plist", 
+           "Planning.eomodeld~/VacanceScolaire.plist", 
+           "Planning.eomodeld~/index.eomodeld"
+        );
+        WO_COMPONENTS = 
+        ();
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

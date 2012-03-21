@@ -1,0 +1,156 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        affAnnsDisplayGroup = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = AffectationAnnuelle; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "periodes.affectation.individu"; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = individu; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "periodes.affectation.structure"; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = service; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "periodes.dateDebut"; 
+                                selectorName = "isGreaterThanOrEqualTo:"; 
+                                value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = annee; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = annee; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                    usesDistinct = YES; 
+                }; 
+                fetchSpecificationName = AffectationsAnnuellesPourIndividuEtPourService; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+        }; 
+        composantesDisplayGroup = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = Structure; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = isComposante; 
+                                selectorName = "isEqualTo:"; 
+                                value = 1; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = isService; 
+                                selectorName = "isEqualTo:"; 
+                                value = 1; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = fetchComposante; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = libelleCourt; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+        servicesDisplayGroup = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = Structure; 
+                    fetchLimit = 0; 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = isService; 
+                                selectorName = "isEqualTo:"; 
+                                value = 1; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = "toStructureAutorisee.annee"; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = annee; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = isStructureAutorisee; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = isStructureAutorisee; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = cStructure; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                    sortOrderings = (
+                        {
+                            class = EOSortOrdering; 
+                            key = libelleLong; 
+                            selectorName = "compareAscending:"; 
+                        }
+                    ); 
+                    usesDistinct = YES; 
+                }; 
+                fetchSpecificationName = fetchService; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = libelleLong; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+    }; 
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CetOptionAncienSysteme" wocomponentcontent="false">    <binding defaults="Boolean" name="disabled"/>
+        <validation message="'isDisabled' is a required binding.">
+            <unbound name="disabled"/>
+        </validation>
+    <binding name="affAnn"/>
+        <validation message="'affAnn' is a required binding.">
+            <unbound name="affAnn"/>
+        </validation>
+    <binding defaults="Boolean" name="isRenoncement"/>
+        <validation message="'isRenoncement' is a required binding.">
+            <unbound name="isRenoncement"/>
+        </validation>
+    <binding name="optionIndemnisationJourSelected"/>
+        <validation message="'optionIndemnisationJourSelected' is a required binding.">
+            <unbound name="optionIndemnisationJourSelected"/>
+        </validation>
+        <binding name="optionTransfertRafpJourSelected"/>
+        <validation message="'optionTransfertRafpJourSelected' is a required binding.">
+            <unbound name="optionTransfertRafpJourSelected"/>
+        </validation>
+    <binding defaults="Boolean" name="isSelectedOptionIndemnisation"/>
+        <binding defaults="Boolean" name="isSelectedOptionTransfertRafp"/>
+        
+        
+    <validation message="'isSelectedOptionTransfertRafp' is a required binding.">
+            <unbound name="isSelectedOptionTransfertRafp"/>
+        </validation>
+        <validation message="'isSelectedOptionIndemnisation' is a required binding.">
+            <unbound name="isSelectedOptionIndemnisation"/>
+        </validation>
+    <binding name="optionMaintienMinuteSelected"/>
+        <validation message="'optionMaintienMinuteSelected' is a required binding.">
+            <unbound name="optionMaintienMinuteSelected"/>
+        </validation>
+    </wo>
+</wodefinitions>

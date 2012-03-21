@@ -1,0 +1,58 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/JourPlanning.java, 
+           src/fr/univlr/cri/conges/LnkCngPopup.java, 
+           src/fr/univlr/cri/conges/PageCET.java, 
+           src/fr/univlr/cri/conges/PageDetailDemande.java, 
+           src/fr/univlr/cri/conges/PagePlannings.java, 
+           src/fr/univlr/cri/conges/PersoFicheRose.java, 
+           src/fr/univlr/cri/conges/PersoHoraires.java, 
+           src/fr/univlr/cri/conges/Plannings.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        (
+           Popups.subproj
+        );
+        WOAPP_RESOURCES = 
+        (
+           JourPlanning.api, 
+           LnkCngPopup.api, 
+           PageCET.api, 
+           PageDetailDemande.api, 
+           PagePlannings.api, 
+           PersoFicheRose.api, 
+           PersoHoraires.api, 
+           Plannings.api
+        );
+        WO_COMPONENTS = 
+        (
+           JourPlanning.wo, 
+           LnkCngPopup.wo, 
+           PageCET.wo, 
+           PageDetailDemande.wo, 
+           PagePlannings.wo, 
+           PersoFicheRose.wo, 
+           PersoHoraires.wo, 
+           Plannings.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

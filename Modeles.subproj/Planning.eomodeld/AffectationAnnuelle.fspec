@@ -1,0 +1,221 @@
+{
+    AffectationsAnnuellesPourIndividuEtPourService = {
+        class = EOFetchSpecification; 
+        entityName = AffectationAnnuelle; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.affectation.individu"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = individu; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.affectation.structure"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = service; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.dateDebut"; 
+                    selectorName = "isGreaterThanOrEqualTo:"; 
+                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = annee; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = annee; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+        usesDistinct = YES; 
+    }; 
+    AffectationsAnnuellesPourMois = {
+        class = EOFetchSpecification; 
+        entityName = AffectationAnnuelle; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.affectation.structure"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = service; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.affectation.structure.toComposante"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = composante; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = annee; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = annee; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateDebut"; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateFin"; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateDebut"; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateFin"; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateFin"; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateFin"; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateDebut"; 
+                                    selectorName = "isGreaterThanOrEqualTo:"; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = "periodes.dateDebut"; 
+                                    selectorName = "isLessThanOrEqualTo:"; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }
+                    ); 
+                }
+            ); 
+        }; 
+        usesDistinct = YES; 
+    }; 
+    FetchAffectationAnnuelle = {
+        class = EOFetchSpecification; 
+        entityName = AffectationAnnuelle; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = dateDebutAnnee; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = dateDebutAnnee; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+    FetchCSV = {
+        class = EOFetchSpecification; 
+        entityName = AffectationAnnuelle; 
+        prefetchingRelationshipKeyPaths = (); 
+    }; 
+    FetchPasseDroit = {
+        class = EOFetchSpecification; 
+        entityName = AffectationAnnuelle; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dateDebutAnnee; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = dateDebutAnnee; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = flagDepassementCongesAutorise; 
+                            selectorName = "isEqualTo:"; 
+                            value = {"_key" = flagDepassementCongesAutorise; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = flagDepSemHautes; 
+                            selectorName = "isEqualTo:"; 
+                            value = {"_key" = flagDepSemHautes; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = flagHorsNorme; 
+                            selectorName = "isEqualTo:"; 
+                            value = {"_key" = flagHorsNorme; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = flagPasseDroit; 
+                            selectorName = "isEqualTo:"; 
+                            value = {"_key" = flagPasseDroit; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = flagTempsPartielAnnualise; 
+                            selectorName = "isEqualTo:"; 
+                            value = {"_key" = flagTempsPartielAnnualise; class = EOQualifierVariable; }; 
+                        }
+                    ); 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.affectation.individu"; 
+                    selectorName = "isNotEqualTo:"; 
+                    value = {class = EONull; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "periodes.affectation.structure"; 
+                    selectorName = "isNotEqualTo:"; 
+                    value = {class = EONull; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

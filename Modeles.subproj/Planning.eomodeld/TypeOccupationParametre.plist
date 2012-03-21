@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            columnName = CONTRAINTE; 
+            externalType = 32; 
+            name = contrainte; 
+            valueClassName = NSString; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VALIDITE"; 
+            externalType = DATE; 
+            name = dDebValidite; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VALIDITE"; 
+            externalType = DATE; 
+            name = dFinValidite; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_TYP_OCC"; 
+            externalType = NUMBER; 
+            name = oidTypOcc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOTypeOccupationParametre"; 
+    classProperties = (
+        contrainte, 
+        dCreation, 
+        dDebValidite, 
+        dFinValidite, 
+        dModification, 
+        toTypeOccupation
+    ); 
+    externalName = "CONGES.PLNG_TYP_OCC_PARAM"; 
+    fetchSpecificationDictionary = {}; 
+    name = TypeOccupationParametre; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = TypeOccupation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidTypOcc; }); 
+            name = toTypeOccupation; 
+        }
+    ); 
+}

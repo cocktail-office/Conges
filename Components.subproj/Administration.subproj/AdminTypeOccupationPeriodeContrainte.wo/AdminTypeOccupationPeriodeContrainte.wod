@@ -1,0 +1,121 @@
+Form: WOForm {
+	
+}
+
+Ancre: WOGenericContainer {
+	elementName = "a";
+	name = typeOcc.libelleCourt;
+}
+
+RepTypeOccupationParametre: WORepetition {
+	list = typeOcc.tosTypeOccupationParametre;
+	item = typeOccParametreItem;
+}
+
+StrTypeOccParametreItem: WOString {
+	value = typeOccParametreItem;
+}
+
+ImgSupprimer: WOImage {
+	border = "0";
+	filename = "images/moins16.gif";
+	framework = "app";	
+	width = "16px";
+	height = "16px";
+}
+
+LnkSupprimer: WOHyperlink {
+	action = supprimer;
+	title = "cliquer pour supprimer cette contrainte";
+	fragmentIdentifier = typeOcc.libelleCourt;	
+}
+
+LnkModifier: WOHyperlink {
+	action = modifier;
+	title = "cliquer pour modifier";
+	fragmentIdentifier = typeOcc.libelleCourt;
+}
+
+ImgModifier: WOImage {
+	border = "0";
+	filename = "images/modifier16.gif";
+	framework = "app";	
+	width = "16px";
+	height = "16px";
+}
+
+CondIsEnCoursDeModification: WOConditional {
+	condition = isEnCoursDeModification;
+}
+
+CondIsEnCoursDAjout: WOConditional {
+	condition = isEnCoursDAjout;
+}
+
+NewDDebut: CRIDatePicker {
+	dateValue = newDDebut;
+}
+
+NewDFin: CRIDatePicker {
+	dateValue = newDFin;
+}
+
+DDebSelected: CRIDatePicker {
+	dateValue = typeOccParametreSelected.dDebValidite;
+}
+
+DFinSelected: CRIDatePicker {
+	dateValue = typeOccParametreSelected.dFinValidite;
+}
+
+BtnSauvegarder: WOImageButton {
+	action = sauvegarder;
+	title = "Enregistrer les modifications ou la saisie d'une nouvelle contrainte";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+LnkAnnuler: WOHyperlink {
+	action = annuler;
+	title = "annuler l'opération en cours";
+	fragmentIdentifier = typeOcc.libelleCourt;	
+}
+
+ImgAnnuler: WOImage {
+	border = "0";
+	filename = "images/annuler16.gif";
+	framework = "app";	
+	width = "16px";
+	height = "16px";
+}
+
+LnkToAjout: WOHyperlink {
+	action = toAjout;
+	title = "cliquer pour saisir une nouvelle contrainte";
+	fragmentIdentifier = typeOcc.libelleCourt;
+}
+
+ImgAjouter: WOImage {
+	border = "0";
+	filename = "images/plus16.gif";
+	framework = "app";	
+	width = "16px";
+	height = "16px";
+}
+
+CondIsAfficherSauvegarderAnnuler: WOConditional {
+	condition = isAfficherSauvegarderAnnuler;
+}
+
+Err: CngErrorBox {
+	showError = hasError;
+}
+
+StrErrorMessage: WOString {
+	value = errorMessage;
+}
+
+CondIsAfficherAjouter: WOConditional {
+	condition = isAfficherAjouter;
+}

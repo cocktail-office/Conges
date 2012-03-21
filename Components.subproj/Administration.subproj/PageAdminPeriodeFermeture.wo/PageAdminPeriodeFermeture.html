@@ -1,0 +1,225 @@
+<style type = "text/css">
+.tdFermetureComposante {
+	width: 160px; 
+}
+
+.tdFermetureService {
+	width: 400px; 
+}
+
+.tdFermetureAffAnn {
+	width: 300px; 
+}
+</style>
+
+<table class="boxBorder">
+	<tr>
+		<td></td>
+		<td><webobject name = "CompServicesAffAnnsNew1"/></td>
+	</tr>
+	
+	<!-- ajouts de fermeture  -->
+	<tr class="listboxHeader">
+		<td>
+			<!-- etablissement -->
+			<webobject name = "FormAddFermetureEtablissement">
+				D&eacute;but : <webobject name = "CRIDatePickerDebut"/><br/>
+				Fin : <webobject name = "CRIDatePickerFin"/><br/>
+				<webobject name = "BtnDoAddFermetureEtablissement"/>				
+			</webobject>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td class="tdFermetureComposante">
+						<!-- composante -->
+						<webobject name = "CondIsAComposanteSelected">
+							<webobject name = "FormAddFermetureComposante">
+								D&eacute;but : <webobject name = "CRIDatePickerDebut"/><br/>
+								Fin : <webobject name = "CRIDatePickerFin"/><br/>
+								<webobject name = "BtnDoAddFermetureComposante"/>				
+							</webobject>
+						</webobject>
+					</td>
+					<td class="tdFermetureService">
+						<!-- service -->
+						<webobject name = "CondIsAServiceSelected">
+							<webobject name = "FormAddFermetureService">
+								D&eacute;but : <webobject name = "CRIDatePickerDebut"/><br/>
+								Fin : <webobject name = "CRIDatePickerFin"/><br/>
+								<webobject name = "BtnDoAddFermetureService"/>				
+							</webobject>
+						</webobject>
+					</td>
+					<td class="tdFermetureAffAnn">
+						<!-- planning -->
+						<webobject name = "CondIsAnAffAnnSelected">
+							<webobject name = "FormAddFermetureAffAnn">
+								D&eacute;but : <webobject name = "CRIDatePickerDebut"/><br/>
+								Fin : <webobject name = "CRIDatePickerFin"/><br/>
+								<webobject name = "BtnDoAddFermetureAffAnn"/>				
+							</webobject>
+						</webobject>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	<webobject name = "FormFermetures">
+
+	<!-- consultation et annulation des fermetures de l'etablissement -->
+	<webobject name = "RepFermetureEtablissement">
+	<tr class="listboxLine">
+		<td>
+			<webobject name = "StrFermetureItem"/>
+			<webobject name = "BtnDoDelFermetureItem"/>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td class="tdFermetureComposante">
+						<webobject name = "CondIsAComposanteSelected">
+							<webobject name = "ChkIsNotAnnuleeFermetureItemForComposanteSelected"/>
+							<webobject name = "StrFermetureItem"/>
+						</webobject>
+					</td>
+					<td class="tdFermetureService">
+						<webobject name = "CondIsAServiceSelected">
+							<webobject name = "CondIsAnnuleeFermetureComposante">
+								<input type = "checkbox" disabled/>
+							</webobject>
+							<webobject name = "CondNotIsAnnuleeFermetureComposante">								
+								<webobject name = "ChkIsNotAnnuleeFermetureItemForServiceSelected"/>
+							</webobject>
+							<webobject name = "StrFermetureItem"/>
+						</webobject>
+					</td>
+					<td class="tdFermetureAffAnn">
+						<webobject name = "CondIsAnAffAnnSelected">
+							<webobject name = "CondIsAnnuleeFermetureComposante">
+								<input type = "checkbox" disabled/>
+							</webobject>
+							<webobject name = "CondNotIsAnnuleeFermetureComposante">
+								<webobject name = "CondIsAnnuleeFermetureService">
+									<input type = "checkbox" disabled/>
+								</webobject>
+								<webobject name = "CondNotIsAnnuleeFermetureService">
+									<webobject name = "ChkIsNotAnnuleeFermetureItemForAffAnnSelected"/>
+								</webobject>
+							</webobject>
+							<webobject name = "StrFermetureItem"/>
+						</webobject>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	</webobject>
+	
+	<!-- consultation et annulation des fermetures de la composante -->
+	<webobject name = "CondIsAComposanteSelected">
+		<webobject name = "RepFermetureComposante">
+		<tr class="listboxLine">
+			<td>&nbsp;</td>
+			<td>
+				<table>
+					<tr>
+						<td class="tdFermetureComposante">
+							<webobject name = "StrFermetureItem"/>
+							<webobject name = "BtnDoDelFermetureItem"/>
+						</td>
+						<td class="tdFermetureService">
+							<webobject name = "CondIsAServiceSelected">
+								<webobject name = "CondIsAnnuleeFermetureComposante">
+									<input type = "checkbox" disabled/>
+								</webobject>
+								<webobject name = "CondNotIsAnnuleeFermetureComposante">								
+									<webobject name = "ChkIsNotAnnuleeFermetureItemForServiceSelected"/>
+								</webobject>
+								<webobject name = "StrFermetureItem"/>
+							</webobject>
+						</td>
+						<td class="tdFermetureAffAnn">
+							<webobject name = "CondIsAnAffAnnSelected">
+								<webobject name = "CondIsAnnuleeFermetureComposante">
+									<input type = "checkbox" disabled/>
+								</webobject>
+								<webobject name = "CondNotIsAnnuleeFermetureComposante">
+									<webobject name = "CondIsAnnuleeFermetureService">
+										<input type = "checkbox" disabled/>
+									</webobject>
+									<webobject name = "CondNotIsAnnuleeFermetureService">
+										<webobject name = "ChkIsNotAnnuleeFermetureItemForAffAnnSelected"/>
+									</webobject>
+								</webobject>
+								<webobject name = "StrFermetureItem"/>
+							</webobject>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</webobject>
+	</webobject>
+
+	<!-- consultation et annulation des fermetures du service -->
+	<webobject name = "CondIsAServiceSelected">
+		<webobject name = "RepFermetureService">
+		<tr class="listboxLine">
+			<td>&nbsp;</td>
+			<td>			
+				<table>
+					<tr>
+						<td class="tdFermetureComposante">&nbsp;</td>
+						<td class="tdFermetureService">
+							<webobject name = "StrFermetureItem"/>
+							<webobject name = "BtnDoDelFermetureItem"/>
+						</td>
+						<td class="tdFermetureAffAnn">
+							<webobject name = "CondIsAnAffAnnSelected">
+								<webobject name = "CondIsAnnuleeFermetureComposante">
+									<input type = "checkbox" disabled/>
+								</webobject>
+								<webobject name = "CondNotIsAnnuleeFermetureComposante">
+									<webobject name = "CondIsAnnuleeFermetureService">
+										<input type = "checkbox" disabled/>
+									</webobject>
+									<webobject name = "CondNotIsAnnuleeFermetureService">
+										<webobject name = "ChkIsNotAnnuleeFermetureItemForAffAnnSelected"/>
+									</webobject>
+								</webobject>
+								<webobject name = "StrFermetureItem"/>
+							</webobject>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</webobject>
+	</webobject>
+
+	<!-- consultation et annulation des fermetures du planning -->
+	<webobject name = "CondIsAnAffAnnSelected">
+		<webobject name = "RepFermetureAffAnn">
+		<tr class="listboxLine">
+			<td>&nbsp;</td>
+			<td>			
+				<table>
+					<tr>
+						<td class="tdFermetureComposante">&nbsp;</td>
+						<td class="tdFermetureService">&nbsp;</td>
+						<td class="tdFermetureAffAnn">
+							<webobject name = "StrFermetureItem"/>
+							<webobject name = "BtnDoDelFermetureItem"/>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</webobject>
+	</webobject>
+	
+	</webobject>
+	
+</table>

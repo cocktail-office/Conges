@@ -1,0 +1,79 @@
+CondPeutVoirPlusDUnService: WOConditional {
+	condition = peutVoirPlusDUnService;
+}
+
+AccueilLink: WOHyperlink {
+	action = afficheAccueil;
+	title = "Page rassemblant toutes les demandes par service";
+	disabled = laSession.isDisabledMenu;
+}
+
+CondHasVisaSurServiceEnCours: WOConditional {
+	condition = hasVisaSurServiceEnCours;
+}
+
+CondVoitExactement1Service: WOConditional {
+	condition = voitExactement1Service;
+}
+
+DemandesLink: WOHyperlink {
+	action = afficheDemandes;
+	title = "Visualiser les demandes en attente de d&eacute;cision";
+	disabled = laSession.isDisabledMenu;
+}
+
+CondIndividuConnecteHasAffectation: WOConditional {
+	condition = laSession.individuConnecteHasAffectation;
+}
+
+PlanningsLink: WOHyperlink {
+	action = affichePlannings;
+	title = "Acc&egrave;der &agrave; votre propre planning";
+	disabled = laSession.isDisabledMenu;
+}
+
+CondHasVisuSurServiceEnCours: WOConditional {
+	condition = hasVisuSurServiceEnCours;
+}
+
+ServiceLink: WOHyperlink {
+	action = afficheService;
+	title = "Visualiser les plannings des agents du service";
+	disabled = laSession.isDisabledMenu;
+}
+
+CondPeutVoirMenuAdmin: WOConditional {
+	condition = peutVoirMenuAdministration;
+}
+
+AdministrationLink: WOHyperlink {
+	action = afficheAdministration;
+	title = "Visualiser la page d'administration pour le super-utilisateur";
+	disabled = laSession.isDisabledMenu;
+}
+
+CondPeutVoirPreferences: WOConditional {
+	condition = peutVoirPreferences;
+}
+
+PreferencesLink: WOHyperlink {
+	action = afficherPreferences;
+	title = "R&eacute;gler mes param&egrave;tres personnels";
+}
+
+CondIsAdmin: WOConditional {
+	condition = laSession.isAdministrateur;
+}
+
+IdentiteLink: WOHyperlink {
+	action = afficheChangeIdentite;
+	title = "Prendre l'identit&eacute; d'une autre personne";
+	disabled = laSession.isDisabledMenu;
+}
+
+QuitterLink: WOHyperlink {
+	action = logout;
+	target = "_top";
+	title = "Terminer la session de travail avec l'application";
+}
+

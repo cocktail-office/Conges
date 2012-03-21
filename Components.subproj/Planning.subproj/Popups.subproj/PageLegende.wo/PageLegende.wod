@@ -1,0 +1,20 @@
+PageTemplate1: PageTemplate {
+	isPopup = true;
+	pageTitle = "Legende du planning";
+	useToolTip = false;
+}
+
+Repetition1: WORepetition {
+	item = unHoraireHebdomadaire;
+	list = lePlanning.horairesHebdomadaires;
+}
+
+TDHoraire: WOGenericElement {
+	bgColor = unHoraireHebdomadaire.horaire.couleur;
+	width = "75";
+	elementName = "TD";
+}
+
+String1: WOString {
+	value = unHoraireHebdomadaire.horaire.nom;
+}

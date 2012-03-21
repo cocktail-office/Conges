@@ -1,0 +1,76 @@
+
+<WEBOBJECT name=PageTemplate1>
+<center><webobject name=Conditional10><webobject
+	name=CngAvertissement1><webobject name=String2></webobject></webobject></webobject>
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0"
+	width=100%>
+	<tr>
+		<th colspan=2><font class="subTitleInverse">&nbsp;Saisie
+		de cong&eacute;s<webobject name=Conditional1>
+		pr&eacute;visionnels</webobject></font></th>
+	</tr>
+	<tr>
+		<td>
+		<table class="boxContents" border="0" cellpadding="5" cellspacing="0" width="100%">
+				<tr>
+					<td><webobject name=CondIsNotOccupationPrevisionnelle><webobject
+						name=FormSelectTypeOccupation>
+					<table border=0 cellpadding=0 cellspacing=0 width=100%>
+						<tr>
+							<td><font class="textEntry">&nbsp;Type :&nbsp;</font></td>
+							<td><webobject name=PopUpTypeOccupation></webobject></td>
+						</tr>
+					</table>
+					</webobject></webobject>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2><webobject name=FormSaisieOccupation>
+					<webobject name=CondIsUnTypeOccupationSelectionne>
+					<webobject name=Conditional2>
+					<table width=100%>
+						<tr>
+							<td nowrap><font class="textEntry">Du : </font></td>
+							<td nowrap><webobject name=DateDebut></webobject></td>
+							<td><webobject name=PopUpDateDebutAMPM></webobject></td>
+							<td nowrap><font class="textEntry">au : </font></td>
+							<td nowrap><webobject name=DateFin></webobject></td>
+							<td><webobject name=PopUpDateFinAMPM></webobject></td>
+						</tr>
+					</table>
+					</webobject><webobject name=Conditional3>
+					<table width=100%>
+						<tr>
+							<td><font class="textEntry">Le : </font></td>
+							<td colspan=2><webobject name=DateFin2></webobject></td>
+							<td><font class="textEntry">de</font></td>
+							<td><WEBOBJECT NAME=CRITimeField1></WEBOBJECT></td>
+							<td><font class="textEntry"> &agrave; </font></td>
+							<td colspan=4><WEBOBJECT NAME=CRITimeField2></WEBOBJECT></td>
+						</tr>
+					</table>
+					</webobject> <br>
+					<table width=100% border=0 cellspacing=0 cellpadding=0>
+						<tr>
+							<td><font class="textEntry">Motif : </font></td>
+							<td><webobject name=Text1></webobject></td>
+						</tr>
+						<tr>
+							<td colspan=2>
+							<table border=0 width=100%>
+								<tr>
+									<td colspan=4 align=center><webobject name=BoutonValider2></webobject></td>
+									<td colspan=3 align=center><webobject name=BoutonAnnuler2></webobject></td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+					</table>
+					</webobject> </webobject></td>
+				</tr>
+		</table>
+		</td>
+	</tr>
+</table>
+</center>
+</webobject>

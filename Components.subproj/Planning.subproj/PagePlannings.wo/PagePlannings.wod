@@ -1,0 +1,205 @@
+Template: PageTemplate {
+	pageTitle = "Planning individuel";
+	useToolTip = true;
+}
+
+CondHasErreur: WOConditional {
+	condition = hasErreur;
+}
+
+CRINote1: CRINote {
+}
+
+StrTxtErreur: WOString {
+	escapeHTML = false;
+	value = txtErreur;
+}
+
+FormSelectService: WOForm {
+	action=changeService;
+	multipleSubmit = true;
+}
+
+FontStatutPlanning: WOGenericContainer {
+	elementName = "font";
+	color = planningHtmlColor;
+}
+
+StrStatutPlanning: WOString {
+	value = planningHtmlLabel;
+	escapeHTML = "false";
+}
+
+CondNotIsPTest: WOConditional {
+	condition = lePlanning.isPTest;
+	negate = true;
+}
+
+CondIsPTest: WOConditional {
+	condition = lePlanning.isPTest;
+}
+
+TipHtmlTextInfoPlanning: CRIToolTip {
+	htmlText = htmlTextInfoPlanning;
+}
+
+ImgInfo: WOImage {
+	framework = "app";
+	filename = "images/info_small.gif";
+	height = "16";
+	width = "16";
+	border = "0";
+}
+
+StrNomComplet: WOString {
+	value = lePlanning.affectationAnnuelle.individu.nomComplet;
+}
+
+PopUpServices: WOPopUpButton {
+	selection = selectedAffAnn;
+	item = affAnn;
+	list = laSession.affAnnsPerso;
+	displayString = displayString;
+	onChange = "this.form.submit();";
+	disabled = laSession.isDisabledMenu;
+}
+
+CondIsNotDisabled: WOConditional {
+	condition = lePlanning.isDisabled;
+	negate = true;
+}
+
+CondIsShowWarningValidationPlanningPrevisionnelImpossible: WOConditional {
+	condition = isShowWarningValidationPlanningPrevisionnelImpossible;
+}
+
+TipWarningValidationPlanningPrevisionnelImpossible: CRIToolTip {
+	htmlText = htmlTextValidationPlanningPrevisionnelImpossible;
+}
+
+ImgWarning: WOImage {
+	framework = "app";
+	filename = "images/important.png";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+CondIsValidationPPrevPossible: WOConditional {
+	condition=isValidationPlanningPrevisionnelPossible;
+}
+
+BtnValiderPPrev: WOSubmitButton {
+	title="Validation du planning previsionnel";
+	value="DEMANDER LA VALID. DU PLANNING PREVISIONNEL";
+	action=validerPlanningPrevisionnel;
+	class = "bouton";
+}
+
+CondIsDevalidationPPrevPossible: WOConditional {
+	condition=isDevalidationPlanningPrevisionnelPossible;
+}
+
+BtnAnnulerDemandeValidationPPrev: WOSubmitButton {
+	title="Recuperer la main sur le planning";
+	value="ANNULER LA DEMANDE DE VALID. DU PLANNING PREV.";
+	action= annulerValidationPrev;
+	class = "bouton";
+}
+
+CondIsPReelDevalidable: WOConditional {
+	condition = isPlanningDevalidable;
+}
+
+BtnDevaliderPReel: WOSubmitButton {
+	//title="Devalidation du planning reel";
+	title = "ATTENTION, l'appui sur ce bouton va invalider votre planning, qui devra être à nouveau validé par votre supérieur hiérarchique. Les congés posés seront conservés. Ce bouton ne doit être utilisé que si vous voulez modifier la répartition de vos heures de la semaine en cours ou des semaines à venir.";
+	value="MODIFIER PLANNING ET HORAIRES (DEVALIDER)";
+	action=devaliderPReel;
+	class = "bouton";
+}
+CondIsPlanningValidable: WOConditional {
+	condition = isPlanningValidable;
+}
+
+BtnValiderPReel: WOSubmitButton {
+	title="Validation du planning reel";
+	value="DEMANDER LA VALID. DU PLANNING REEL";
+	action=validerPReel;
+	class = "bouton";
+}
+
+CondIsAnnulationValidationPReelPossible: WOConditional {
+	condition = isAnnulationValidationPReelPossible;
+}
+
+BtnAnnulerDemandeValidationPReel: WOSubmitButton {
+	title="Recuperer la main sur le planning";
+	value="ANNULER LA DEMANDE DE VALID. DU PLANNING REEL.";
+	action=annulerValidationReel;
+	class = "bouton";
+}
+
+BtnRecopierReelToTest: WOSubmitButton {
+	title="Iniitialiser le planning a partir du planning reel";
+	value="ALIMENTER A PARTIR DU PLANNING REEL";
+	action=recopierReelToTest;
+	class = "bouton";
+}
+
+CondShowBtnAdminValider: WOConditional {
+	condition = showBtnAdminValider;
+}
+
+BtnAdminValider: WOSubmitButton {
+	title="Valider directement ce planning";
+	value="ADMIN : VALIDER LE PLANNING";
+	action=adminValider;
+	class = "bouton";
+}
+
+CondShowBtnAdminRazPlanning: WOConditional {
+	condition = showBtnAdminRazPlanning;
+}
+
+BtnAdminRazPlanning: WOSubmitButton {
+	title="Tout effacer (sauf les horaires)";
+	value="ADMIN : RAZ PLANNING";
+	action=adminRazPlanning;
+	class = "bouton";
+}
+
+PdfBoxHoraire: CngPdfBoxLink {
+	ctrl = ctrlHoraires;
+	printLabel = "Horaires";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF des horaires et de leurs associations. Attention, il faut au moins un horaire associ&eacute; &agrave; une semaine, sinon l'&eacute;dition ne retournera rien.";
+}
+
+PlanningsComponent: Plannings {
+	lePlanning=lePlanning;
+	selectedItemMenu=menuSelectionne;
+	menuItems=laSession.menuItemsPersonnel;
+	isDisabled = lePlanning.isDisabled;
+	showMenu = true;
+}
+
+CondShouldDisplayPlanningExceedAlert: WOConditional {
+	condition = shouldDisplayPlanningExceedAlert;
+}
+
+LayerPlanningExceedAlert: CRILayer {
+	text = strPlanningExceedAlert;
+}
+
+CondNotShouldDisplayPlanningExceedAlert: WOConditional {
+	condition = shouldDisplayPlanningExceedAlert;
+	negate = true;
+}
+
+CondShouldDisplayPlanningStateAlert: WOConditional {
+	condition = shouldDisplayPlanningStateAlert;
+}
+
+LayerPlanningStateAlert: CRILayer {
+	text = htmlPlanningStateAlert;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CompServicesAffAnnsNew" wocomponentcontent="false">    <binding name="anneeUnivSelected"/>
+        <binding defaults="Boolean" name="isOnlyService"/>
+        <binding name="affAnnSelected"/>
+        <binding name="serviceSelected"/>
+        
+    
+    <binding name="composanteSelected"/>
+    </wo>
+</wodefinitions>

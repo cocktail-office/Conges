@@ -1,0 +1,98 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEB_SEMAINE"; 
+            externalType = DATE; 
+            name = dateDebutSemaine; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NATURE; 
+            externalType = VARCHAR2; 
+            name = flagNature; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_HORAIRE"; 
+            externalType = NUMBER; 
+            name = oidHoraire; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_PER_AFF_ANN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "OID_PER_AFF_ANNUELLE"; }; 
+            name = oidPeriodeAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOPlanningHebdomadaire"; 
+    classProperties = (
+        flagNature, 
+        dateDebutSemaine, 
+        horaire, 
+        periodeAffectationAnnuelle, 
+        dCreation, 
+        dModification
+    ); 
+    externalName = "CONGES.PLNG_PLG_HEB"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (flagNature, dateDebutSemaine, horaire, periodeAffectationAnnuelle); 
+        "_nameInObjectStore" = "PLNG_PLG_HEB"; 
+    }; 
+    name = PlanningHebdomadaire; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = Horaire; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidHoraire; }); 
+            name = horaire; 
+        }, 
+        {
+            destination = PeriodeAffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = oid; sourceAttribute = oidPeriodeAffectationAnnuelle; }
+            ); 
+            name = periodeAffectationAnnuelle; 
+        }
+    ); 
+}

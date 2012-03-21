@@ -1,0 +1,37 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "OID_STRUCTURE"; }; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EODroitPasDeMailCds"; 
+    classProperties = (cStructure, dCreation, dModification); 
+    externalName = "CONGES.CNG_CDS_NO_MAIL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CONGES_NEW.CNG_CDS_NO_MAIL"; }; 
+    name = DroitPasDeMailCds; 
+    primaryKeyAttributes = (cStructure); 
+}

@@ -1,0 +1,109 @@
+<style type = "text/css">
+.ulRetourLigneAlignGauche li {
+	display: list-item;
+	text-align: left;
+}
+</style>
+
+	Vous avez	demand&eacute; :
+
+	<ul class="ulRetourLigneAlignGauche">
+	
+		<webobject name = "CondIsExerciceDroitOptionAncienRegime">
+			<li>
+
+				Exercice du droit d'option sur votre CET ancien r&eacute;gime :
+				<table class="listboxBorder" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td>
+							<table width="100%" cellspacing="1" cellpadding="2" border="0">
+							
+								<tr class="listboxHeader">
+									<th/>
+									<th>Jours concern&eacute;s</th>
+									<th>RAFP</th>
+									<th>Indemnisation</th>
+									<th>Maintien sur CET</th>
+								</tr>
+								
+								<tr class="listboxLine">
+									<th>Jours &agrave; 7h00</th>
+									<td align="right"><webobject name = "StrTotalJourConcerneAncienRegimeJoursA7h00"/></td>
+									<td align="right"><webobject name = "StrDemandeTransfertRafpAncienRegimeJourA7h00Arrondi"/></td>
+									<td align="right"><webobject name = "StrDemandeIndemnisationAncienRegimeJourA7h00Arrondi"/></td>
+									<td align="right"><webobject name = "StrDemandeMaintienCetAncienRegimeJourA7h00"/></td>
+								</tr>
+								
+								<tr class="listboxLine">
+									<th>Heures</th>
+									<td align="right"><webobject name = "StrTotalJourConcerneAncienRegimeHeures"/></td>
+									<td align="right"><webobject name = "StrDemandeTransfertRafpAncienRegimeHeures"/></td>
+									<td align="right"><webobject name = "StrDemandeIndemnisationAncienRegimeHeures"/></td>
+									<td align="right"><webobject name = "StrDemandeMaintienCetAncienRegimeHeures"/></td>
+								</tr>
+						
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</li>
+		</webobject>
+
+		<webobject name = "CondIsDemandeTransfertVersRegimePerenne">
+			<li>
+				Transfert des jours de cong&eacute;s du CET ancien r&eacute;gime vers le r&eacute;gime p&eacute;renne : <b><webobject name = "StrDemandeTransfertRegimePerenneJoursA7h00"/> jours &agrave; 7h00</b>.
+			</li>
+		</webobject>
+
+		<webobject name = "CondIsDemandeEpargne">
+			<li>
+				Demande le versement de jours de cong&eacute;s non pris rattach&eacute;s &agrave; l'ann&eacute;e universitaire <webobject name = "StrAnneeUnivNm1"/> : <b><webobject name = "StrDemandeEpargneJoursA7h00"/> jours &agrave; 7h00</b>.
+			</li>
+		</webobject>
+		
+		<webobject name = "CondIsDemandeExercieDroitDOption">
+			<li>
+
+				Exercice du droit d'option sur votre CET :
+				
+				<table class="listboxBorder" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td>
+							<table width="100%" cellspacing="1" cellpadding="2" border="0">
+							
+								<tr class="listboxHeader">
+									<th/> 
+									<th>Jours concern&eacute;s (&gt;20)</th>
+									<th>RAFP</th>
+									<th>Indemnisation</th>
+									<th>Maintien sur CET</th>
+								</tr>
+								
+								<tr class="listboxLine">
+									<th>Jours &agrave; 7h00</th>
+									<td align="right"><webobject name = "StrTotalJourConcerneJoursA7h00"/></td>
+									<td align="right"><webobject name = "StrDemandeTransfertRafpJourA7h00Arrondi"/></td>
+									<td align="right"><webobject name = "StrDemandeIndemnisationJourA7h00Arrondi"/></td>
+									<td align="right"><webobject name = "StrDemandeMaintienCetJourA7h00Arrondi"/></td>
+								</tr>
+								
+								<tr class="listboxLine">
+									<th>Heures</th>
+									<td align="right"><webobject name = "StrTotalJourConcerneHeures"/></td>
+									<td align="right"><webobject name = "StrDemandeTransfertRafpHeures"/></td>
+									<td align="right"><webobject name = "StrDemandeIndemnisationHeures"/></td>
+									<td align="right"><webobject name = "StrDemandeMaintienCetJourHeures"/></td>
+								</tr>
+								
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</li>
+		</webobject>
+		
+	</ul>
+	
+	<!--  Cette demande est en cours traitement.-->

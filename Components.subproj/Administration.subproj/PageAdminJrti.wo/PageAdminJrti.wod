@@ -1,0 +1,64 @@
+CompServicesAffAnnsNew1: CompServicesAffAnns {
+	affAnnSelected = selectedAffAnn;
+	serviceSelected = selectedService;
+}
+
+CondIsAffAnnSelected: WOConditional {
+	condition = isAffAnnSelected;
+}
+
+StrFinAnnee: WOString {
+	value = strDateFinAnnee;
+}
+
+StrCongesRestant: WOString {
+	value = strCongesRestant;
+}
+
+StrDebutAnnee: WOString {
+	value = strDateDebutAnnee;
+}
+
+StrCetRestant: WOString {
+	value = strCetRestant;
+}
+
+FormAdminJrti: WOForm {
+	action = neFaitRien;
+	multipleSubmit = true;
+	name = "FormAdminJrti";
+}
+
+ComboJourJrtiList: WOPopUpButton {
+	list = jourList;
+	item = jourItem;
+	selection = jourJrtiSelected;
+}
+
+TFJourCet: WOTextField {
+	value = jourCet;
+	numberformat = "0";
+	size = "2";
+}
+
+TFJourBasculeCetVersRafp: WOTextField {
+	value = jourBasculeCetVersRafp;
+	numberformat = "0";
+	size = "2";
+}
+
+
+BtnEnregistrer: WOSubmitButton {
+	action = enregistrer;
+	class = "bouton";
+	value = "Enregistrer";
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+StrErrorMessage: WOString {
+	value = errorMessage;
+	escapeHTML = false;
+}

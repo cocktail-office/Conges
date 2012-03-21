@@ -1,0 +1,110 @@
+{
+    AffectationsPourIndividu = {
+        class = EOFetchSpecification; 
+        entityName = Affectation; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = individu; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = individu; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = structure; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = structure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "toVPersonnelNonEns.toIndividu.persId"; 
+                    selectorName = isNotEqualTo; 
+                    value = {class = EONull; }; 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = dFinAffectation; 
+                            selectorName = isEqualTo; 
+                            value = {class = EONull; }; 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dDebAffectation; 
+                                    selectorName = isLessThan; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dFinAffectation; 
+                                    selectorName = isGreaterThan; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dFinAffectation; 
+                                    selectorName = isGreaterThanOrEqualTo; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dFinAffectation; 
+                                    selectorName = isLessThanOrEqualTo; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }, 
+                        {
+                            class = EOAndQualifier; 
+                            qualifiers = (
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dDebAffectation; 
+                                    selectorName = isGreaterThanOrEqualTo; 
+                                    value = {"_key" = dateDebut; class = EOQualifierVariable; }; 
+                                }, 
+                                {
+                                    class = EOKeyValueQualifier; 
+                                    key = dDebAffectation; 
+                                    selectorName = isLessThanOrEqualTo; 
+                                    value = {"_key" = dateFin; class = EOQualifierVariable; }; 
+                                }
+                            ); 
+                        }
+                    ); 
+                }
+            ); 
+        }; 
+        sortOrderings = (
+            {
+                class = EOSortOrdering; 
+                key = noDossierPers; 
+                selectorName = "compareAscending:"; 
+            }, 
+            {
+                class = EOSortOrdering; 
+                key = cStructure; 
+                selectorName = "compareAscending:"; 
+            }, 
+            {
+                class = EOSortOrdering; 
+                key = dDebAffectation; 
+                selectorName = "compareAscending:"; 
+            }
+        ); 
+    }; 
+}

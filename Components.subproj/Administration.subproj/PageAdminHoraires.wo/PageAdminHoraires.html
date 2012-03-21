@@ -1,0 +1,53 @@
+<BR>
+<WEBOBJECT NAME=CngInfoBox1>
+Si dans la table de configuration (CNG_PARAMETRE), LOCK_HORAIRES_TYPES est positionn&eacute;
+&agrave; <b>YES</b>, alors les agents sont cantonn&eacute;s a saisir des horaires dont la dur&eacute;e
+hebdomadaire sera l'une des dur&eacute;es suivantes.<br/>
+<br/>
+Sinon LOCK_HORAIRES_TYPES &agrave; <b>NO</b>),
+Les horaires d&eacute;clar&eacute;s ici serviront de base lors de la saisie.&nbsp;
+L'agent aura toujours la possibilit&eacute; de saisir n'importe quelle dur&eacute;e (entre 32h00 et 
+40h00 si l'agent n'est pas d&eacute;clar&eacute; &quot;hors-norme&quot;)
+</WEBOBJECT>
+<br/>
+Configuration actuelle : <b><webobject name = "StrParamAppLockHorairesTypes"></webobject></b>
+<br/>
+<br/>
+<WEBOBJECT NAME=Form1>
+<TABLE>
+	<TR>
+		<TD WIDTH=50% VALIGN=TOP ALIGN=CENTER ROWSPAN=2 CLASS="admBox"><WEBOBJECT
+			NAME=Browser1></WEBOBJECT><WEBOBJECT NAME=Conditional9><BR><WEBOBJECT NAME=SubmitButton6></WEBOBJECT></WEBOBJECT></TD>
+		<TD ROWSPAN=2 WIDTH=10></TD>
+		<TD COLSPAN=2><B>Dur&eacute;e : </B><WEBOBJECT NAME=Conditional3><WEBOBJECT
+			NAME=TimeFieldModifTypeHor></WEBOBJECT></WEBOBJECT><WEBOBJECT NAME=Conditional4><WEBOBJECT
+			NAME=TimeFieldCreatTypeHor></WEBOBJECT></WEBOBJECT></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2>
+		<TABLE class="admBox">
+			<tr><th>Conditions d'acc&egrave;s</th></tr>
+			<TR>
+				<TD><WEBOBJECT NAME=Conditional5><WEBOBJECT
+					NAME=CheckBox1></WEBOBJECT>&nbsp;Horaire hors-normes<BR>
+				<WEBOBJECT NAME=CheckBox2></WEBOBJECT>&nbsp;Semaine haute</WEBOBJECT><WEBOBJECT
+					NAME=Conditional6><WEBOBJECT NAME=CheckBox4></WEBOBJECT>&nbsp;Horaire
+				hors-normes<BR>
+				<WEBOBJECT NAME=CheckBox3></WEBOBJECT>&nbsp;Semaine haute</WEBOBJECT></TD>
+			</TR>
+		</TABLE>
+		</TD>
+	</TR>
+	<TR>
+		<TD ALIGN=CENTER COLSPAN=4></TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=4 ALIGN=CENTER><WEBOBJECT NAME=Conditional8><WEBOBJECT
+			NAME=SubmitButton1></WEBOBJECT><BR>
+		<BR>
+		<WEBOBJECT NAME=SubmitButton5></WEBOBJECT></WEBOBJECT><WEBOBJECT
+			NAME=Conditional10><WEBOBJECT NAME=BoutonValiderProfil></WEBOBJECT><WEBOBJECT
+			NAME=SubmitButton7></WEBOBJECT></WEBOBJECT></TD>
+	</TR>
+</TABLE>
+</WEBOBJECT>

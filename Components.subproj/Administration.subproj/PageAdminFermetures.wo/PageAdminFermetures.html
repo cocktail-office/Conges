@@ -1,0 +1,44 @@
+<table>
+	<tr>
+		<td>
+			<webobject name="FormGestVacances">
+				<table class="admBox">
+					<tr>
+						<th colspan="3" bgcolor="#ffe5bd">Vacances scolaires</th>
+					</tr>
+					<th width = "33%">
+						Ann&eacute;e universitaire : <webobject name = "PopUpLesAnneeUniv"/>
+					</th>
+					<tr>
+						<td align=RIGHT><webobject name="BrwsVac"/></td>
+						<td width=10 valign=TOP>
+							<webobject name="CondIsNotModeCreatVacance">
+								<WEBOBJECT NAME="BtnAjoutVac"/>
+								<webobject name="CondLesVacsSelectionneesCount">
+									<br><br>
+									<WEBOBJECT NAME="BtnSuppVac"/>
+								</webobject>
+							</webobject>
+						</td>
+					</tr>
+					<tr>
+						<td colspan=3 align=CENTER>
+							<webobject name="CondIsModeCreatVac">
+								<b> D&eacute;but : </b>
+								<WEBOBJECT NAME="DtePickerDebVac"/><BR>
+								<b>Fin :</b>
+								<WEBOBJECT NAME="DtePickerFinVac"/>
+								<WEBOBJECT NAME="BtnEnregistrerVac"/>
+								<br><br>
+								<WEBOBJECT NAME="BtnAnnuler"/>
+							</webobject>
+							<webobject name="CondIsNotModeCreatVacance">
+								<webobject name="BtnEnregistrerVacCache"/>
+							</webobject>
+						</td>
+					</tr>
+				</table>
+			</webobject>
+		</td>
+	</tr>
+</table>

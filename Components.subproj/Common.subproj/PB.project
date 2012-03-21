@@ -1,0 +1,54 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/CngAvertissement.java, 
+           src/fr/univlr/cri/conges/CngInfoBox.java, 
+           src/fr/univlr/cri/conges/CngPdfBoxComponent.java, 
+           src/fr/univlr/cri/conges/CngPdfBoxLink.java, 
+           src/fr/univlr/cri/conges/Menu.java, 
+           src/fr/univlr/cri/conges/PageTemplate.java, 
+           src/fr/univlr/cri/conges/ParentPlannings.java, 
+           src/fr/univlr/cri/conges/ZCRILookupField.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           CngAvertissement.api, 
+           CngInfoBox.api, 
+           CngPdfBoxComponent.api, 
+           CngPdfBoxLink.api, 
+           Menu.api, 
+           PageTemplate.api, 
+           ZCRILookupField.api
+        );
+        WO_COMPONENTS = 
+        (
+           CngAvertissement.wo, 
+           CngInfoBox.wo, 
+           CngPdfBoxComponent.wo, 
+           CngPdfBoxLink.wo, 
+           Menu.wo, 
+           PageTemplate.wo, 
+           ZCRILookupField.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

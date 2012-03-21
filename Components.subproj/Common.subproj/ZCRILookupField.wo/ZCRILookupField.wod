@@ -1,0 +1,14 @@
+ComponentContent1: WOComponentContent {
+}
+
+String1: WOString {
+	escapeHTML = false;
+	value = connectionString;
+}
+
+TextField1: WOTextField {
+	name = ^fieldName;
+	onKeyUp = onKeyUp;
+	size = ^size;
+	value = filterText;
+}

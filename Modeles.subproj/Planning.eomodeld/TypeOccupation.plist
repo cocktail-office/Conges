@@ -1,0 +1,106 @@
+{
+    attributes = (
+        {
+            columnName = "CONGE_LEGAL"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "FLG_IMPUTATION"; }; 
+            name = congeLegal; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 1; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FLG_DRH"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "FLG_IMPUTATION"; }; 
+            name = flagDRH; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = libelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = QUANTUM; 
+            externalType = VARCHAR2; 
+            name = quantum; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "SENS_IMPUTATION"; 
+            externalType = VARCHAR2; 
+            name = sensImputation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOTypeOccupation"; 
+    classProperties = (
+        libelle, 
+        libelleCourt, 
+        flagDRH, 
+        sensImputation, 
+        dCreation, 
+        dModification, 
+        congeLegal, 
+        quantum, 
+        tosTypeOccupationParametre
+    ); 
+    externalName = "CONGES.PLNG_TYP_OCC"; 
+    internalInfo = {"_nameInObjectStore" = "PLNG_TYP_OCC"; }; 
+    name = TypeOccupation; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = TypeOccupationParametre; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidTypOcc; sourceAttribute = oid; }); 
+            name = tosTypeOccupationParametre; 
+        }
+    ); 
+}

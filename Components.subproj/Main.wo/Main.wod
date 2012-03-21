@@ -1,0 +1,123 @@
+PageTemplate1: PageTemplate {
+	isPopup = true;
+	pageTitle = "HAmAC - Gestion des Conges";
+	useToolTip = false;
+}
+
+imgLogo: WOImage {
+	alt = "Logo Universite";
+	src = app.mainLogoUrl;
+}
+
+imgLigneJaune: WOImage {
+  
+	border = "0";
+	src = "images/ligneApplisDegradee.gif";
+	width = "100%";
+	height = "6";
+}
+
+CondNotIsBadNavigator: WOConditional {
+	condition = isBadNavigator;
+	negate = true;
+}
+
+CondMessagesEnCoursCount: WOConditional {
+	condition = lesMessagesEnCours.count;
+}
+
+RepMessagesEnCours: WORepetition {
+	item = unMessage;
+	list = lesMessagesEnCours;
+}
+
+CngInfoBox1: CngInfoBox {
+}
+
+StrTitre: WOString {
+	value = unMessage.mesTitre;
+}
+
+StrDModification: WOString {
+	dateformat = "%d/%m/%Y";
+	value = unMessage.dModification;
+}
+
+StrContenu: WOString {
+	value = unMessage.mesContenu;
+}
+
+CondAppUseCas: WOConditional {
+	condition = app.appUseCas;
+}
+
+LnkCasLogin: WOHyperlink {
+	href = linkCasLogin;
+	title = "Se connecter a l'application HAmAC";
+}
+
+CondAppNotUseCas: WOConditional {
+	condition = app.appUseCas;
+	negate = true;
+}
+
+imgClefs: WOImage {
+	border = "0";
+	src = "images/clefs.gif";
+}
+
+CRILogin: CRILogin {
+	loginResponder = loginResponder;
+	buttonTip = "Se connecter a l'application";
+}
+
+CondLnkAppDTExists: WOConditional {
+	condition = isLinkAppDTExists;
+}
+
+LnkAppDT: WOHyperlink {
+	href = linkAppDT;
+	title = "Cliquer ici pour acceder a l'application DT";
+}
+
+CondIsBadNavigator: WOConditional {
+	condition = isBadNavigator;
+}
+
+InfoBoxPerm: CngInfoBox {
+}
+
+CondIsLinkTutorialExists: WOConditional {
+	condition = isLinkTutorialExists;
+}
+
+LnkTutorial: WOHyperlink {
+	href = linkTutorial;
+	target = "_blank";
+	title = "Visionner les animations de l'utilisation de l'application";
+}
+
+CondIsLinkCircuExists: WOConditional {
+	condition = isLinkCircuExists;
+}
+
+LnkCircu: WOHyperlink {
+	href = linkCircu;
+	target = "_blank";
+	title = "Consulter la circulaire relative a l'application de l'ARTT ";
+}
+
+CondIsLinkDocExists: WOConditional {
+	condition = isLinkDocExists;
+}
+
+LnkDoc: WOHyperlink {
+	href = linkDoc;
+	target = "_blank";
+	title = "Consulter la documentation de l'utilisation de l'application";
+}
+
+StrAppVersionDateInstanceInfo: WOString {
+	value = app.appVersionDateInstanceInfo;
+	escapeHTML = false;
+}

@@ -1,0 +1,86 @@
+InfoTotalAffAnn: CngInfoBox {
+}
+
+CondShowLastTotalAffAnn: WOConditional {
+	condition = shouldShowLastTotalAffAnn;
+}
+
+StrTotalAffAnn: WOString {
+	value = lastTotalAffAnn;
+}
+
+StrTotalPeriode: WOString {
+	value = lastTotalPeriode;
+}
+
+
+FormServicesAutorises: WOForm {
+	name="FormServicesAutorises";
+	action = neFaitRien;
+	multipleSubmit="true";
+}
+
+PopUpButton1: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	onChange = "FormServicesAutorises.submit();return false;";
+	selection = lAnneeUnivSelectionnee;
+}
+
+StrLesServiceCount: WOString {
+	value = lesServices.count;
+}
+
+BrowserServices: WOBrowser {
+	list = lesServices;
+	item = unService;
+	selections = lesServicesSelectionnes;
+	displayString = unService.display;
+	name = "BrowserServices";
+	id = "BrowserServices";
+	class = "browser";
+	multiple="true";
+	size=20;
+}
+
+ChkIsShowServicesArchives: WOCheckBox {
+	checked = isShowServicesArchives;
+	onclick = "this.form.submit();";
+}
+
+BtnAddServices: WOSubmitButton {
+	title = "Créer les plannings de tous les agents affectés au service pour cette année";
+	value = "==>";
+	action = autoriser;
+	class = "bouton";
+}
+
+BtnAutoriserIdentiqueAnneeNm1: WOSubmitButton {
+	title = "Autoriser les mêmes services que ceux de l'année précedente";
+	value = "==> (identique N-1)";
+	action = autoriserIdentiqueAnneeNm1;
+	class = "bouton";
+}
+
+BtnDelService: WOSubmitButton {
+	title = "Effacer le service dans HAmAC pour cette année, ainsi que tous les planning associés";
+	value = "<==";
+	action = supprimer;
+	class = "bouton";
+}
+
+StrLesServicesAutorisesCount: WOString {
+	value = lesServicesAutorises.count;
+}
+
+BrowserServicesAutorises: WOBrowser {
+	list = lesServicesAutorises;
+	item = unServiceAutorise;
+	selections = lesServicesAutorisesSelectionnes;
+	displayString = unServiceAutorise.display;
+	name = "BrowserServicesAutorises";
+	id = "BrowserServicesAutorises";
+	class = "browser";
+	size=20;
+}

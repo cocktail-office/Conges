@@ -1,0 +1,84 @@
+InfoTypeOcc: CngInfoBox {
+	
+}
+
+RepTypeOcc: WORepetition {
+	list = typeOccDg.displayedObjects;
+	item = typeOccItem;
+}
+
+CondIsTypeOccItemNeedsInfo: WOConditional {
+	condition = isTypeOccItemNeedsInfo;
+}
+
+TipInfo: CRIToolTip {
+	htmlText = htmlInfo;
+}
+
+StrItemLibelleCourt: WOString {
+	value = typeOccItem.libelleCourt;
+}
+
+StrItemLibelleLong: WOString {
+	value = typeOccItem.libelle;
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+TipSens: CRIToolTip {
+	htmlText = "Indique comment se fait l'imputation<br/>&nbsp;&nbsp;&nbsp;'+' pour un d&eacute;dit normal<br/>&nbsp;&nbsp;&nbsp;'-'\pour un cr&eacute;dit (ex: heures supp.)";
+}
+
+StrItemSens: WOString {
+	value = typeOccItem.sensImputation;
+}
+
+TipQuantum: CRIToolTip {
+	htmlText = "Indique l'unit&eacute; 'atomique' de comptabilisation:<br/>&nbsp;&nbsp;&nbsp;'J' pour la demi-journ&eacute;e<br/>&nbsp;&nbsp;&nbsp;'M' pour la minute";
+}
+
+StrItemQuantum: WOString {
+	value = typeOccItem.quantum;
+}
+
+TipLegal: CRIToolTip {
+	htmlText = "Si coch&eacute;, alors toutes les 'occupations' ayant ce type sont r&eacute;cup&eacute;r&eacute;es depuis<br>l'application de GRH, et elles ne viennent pas d&eacute;biter le droit &agrave; cong&eacute;s de l'agent.<br><br><b>HAmAC n'autorise pas la saisie de ce type d'occupation par l'agent.</b>";
+}
+
+ChkItemLegal: WOCheckBox {
+	checked = typeOccItem.isCongeLegal;
+	disabled = true;
+}
+
+TipDRH: CRIToolTip {
+	htmlText = "Si coch&eacute, alors les occupations de ce type sont vis&eacute;es<br>par le responsable, et valid&eacute;es par le DRH.<br><br>Le cong&eacute; est recr&eacute;dit&eacute; &agrave; la validation.";
+}
+
+ChkItemDRH:  WOCheckBox {
+	checked = typeOccItem.isCongeDRH;
+	disabled = true;
+}
+
+TipHoraireForce: CRIToolTip {
+	htmlText = "Pour les semaines complètes (LUN au VEN) inclues (tout ou partie) dans les périodes indiquées,<br>l'horaire associé\
+		est echangé avec un horaire à 35h00 (7h00 par jour), proratisé sur la base de<br>la quotité de travail de la semaine.\
+		<br><br><b>HAmAC n'autorise pas la saisie de ce type d'occupation par l'agent.</b>";
+}
+
+AdminTypeOccupationPeriodeContrainte1: AdminTypeOccupationPeriodeContrainte {
+	typeOcc = typeOccItem;
+}
+
+TipAbsTypeCode: CRIToolTip {
+	htmlText = "Code de correspondance permettant à HAmAC de faire le lien entre ses congés<br>légaux et les congés issus de l'application de gestion du personnel.<br><br><b>Ne sert rien si le type de congé HAmAC associé n'est pas déclaré 'légal' !</b>";
+}
+
+StrItemAbsTypeCode: WOString {
+	value = absTypeGepeto.absTypeCode;//VALID
+}

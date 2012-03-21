@@ -1,0 +1,371 @@
+BoxInfoDetail: CngInfoBox {
+}
+
+CondHasRegularisation: WOConditional {
+	condition = hasRegularisation;
+}
+
+CondIsNotVisuAbsences: WOConditional {
+	condition = isVisuAbsences;
+	negate = true;
+}
+
+CondIsPlanningValide: WOConditional {
+	condition=isPlanningValide;
+}
+
+CondIsVisuAbsences: WOConditional {
+	condition = isVisuAbsences;
+}
+
+TipColonneDateDebit: CRIToolTip {
+	htmlText = "<b>Statut</b><br>Passez la souris sur la date de d&eacute;but pour obtenir des informations sur la saisie et les validations.";
+}
+
+TipColonneDebit: CRIToolTip {
+	htmlText = "<b>D&eacute;bits sur les reliquats et cong&eacute;s</b><br>Passez la souris sur la valeur pour conna&icirc;tre les d&eacute;tails des d&eacute;bits parmi les comptes";
+}
+
+ImgInfo: WOImage {
+	framework = "app";
+	filename = "images/info_small.gif";
+	height = "16";
+	width = "16";
+	border = "0";
+}
+
+CondNotIsDisabled: WOConditional {
+	condition = isDisabled;
+	negate = true;
+}
+
+CondIsReliquatNegatif: WOConditional {
+	condition = isReliquatNegatif;
+}
+
+CondHasDecompteLegal: WOConditional {
+	condition = hasDecompteLegal;
+}
+
+CondIsVisee: WOConditional {
+	condition = isVisee;
+}
+
+CondIsEnCoursDeValidation: WOConditional {
+	condition = isEnCoursDeValidation;
+}
+
+CondIsBilanHSupCCompNegatif: WOConditional {
+	condition = isBilanHSupCCompNegatif;
+}
+
+CondIsEnCoursDeSuppression: WOConditional {
+	condition = isEnCoursDeSuppression;
+}
+
+CondIsValidee: WOConditional {
+	condition = isValidee;
+}
+
+TipUneAbsenceDebit: CRIToolTip {
+	htmlText = debitHtmlTip;
+}
+
+StrUneAbsenceDebit: WOString {
+	value = uneAbsence.debit;
+}
+
+StrUneAbsenceDateDebutAmPm: WOString {
+	value = uneAbsence.dateDebut;
+	dateformat = dateFormatUneAbsenceFicheRose;
+}
+
+StrUneAbsenceDateDebut: WOString {
+	value = uneAbsence.dateDebut;
+	dateformat = "%d/%m/%Y";
+}
+
+StrUneAbsenceDuree: WOString {
+	value=uneAbsence.duree;
+}
+
+StrUneAbsenceDateFinAmPm: WOString {
+	value = uneAbsence.dateFin;
+	dateformat = dateFormatUneAbsenceFicheRose;
+}
+
+StrUneAbsenceHeureMinuteFin: WOString {
+	value = uneAbsence.dateFin;
+	dateformat = "%H:%M";
+}
+
+StrUneAbsenceHeureMinuteDebut: WOString {
+	value = uneAbsence.dateDebut;
+	dateformat = "%H:%M";
+}
+
+FormFicheRose: WOForm {
+	name = "FormFicheRose";
+}
+
+LnkFoPageAbsences: WOHyperlink {
+	action = goPageAbsences;
+}
+
+LnkGoPageHsupCcomp: WOHyperlink {
+	action = goPageHsupCcomp;
+}
+
+ImgEnCoursDeSuppression: WOImage {
+	filename = "images/greenled_croix.png";
+	framework = "app";
+	title = "Absence en cours de suppression";
+	width = "14";
+	height = "14";
+}
+
+ImgEnCoursDeValidation: WOImage {
+	filename = "images/yellowled.png";
+	framework = "app";
+	title = "Absence en cours de validation";
+	width = "14";
+	height = "14";
+}
+
+ImgValidee: WOImage {
+	filename = "images/greenled.png";
+	framework = "app";
+	title = "absence validee par un responsable";
+	width = "14";
+	height = "14";
+}
+
+ImgVisee: WOImage {
+	filename = "images/greenled_yellow.png";
+	framework = "app";
+	title = "Absence visee par un responsable";
+	width = "14";
+	height = "14";
+}
+
+ImgPlus: WOImage {
+	border = 0;
+	filename = "images/plus16.gif";
+	width = "16";
+	height = "16";
+}
+
+TipStatut: CRIToolTip {
+	htmlText = statutHtmlTip;
+}
+
+LnkDetailAbsence: WOHyperlink {
+	action = detaillerUneAbsence;
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=400,rezise=no,menubar=no,toolbar=no,location=no');FormFicheRose.submit();return false;";
+	target="_new";
+	disabled = isDisabled;
+	title = "Cliquer pour afficher plus de details sur cette absence";
+}
+
+LnkSaisieCongesComp: WOHyperlink {	
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=300,rezise=no,menubar=no,toolbar=no,location=no');FormFicheRose.submit();return false;";
+	target="_new";
+	title = "Saisir un conge compensateur d'heure supplementaire";
+	action = saisirOccupationCongesComp;
+	disabled = isDisabled;
+}
+
+LnkSaisieHeureSup: WOHyperlink {	
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=300,rezise=no,menubar=no,toolbar=no,location=no');FormFicheRose.submit();return false;";
+	target="_new";
+	title = "Saisir une heure supplementaire";
+	action = saisirOccupationHeureSup;
+	disabled = isDisabled;
+}
+
+LnkSaisieOccupation: WOHyperlink {	
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=300,rezise=no,menubar=no,toolbar=no,location=no');FormFicheRose.submit();return false;";
+	target="_new";
+	title = "Saisir une nouvelle absence/une nouvelle occupation";
+	action = saisirOccupationFicheRose;
+	disabled = isDisabled;
+}
+
+RepAbsencesFicheRose: WORepetition {
+	list = lesAbsencesFicheRose;
+	item = uneAbsence;
+	index = indexAbsence;
+}
+
+RepAbsencesCComp: WORepetition {
+	list = lesAbsencesCComp;
+	item = uneAbsence;
+	index = indexAbsence;
+}
+
+RepAbsencesHSup: WORepetition {
+	list = lesAbsencesHSup;
+	item = uneAbsence;
+	index = indexAbsence;
+}
+
+StrSoldeConges: WOString {
+	value=soldeConges;
+}
+
+StrA_HeuresCongesInitiales: WOString {
+	value = a_heuresCongesInitiales;
+}
+
+StrDureeComptabilise: WOString {
+	value= uneAbsence.dureeComptabilisee;
+}
+
+StrUneAbsenceMotif: WOString {
+	value = uneAbsence.motif;
+}
+
+StrPlanningReliquatInitial: WOString {
+	value = lePlanning.reliquatInitial;
+}
+
+StrSoldeReliquat: WOString {
+	value=soldeReliquats;
+}
+
+StrHeuresBilanNegatif: WOString {
+	value = heuresBilanNegatif;
+}
+
+StrLePlanningCongesGlobalRestants: WOString {
+	value = lePlanning.congesGlobalRestants;
+}
+
+StrCCompTotal: WOString {
+	value = cCompTotal;
+}
+
+StrCCompValid: WOString {
+	value = cCompValid;
+}
+
+StrHSupTotal: WOString {
+	value = hSupTotal;
+}
+
+StrHSupValid: WOString {
+	value = hSupValid;
+}
+
+StrD_heuresCongesInitiales: WOString {
+	value = d_heuresCongesInitiales;
+}
+
+StrE_reliquatInitialPositif: WOString {
+	value = e_reliquatInitialPositif;
+}
+
+CondHasJrti: WOConditional {
+	condition = hasJrti;
+}
+
+StrDebitJrti: WOString {
+	value = debitJrti;
+}
+
+StrG_heuresCongesInitialesApresJrti: WOString {
+	value = g_heuresCongesInitialesApresJrti;
+}
+
+StrF_heuresReliquatInitialesApresJrti: WOString {
+	value = f_heuresReliquatInitialesApresJrti;
+}
+
+CondHasBlocageReliquatsCet: WOConditional {
+	condition = hasBlocageReliquatsCet;
+}
+
+
+CondIsCetDecisionPrise: WOConditional {
+	condition = lePlanning.affectationAnnuelle.cetFactory.isEpargneCetDecisionPrise;
+}
+
+CondIsDemandeEpargneCetEnAttenteDeDecision: WOConditional {
+	condition = lePlanning.affectationAnnuelle.cetFactory.isEpargneCetDemandeEnAttenteDeDecision;
+}
+
+ImgBlocageReliquatEnAttenteDeDecision: WOImage {
+	filename = "images/yellowled.png";
+	framework = "app";
+	title = "Le blocage de reliquat n'a pas encore donn&eacute; lieu &agrave; une bascule en CET ...";
+	width = "14";
+	height = "14";
+}
+
+ImgBlocageReliquatBasculeEnCet: WOImage {
+	filename = "images/greenled.png";
+	framework = "app";
+	title = "Ce blocage de reliquat a &eacute;t&eacute; bascul&eacute; en CET";
+	width = "14";
+	height = "14";
+}
+
+StrDebitBlocageReliquatsCet: WOString {
+	value = debitBlocageReliquatsCet;
+}
+
+StrI_heuresCongesInitialesApresBlocageReliquatsCet: WOString {
+	value = i_heuresCongesInitialesApresBlocageReliquatsCet;
+}
+
+StrH_heuresReliquatInitialesApresBlocageReliquatsCet: WOString {
+	value = h_heuresReliquatInitialesApresBlocageReliquatsCet;
+}
+
+StrLePlanningDecompteLegal: WOString {
+	value = lePlanning.decompteLegal;
+}
+
+StrB_heuresCongesInitiales: WOString {
+	value = b_heuresCongesInitiales;
+}
+
+CRINoteBilan: CRINote {
+}
+
+StrHeuresBilan: WOString {
+	value = heuresBilan;
+}
+
+StrReliquatFinal: WOString {
+	value = reliquatFinal;
+}
+
+TipRegularisation: CRIToolTip {
+	htmlText = regularisationHtmlTip;
+}
+
+StrSigneRegularisation: WOString {
+	value = signeRegularisation;
+}
+
+StrLePlanningRegularistationEnHeures: WOString {
+	value = lePlanning.regularistationEnHeures;
+}
+
+StrDebitReliquatNegatif: WOString {
+	value = debitReliquatNegatif;
+}
+
+StrC_heuresCongesInitiales: WOString {
+	value = c_heuresCongesInitiales;
+}
+
+TrLigneAlternanceCouleur: WOGenericContainer {
+	elementName = "tr";
+	class = trLigneClass;
+}
+
+StrUneAbsenceType: WOString {
+	value=uneAbsence.type;
+}

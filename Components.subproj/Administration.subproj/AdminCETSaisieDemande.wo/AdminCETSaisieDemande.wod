@@ -1,0 +1,47 @@
+PopUpLesAnneeUniv: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	selection = lAnneeUnivSelectionnee;
+}
+
+FormSearchIndividuSaisieDemande: WOForm {
+	name = "FormSearchIndividuSaisieDemande";
+}
+
+SearchIndividuSaisieDemande: SearchIndividu {
+	individuSelected = individuSelected;
+}
+
+BtnSelectIndividuSaisieDemande: WOSubmitButton {
+	action = neFaitRien;
+	name = "BtnSelectIndividuSaisieDemande";
+	value = "Saisie d'une demande pour cet agent";
+	title = "Cliquer pour choisir cet agent";
+	class = "bouton";
+}
+
+CondIsIndividuSelected: WOConditional {
+	condition = individuSelected;
+}
+
+FormSelectAffAnn: WOForm {
+	name = "FormSelectAffAnn";
+}
+
+PopAffAnn: WOPopUpButton {
+	list = affAnnList;
+	item = affAnnItem;
+	selection = affAnnSelected;
+	title = "Liste des plannings";
+	onChange = "FormSelectAffAnn.submit();";
+}
+
+CondIsPlanningForAffAnnSelected: WOConditional {
+	condition = planningForAffAnnSelected;
+}
+
+PageCET1: PageCET {
+	lePlanning = planningForAffAnnSelected;
+	isForceSaisieAutorisee = true;
+}

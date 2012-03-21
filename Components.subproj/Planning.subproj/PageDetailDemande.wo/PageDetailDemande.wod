@@ -1,0 +1,77 @@
+Template: PageTemplate {
+	useToolTip = true;
+	pageTitle = "Detail de la demande";
+}
+
+FormDemande: WOForm {
+	multipleSubmit="true";
+	action=accepterLaDemande;
+}
+
+Demande: WOString {
+	// TODO value=laDemande.descriptif;
+	value=laDemande.libelle;
+}
+NomComplet: WOString {
+	value=session.lePlanningSelectionne.affectationAnnuelle.individu.nomComplet;
+}
+
+ButtonAccepterLaDemande: WOSubmitButton {
+	action=accepterLaDemande;
+	class="bouton";
+	value="Accepter";
+}
+ButtonRefuserLaDemande: WOSubmitButton {
+	action=refuserLaDemande;
+	class="bouton";
+	value="Refuser";
+}
+
+SubmitButton1: WOSubmitButton {
+	action = suspendreLaDemande;
+	class = "bouton";
+	value = "Ne pas decider";
+}
+
+FormAffectations: WOForm {
+	action = selectAffectation;
+	name = "FormAffectations";
+}
+PopupAffectations: WOPopUpButton {
+	list = lesAffectationsDuServiceRestantes;
+	item = lesAffectationsDuServiceRestantesItem;
+	displayString = lesAffectationsDuServiceRestantesItem.individu.nomComplet;
+	selection = lesAffectationsDuServiceRestantesSelection;
+	noSelectionString = "Individus du service";
+	onchange = "FormAffectations.submit();";
+}
+RepOngletAffectation: WORepetition {
+	list = lesAffectations;
+	item = lAffectation;
+	index = indexMenuItem;
+}
+TabMenu: WOGenericContainer {
+	elementName="td";
+	class=classTabMenu;
+}
+LinkAffectation: WOHyperlink {
+	action = selectAffectation;
+	string = libelleOnglet;
+}
+
+LePlanning: Plannings {
+	lePlanning = lePlanningLocal;
+	menuItems=laSession.menuItemsDetailDemande;
+	showMenu = false;
+}
+CondIsDemandePPrev: WOConditional {
+	condition = laDemande.isValidationPrev;
+}
+unHoraire: WOString {
+	value=unHoraire.toString;
+	escapeHTML=false;
+} 
+RepHoraires: WORepetition {
+	list = lesHoraires;
+	item = unHoraire;
+}

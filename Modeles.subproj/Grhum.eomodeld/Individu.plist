@@ -1,0 +1,139 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_CIVILITE"; 
+            externalType = VARCHAR2; 
+            name = cCivilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_PATRONYMIQUE"; 
+            externalType = VARCHAR2; 
+            name = nomJF; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = oid; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "IND_QUALITE"; 
+            externalType = VARCHAR2; 
+            name = qualite; 
+            valueClassName = NSString; 
+            width = 120; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOIndividu"; 
+    classProperties = (
+        nomJF, 
+        nom, 
+        persId, 
+        prenom, 
+        oid, 
+        repartComptes, 
+        cCivilite, 
+        tosElementCarriere, 
+        tosCET, 
+        qualite, 
+        tosEnfant, 
+        tosRepartEnfant, 
+        tosPreference, 
+        toVPersonnelActuel, 
+        tosContrat
+    ); 
+    externalName = "GRHUM.INDIVIDU_ULR"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (nomJF, nom, persId, prenom, oid, repartComptes); 
+    }; 
+    name = Individu; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = "ul_RepartCompte"; 
+            internalInfo = {"_nameInObjectStore" = "ul_RepartCompte"; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = repartComptes; 
+        }, 
+        {
+            destination = CET; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidIndividu; sourceAttribute = oid; }); 
+            name = tosCET; 
+        }, 
+        {
+            destination = Contrat; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = oid; }); 
+            name = tosContrat; 
+        }, 
+        {
+            destination = ElementCarriere; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = oid; }); 
+            name = tosElementCarriere; 
+        }, 
+        {definition = "tosRepartEnfant.toEnfant"; name = tosEnfant; }, 
+        {
+            destination = Preference; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidIndividu; sourceAttribute = oid; }); 
+            name = tosPreference; 
+        }, 
+        {
+            destination = RepartEnfant; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = oid; }); 
+            name = tosRepartEnfant; 
+        }, 
+        {
+            destination = VPersonnelActuel; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = oid; }); 
+            name = toVPersonnelActuel; 
+        }
+    ); 
+}

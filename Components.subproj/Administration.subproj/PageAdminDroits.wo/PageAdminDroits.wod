@@ -1,0 +1,43 @@
+SubMenu1: SubMenu {
+	ctrl = subMenuCtrl;
+}
+
+CondIsMenuDroitGestion: WOConditional {
+	condition = subMenuCtrl.isMenuDroitGestion;
+}
+
+AdminDroitGestion1: AdminDroitGestion {
+	
+}
+
+CondIsMenuDroitListe: WOConditional {
+	condition = subMenuCtrl.isMenuDroitListe;
+}
+
+PageAdminDroitsList1: PageAdminDroitsList {
+	
+}
+
+CondIsMenuPasseDroitListe: WOConditional {
+	condition = subMenuCtrl.isMenuPasseDroitListe;
+}
+
+AdminPasseDroitList1: AdminPasseDroitList {
+	
+}
+
+CondIsMenuDroitAdmin: WOConditional {
+	condition = subMenuCtrl.isMenuDroitAdmin;
+}
+
+AdminAdministrateur1: AdminAdministrateur {
+	
+}
+
+CondIsMenuDroitDRH: WOConditional {
+	condition = subMenuCtrl.isMenuDroitDRH;
+}
+
+AdminDRH1: AdminDRH {
+	
+}

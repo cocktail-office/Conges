@@ -1,0 +1,49 @@
+<webobject name= "FormOutilSynchronisation">
+	<table>
+		<webobject name = "CondShowLastTotalAffAnn">
+		<!-- le message indiquant le dernier total d'affectation annuelles crees -->
+		<tr>
+			<td>
+				<webobject name = "InfoTotalAffAnn">
+					Total affectations annuelles cr&eacute;&eacute;es : <b><webobject name = "StrTotalAffAnn"/></b><br>
+					Total p&eacute;riodes d'affectations annuelles cr&eacute;&eacute;es : <b><webobject name = "StrTotalPeriode"/></b><br>
+					D&eacute;tails :<br>
+					<webobject name = "StrLastMessage"/>
+				</webobject>
+			</td>
+		</tr>
+		</webobject>
+
+		<tr>
+			<td class="admBox">
+				<span title="Selectionnez l'ann&eacute;e universitaire sur laquelle vous allez faire la synchronisation">
+					<b>Ann&eacute;e universitaire &agrave; synchroniser :<webobject name="PopUpLesAnneeUniv"/></b>
+					<webobject name="BtnSync"/>	
+				</span>
+				<br>
+				<webobject name = "InfoSynchro">
+					Il est possible que certains plannings ne soient pas cr&eacute;&eacute;s sur une ann&eacute;e universitaire.<br><br>
+					<u>exemple :</u> autorisation de services dans "G&eacute;n&eacute;ral" sur l'ann&eacute;e universitaire suivante, 
+					puis saisie dans l'application de DRH des affectations/contrats avant le d&eacute;but de l'annee cit&eacute;e).<br><br>
+					Cette op&eacute;ration ne supprime aucun planning. 
+				</webobject>
+			</td>
+		</tr>
+	</table>
+	
+	<br/>
+	
+	<table>
+		<tr>
+			<td class="admBox">
+				<b>Arr&ecirc;ter l'application</b>
+				<webobject name="BtnArreterApplication"/>	
+				<br/>
+				<webobject name = "InfoArret">
+					L'application sera arr&ecirc;t&eacute;e imm&eacute;diatement.<br/>
+					Elle sera relanc&eacute;e automatiquement si l'instance est param&eacute;tr&eacute;e en <i>Auto Recover</i>.
+				</webobject>
+			</td>
+		</tr>
+	</table>
+</webobject>

@@ -1,0 +1,14 @@
+CRIDefaultPage1: CRIDefaultPage {
+	useToolTip = false;
+	pageTitle = "Création d'un fichier CSV"; 
+	hideFooter = true;
+}
+
+CondIsWorking: WOConditional {
+	condition = isWorking;
+}
+
+StrTexteEvolution: WOString {
+	value = strTexteEvolution;
+	escapeHTML = false;
+}

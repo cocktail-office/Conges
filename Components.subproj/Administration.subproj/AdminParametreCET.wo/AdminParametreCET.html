@@ -1,0 +1,110 @@
+<webobject name = "FormAnneeUnivCet">
+	<table align = "center">
+		<tr>
+			<td align="center">
+				<span title="Selectionnez l'ann&eacute;e universitaire sur laquelle vous allez faire des modifications">
+				<b>Ann&eacute;e universitaire :	<webobject name="PopUpLesAnneeUniv"/></b>
+				</span>
+				<br>
+				<font class="textNote">Les param&egrave;tres suivis de (a) sont annualis&eacute;s</font>
+			</td>
+		</tr>
+	</table>
+</webobject>
+
+
+<webobject name = "FormParametreParametreCet">
+
+	<webobject name = "BtnDoUpdateAllParametresHidden"/>
+
+	<table align = "center">
+		
+		<tr>
+			<td align="center">
+				<table>
+					<caption>Param&egrave;tres CET</caption>
+					<tr>
+						<td>
+							<span title="La date a partir de laquelle les agents peuvent faire leur demande de bascule en CET">Date debut demande&nbsp; : <webobject name = "CompParametreDebutDemandeCet"/></span>
+						</td>
+						<td>
+							<span title="La date limite a laquelle les agents peuvent faire leur demande de bascule en CET">Date fin demande&nbsp; :	<webobject name = "CompParametreFinDemandeCet"/></span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<span title = "La valeur minimum que l'agent doit avoir consomm&eacute; en cong&eacute; sur l'ann&eacute;e N-1 pour pr&eacute;tendre &agrave; une &eacute;pargne CET sur l'ann&eacute;e N (ce sera juste un avertissement si le seuil n'est pas atteint - valeur &agrave; ponderer &agrave; la quotit&eacute; d'affectation)";>
+								Seuil consommation ann&eacute;e N-1: <webobject name = "CompParametreSeuilCongesConsommesJour7h00Nm1PourEpargneCet"/> j. &agrave; 7h00
+							</span>
+						</td>
+						<td>
+							<span title = "La valeur minimum que l'agent doit avoir en reliquat pour pr&eacute;tendre &agrave; une &eacute;pargne CET sur l'ann&eacute;e N";>
+								Seuil reliquat ann&eacute;e N: <webobject name = "CompParametreSeuilReliquatHeuresPourEpargneCet"/>
+							</span>
+						</td>
+						<td colspan = "2">
+							<span title = "La valeur maximum que l'agent peut &eacute;pargner en CET sur l'ann&eacute;e N (valeur &agrave; ponderer &agrave; la quotit&eacute; d'affectation)";>
+								Plafond &eacute;pargne ann&eacute;e N: <webobject name = "CompParametrePlafondEpargneCet"/> j. &agrave; 7h00
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title = "Le statut doit &ecirc;tre disponible dans la base de donn&eacute;es (via les tables MANGUE.CARRIERE, MANGUE.CONTRAT ...)">
+								<webobject name = "CompParametreVerifierStatutDemandeEpargneCet"/>
+								Verifier le statut de l'agent pour le droit d'option (pas de RAFP pour les contractuels)
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title = "Le statut doit &ecirc;tre disponible dans la base de donn&eacute;es (via les tables MANGUE.CARRIERE, MANGUE.CONTRAT ...)">
+								<webobject name = "CompParametreAutoriserDemandeEpargneCetCddNonCdi"/>
+								Autoriser les demandes d'&eacute;pargne CET aux contractuels non CDI
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title = "En cas de non renoncement &agrave; l'ancien r&eacute;gime, faut-il bloquer les 20 premiers jours &eacute;pargn&eacute;s &agrave; &ecirc;tre maintenus en CET ?">
+								<webobject name = "CompParametreCetOptionAncienSystemeAuDela20Jours"/>
+								Ancien CET : droit d'option &agrave; partir du 20&egrave;me jour
+							</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<br>
+							Texte affich&eacute; suite &agrave; l'&eacute;dition de la demande CET<br/>
+							<webobject name = "CompParametreMessageEditionDemandeEpargneCet"/><br/>
+							<font class="textNote">
+								<b>NOTE:</b> le texte doit &eacute;tre en HTML (sans accents) et ne pas d&eacute;passer 2000 caract&egrave;res.
+							</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<br>
+							<webobject name = "CRINote1">
+							<b>R&egrave;gles statiques</b><br>
+							- 20 j. &agrave; 7h00 minimum disponibles en CET pour pouvoir demander une indemnisation et/ou un transfert en RAFP<br/>
+							- progression de 10 j. &agrave; 7h00 maximum si &gt; 20 j. &agrave; 7h00 &eacute;pargn&eacute;s<br/>
+							- progression de 20 j. &agrave; 7h00 maximum si &lt; 20 j. &agrave; 7h00 &eacute;pargn&eacute;s (maximis&eacute; &agrave; 30 j. d'&eacute;pargne)
+							</webobject>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "2">
+							<span title="Cette mention sera report&eacute;e sur l'&eacute;dition de la d&eacute;cision CET en cas d'acceptation, mais diff&eacute;rente &agrave; la demande">
+								&Eacute;dition : nom du pr&eacute;sident de l'&eacute;tablissement :	<webobject name = "CompParametreSignaturePresident"/>
+							</span>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+  <webobject name = "BtnDoUpdateAllParametres"/>
+</webobject>

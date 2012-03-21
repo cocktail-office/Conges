@@ -1,0 +1,81 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/CompServicesAffAnns.java, 
+           src/fr/univlr/cri/conges/IntPageAdminCreationAffAnn.java, 
+           src/fr/univlr/cri/conges/PageAdminCET.java, 
+           src/fr/univlr/cri/conges/PageAdminCongesSup.java, 
+           src/fr/univlr/cri/conges/PageAdminDroits.java, 
+           src/fr/univlr/cri/conges/PageAdminDroitsList.java, 
+           src/fr/univlr/cri/conges/PageAdminFermetures.java, 
+           src/fr/univlr/cri/conges/PageAdminHoraires.java, 
+           src/fr/univlr/cri/conges/PageAdminJrti.java, 
+           src/fr/univlr/cri/conges/PageAdminLogs.java, 
+           src/fr/univlr/cri/conges/PageAdminMessage.java, 
+           src/fr/univlr/cri/conges/PageAdminOutils.java, 
+           src/fr/univlr/cri/conges/PageAdminRelationDonnees.java, 
+           src/fr/univlr/cri/conges/PageAdminReliquats.java, 
+           src/fr/univlr/cri/conges/PageAdminServices.java, 
+           src/fr/univlr/cri/conges/PageAdministration.java, 
+           src/fr/univlr/cri/conges/PageDRHFermetures.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           CompServicesAffAnns.api, 
+           PageAdminCET.api, 
+           PageAdminCongesSup.api, 
+           PageAdminDroits.api, 
+           PageAdminDroitsList.api, 
+           PageAdminFermetures.api, 
+           PageAdminHoraires.api, 
+           PageAdminLogs.api, 
+           PageAdminMessage.api, 
+           PageAdminRelationDonnees.api, 
+           PageAdminReliquats.api, 
+           PageAdminServices.api, 
+           PageAdministration.api, 
+           PageDRHFermetures.api
+        );
+        WO_COMPONENTS = 
+        (
+           CompServicesAffAnns.wo, 
+           PageAdminCET.wo, 
+           PageAdminCongesSup.wo, 
+           PageAdminDroits.wo, 
+           PageAdminDroitsList.wo, 
+           PageAdminFermetures.wo, 
+           PageAdminHoraires.wo, 
+           PageAdminJrti.wo, 
+           PageAdminLogs.wo, 
+           PageAdminMessage.wo, 
+           PageAdminOutils.wo, 
+           PageAdminRelationDonnees.wo, 
+           PageAdminReliquats.wo, 
+           PageAdminServices.wo, 
+           PageAdministration.wo, 
+           PageDRHFermetures.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

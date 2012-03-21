@@ -1,0 +1,138 @@
+<webobject name = "FormParametreHoraire">
+  <webobject name = "BtnDoUpdateAllParametresHidden" />
+  <table align = "center" border = "1">
+    <caption>Types horaires</caption>
+    <tr>
+      <td rowspan = "3">
+        DURÉES HEBDOMADAIRES<br>
+        (&agrave; proratiser à la quotit&eacute; d'affectation)
+      </td>
+      <td>Minimum &agrave; r&eacute;aliser</td>
+      <td><webobject name = "CompParametreDureeHoraireHebdoMini" /></td>
+    </tr>
+    <tr>
+      <td>Maximum r&eacute;alisable</td>
+      <td><webobject name = "CompParametreDureeHoraireHebdoMaxi" /></td>
+    </tr>
+    <tr>
+      <td>Maximum r&eacute;alisable (pour les horaires &quot;hors-normes&quot;)</td>
+      <td><webobject name = "CompParametreDureeHoraireHebdoMaxiHorsNormes" /></td>
+    </tr>
+    <tr>
+      <td>AUTRES</td>
+      <td>
+      	Dur&eacute;e hebdomadaire forc&eacute;ment &eacute;gale aux dur&eacute;es des horaires types<br>
+        <font class = "textNote">Attention, fermer la session pour prise en compte de ce param&egrave;tre</font>
+      </td>
+      <td>
+        <webobject name = "CompParametreLockHorairesTypes" />
+      </td>
+    </tr>
+  </table>
+  <br />
+  <table align = "center" border = "1">
+    <caption>Spectre journalier</caption>
+    <tr>
+      <td rowspan = "3">MATIN</td>
+      <td>Heure d'embauche minimum</td>
+      <td><webobject name = "CompParametreAmDebutMini" /></td>
+    </tr>
+    <tr>
+      <td>Heure d'embauche maximum</td>
+      <td><webobject name = "CompParametreAmDebutMaxi" /></td>
+    </tr>
+    <tr>
+      <td>Heure de d&eacute;bauche minimum</td>
+      <td><webobject name = "CompParametrePauseMeridienneDebutMini" /></td>
+    </tr>
+    <tr>
+      <td rowspan = "3">MIDI</td>
+      <td>Pause RTT</td>
+      <td><webobject name = "CompParametrePauseRttDuree" /></td>
+    </tr>
+    <tr>
+      <td>Pause m&eacute;ridienne dur&eacute;e minimum (pause exclue)</td>
+      <td><webobject name = "CompParametrePauseMeridienneDureeMini" /></td>
+    </tr>
+    <tr>
+      <td>Pause RTT accord&eacute;e &agrave; partir de </td>
+      <td><webobject name = "CompParametrePauseRttGain" /> de temps de travail dans la journ&eacute;e</td>
+    </tr>
+    <tr>
+      <td rowspan = "3">APR&Egrave;S MIDI</td>
+      <td>Heure d'embauche maximum</td>
+      <td><webobject name = "CompParametrePauseMeridienneFinMaxi" /></td>
+    </tr>
+    <tr>
+      <td>Heure de d&eacute;bauche minimum</td>
+      <td><webobject name = "CompParametrePmFinMini" /></td>
+    </tr>
+    <tr>
+      <td>Heure de d&eacute;bauche maximum</td>
+      <td><webobject name = "CompParametrePmFinMaxi" /></td>
+    </tr>
+    <tr>
+    	<td>&nbsp;</td>
+    	<td>Dur&eacute;e maximum d'une 1/2j. de travail<br>
+    	<font class="textNote">Dur&eacute;e de la pause RTT inclue</font></td>
+      <td><webobject name = "CompParametreDemiJourneeDureeMaxi" /></td>
+    </tr>
+  </table>
+  <br />
+  <table align = "center" border = "1">
+    <caption>Bonifications</caption>
+    <tr>
+      <td rowspan = "5">HORAIRES JOURNALIERS</td>
+      <td>Coefficient de bonus du lundi au vendredi</td>
+      <td>1h = 
+        <webobject name = "CompParametreCoefDebordementBonus" />h</td>
+    </tr>
+    <tr>
+      <td>Heure d'embauche avant laquelle le temps est sujet &agrave; bonus</td>
+      <td><webobject name = "CompParametreDebutJourneeBonus" /></td>
+    </tr>
+    <tr>
+      <td>Heure de d&eacute;bauche apr&egrave;s laquelle le temps est sujet &agrave; bonus</td>
+      <td><webobject name = "CompParametreFinJourneeBonus" /></td>
+    </tr>
+    <tr>
+      <td>Total cumul&eacute; temps sujet &agrave; bonus pour d&eacute;clencher l'application le coefficient</td>
+      <td><webobject name = "CompParametreHeuresTravailleesMiniHorBonus" /></td>
+    </tr>
+    <tr>
+      <td>
+      	Coefficient pour les horaires du samedi matin<br>
+      	<font class = "textNote">(les 10 demi-journ&eacute;es du lundi au vendredi doivent &ecirc;tre travaill&eacute;es)</font>
+      </td>
+      <td>
+        1h = 
+        <webobject name = "CompParametreCoefSamediMatinBonus" />h
+      </td>
+    </tr>
+    <tr>
+      <td rowspan = "3">HEURES SUPPL&Eacute;MENTAIRES</td>
+      <td>Coefficient si intervient pendant les p&eacute;riodes sujettes &agrave; bonus</td>
+      <td>1h = 
+        <webobject name = "CompParametreCoefHsupDebordement" />h</td>
+    </tr>
+    <tr>
+      <td>
+      	Coefficient le samedi matin<br>
+      	<font class = "textNote">(les 10 demi-journ&eacute;es du lundi au vendredi doivent &ecirc;tre travaill&eacute;es)</font>
+     	</td>
+      <td>
+        1h = 
+        <webobject name = "CompParametreCoefHsupSamMat5j" />h
+      </td>
+    </tr>
+    <tr>
+      <td>Coefficient le samedi apr&egrave;s midi / dimanche / jours f&eacute;ri&eacute;s</td>
+      <td>
+        1h = 
+        <webobject name = "CompParametreCoefHsupSamApremDimJf" />h 
+      </td>
+    </tr>
+  </table>
+  
+  <webobject name = "BtnDoUpdateAllParametres"/>
+</webobject>

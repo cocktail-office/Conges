@@ -1,0 +1,121 @@
+PageTemplate: PageTemplate {
+	pageTitle = "Demandes en attente";
+}
+
+CngInfoBox1: CngInfoBox {
+}
+
+CondIsAffichageSurPlusieursPages: WOConditional {
+	condition = isAffichageSurPlusieursPages;
+}
+
+CRINavBarDisplayGroupStructuresDispoParNiveau: CRINavigationBar {
+	displayGroup = displayGroupStructuresDispoParNiveau;
+	longListLimit = 10;
+}
+
+RepServices: WORepetition {
+	list=displayGroupStructuresDispoParNiveau.displayedObjects;
+	item=structuresDispoParNiveauItem;
+}
+
+LinkNomService: WOHyperlink {
+	string = displayStructuresDispoParNiveauItem;
+	title = "Visualiser les plannings du service";
+	action = detaillerService;
+}
+
+CondHasAlertesAValider: WOConditional {
+	condition = pageDemande.totalAlertesAValider;
+}
+
+LinkNombreDemandesAValider: WOHyperlink {
+	title = "Visualiser les demandes";
+	action = pageDemande;
+	string = pageDemande.totalAlertesAValider;
+}
+
+CondNotHasAlertesAValider: WOConditional {
+	condition = pageDemande.totalAlertesAValider;
+	negate = true;
+}
+
+CondHasAlertesValidationDRH: WOConditional {
+	condition = pageDemande.totalAlertesValidationDRH;
+}
+
+LinkNombreDemandesAValider3: WOHyperlink {
+	title = "dont demandes a valider type' DRH'";
+	action = pageDemande;
+}
+
+StrTotalAlertesValidationDRH: WOString {
+	numberformat = "0";
+	value = pageDemande.totalAlertesValidationDRH;
+}
+
+CondHasAlertesAViser: WOConditional {
+	condition = pageDemande.totalAlertesAViser;
+}
+
+LinkNombreDemandesAViser: WOHyperlink {
+	title = "Visualiser les demandes";
+	action = pageDemande;
+	string = pageDemande.totalAlertesAViser;
+}
+
+CondNotHasAlertesAViser: WOConditional {
+	condition = pageDemande.totalAlertesAViser;
+	negate = true;
+}
+
+CondHasAlertesVisaDRH: WOConditional {
+	condition = pageDemande.totalAlertesVisaDRH;
+}
+
+LinkNombreDemandesAViser3: WOHyperlink {
+	title = "dont demandes a viser type' DRH'";
+	action = pageDemande;
+}
+
+StrTotalAlertesVisaDRH: WOString {
+	value = pageDemande.totalAlertesVisaDRH;
+}
+
+FormSearch: WOForm {
+	name = "FormSearch";
+	multipleSubmit = true;
+	action = doSearch;
+}
+
+TFSearchString: WOTextField {
+	value = searchString;
+	class = "searchField";
+	name = "TFSearchString";
+}
+
+CondSearchListCount: WOConditional {
+	condition = searchList.count;
+}
+
+RepSearchList: WORepetition {
+	list = searchList;
+	item = searchItem;
+}
+
+LnkSearchItem: WOHyperlink {
+	action = doSearchItemSelection;
+	title = "Cliquer pour afficher ce planning";
+}
+
+StrSearchItemService: WOString {
+	value = searchItem.structure.libelleCourt;
+}
+
+StrAffichageListePeriode: WOString {
+	value = searchItem.affichageListePeriode;
+}
+
+StrSearchItemNomComplet: WOString {
+	value = searchItem.individu.nomComplet;
+}

@@ -1,0 +1,80 @@
+<webobject name=Template>
+<SCRIPT TYPE="text/javascript">	window.name='pageprincipale';</SCRIPT>
+<webobject name="CondHasErreur">
+		<center>
+			<webobject name="CRINote1">
+				<table>
+					<tr>
+						<td align="center"><b><font color="#ff0000"><webobject name="StrTxtErreur"/></font></b></td>
+					</tr>
+				</table>
+			</webobject>
+		</center>
+	</webobject>
+	<webobject name="FormSelectService">
+	<table width="100%" border="1" cellspacing="0" cellpadding="0" bgcolor="#123fa9">
+		<tr>
+			<td>
+					<table width="100%" border="0" cellspacing="1" cellpadding="0" bgcolor="#ffffff">
+						<tr align="center" valign="center">
+							<th width="49%">
+								<webobject name = "FontStatutPlanning"><webobject name = "StrStatutPlanning"/></webobject>&nbsp;
+								<webobject name="TipHtmlTextInfoPlanning"><webobject NAME="ImgInfo"/></webobject>
+							</th>
+							<td width="1%" nowrap><b><webobject name="StrNomComplet"/></b></td>
+							<td width="1%"><webobject name="PopUpServices"/></td>
+							<td width="49%">&nbsp;
+								<webobject name="CondIsNotDisabled">
+									<webobject name="CondNotIsPTest">
+										<webobject name="CondIsValidationPPrevPossible">
+											<webobject name="BtnValiderPPrev"/>
+										</webobject>
+										<webobject name = "CondIsShowWarningValidationPlanningPrevisionnelImpossible">
+											<!-- message explicatif validation du previsionnel impossible -->
+											<webobject name = "TipWarningValidationPlanningPrevisionnelImpossible">
+												<webobject name = "ImgWarning"/> <font class="textError">Validation du pr&eacute;visionnel impossible ...</font>
+											</webobject>
+										</webobject>
+										<webobject name="CondIsDevalidationPPrevPossible">
+											<webobject name="BtnAnnulerDemandeValidationPPrev"/>
+										</webobject>
+										<webobject name="CondIsPReelDevalidable">
+											<webobject name="BtnDevaliderPReel"/>
+										</webobject>
+										<webobject name="CondIsPlanningValidable">
+											<webobject name="BtnValiderPReel"/>
+										</webobject>
+										<webobject name="CondIsAnnulationValidationPReelPossible">
+											<webobject name="BtnAnnulerDemandeValidationPReel"/>
+										</webobject>
+									</webobject>
+									<webobject name="CondIsPTest">
+										<webobject name="BtnRecopierReelToTest"/>
+									</webobject>
+								</webobject>
+								<webobject name="CondShowBtnAdminValider">
+									<webobject name="BtnAdminValider"/>
+								</webobject>
+								<webobject name="CondShowBtnAdminRazPlanning">
+									<webobject name="BtnAdminRazPlanning"/>
+								</webobject>
+							</td>
+							<td><webobject name="PdfBoxHoraire"/></td>
+						</tr>
+					</table>
+			</td>
+		</tr>
+	</table>
+	</webobject>
+	<webobject name="PlanningsComponent"/>
+	<!--popup d'erreur des 390 heures-->
+	<webobject name="CondShouldDisplayPlanningExceedAlert">
+		<webobject name="LayerPlanningExceedAlert"/>
+	</webobject>
+	<!--popup d'information (une seule fois par planning)-->
+	<webobject name="CondNotShouldDisplayPlanningExceedAlert">
+		<webobject name="CondShouldDisplayPlanningStateAlert">
+			<webobject name="LayerPlanningStateAlert"/>
+		</webobject>
+	</webobject>
+</webobject>

@@ -1,0 +1,58 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        vOccupationsSuiviDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = VOccupationsSuivi; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOAndQualifier; 
+                        qualifiers = (
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = toStructure; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = toStructure; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = toComposante; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = toComposante; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = dteDebutAnnee; 
+                                selectorName = "isEqualTo:"; 
+                                value = {"_key" = dteDebutAnnee; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = nomUsuel; 
+                                selectorName = "isLike:"; 
+                                value = {"_key" = nomUsuel; class = EOQualifierVariable; }; 
+                            }, 
+                            {
+                                class = EOKeyValueQualifier; 
+                                key = prenom; 
+                                selectorName = "isLike:"; 
+                                value = {"_key" = prenom; class = EOQualifierVariable; }; 
+                            }
+                        ); 
+                    }; 
+                }; 
+                fetchSpecificationName = fetchVOccupationSuivi; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = YES; 
+        }; 
+    }; 
+}

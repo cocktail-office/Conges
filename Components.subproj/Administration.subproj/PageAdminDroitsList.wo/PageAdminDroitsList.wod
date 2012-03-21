@@ -1,0 +1,94 @@
+PopUpTypeCible: WOPopUpButton {
+	displayString = typeCibleItemDisplay;
+	item = typeCibleItem;
+	list = TYPE_CIBLE_LIST;
+	noSelectionString = "-- type cible --";
+	selection = typeCibleSelected;
+	onChange = "this.form.submit();";
+	title = "Filtrer par le type de la cible du droit";
+}
+
+PopUpNiveauList: WOPopUpButton {
+	displayString = niveauItemDisplay;
+	item = niveauItem;
+	list = NIVEAU_LIST;
+	noSelectionString = "-- niveau --";
+	selection = niveauSelected;
+	onChange = "this.form.submit();";
+	escapeHTML = false;
+	title = "Filtrer selon le niveau d'acr&eacute;ditation";
+}
+
+CRINavBarDroit: CRINavigationBar {
+	displayGroup = droitDg;
+	longListLimit = 10;
+}
+
+LnkSortTitulaire: WOHyperlink {
+	action = goSortTitulaire;
+	title = "Classer";
+}
+
+TFTitulaire: WOTextField {
+	value = titulaire;
+	title = "Filtrer par le nom / pr&eacute;nom du titulaire du droit";
+	class = "searchField";
+}
+
+LnkSortCible: WOHyperlink {
+	action = goSortCible;
+	title = "Classer";
+}
+
+TFCible: WOTextField {
+	value = cible;
+	title = "Filtrer par le libell&eacute; de la cible du droit";
+	class = "searchField";
+}
+
+LnkSortNiveau: WOHyperlink {
+	action = goSortNiveau;
+	title = "Classer";
+}
+
+RepDroitDgDisplayedObjects: WORepetition {
+	item = droitItem;
+	list = droitDg.displayedObjects;
+}
+
+StrDroitTitulaire: WOString {
+	value = droitItem.toIndividuResp.nomComplet;
+}
+
+StrDroitTypeCibleLibelle: WOString {
+	value = droitItem.droitTypeCibleLibelle;
+}
+
+StrDroitCibleLibelle: WOString {
+	value = droitItem.droitCibleLibelle;
+}
+
+StrDroitNiveau: WOString {
+	value = droitItem.cdrNiveau;
+}
+
+BtnDoDeleteSelectedDroitList: WOImageButton {
+	title = "Supprimer les droits selectionn&eacute;s";
+	action = doDeleteSelectedDroitList;
+	class = "bouton";
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	height = "16"; 
+	name = "BtnDoDeleteSelectedDroitList";
+}
+
+FormDroit: WOForm {
+	name = "FormDroit";
+	multipleSubmit = true;
+	action = neFaitRien;
+}
+
+ChkDroit: WOCheckBox {
+	checked = isDroitItemChecked;
+}

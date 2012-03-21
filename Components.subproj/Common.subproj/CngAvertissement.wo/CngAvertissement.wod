@@ -1,0 +1,7 @@
+Image1: WOImage {
+	filename = "img/alert-exclam.gif";
+	framework = "CRIWebExt3";
+}
+
+ComponentContent1: WOComponentContent {
+}

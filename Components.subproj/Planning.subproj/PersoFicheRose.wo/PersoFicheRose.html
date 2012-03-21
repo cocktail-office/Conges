@@ -1,0 +1,309 @@
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td align="center" colspan="2">
+		<webobject name="CondIsNotVisuAbsences">
+			<table border="0" cellpadding="5">
+				<tr>
+					<td valign="middle" class="tab"><webobject name="LnkFoPageAbsences">Fiche	Rose</webobject></td>
+					<td valign="middle" class="selectedTab"><b>Heures Sup / Cong&eacute;s	Compensateurs</b></td>
+				</tr>
+			</table>
+		</webobject>
+		<webobject name="CondIsVisuAbsences">
+			<table border="0" cellpadding="5">
+				<tr>
+					<td valign="middle" class="selectedTab"><b>Fiche&nbsp;Rose</b></td>
+					<td valign="middle" class="tab"><webobject name="LnkGoPageHsupCcomp">Heures	Sup/Cong&eacute;s Compensateurs</webobject></td>
+				</tr>
+			</table>
+		</webobject>
+		<webobject name = "CondNotIsDisabled">
+			<br>
+			<webobject name="BoxInfoDetail">
+				Cliquez sur la date de d&eacute;but de l'absence pour avoir le d&eacute;tail du d&eacute;compte et faire des modifications.
+			</webobject>
+		</webobject>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><br/>
+		<webobject name="FormFicheRose">
+	
+			
+			<webobject name="CondIsVisuAbsences">
+			<table class="tableFicheRose">
+				<!-- Titre du tableau -->
+				<tr>
+					<th>Etat</th>
+					<th><webobject name = "TipColonneDateDebit"><webobject name = "ImgInfo"/></webobject>D&eacute;but</th>
+					<th>Fin</th>
+					<th nowrap>Dur&eacute;e R&eacute;elle(j)</th>
+					<th>Dur&eacute;e Compt.(j)</th>
+					<th>Type</th>
+					<th>Motif</th>
+					<th nowrap align="center"><webobject name = "TipColonneDebit"><webobject name = "ImgInfo"/></webobject>D&eacute;bit<br/>C+R</th>
+					<th align="center">Solde<br/>Cong&eacute;s</th>
+					<th align="center">Solde<br/>Reliquats</th>
+				</tr>
+				<!-- Droits initiaux -->
+				<webobject name = "TrLigneAlternanceCouleur">
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>Droits initiaux</td>
+					<td>&nbsp;</td>
+					<td class="droite"><webobject name="StrA_HeuresCongesInitiales"/></td>
+					<td class="droite"><webobject name="StrPlanningReliquatInitial"/></td>
+				</webobject>
+				<webobject NAME="CondHasRegularisation">
+					<!-- Regularisation de solde -->
+					<webobject name = "TrLigneAlternanceCouleur">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td><webobject name = "TipRegularisation"><webobject name = "ImgInfo"/> <b>R&eacute;gularisation de solde</b></webobject></td>
+						<td class="droite"><webobject name="StrSigneRegularisation"/><webobject name="StrLePlanningRegularistationEnHeures"/></td>
+						<td class="droite"><webobject name="StrB_heuresCongesInitiales"/></td>
+						<td class="droite"><webobject name="StrPlanningReliquatInitial"/></td>
+					</webobject>
+				</webobject>
+				<webobject name="CondIsReliquatNegatif">
+					<!-- Reliquat de conges negatif -->
+					<webobject name = "TrLigneAlternanceCouleur">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>D&eacute;compte de reliquat initial n&eacute;gatif</td>
+						<td class="droite"><webobject name="StrDebitReliquatNegatif"/></td>
+						<td class="droite"><webobject name="StrC_heuresCongesInitiales"/></td>
+						<td class="droite">00h00</td>
+					</webobject>
+				</webobject>
+				<webobject name="CondHasDecompteLegal">
+					<!-- Decompte du aux conges legaux -->
+					<webobject name = "TrLigneAlternanceCouleur">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>D&eacute;compte cong&eacute;s l&eacute;gaux</td>
+						<td class="droite"><webobject name="StrLePlanningDecompteLegal"/></td>
+						<td class="droite"><webobject name="StrD_heuresCongesInitiales"/></td>
+						<td class="droite"><webobject name="StrE_reliquatInitialPositif"/></td>
+					</webobject>
+				</webobject>
+				<webobject name="CondHasJrti">
+					<!-- Rachat de jours de conges -->
+					<webobject name = "TrLigneAlternanceCouleur">
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>JRTI</td>
+						<td>Jours de Repos Travaill&eacute;s indemnis&eacute;s</td>
+						<td class="droite"><webobject name = "StrDebitJrti"/></td>
+						<td class="droite"><webobject name = "StrG_heuresCongesInitialesApresJrti"/></td>
+						<td class="droite"><webobject name = "StrF_heuresReliquatInitialesApresJrti"/></td>
+					</webobject>
+				</webobject>
+				<webobject name="CondHasBlocageReliquatsCet">
+					<!-- Blocage de reliquats avant bascule en CET -->
+					<webobject name = "TrLigneAlternanceCouleur">
+						<td width="1%">
+							<webobject name = "CondIsDemandeEpargneCetEnAttenteDeDecision"><webobject name = "ImgBlocageReliquatEnAttenteDeDecision"/></webobject>
+							<webobject name = "CondIsCetDecisionPrise"><webobject name = "ImgBlocageReliquatBasculeEnCet"/></webobject>
+						</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						<td>Blocage de reliquats</td>
+						<td>
+							<webobject name = "CondIsDemandeEpargneCetEnAttenteDeDecision">Reliquats de cong&eacute;s en attente d'&eacute;pargne CET</webobject>
+							<webobject name = "CondIsCetDecisionPrise">Reliquats de cong&eacute; &eacute;pargn&eacute;s en CET</webobject>
+						</td>
+						<td class="droite"><webobject name = "StrDebitBlocageReliquatsCet"/></td>
+						<td class="droite"><webobject name = "StrI_heuresCongesInitialesApresBlocageReliquatsCet"/></td>
+						<td class="droite"><webobject name = "StrH_heuresReliquatInitialesApresBlocageReliquatsCet"/></td>
+					</webobject>
+				</webobject>
+				<!-- La liste de toutes les absences -->
+				<webobject name="RepAbsencesFicheRose">
+				<webobject name="TrLigneAlternanceCouleur">
+					<td width="1%">
+						<!-- icone indiquant l'etat de l'occupation -->
+						<webobject name="CondIsVisee"><webobject name="ImgVisee"></webobject></webobject>
+						<webobject name="CondIsEnCoursDeSuppression"><webobject name="ImgEnCoursDeSuppression"></webobject></webobject>
+						<webobject name="CondIsEnCoursDeValidation"><webobject name="ImgEnCoursDeValidation"></webobject></webobject>
+						<webobject name="CondIsValidee"><webobject name="ImgValidee"></webobject></webobject>
+					</td>
+					<td width="1%" class="gauche">
+						<webobject name = "TipStatut"><webobject name="LnkDetailAbsence"><webobject name="StrUneAbsenceDateDebutAmPm"/></webobject></webobject>
+					</td>
+					<td width="1%" class="gauche"><webobject name="StrUneAbsenceDateFinAmPm"/></td>
+					<td width="1%"><webobject name="StrUneAbsenceDuree"/></td>
+					<td><webobject name="StrDureeComptabilise"/></td>
+					<td><webobject name="StrUneAbsenceType"/></td>
+					<td><webobject name="StrUneAbsenceMotif"/></td>
+					<td width="1%" class="droite"><webobject name = "TipUneAbsenceDebit"><b><webobject name="StrUneAbsenceDebit"/></b></webobject></td>
+					<td width="1%" class="droite"><webobject name="StrSoldeConges"/></td>
+					<td width="1%" class="droite"><webobject name="StrSoldeReliquat"/></td>
+				</webobject>
+				</webobject>
+				<webobject name="CondIsBilanHSupCCompNegatif">
+				<webobject name="TrLigneAlternanceCouleur">
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>Bilan Heures supp / cong&eacute;s compensateurs</td>
+					<td>Bilan n&eacute;gatif</td>
+					<td class="droite"><webobject name="StrHeuresBilanNegatif"/></td>
+					<td class="droite"><webobject name="StrLePlanningCongesGlobalRestants"/></td>
+					<td class="droite"><webobject name="StrReliquatFinal"/></td>
+				</webobject>
+				</webobject>
+			</table>
+			<!-- lien de saisie d'une nouvelle occupation -->
+			<webobject name="CondNotIsDisabled">
+			<webobject name="CondIsPlanningValide"><br/>
+			<table style="border:dotted 1px #000; background-color:pink">
+				<tr>
+					<td valign="middle"><b><webobject name="LnkSaisieOccupation"><webobject name="ImgPlus"/></webobject></b></td>
+					<td valign="middle"><b><webobject name="LnkSaisieOccupation">Saisir une nouvelle occupation</webobject></b></td>
+				</tr>
+			</table>
+			</webobject>
+			</webobject>
+			</webobject>
+			
+			
+			
+			<webobject name="CondIsNotVisuAbsences">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td WIDTH="50%" VALIGN="TOP">
+					<table class="tableFicheRose">
+						<tr>
+							<th COLSPAN="5" ALIGN="CENTER" NOWRAP><i>Cong&eacute;s compensateurs</i></th>
+						</tr>
+						<tr>
+							<th>Etat</th>
+							<th>Date</th>
+							<th>D&eacute;but</th>
+							<th>Fin</th>
+							<th nowrap>Dur&eacute;e</th>
+						</tr>
+						<webobject name="RepAbsencesCComp">
+							<webobject name="TrLigneAlternanceCouleur">
+								<td WIDTH="1%">
+									<webobject name="CondIsVisee"><webobject name="ImgVisee"/></webobject>
+									<webobject name="CondIsEnCoursDeSuppression"><webobject name="ImgEnCoursDeSuppression"/></webobject>
+									<webobject name="CondIsEnCoursDeValidation"><webobject name="ImgEnCoursDeValidation"/></webobject>
+									<webobject name="CondIsValidee"><webobject name="ImgValidee"/></webobject>
+								</td>
+								<td><webobject name="LnkDetailAbsence"><webobject	name="StrUneAbsenceDateDebut"/></webobject></td>
+								<td><webobject name="StrUneAbsenceHeureMinuteDebut"/></td>
+								<td><webobject name="StrUneAbsenceHeureMinuteFin"/></td>
+								<td><webobject name="StrUneAbsenceDuree"/></td>
+							</webobject>
+						</webobject>
+					</table>
+					</td>
+					<td VALIGN="TOP">
+						<table class="tableFicheVerte">
+							<tr>
+								<th colspan="6" align="CENTER"><i>Heures suppl&eacute;mentaires</i></th>
+							</tr>
+							<tr>
+								<th>Etat</th>
+								<th>Date</th>
+								<th>D&eacute;but</th>
+								<th>Fin</th>
+								<th nowrap>Dur&eacute;e</th>
+								<th width="1%">Comptabilis&eacute;</th>
+							</tr>
+							<webobject name="RepAbsencesHSup">
+								<WEBOBJECT name="TrLigneAlternanceCouleur">
+									<td WIDTH="1%">
+										<webobject name="CondIsVisee"><webobject name="ImgVisee"/></webobject>
+										<webobject name="CondIsEnCoursDeSuppression"><webobject name="ImgEnCoursDeSuppression"/></webobject>
+										<webobject name="CondIsEnCoursDeValidation"><webobject name="ImgEnCoursDeValidation"/></webobject>
+										<webobject name="CondIsValidee"><webobject name="ImgValidee"/></webobject>
+									</td>
+									<td><webobject name="LnkDetailAbsence"><webobject	name="StrUneAbsenceDateDebut"/></webobject></td>
+									<td><webobject name="StrUneAbsenceHeureMinuteDebut"/></td>
+									<td><webobject name="StrUneAbsenceHeureMinuteFin"/></td>
+									<td><webobject name="StrUneAbsenceDuree"/></td>
+									<td><webobject name="StrUneAbsenceDebit"/></td>
+								</WEBOBJECT>
+							</webobject>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="CENTER"><br>
+					<b><i>Total : <webobject name="StrCCompTotal"/> (dont <webobject	name="StrCCompValid"/> valid&eacute;es)</i></b></td>
+					<td align="CENTER"><br>
+					<b><i>Total : <webobject name="StrHSupTotal"/> (dont <webobject	name="StrHSupValid"/> valid&eacute;es)</i></b></td>
+				</tr>
+				<tr>
+					<td>
+						<WEBOBJECT NAME="CondNotIsDisabled">
+							<webobject	name="CondIsPlanningValide"><br>
+							<table border="0" cellspacing="0" align="CENTER" style="BORDER:DOTTED;BORDER-WIDTH:1px" bgcolor="#ffc0cb">
+								<tr>
+									<td><b><webobject name="LnkSaisieCongesComp"><webobject	name="ImgPlus"/></webobject></b></td>
+									<td><b><webobject name="LnkSaisieCongesComp">Saisir	un cong&eacute; compensateur</webobject></b></td>
+								</tr>
+							</table>
+						</webobject>
+					</WEBOBJECT>
+					</td>
+					<td>
+						<WEBOBJECT NAME="CondNotIsDisabled">
+							<webobject	name="CondIsPlanningValide"><br/>
+							<table border="0" cellspacing="0" align="CENTER" style="BORDER:DOTTED;BORDER-WIDTH:1px" bgcolor="#90ee90">
+								<tr>
+									<td><b><webobject name="LnkSaisieHeureSup"><webobject	name="ImgPlus"/></webobject></b></td>
+									<td><b><webobject name="LnkSaisieHeureSup">Saisir	une heure suppl&eacute;mentaire</webobject></b></td>
+								</tr>
+							</table>
+							</webobject>
+						</WEBOBJECT>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<table>
+				<tr>
+					<td>
+						<webobject name = "CRINoteBilan">
+							<div align="center">Balance : <b><webobject name="StrHeuresBilan"/></b></div>
+						</webobject>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<font class="textNote">Attention, la balance ne tient compte que des heures <u>valid&eacute;es</u></font>
+			</webobject>
+			
+			
+		
+		</webobject>
+		</td>
+	</tr>
+</table>

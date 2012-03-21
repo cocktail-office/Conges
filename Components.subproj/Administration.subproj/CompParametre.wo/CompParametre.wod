@@ -1,0 +1,92 @@
+
+CondIsTypeInterfaceHeuresSansLimite: WOConditional {
+	condition = parametre.isTypeInterfaceHeuresSansLimite;
+}
+
+TimeFieldParametreSansLimite: CRITimeField {
+	fieldValue =  parametre.paramValueString;
+	fieldName = parametre.fullParamKey;
+	limit24h = false;
+}
+
+CondIsTypeInterfaceHeuresLimite24: WOConditional {
+	condition = parametre.isTypeInterfaceHeuresLimite24;
+}
+
+TimeFieldParametreSansLimite24: CRITimeField {
+	fieldValue = parametre.paramValueString;
+	fieldName = parametre.fullParamKey;
+	limit24h = false;
+}
+
+CondIsTypeInterfaceDate: WOConditional {
+	condition = parametre.isTypeInterfaceDate;
+}
+
+DatePickerDate: CRIDatePicker {
+	dateValue = parametre.paramValueNSTimestamp;
+}
+
+CondIsTypeInterfaceCaseACocher: WOConditional {
+	condition = parametre.isTypeInterfaceCaseACocher;
+}
+
+WOCheckBoxBoolean: WOCheckBox {
+	checked = parametre.paramValueBoolean;
+}
+
+CondIsTypeInterfaceTextfieldTexte: WOConditional {
+	condition = parametre.isTypeInterfaceTextfieldTexte;
+} 
+
+WOTextFieldTexte: WOTextField {
+	value = parametre.paramValueString;
+	maxLength = maxLength;
+	size = size;
+}
+
+CondIsTypeInterfaceTextfieldEntier: WOConditional {
+	condition = parametre.isTypeInterfaceTextfieldEntier;
+} 
+
+CondIsTypeInterfaceTextfield1NombreApresVirgule: WOConditional {
+	condition = parametre.isTypeInterfaceTextfield1NombreApresVirgule;
+} 
+
+WOTextFieldEntier: WOTextField {
+	value = parametre.paramValueInteger;
+	numberformat = "0";
+	size = 2;
+	maxlength = 3;
+}
+
+WOTextFieldFloat: WOTextField {
+	value = parametre.paramValueFloat;
+	numberformat = "0.0";
+	size = 3;
+	maxlength = 3;
+}
+
+CondIsTypeInterfaceZoneDeTexte: WOConditional {
+	condition = parametre.isTypeInterfaceZoneDeTexte;
+} 
+
+WOTextString: WOText {
+	value = parametre.paramValueString;
+	class = "zoneTexte";
+}
+
+
+CondIsTypeInterfacePopup: WOConditional {
+	condition = parametre.isTypeInterfacePopup;
+} 
+
+WOPopup: WOPopUpButton {
+	list = popupValueList;
+	item = popupItem;
+	selection = popupSelection;
+}
+
+CondIsAnnualise: WOConditional {
+	condition = parametre.isAnnualise;
+}

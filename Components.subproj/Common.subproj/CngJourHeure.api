@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CngJourHeure" wocomponentcontent="false">    <binding name="minutes"/>
+        <binding defaults="Boolean" name="showHeures"/>
+        <validation message="'showHeures' is a required binding.">
+            <unbound name="showHeures"/>
+        </validation>
+    <binding defaults="Boolean" name="showJours"/>
+        <validation message="'showJours' is a required binding.">
+            <unbound name="showJours"/>
+        </validation>
+    <binding name="minutesMax"/>
+        <binding name="jourList"/>
+    <binding name="showDefautHeures"/>
+    <validation message="'minutes' is a required binding.">
+            <unbound name="minutes"/>
+        </validation>
+    </wo>
+</wodefinitions>

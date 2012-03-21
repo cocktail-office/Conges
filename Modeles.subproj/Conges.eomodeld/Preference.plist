@@ -1,0 +1,51 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "OID_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = oidIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_PREFERENCE"; 
+            externalType = VARCHAR2; 
+            name = prfPreference; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }
+    ); 
+    attributesUsedForLocking = (oidIndividu); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOPreference"; 
+    classProperties = (dCreation, dModification, prfPreference, toIndividu); 
+    externalName = "CONGES.CNG_PREFERENCE"; 
+    fetchSpecificationDictionary = {}; 
+    name = Preference; 
+    primaryKeyAttributes = (oidIndividu); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidIndividu; }); 
+            name = toIndividu; 
+        }
+    ); 
+}

@@ -1,0 +1,89 @@
+CondShowTransparentDiv: WOConditional {
+	condition = showTransparentDiv;
+}
+
+StrOpenDivTransp: WOString {
+	value=transparentOpenDiv;
+	escapeHTML="false";
+}
+
+DivJour: WOGenericContainer {
+ 	elementName="div";
+	class = classeJour;
+	id = leJour.idCss;
+}
+
+StrJourLibelle: WOString {
+	value=leJour.libelle;
+}
+
+LnkPopupSaisieConges: LnkCngPopup {
+	action = clickJourSemaine;
+	disabled = isDisabledClicJour;
+	height = heightPopup;
+	lnkText = leJour.numero;
+	title = tipNoJour;
+}
+
+DivVac: WOGenericContainer {
+ 	elementName="div";
+	class = cssIdVac;
+}
+
+StrDureeJour: WOString {
+	value=leJour.dureeAffichee;
+	escapeHTML="false";
+	tip=leJour.dureeTravailEffectueEnHeures;
+}
+
+LnkCngPopupAssocier: LnkCngPopup {
+	action = parentPage.associerHoraire;
+	disabled = isSemainePasModifiable;
+	lnkText = leJour.numeroSemaine;
+	title = "Associer un horaire (cycle hebdomadaire) à cette semaine";
+}
+
+CondIsSemaineModifiable: WOConditional {
+	condition = isSemainePasModifiable;
+	negate = true;
+}
+
+StrPrefixeGras: WOString {
+	value = "<b>";
+	escapeHTML = false;
+}
+
+StrSuffixeGras: WOString {
+	value = "</b>";
+	escapeHTML = false;
+}
+
+CondShowToolTip: WOConditional {
+	condition = parentPage.showToolTipHoraire;
+}
+
+CondIsNotHoraireAssocie: WOConditional {
+	condition = isHoraireNonAssocie;
+	negate = true;
+}
+
+ToolTipHoraire: CRIToolTip {
+	htmlText = htmlTextHoraire;
+}
+
+ImgLoupe: WOImage {
+	border = 0;
+	height = 12;
+	src = "images/loupe16.gif";
+	width = 12;
+}
+
+StrCloseDivTransp: WOString {
+	value=transparentCloseDiv;
+	escapeHTML="false";
+}
+
+DivDureeJour: WOGenericContainer {
+ 	elementName="div";
+	class = leJour.classeDuree;
+}

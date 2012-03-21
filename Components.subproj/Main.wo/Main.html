@@ -1,0 +1,116 @@
+<webobject name = "PageTemplate1">
+  <div align = "center">
+    <table cellspacing = "5px">
+      <tr>
+        <td align = "right" rowspan = "2" valign = "middle">
+          <webobject name = "imgLogo"></webobject>
+        </td>
+        <td align = "CENTER" valign = "bottom" class = "mainTitle"><!--   &amp;amp;amp;nbsp;Gestion des cong&amp;amp;amp;eacute;s   -->
+HAmAC</td>
+      </tr>
+      <tr>
+        <td class = "textNote" colspan = "2">
+          H<font color = "#777777">oraires</font> Am<font color = "#777777">&eacute;nag&eacute;s en fonction<br />
+            de l'</font>A<font color = "#777777">RTT et des </font>C<font color = "#777777">ong&eacute;s</font>
+        </td>
+      </tr>
+    </table>
+    <webobject name = "imgLigneJaune"></webobject>
+  </div>
+  <webobject name = "CondNotIsBadNavigator">
+    <center>
+<!--    Identifier vous    -->
+      <webobject name = "CondMessagesEnCoursCount">
+        <br/>
+          <webobject name = "RepMessagesEnCours">
+            <webobject name = "CngInfoBox1">
+              <table>
+                <tr>
+                  <th colspan = "3" align = "CENTER">
+                    <webobject name = "StrTitre"></webobject>
+                    <i>
+                      (<webobject name = "StrDModification"></webobject>)
+                    </i>
+                  </th>
+                </tr>
+                <tr>
+                  <td align = "CENTER">
+                    <webobject name = "StrContenu"></webobject>
+                  </td>
+                </tr>
+              </table>
+            </webobject>
+            <br/>
+          </webobject>
+
+      </webobject>
+      <br />
+        <hr color = "#0069b3" style = "filter:alpha(opacity=100, finishopacity=0,style=1 )" width = "70%"/>
+          <webobject name = "CondAppUseCas">
+            <font class = "title">
+              <webobject name = "LnkCasLogin">Acc&eacute;der &agrave; l'application</webobject>
+            </font>
+            <br/>
+              <br/>
+                Une authentification sera demand&eacute;e si
+                <br>vous vous connectez pour la premi&egrave;re fois
+          </webobject>
+          <webobject name = "CondAppNotUseCas">
+            <table border = "0">
+              <tr valign = "middle">
+                <td>
+                  <webobject name = "imgClefs"></webobject>
+                </td>
+                <td class = "title">&nbsp;Identifiez vous...</td>
+              </tr>
+            </table>
+            <br/>
+              <br/>
+<!--    Line    -->
+<!--    Login    -->
+                <webobject name = "CRILogin"></webobject>
+          </webobject>
+<!--    Line    -->
+          <hr color = "#0069b3" style = "filter:alpha(opacity=100, finishopacity=0,style=1 )" width = "70%"/>
+<!--    Bas page    -->
+            <br/>
+              <webobject name = "CondLnkAppDTExists">
+                <i>
+                  Pour tout probl&egrave;me concernant l'application, merci de
+                  <br/>
+                    <u>vous connecter</u>
+                    &agrave; l'application DT pour
+                    <br/>
+                  <webobject name = "LnkAppDT">cr&eacute;er une Demande de Travaux
+                  </webobject>
+                </i>
+              </webobject>
+    </center>
+  </webobject>
+  <webobject name = "CondIsBadNavigator">
+    <p align = "CENTER">
+      Votre navigateur n'est pas compatible avec l'application Cong&eacute;s.<br/>
+    	Il doit imp&eacute;rativement mis &agrave; jour ...<br/><br/>
+    	Veuillez faire une demande de travaux aupr&egrave;s du <br/>
+      CRI&nbsp;pour cette mise &agrave; jour soit faite.<br/><br/>
+      <webobject name = "LnkAppDT">Faire une Demande deTravaux</webobject>
+    </p>
+  </webobject>
+  <br/>
+    <center>
+      <webobject name = "InfoBoxPerm">
+        <b>Informations permanentes</b><br/>
+      	<webobject name = "CondIsLinkTutorialExists">
+        	<br/><webobject name = "LnkTutorial">&raquo; Visionner les tutoriaux anim&eacute;s</webobject>
+      	</webobject>
+        <webobject name = "CondIsLinkCircuExists">
+          <br/><webobject name = "LnkCircu">&raquo; Consulter la circulaire sur l'ARTT</webobject>
+      	</webobject>
+      	<webobject name = "CondIsLinkDocExists">
+          <br/><webobject name = "LnkDoc">&raquo; Consulter la documentation</webobject>
+      	</webobject>
+      </webobject>
+    </center>
+    <p>&nbsp;</p>
+    <div align="center"><webobject name = "StrAppVersionDateInstanceInfo"/></div>
+</webobject>

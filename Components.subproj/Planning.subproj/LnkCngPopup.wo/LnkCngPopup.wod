@@ -1,0 +1,25 @@
+CondIsNotDisabled: WOConditional {
+	condition = disabled;
+	negate = true;
+}
+
+StrText: WOString {
+	value = lnkText;
+}
+
+CondIsDisabled: WOConditional {
+	condition = disabled;
+}
+
+ActionURL1: WOActionURL {
+	action = action;
+}
+
+StrTitle: WOString {
+	value = title;
+}
+
+StrHeight: WOString {
+	value = height;
+	numberformat = "0";
+}

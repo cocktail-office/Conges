@@ -1,0 +1,59 @@
+StrAnneeUnivReliquats: WOString {
+	value = anneeUnivReliquats;
+}
+
+PopUpEpargne: WOPopUpButton {
+	list = epargneList;
+	item = epargneItem;
+	selection = localEpargneSelected;
+	disabled = isDisabledPopUpEpargne;
+}
+
+CondShowBtnDoSelectEpargne: WOConditional {
+	condition = showBtnDoSelectEpargne;
+}
+
+BtnDoSelectEpargne: WOSubmitButton {
+	action = doSelectEpargne;
+	name = "BtnDoSelectEpargne";
+	value = "VALIDER";
+	title = "Cliquer pour choisir cette valeur de jours &agrave; &eacute;pargner";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+CondShowLnkDoUnSelectEpargne: WOConditional {
+	condition = showLnkDoUnSelectEpargne;
+}
+
+LnkDoUnSelectEpargne: WOHyperlink {
+	action = doUnSelectEpargne;
+	string = "modifier";
+	title = "Modifier la valeur des jours a &eacute;pargner";
+	escapeHTML = false;
+}
+
+CondIsSelectedEpargne: WOConditional {
+	condition = isSelectedEpargne;
+}
+
+StrAnneeUniv: WOString {
+	value = affAnn.annee;
+}
+
+StrCongesRestantsEnHeures: WOString {
+	value = congesRestantsEnHeures;
+}
+
+StrCongesRestantsEnJourA7h00: WOString {
+	value = congesRestantsEnJourA7h00;
+}
+
+StrCongesRestantsApresEpargneEnHeures: WOString {
+	value = congesRestantsApresEpargneEnHeures;
+}
+
+StrCongesRestantsApresEpargneEnJourA7h00: WOString {
+	value = congesRestantsApresEpargneEnJourA7h00;
+	numberformat = "0.00";
+}

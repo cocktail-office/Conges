@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = oidIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = l; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOCET"; 
+    classProperties = (individu, cETTransactions, dModification, dCreation); 
+    externalName = "CONGES.CNG_CET"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (individu, cETTransactions); 
+        "_nameInObjectStore" = "CONGES_NEW.CNG_CET"; 
+    }; 
+    name = CET; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = CETTransaction; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidCET; sourceAttribute = oid; }); 
+            name = cETTransactions; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidIndividu; }); 
+            name = individu; 
+        }
+    ); 
+}

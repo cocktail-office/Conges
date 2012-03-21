@@ -1,0 +1,82 @@
+FormAnneeUnivCet: WOForm {
+	name = "FormAnneeUnivCet";
+	action = neFaitRien;
+}
+
+PopUpLesAnneeUniv: WOPopUpButton {
+	item = strAnneeUnivItem;
+	list = strAnneeUnivArray;
+	onChange = "this.form.submit(); return false;";
+	selection = strAnneeUnivSelected;
+}
+
+FormParametreParametreCet: WOForm {
+	name = "FormParametreParametreCet";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+BtnDoUpdateAllParametresHidden: WOSubmitButton {
+	action = doUpdateAllParametres;
+	value = "Enregister";
+	style = "visibility:hidden;display:none";
+	name = "BtnDoUpdateAllParametresHidden";
+}
+
+CompParametreDebutDemandeCet: CompParametre {
+	anneeUniv = dateAnneeUnivSelected; 
+	parametre = parametreDebutDemandeCet;
+}
+
+CompParametreFinDemandeCet: CompParametre {
+	anneeUniv = dateAnneeUnivSelected;
+	parametre = parametreFinDemandeCet;
+}
+
+CompParametreSeuilCongesConsommesJour7h00Nm1PourEpargneCet: CompParametre {
+ 	anneeUniv = dateAnneeUnivSelected;
+	parametre = parametreSeuilCongesConsommesJour7h00Nm1PourEpargneCet;
+}
+
+CompParametreSeuilReliquatHeuresPourEpargneCet: CompParametre {
+	anneeUniv = dateAnneeUnivSelected;
+	parametre = parametreSeuilReliquatHeuresPourEpargneCet;
+}
+
+CompParametreSignaturePresident: CompParametre {
+	parametre = parametreSignaturePresident;
+}
+
+CompParametrePlafondEpargneCet: CompParametre {
+	anneeUniv = dateAnneeUnivSelected;
+	parametre = parametrePlafondEpargneCet;
+}
+
+CompParametreMessageEditionDemandeEpargneCet: CompParametre {
+	parametre = parametreMessageEditionDemandeEpargneCet;
+}
+
+CompParametreVerifierStatutDemandeEpargneCet: CompParametre {
+	parametre = parametreVerifierStatutDemandeEpargneCet;
+}
+
+CompParametreAutoriserDemandeEpargneCetCddNonCdi: CompParametre {
+	parametre = parametreAutoriserDemandeEpargneCetCddNonCdi;
+}
+
+CompParametreCetOptionAncienSystemeAuDela20Jours: CompParametre {
+	parametre = parametreCetOptionAncienSystemeAuDela20Jours;
+}
+
+CRINote1: CRINote {
+	
+}
+
+BtnDoUpdateAllParametres: WOImageButton {
+	action = neFaitRien;
+	title = "Enregistrer les modifications";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+	onclick = "BtnDoUpdateAllParametresHidden.click();";
+}

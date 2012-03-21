@@ -1,0 +1,140 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CAL_HASHCODE_VAL"; 
+            externalType = VARCHAR2; 
+            name = calHashcodeVal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 32; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CAL_HASHCODE_VIS"; 
+            externalType = VARCHAR2; 
+            name = calHashcodeVis; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 32; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = COMMENTAIRE; 
+            externalType = VARCHAR2; 
+            name = commentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLG_REPONSE"; 
+            externalType = VARCHAR2; 
+            name = flagReponse; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = OID; }; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "OID_AFF_ANNUELLE"; }; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_OCCUPATION"; 
+            externalType = NUMBER; 
+            name = oidOccupation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "TO_NUMBER(oid)"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = OID; }; 
+            name = oidR; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOAlerte"; 
+    classProperties = (
+        occupation, 
+        affectationAnnuelle, 
+        commentaire, 
+        libelle, 
+        flagReponse, 
+        dModification, 
+        dCreation, 
+        oidR, 
+        calHashcodeVis, 
+        calHashcodeVal
+    ); 
+    externalName = "CONGES.CNG_ALERTE"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (occupation, affectationAnnuelle, commentaire, libelle, flagReponse); 
+        "_nameInObjectStore" = "CNG_ALERTE"; 
+    }; 
+    name = Alerte; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = affectationAnnuelle; 
+        }, 
+        {
+            destination = Occupation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidOccupation; }); 
+            name = occupation; 
+        }
+    ); 
+}

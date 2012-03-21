@@ -1,0 +1,13 @@
+{
+    FetchRepartStructure = {
+        class = EOFetchSpecification; 
+        entityName = Repartition; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = oidStructure; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+        }; 
+    }; 
+}

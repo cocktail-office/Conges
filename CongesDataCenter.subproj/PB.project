@@ -1,0 +1,44 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/databus/CngAlerteBus.java, 
+           src/fr/univlr/cri/conges/databus/CngDataBus.java, 
+           src/fr/univlr/cri/conges/databus/CngDataCenter.java, 
+           src/fr/univlr/cri/conges/databus/CngDbTodoBus.java, 
+           src/fr/univlr/cri/conges/databus/CngDroitBus.java, 
+           src/fr/univlr/cri/conges/databus/CngHoraireBus.java, 
+           src/fr/univlr/cri/conges/databus/CngIndividuBus.java, 
+           src/fr/univlr/cri/conges/databus/CngMailTodoBus.java, 
+           src/fr/univlr/cri/conges/databus/CngOccupationBus.java, 
+           src/fr/univlr/cri/conges/databus/CngParametreBus.java, 
+           src/fr/univlr/cri/conges/databus/CngPlanningBus.java, 
+           src/fr/univlr/cri/conges/databus/CngStructureBus.java, 
+           src/fr/univlr/cri/conges/databus/CngUserInfo.java, 
+           src/fr/univlr/cri/conges/factory/CngCalculFactory.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WOAPP_RESOURCES = 
+        ();
+        WO_COMPONENTS = 
+        ();
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

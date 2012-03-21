@@ -1,0 +1,34 @@
+SubMenu1: SubMenu {
+	ctrl = subMenuCtrl;
+}
+
+CondIsMenuListeDemande: WOConditional {
+	condition = subMenuCtrl.isMenuListeDemande;
+}
+
+AdminCETListeDemande1: AdminCETListeDemande {
+	
+}
+CondIsMenuSaisieDemande: WOConditional {
+	condition = subMenuCtrl.isMenuSaisieDemande;
+}
+
+AdminCETSaisieDemande1: AdminCETSaisieDemande {
+	
+}
+
+CondIsMenuRegularisation: WOConditional {
+	condition = subMenuCtrl.isMenuRegularisation;
+}
+
+AdminCETRegularisation1: AdminCETRegularisation {
+	
+}
+
+CondIsMenuSituation: WOConditional {
+	condition = subMenuCtrl.isMenuSituation;
+}
+
+AdminCETSituation1: AdminCETSituation {
+	
+}

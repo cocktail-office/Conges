@@ -1,0 +1,56 @@
+SubMenu1: SubMenu {
+	ctrl = subMenuCtrl;
+}
+
+CondIsMenuServicesAutorises: WOConditional {
+	condition = subMenuCtrl.isMenuServicesAutorises;
+}
+
+PageAdminServices1: PageAdminServices {
+	
+}
+
+
+CondIsMenuHoraireTypes: WOConditional {
+	condition = subMenuCtrl.isMenuHoraireTypes;
+}
+
+PageAdminHoraires1: PageAdminHoraires {
+	
+}
+
+
+CondIsMenuTypeOccupation: WOConditional {
+	condition = subMenuCtrl.isMenuTypeOccupation;
+}
+
+PageAdminTypeOccupation1: PageAdminTypeOccupation {
+	
+}
+
+
+CondIsMenuParametres: WOConditional {
+	condition = subMenuCtrl.isMenuParametres;
+}
+
+AdminParametreParametres1: AdminParametreParametres {
+	
+}
+
+
+CondIsMenuHoraire: WOConditional {
+	condition = subMenuCtrl.isMenuHoraire;
+}
+
+AdminParametreHoraire1: AdminParametreHoraire {
+	
+}
+
+
+CondIsMenuCet: WOConditional {
+	condition = subMenuCtrl.isMenuCet;
+}
+
+AdminParametreCET1: AdminParametreCET {
+	
+}

@@ -1,0 +1,55 @@
+CondIsSelectedAffAnn: WOConditional {
+	condition = selectedAffAnn;
+}
+
+CompServicesAffAnns1: CompServicesAffAnns {
+	affAnnSelected = selectedAffAnn;
+}
+
+StrSelectedAffAnn: WOString {
+	value = selectedAffAnn;
+}
+
+StrSelectedAffAnnOid: WOString {
+	value = selectedAffAnn.oid;
+}
+
+LnkDeleteSelectedAffAnn: WOHyperlink {
+	action = deleteSelectedAffAnn;
+	title = "Cliquer pour effacer le planning de cet agent, pour ce service et cette ann&eacute;e universitaire";
+}
+
+ImgDeleteAffAnn: WOImage {
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	heigth = "16"; 
+	border = "0";
+}
+
+RepPeriodes: WORepetition {
+	list = selectedAffAnn.periodes;
+	item = period;
+}
+
+StrAffectionPourPeriode: WOString {
+	value = period.affectation;
+}
+
+CondAffAnnASupprimer: WOConditional {
+	condition = affAnnASupprimer.count;
+}
+
+RepAffAnnASuppimer: WORepetition {
+	list = affAnnASupprimer;
+	item = affAnn;
+}
+
+StrAffAnnASupprimer: WOString {
+	value = affAnn;
+}
+
+LnkDeleteAffAnn: WOHyperlink {
+	action = deleteAffAnn;
+	title = "Cliquer pour effacer ce planning";
+}

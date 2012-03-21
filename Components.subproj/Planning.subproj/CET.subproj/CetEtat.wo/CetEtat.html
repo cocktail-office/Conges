@@ -1,0 +1,249 @@
+<style type = "text/css">
+.transactionCredit td {
+	font-weight: bold;
+	font-size: 14px;
+	white-space: nowrap;
+}
+.date {
+	text-align: center;
+}
+.motif {
+	text-align: left;
+}
+.valeur {
+	text-align: right;
+	font-weight: bold;
+}
+.credit {
+	color: #099502;
+}
+.debit {
+	color: #bd0c0c;
+}
+.sousTotal {
+	font-size: 14px;
+}
+.total {
+	font-size: 16px;
+}
+.totalFinal {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: right;
+}
+</style>
+
+<br/>
+
+<table>
+	<tr>
+		<td>
+			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+				<tr>
+					<td>
+					
+						
+					<webobject name = "FormCetEtat">
+					
+					
+						<table border="0" cellpadding="2" cellspacing="1">
+							<caption class = "listboxHeader">Etat du CET</caption>
+							<tr class = "listboxHeader">
+								<th width="1%">Date de	valeur</th>
+								<th>Motif</th>
+								<th width="1%">Cr&eacute;dit</th>
+								<th width="1%">D&eacute;bit</th>
+								<webobject name = "CondIsModificationAutorisee">
+								<th/>
+								<th/>
+								</webobject>
+							</tr>
+							<webobject name="RepLesTransactions">
+								<tr class="listboxLine transactionCredit">
+									<td class="date">
+										<webobject name = "AncreTransactionItem"/>
+										<webobject name = "CondNotIsTheTransactionSelected">
+											<webobject name="StrDateValeur"/>
+										</webobject>
+										<webobject name = "CondIsTheTransactionSelected">
+											<webobject name = "DatePickerDateValeur"/>
+										</webobject>
+									</td>
+									<td class="motif">
+										<webobject name = "CondNotIsTheTransactionSelected">
+											<webobject name="StrMotif"/>
+										</webobject>
+										<webobject name = "CondIsTheTransactionSelected">
+											<webobject name = "TFTransactionSelectedMotif"/>
+										</webobject>
+									</td>
+									<td class="valeur credit sousTotal">
+										<webobject name = "CondNotIsTheTransactionSelected">
+											<webobject name="StrCreditEnHeures"/>
+										</webobject>
+										<webobject name = "CondIsTheTransactionSelected">
+											<webobject name = "TFTransactionSelectedCreditEnHeures"/>
+										</webobject>
+									</td>
+									<td/>
+									
+									<webobject name = "CondIsModificationAutorisee">
+									<td>
+										<webobject name = "CondShowBtnToModificationTransactionItem">
+											<webobject name = "BtnToModificationTransactionItem"/>
+										</webobject>
+										<webobject name = "CondShowBtnDoModificationTransactionItem">
+											<webobject name = "BtnDoModificationTransactionSelected"/>
+											<webobject name = "BtnToAnnulerModificationTransactionSelected"/>
+										</webobject>
+									</td>
+									
+									<td>
+										<webobject name = "CondIsShowBtnDoSuppressionTransactionItem">
+											<webobject name = "BtnDoSuppressionTransactionItem"/>
+										</webobject>
+									</td>
+									
+									</webobject>
+								</tr>
+								<webobject name = "RepDebitables">
+								
+								<tr class="listboxLine">
+									<td/>
+									<td class="motif">&raquo; <webobject name = "StrDebitableDisplayCet"/></td>
+									<td/>
+									<td class="valeur debit"><webobject name = "StrDebitForDebitable"/></td>
+									<webobject name = "CondIsModificationAutorisee">
+									<td/>
+									<td/>
+									</webobject>
+								</tr>
+								</webobject>
+								
+								<tr class="listboxLine">
+									<td colspan = "3"/>
+									<td class="valeur debit sousTotal">
+										<webobject name="StrDebitEnHeures"/>
+									</td>
+									<webobject name = "CondIsModificationAutorisee">
+									<td/>
+									<td/>
+									</webobject>
+								</tr>
+							</webobject>
+							
+							<tr class="listboxLine">
+								<td colspan="2"></td>
+								<td class="valeur credit total"><webobject name="StrTotalCredits"/></td>
+								<td class="valeur debit total"><webobject name="StrTotalDebits"/></td>
+								<webobject name = "CondIsModificationAutorisee">
+								<td/>
+								<td/>
+								</webobject>
+							</tr>
+							
+							
+							<tr class="listboxLine">
+								<td class="totalFinal" colspan="2">Solde final</td>					
+								<td class="totalFinal" colspan="2">		
+									<webobject name="StrTotalTransactionsEnHeures"/>
+								</td>
+								<webobject name = "CondIsModificationAutorisee">
+								<td/>
+								<td/>
+								</webobject>
+							</tr>
+							
+							
+						</table>
+			
+			
+					</webobject>
+			
+					</td>
+				</tr>
+			</table>
+		</td>
+		
+		<webobject name = "CondIsModificationAutorisee">
+		<webobject name="CondHasTransactions">
+		
+		
+		<td width="10px">&nbsp;</td>
+
+		<td valign="top">
+		
+			<table>
+				<caption>&Eacute;dition de la situation</caption>
+				<tr>						
+					<td align = "center">
+						<webobject name="FormDateArret">
+							Date de situation :
+							<webobject name="DatePickerArret"/>
+							<webobject name="BtnEcrireDansLePdf"/>
+						</webobject>
+					</td>
+				</tr>
+				<tr>
+					<td align = "center">
+						<webobject name="CngPdfBoxSituation"/>
+					</td>
+				</tr>
+			</table>
+			
+			<br>
+			<hr>
+				
+			<webobject name = "FormVidage">
+			<input type="hidden" value="bidon" name ="bidon"/>
+			<table>
+				<caption>
+					Vidage manuel du CET
+					<webobject name = "TipVidage"><webobject name = "ImgInfo"/></webobject>
+				</caption>
+				<tr>
+					<td title = "vider le solde restant de l'ancien r&eacute;gime en indemnisation">
+						<webobject name = "ChkIsVidageIndemnisationAncienRegime"/> vider l'ancien r&eacute;gime (indemnisation)
+					</td>
+				</tr>			
+				<tr>
+					<td title = "vider le solde restant de l'ancien r&eacute;gime en RAFP">
+						<webobject name = "ChkIsVidageTransfertRafpAncienRegime"/> vider l'ancien r&eacute;gime (transfert RAFP)
+					</td>
+				</tr>			
+				<tr>
+					<td title = "vider le solde restant de l'ancien r&eacute;gime et du r&eacute;gime p&eacute;renne en indemnisation">
+						<webobject name = "ChkIsVidageIndemnisation"/> vider tout le CET (indemnisation)
+					</td>
+				</tr>			
+				<tr>
+					<td title = "vider le solde restant de l'ancien r&eacute;gime et du r&eacute;gime p&eacute;renne en RAFP">
+						<webobject name = "ChkIsVidageTransfertRafp"/> vider tout le CET (transfert RAFP)
+					</td>
+				</tr>			
+				<tr>
+					<td>
+						<font class="textNote">
+							NOTE : le vidage se fait par rapport au restant sur le CET.<br>
+							Si vous changez les valeurs des	transactions, il faudra vider<br>
+							&agrave; nouveau pour que les nouvelles valeurs soient prises	en compte.
+						</font>
+					</td>
+				</tr>
+			</table>
+			</webobject>
+			
+			
+			
+		</td>
+		
+		</webobject>
+		</webobject>
+		
+	</tr>
+</table>
+
+
+<webobject name = "CondHasError">
+	<webobject name = "LayerErrorMessage"/>
+</webobject>

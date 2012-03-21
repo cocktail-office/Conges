@@ -1,0 +1,139 @@
+PageTemplate1: PageTemplate {
+	isPopup = true;
+	pageTitle = "Boite d'impression SIX";
+	useToolTip = false;
+}
+
+CondIsDicoOver: WOConditional {
+	condition = isDicoOver;
+}
+
+ImgOver: WOImage {
+	filename = "images/greenled.png";
+	framework = "app";
+	title = "Operation terminee";
+}
+
+CondNotIsDicoOver: WOConditional {
+	condition = isDicoOver;
+	negate = true;
+}
+
+CondIsDicoStep: WOConditional {
+	condition = isDicoStep;
+}
+
+ImgStep: WOImage {
+	filename = "images/Chargement.gif";
+	framework = "app";
+	title = "Operation en cours";
+}
+
+CondNotIsDicoStep: WOConditional {
+	condition = isDicoStep;
+	negate = true;
+}
+
+ImgNotStarted: WOImage {
+	filename = "images/yellowled.png";
+	framework = "app";
+	title = "Operation pas commencee";
+}
+
+StrTimeExecDico: WOString {
+	value = timeExecDico;
+}
+
+CondIsXmlOver: WOConditional {
+	condition = isXmlOver;
+}
+
+CondNotIsXmlOver: WOConditional {
+	condition = isXmlOver;
+	negate = true;
+}
+
+CondIsXmlStep: WOConditional {
+	condition = isXmlStep;
+}
+CondNotIsXmlStep: WOConditional {
+	condition = isXmlStep;
+	negate = true;
+}
+
+StrTimeExecXml: WOString {
+	value = timeExecXml;
+}
+
+CondIsSixOver: WOConditional {
+	condition = isSixOver;
+}
+
+CondNotIsSixOver: WOConditional {
+	condition = isSixOver;
+	negate = true;
+}
+
+CondIsErrSix: WOConditional {
+	condition = isErrSix;
+}
+
+CRINoteErrSix: CRINote {
+}
+
+StrErrSix: WOString {
+	value = strErrSix;
+}
+
+CondNotIsErrSix: WOConditional {
+	condition = isErrSix;
+	negate = true;	
+}
+
+CondHasEndingMessage: WOConditional {
+	condition = hasEndingMessage;
+}
+
+CRINoteEndingMessage: CngInfoBox {
+	
+}
+
+StrEndingMessage: WOString {
+	value = endingMessage;
+	escapeHTML = false;
+}
+
+
+CondIsSixStep: WOConditional {
+	condition = isSixStep;
+}
+
+CondNotIsSixStep: WOConditional {
+	condition = isSixStep;
+	negate = true;
+}
+
+StrTimeExecSix: WOString {
+	value = timeExecSix;
+}
+
+LnkGetPdf: WOHyperlink {
+	action = getPdfPage;
+	title = "T&eacute;l&eacute;charger le document g&eacute;n&eacute;r&eacute;";
+	target = "_blank";
+}
+
+ResultPdfNote: CRINote {
+	
+}
+
+StrFileName: WOString {
+	value = fileName;
+}
+
+ImgFichierPdf: WOImage {
+	filename = "images/FichierPDF.png";
+	framework = "app";
+	border = "0";
+	width = "16";
+}

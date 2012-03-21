@@ -1,0 +1,17 @@
+CondIsStrike: WOConditional {
+	condition = ^isStrike;
+}
+
+StrTagStrikeStart: WOString {
+	value = "<s>";
+	escapeHTML = false;
+}
+
+StrTagStrikeEnd: WOString {
+	value = "</s>";
+	escapeHTML = false;
+}
+
+Content: WOComponentContent {
+	
+}

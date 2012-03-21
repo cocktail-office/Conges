@@ -1,0 +1,54 @@
+<font class="title">
+	Solde avant option : <webobject name = "StrSoldeAvantOption"/>j. 
+	<webobject name = "CondHasEpargne">
+		+ demande d'&eacute;pargne de <webobject name = "StrEpargneJour"/>j.
+	</webobject>
+	<br/>
+	&raquo; exercice du droit d'option sur l'exc&eacute;dent de 20j. soit <webobject name = "StrOptionTotalJour"/>j.
+</font>
+<br/>
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+	<tr>
+		<td>
+			<table border="0" cellpadding="2" cellspacing="1">
+				<tr class = "listboxHeader">
+					<th>Rubrique</th>
+					<th>j. &agrave; 7h00</th>
+					<th/>
+				</tr>
+	
+				<tr class="listboxLine">
+					<td>Maintien en CET au del&agrave; 20j.</td>
+					<td align="right"><webobject name = "PopUpMaintienJour"/></td>
+					<td>
+						<webobject name = "CondShowBtnDoSelectMaintien"><webobject name = "BtnDoSelectMaintien"/></webobject>
+						<webobject name = "CondShowLnkDoUnSelectMaintien"><webobject name = "LnkDoUnSelectMaintien"/></webobject>
+
+						<webobject name = "CondIsSelectedOptionMaintien">
+							Solde du compte apr&egrave;s maintien : <webobject name = "StrSoldeApresOption"/>j.
+						</webobject>
+					</td>
+				</tr>
+	
+				<webobject name = "CondShowPopUpIndemnisation">
+					<tr class="listboxLine">
+						<td>Indemnisation</td>
+						<td align="right"><webobject name = "PopUpIndemnisationJour"/></td>
+						<td>
+							<webobject name = "CondShowBtnDoSelectIndemnisation"><webobject name = "BtnDoSelectIndemnisation"/></webobject>
+							<webobject name = "CondShowLnkDoUnSelectIndemnisation"><webobject name = "LnkDoUnSelectIndemnisation"/></webobject>
+						</td>
+					</tr>
+				</webobject>
+
+				<webobject name = "CondShowStrRafp">
+					<tr class="listboxLine">		
+						<td>Transfert en RAFP</td>
+						<td align="right"><webobject name = "StrOptionTransfertRafpJourSelected"/></td>
+						<td/>
+					</tr>
+				</webobject>
+			</table>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PersoHoraires" wocomponentcontent="false">
+
+		<binding name="lePlanning"/>
+
+		<validation message="&apos;lePlanning&apos; is a required binding">
+			<unbound name="lePlanning"/>
+		</validation>
+	</wo>
+</wodefinitions>

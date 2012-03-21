@@ -1,0 +1,24 @@
+TableBox: WOGenericContainer {
+	elementName = "table";
+	border = "0";
+	style = "border: 1px solid #555555; background: #EEEEEE";
+}
+
+LnkPrint: WOHyperlink {
+	action = doPrint;
+	target = "_blank";
+	title = printTip;
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=300,rezise=no,menubar=no,toolbar=no,location=no,scrollbars=yes');return false;";	
+}
+
+ImgPrinter: WOImage {
+	filename = "images/printer.gif";
+	framework = "app";
+	height = "16";
+	width = "16";
+	border = "0";
+}
+
+StrLabel: WOString {
+	value = printLabel;
+}

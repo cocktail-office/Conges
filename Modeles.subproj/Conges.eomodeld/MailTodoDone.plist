@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            columnName = "MTD_KEY"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DTD_KEY"; }; 
+            name = mtdKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MTD_REQ"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DTD_REQ"; }; 
+            name = mtdReq; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (mtdKey); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOMailTodoDone"; 
+    classProperties = (mtdKey, mtdReq); 
+    externalName = "CONGES.MAIL_TODO_DONE"; 
+    fetchSpecificationDictionary = {}; 
+    name = MailTodoDone; 
+    primaryKeyAttributes = (mtdKey); 
+}

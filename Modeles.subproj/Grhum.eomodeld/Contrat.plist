@@ -1,0 +1,66 @@
+{
+    attributes = (
+        {
+            columnName = "C_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = cTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            columnName = "D_DEB_CONTRAT_TRAV"; 
+            externalType = DATE; 
+            name = dDebContratTrav; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_FIN_CONTRAT_TRAV"; 
+            externalType = DATE; 
+            name = dFinContratTrav; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_SEQ_CONTRAT"; 
+            externalType = NUMBER; 
+            name = noSeqContrat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEM_ANNULATION"; 
+            externalType = VARCHAR2; 
+            name = temAnnulation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noSeqContrat); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOContrat"; 
+    classProperties = (cTypeContratTrav, dDebContratTrav, dFinContratTrav, temAnnulation, toIndividu); 
+    externalName = "GRHUM.CONTRAT"; 
+    fetchSpecificationDictionary = {}; 
+    name = Contrat; 
+    primaryKeyAttributes = (noSeqContrat); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noDossierPers; }); 
+            name = toIndividu; 
+        }
+    ); 
+    restrictingQualifier = "temAnnulation = 'N'"; 
+}

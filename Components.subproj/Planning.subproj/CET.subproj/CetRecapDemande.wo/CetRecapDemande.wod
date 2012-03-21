@@ -1,0 +1,101 @@
+CondIsExerciceDroitOptionAncienRegime: WOConditional {
+	condition = isExerciceDroitOptionAncienRegime;
+}
+
+StrTotalJourConcerneAncienRegimeJoursA7h00: WOString {
+	value = totalJourConcerneAncienRegimeJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDemandeTransfertRafpAncienRegimeJourA7h00Arrondi: WOString {
+	value = affAnn.toMouvementCetDemandeTransfertRafpAncienRegime.mouvementJoursA7h00Arrondi;
+	numberformat = "0";
+}
+
+StrDemandeIndemnisationAncienRegimeJourA7h00Arrondi: WOString {
+	value = affAnn.toMouvementCetDemandeIndemnisationAncienRegime.mouvementJoursA7h00Arrondi;
+	numberformat = "0";
+}
+
+StrDemandeMaintienCetAncienRegimeJourA7h00: WOString {
+	value = affAnn.toMouvementCetDemandeMaintienCetAncienRegime.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrTotalJourConcerneAncienRegimeHeures: WOString {
+	value = totalJourConcerneAncienRegimeHeures;
+}
+
+StrDemandeTransfertRafpAncienRegimeHeures: WOString {
+	value = affAnn.toMouvementCetDemandeTransfertRafpAncienRegime.mouvementHeures;
+}
+
+StrDemandeIndemnisationAncienRegimeHeures: WOString {
+	value = affAnn.toMouvementCetDemandeIndemnisationAncienRegime.mouvementHeures;
+}
+
+StrDemandeMaintienCetAncienRegimeHeures: WOString {
+	value = affAnn.toMouvementCetDemandeMaintienCetAncienRegime.mouvementHeures;
+}
+
+StrDemandeTransfertRegimePerenneJoursA7h00: WOString {
+	value = affAnn.toMouvementCetDemandeTransfertRegimePerenne.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrAnneeUnivNm1: WOString {
+	value = strAnneeUnivNm1;
+}
+
+StrDemandeEpargneJoursA7h00: WOString {
+	value = affAnn.toMouvementCetDemandeEpargne.mouvementJoursA7h00;
+	numberformat = "0";
+}
+
+StrTotalJourConcerneJoursA7h00: WOString {
+	value = totalJourConcerneJoursA7h00;
+	numberformat = "0";
+}
+
+StrDemandeTransfertRafpJourA7h00Arrondi: WOString {
+	value = affAnn.toMouvementCetDemandeTransfertRafp.mouvementJoursA7h00Arrondi;
+	numberformat = "0";
+}
+
+StrDemandeIndemnisationJourA7h00Arrondi: WOString {
+	value = affAnn.toMouvementCetDemandeIndemnisation.mouvementJoursA7h00Arrondi;
+	numberformat = "0";
+}
+
+StrDemandeMaintienCetJourA7h00Arrondi: WOString {
+	value = affAnn.toMouvementCetDemandeMaintienCet.mouvementJoursA7h00Arrondi;
+	numberformat = "0";
+}
+
+StrDemandeTransfertRafpHeures: WOString {
+	value = affAnn.toMouvementCetDemandeTransfertRafp.mouvementHeures;
+}
+
+StrDemandeIndemnisationHeures: WOString {
+	value = affAnn.toMouvementCetDemandeIndemnisation.mouvementHeures;
+}
+
+StrDemandeMaintienCetJourHeures: WOString {
+	value = affAnn.toMouvementCetDemandeMaintienCet.mouvementHeures;
+}
+
+StrTotalJourConcerneHeures: WOString {
+	value = totalJourConcerneHeures;
+}
+
+CondIsDemandeTransfertVersRegimePerenne: WOConditional {
+	condition = affAnn.toMouvementCetDemandeTransfertRegimePerenne.mouvementMinutes;
+}
+
+CondIsDemandeEpargne: WOConditional {
+	condition = affAnn.toMouvementCetDemandeEpargne.mouvementMinutes;
+}
+
+CondIsDemandeExercieDroitDOption: WOConditional {
+	condition = isExerciceDroitOption;
+}

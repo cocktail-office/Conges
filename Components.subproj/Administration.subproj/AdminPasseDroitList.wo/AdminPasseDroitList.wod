@@ -1,0 +1,155 @@
+FormNavBar: WOForm {
+	name = "FormNavBar";
+}
+
+CRINavBarAffAnn: CRINavigationBar {
+	displayGroup = affectationAnnuelleDg;
+	longListLimit = 20;
+}
+
+
+FormAdminPasseDroitListAnneeUniv: WOForm {
+	name = "FormAdminPasseDroitListAnneeUniv";
+	action = neFaitRien;
+}
+
+PopUpLesAnneeUniv: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	onChange = "FormAdminPasseDroitListAnneeUniv.submit();";
+	selection = lAnneeUnivSelectionnee;
+}
+
+
+FormAdminPasseDroitListFiltre: WOForm {
+	name = "FormAdminPasseDroitListFiltre";
+	action = neFaitRien;
+} 
+
+ChkIsVoirUniquementAgentPasseDroit: WOCheckBox {
+	checked = isVoirUniquementAgentPasseDroit;
+	onClick = "FormAdminPasseDroitListFiltre.submit();";
+}
+
+
+
+FormAdminPasseDroitList: WOForm {
+	name = "FormAdminPasseDroitList";
+	multipleSubmit = true;
+	action = neFaitRien;
+}
+
+BtnEnregistrer: WOSubmitButton {
+	value = "BOUTON CACHE ENREGISTRER";
+	action = sauvegarde;
+	style = "visibility:hidden;display:none";
+	name = "BtnEnregistrer";
+}
+
+RepAffAnn: WORepetition {
+	list = affectationAnnuelleDg.displayedObjects;
+	item = affectationAnnuelleItem;
+}
+
+SpanStrComposante: WOGenericContainer {
+	elementName = "span";
+	title = affectationAnnuelleItem.structure.toComposante.libelleLong;
+}
+
+StrComposante: WOString {
+	value = affectationAnnuelleItem.structure.toComposante.libelleCourt;
+}
+
+SpanStrService: WOGenericContainer {
+	elementName = "span";
+	title = affectationAnnuelleItem.structure.libelleLong;
+}
+
+StrService: WOString {
+	value = affectationAnnuelleItem.structure.libelleCourt;
+}
+
+SpanOidAffAnn: WOGenericContainer {
+	elementName = "span";
+	title = affectationAnnuelleItem.oid;
+}
+
+StrNomComplet: WOString {
+	value = affectationAnnuelleItem.individu.nomComplet;
+}
+
+ChkIsDepSemHautes: WOCheckBox {
+	checked = affectationAnnuelleItem.isDepSemHautes;
+	onClick = "BtnEnregistrer.click();";
+}
+
+ChkIsHorsNorme: WOCheckBox {
+	checked = affectationAnnuelleItem.isHorsNorme;
+	onClick = "BtnEnregistrer.click();";
+}
+
+ChkIsPasseDroit: WOCheckBox {
+	checked = affectationAnnuelleItem.isPasseDroit;
+	onClick = "BtnEnregistrer.click();";
+}
+
+ChkIsDepassementCongesAutorise: WOCheckBox {
+	checked = affectationAnnuelleItem.isDepassementCongesAutorise;
+	onClick = "BtnEnregistrer.click();";
+}
+
+ChkIsTempsPartielAnnualise: WOCheckBox {
+	checked = affectationAnnuelleItem.isTempsPartielAnnualise;
+	onClick = "BtnEnregistrer.click();";
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+}
+
+ToolTipComposante: CRIToolTip {
+	htmlText = "Composante d'appartenance. Survoler le libell&eacute; pour afficher le nom &quot;long&quot; de la composante.";
+}
+
+ToolTipService: CRIToolTip {
+	htmlText = "Service d'appartenance. Survoler le libell&eacute; pour afficher le nom &quot;long&quot; du service.";
+}
+ToolTipAgent: CRIToolTip {
+	htmlText = "Agent concern&eacute;. Survoler le libell&eacute; pour afficher le OID de la table CONGES.PLNG_AFF_ANN (utile pour l'administrateur).";
+}
+
+ToolTipDep: CRIToolTip {
+	htmlText = htmlTipDepConges;
+}
+
+ToolTipHorsNormes: CRIToolTip {
+	htmlText = htmlTipHorsNorme;
+}
+
+ToolTipPasseDroit: CRIToolTip {
+	htmlText = htmlTipPasseDroit;
+}
+
+ToolTipTPA: CRIToolTip {
+	htmlText = htmlTipTPA;
+}
+
+ToolTipSemHautes: CRIToolTip {
+	htmlText = htmlTipDepSemHautes;
+}
+
+
+FormSearch: WOForm {
+	name = "FormSearch";
+	action = neFaitRien;
+}
+
+TFSearchString: WOTextField {
+	value = searchString;
+	class = "searchField";
+	title = "Entrez le nom et/ou pr&eacute;nom d'un agent pour lancer la recherche";
+}

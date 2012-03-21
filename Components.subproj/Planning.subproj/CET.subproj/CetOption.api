@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CetOption" wocomponentcontent="false">    <binding name="affAnn"/>
+        <validation message="'affAnn' is a required binding.">
+            <unbound name="affAnn"/>
+        </validation>
+        <binding name="epargneJour"/>
+        <binding defaults="Boolean" name="disabled"/>
+        <validation message="'disabled' is a required binding.">
+            <unbound name="disabled"/>
+        </validation>
+        <binding name="optionMaintienJourSelected"/>
+        <binding name="optionIndemnisationJourSelected"/>
+        <binding name="optionTransfertRafpJourSelected"/>
+        <validation message="'optionIndemnisationJourSelected' is a required binding.">
+            <unbound name="optionIndemnisationJourSelected"/>
+        </validation>
+        <validation message="'optionMaintienJourSelected' is a required binding.">
+            <unbound name="optionMaintienJourSelected"/>
+        </validation>
+        <validation message="'optionTransfertRafpJourSelected' is a required binding.">
+            <unbound name="optionTransfertRafpJourSelected"/>
+        </validation>
+    <binding defaults="Boolean" name="isSelectedOptionMaintien"/>
+    <binding defaults="Boolean" name="isSelectedOptionIndemnisation"/>
+    
+        
+        
+    <validation message="'epargneJour' is a required binding.">
+            <unbound name="epargneJour"/>
+        </validation>
+    <validation message="'isSelectedOptionIndemnisation' is a required binding.">
+            <unbound name="isSelectedOptionIndemnisation"/>
+        </validation>
+        <validation message="'isSelectedOptionMaintien' is a required binding.">
+            <unbound name="isSelectedOptionMaintien"/>
+        </validation>
+    
+        
+    <binding name="transfertAncienCetMinutes"/>
+        <validation message="'transfertAncienCetMinutes' is a required binding.">
+            <unbound name="transfertAncienCetMinutes"/>
+        </validation>
+    </wo>
+</wodefinitions>

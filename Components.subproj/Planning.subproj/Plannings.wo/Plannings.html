@@ -1,0 +1,134 @@
+<webobject name="CondShowMenu">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td valign="top">
+				<table align="center" cellpadding="0" cellspacing="0">
+					<tr>
+					<td></td>
+						<webobject name="RepMenu">
+							<webobject name="TabMenu">
+								<webobject name="CondIsToolTipMenuVisible">
+									<webobject name="ToolTipMenu">
+										<webobject name="ImgImportant"/>
+									</webobject>&nbsp;&nbsp;
+								</webobject>
+								<webobject name="LinkMenu">
+									<webobject name="LibelleTabMenu"/>
+								</webobject>
+							</webobject>
+						</webobject>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</webobject>
+
+<center>
+	<webobject name="CondShowPlanning">
+			<FORM ONSUBMIT="return false;" NAME="FormCalculs"><INPUT TYPE=HIDDEN VALUE=bidon><table class="tablePlanning" cellspacing=2 cellpadding=0>
+					<tr>
+						<td>
+							<div STYLE="text-align:left; background-color: white; border-right:1px dotted #000">
+								<label><webobject name="CheckAffHoraire"/>horaires</label><br/>
+								<label><webobject name="CheckAffOccupation"/>occupations</label>&nbsp;&nbsp;
+							</div>
+						</td>
+						<td>
+							<table CLASS=tableChiffres CELLPADDING=0 ALIGN=CENTER>
+								<tr>
+									<td>
+										<table CELLPADDING=0 CELLSPACING=0 WIDTH=100%% BORDER=0 BGCOLOR=#e2e2f4>
+											<tr>
+												<td align="left" width="1%" nowrap><i>Heures initiales :</i> &nbsp;&nbsp;&nbsp;</td>
+												<td nowrap align="right">Associ&eacute;es : <b><webobject name="StrHeuresAssociees"/></b>&nbsp;&nbsp;&nbsp;</td>
+												<td align=CENTER nowrap>Dues : <b><webobject name="StrHeuresDues"/></b>&nbsp;&nbsp;&nbsp;</td>
+												<td align=CENTER>&nbsp;Maximums : <b><webobject name="StrHeuresMax"/></b>&nbsp;&nbsp;&nbsp;</td>
+												<td align=CENTER><webobject name="CondIsLimiteCongesDepassee">&nbsp;<b><font class="textError">D&eacute;passement :	<webobject name="StrCongesDepassement"/></font></b>&nbsp;&nbsp;&nbsp;</webobject></td>
+												<td nowrap align=CENTER>&nbsp;Droit	&agrave; cong&eacute;s : <b><webobject name="StrCongesInitiauxEnHeures"/>&nbsp;&nbsp;(<webobject name="DivCongesInitiauxJours">#CONGES_INITIAUX_JOURS#</webobject>j.)</b>&nbsp;&nbsp;&nbsp;
+													(<webobject name="CondIsReliquatNegatif">dont</webobject><webobject name="CondIsNotReliquatNegatif">+</webobject>&nbsp;reliquat:&nbsp;<b><webobject name="StrReliquatInitial"/></b>)</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>	
+									<td>
+										<table CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0" BGCOLOR="white">
+											<tr>
+												<td align="left" width="1%" nowrap><i>Heures restantes :&nbsp;&nbsp;&nbsp;</i></td>
+												<td width="1%" align="right">Cong&eacute;s :&nbsp;<b><font color="green"><webobject name="StrCongesGlobalRestants"/></font></b>&nbsp;&nbsp;<b>(<webobject name="DivCongesRestantsJours">#CONGES_RESTANTS_JOURS#</webobject>j.)</b>&nbsp;&nbsp;&nbsp;</td>
+												<td>&nbsp;&nbsp;+Reliquats :&nbsp;<b><font color="green"><webobject name="StrReliquatRestant"/></font>&nbsp;&nbsp;</b><B>&nbsp;(<webobject name="DivReliquatsRestantsJours">#RELIQUATS_RESTANTS_JOURS#</webobject>j.)</B>
+													<webobject name="ToolTipReliquat"><webobject name="ImgInfo"/></webobject>&nbsp;&nbsp;&nbsp;</td>
+												<td>Dur&eacute;e d'une journ&eacute;e :
+													<!-- zone de texte contenant la duree type d'un jour -->
+													<webobject name="TFDureeJournee"/>&nbsp;&nbsp;&nbsp;</td>
+												<td>
+													Bilan HS/CC :	<b><webobject name = "StrBilanHSCC"/></b>
+													<webobject name="ToolTipBilanHSCC"><webobject name="ImgInfo"/></webobject>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="text-align:left; background-color: white; border-left:1px dotted #000">
+							<webobject name="CondIsVisibleLienLegende">
+								&nbsp;&nbsp;<webobject name="LnkOuvrirLegende"><b>&raquo; L&eacute;gende&nbsp;</b></webobject><br/>
+								&nbsp;&nbsp;<webobject name="LnkDetaillerCalculs"><b>&raquo; Calculs</b></webobject>
+							</webobject>
+						</td>
+					</tr>
+				</table>
+				</FORM>
+				<div class="planning">
+					<!-- l'annee complete -->
+					<div class="annee">
+						<webobject name=RepMois>
+						<!-- 1 mois complet -->
+						<div class="mois">
+							<div class="moisTitre"><webobject name="StrMoisLibelleAvecAnnee"/></div>
+							<div class="moisDuree"><webobject name="StrMoisHeuresTravaillees"/></div>
+							<div class="groupeSemaine">
+								<!-- la liste de toutes les semaines -->
+								<webobject name="RepSemaines">
+									<webobject name="DivSemaine">
+										<!-- tous les jours de la semaine -->
+										<webobject name="RepJours">
+											<webobject name="CondIsPlanningTest">
+												<webobject name="JourPlanningTest"/>
+											</webobject>
+											<webobject name="CondIsPlanningReel">
+												<webobject name="JourPlanningReel"/>
+											</webobject>																					
+											<webobject name="CondIsPlanningPrevisionnel">
+												<webobject name="JourPlanningPrev"/>
+											</webobject>																							
+										</webobject>
+										<webobject name="CondShowDivNoHoraire">
+											<webobject name="DivNoHoraire"/>
+										</webobject>
+									</webobject> <!-- fin de la semaine -->
+								</webobject>
+							</div> <!-- fin du groupe de semaines -->
+						</div> <!-- fin du mois -->
+						</webobject>
+					</div> <!-- fin de l'annee --> 
+				</div>
+		<!-- conversion au chargement (le onLoad est inhibe par le CRILayer)-->
+		<webobject name="JsConversionChargement"/>
+	</webobject>
+	
+	<webobject name="CondIsHoraire">
+		<webobject name="PersoHoraires1"/>
+	</webobject>
+	<webobject name="CondShowCET">
+		<webobject name="PageCET1"/>
+	</webobject>
+	<webobject name="CondShowFicheRose">
+		<webobject name="PersoFicheRose1"/>
+	</webobject>
+	<webobject name="CondShowImprimesDivers">
+		<webobject name="SwapImprimesDivers1"/>
+	</webobject>
+</center>

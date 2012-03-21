@@ -1,0 +1,20 @@
+SubMenu1: SubMenu {
+	ctrl = subMenuCtrl;
+}
+
+CondIsMenuOutilSynchronisation: WOConditional {
+	condition = subMenuCtrl.isMenuOutilSynchronisation;
+}
+
+AdminOutilSynchronisation1: AdminOutilSynchronisation {
+	
+}
+
+
+CondIsMenuOutilNettoyageBase: WOConditional {
+	condition = subMenuCtrl.isMenuOutilNettoyageBase;
+}
+
+AdminOutilNettoyageBase1: AdminOutilNettoyageBase {
+	
+}

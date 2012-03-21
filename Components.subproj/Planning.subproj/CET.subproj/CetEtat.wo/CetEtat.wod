@@ -1,0 +1,214 @@
+FormCetEtat: WOForm {
+	name = "FormCetEtat";
+	multipleSubmit = true;
+}
+
+RepLesTransactions: WORepetition {
+	list = lesTransactions;
+	item = transactionItem;
+}
+
+AncreTransactionItem: WOGenericContainer {
+	elementName = "a";
+	name = transactionItem.oid;
+}
+
+StrDateValeur: WOString {
+	value = transactionItem.dateValeur;
+	dateformat = "%d/%m/%Y";
+}
+
+DatePickerDateValeur: CRIDatePicker {
+	dateValue = transactionItem.dateValeur;
+}
+
+StrMotif: WOString {
+	value = transactionItem.motif;
+	escapeHTML = false;
+}
+
+CondIsTheTransactionSelected: WOConditional {
+	condition = isTheTransactionSelected;
+}
+
+CondNotIsTheTransactionSelected: WOConditional {
+	condition = isTheTransactionSelected;
+	negate = true;
+}
+
+TFTransactionSelectedMotif: WOTextField {
+	value = transactionSelected.motif;
+	name = "TFTransactionSelectedMotif";
+	maxLength = "128";
+}
+
+StrCreditEnHeures: WOString {
+	value = transactionItem.creditEnHeures;
+}
+
+TFTransactionSelectedCreditEnHeures: CRITimeField {
+	fieldValue = transactionItem.creditEnHeures;
+	fieldName = "TFTransactionSelectedCreditEnHeures";
+	limit24h = false;
+}
+
+
+CondIsModificationAutorisee: WOConditional {
+	condition = ^isModificationAutorisee;
+}
+
+CondShowBtnToModificationTransactionItem: WOConditional {
+	condition = showBtnToModificationTransactionItem;
+}
+
+BtnToModificationTransactionItem: WOImageButton {
+	action = toModificationTransactionItem;
+	title = "Modifier cette transaction";	
+	filename = "images/modifier16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondShowBtnDoModificationTransactionItem: WOConditional {
+	condition = showBtnDoModificationTransactionItem;
+}
+
+BtnDoModificationTransactionSelected: WOImageButton {
+	action = doModificationTransactionSelected;
+	title = "Enregistrer les modifications";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+BtnToAnnulerModificationTransactionSelected: WOImageButton {
+	action = toAnnulerModificationTransactionSelected;
+	title = "Annuler les modifications";	
+	filename = "images/annuler16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondIsShowBtnDoSuppressionTransactionItem: WOConditional {
+	condition = isShowBtnDoSuppressionTransactionItem;
+}
+
+BtnDoSuppressionTransactionItem: WOImageButton {
+	action = doSuppressionTransactionItem;
+	title = "Supprimer cette transaction";	
+	filename = "images/moins16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+StrDebitEnHeures: WOString {
+	value = transactionItem.debitEnHeures;
+}
+
+RepDebitables: WORepetition {
+	list = transactionItem.debitables;
+	item = debitable;
+	index = debitableIndex;
+}
+
+StrDebitableDisplayCet: WOString {
+	value = debitable.displayCet;
+	escapeHTML = false;
+}
+
+StrDebitForDebitable: WOString {
+	value = debitForDebitable;
+}
+
+StrTotalCredits: WOString {
+	value = totalCredits;
+}
+
+StrTotalDebits: WOString {
+	value = totalDebits;
+}
+
+CondHasTransactions: WOConditional {
+	condition = lesTransactions.count;
+}
+
+StrTotalTransactionsEnHeures: WOString {
+	value = totalTransactionsEnHeures;
+}
+
+CngPdfBoxSituation: CngPdfBoxLink {
+	printLabel = "Situation de l'agent";
+	printTip = "Generer le fichier PDF de la situation du CET de cet agent";
+	ctrl = ctrlSituationCETAgent;
+}
+
+FormDateArret: WOForm {
+	action = neFaitRien;
+	name = "FormDateArret";
+}
+
+DatePickerArret: CRIDatePicker {
+	dateValue = dateArret;
+	fieldName = "dateArret";
+	formName = "FormDateArret";
+}
+
+BtnEcrireDansLePdf: WOSubmitButton {
+	action = neFaitRien;
+	name = "BtnEcrireDansLePdf";
+	class = "bouton";
+	value = "Appliquer";
+	title = "Cliquer pour modifier la date de la situation imprim&eacute;e dans le document";
+	escapeHTML = "false";
+}
+
+FormVidage: WOForm {
+	name = "FormVidage";
+	multipleSubmit = true;
+	action = neFaitRien;
+}
+
+TipVidage: CRIToolTip {
+	htmlText = "<b>Quand vider un CET</b>:<br>\
+	&raquo; en cas de non prise de d&eacute;cision sur l'ancien r&eacute;gime<br>\
+	&raquo; en cas de d&eacute;part d&eacute;finitif de l'agent";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+ChkIsVidageIndemnisation: WOCheckBox {
+	checked = isVidageIndemnisation;
+	onclick = "FormVidage.submit();";
+	disabled = isVidageTransfertRafp;
+}
+
+ChkIsVidageTransfertRafp: WOCheckBox {
+	checked = isVidageTransfertRafp;
+	onclick = "FormVidage.submit();";
+	disabled = isVidageIndemnisation;
+}
+
+ChkIsVidageIndemnisationAncienRegime: WOCheckBox {
+	checked = isVidageIndemnisationAncienRegime;
+	onclick = "FormVidage.submit();";
+	disabled = isDisabledChkIsVidageIndemnisationAncienRegime;
+}
+
+ChkIsVidageTransfertRafpAncienRegime: WOCheckBox {
+	checked = isVidageTransfertRafpAncienRegime;
+	onclick = "FormVidage.submit();";
+	disabled = isDisabledChkIsVidageTransfertRafpAncienRegime;
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+LayerErrorMessage: CRILayer {
+	text = errorMessage;
+	title = "Erreur";
+}

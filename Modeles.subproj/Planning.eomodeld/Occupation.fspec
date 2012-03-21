@@ -1,0 +1,49 @@
+{
+    OccupationsPourIndividu = {
+        class = EOFetchSpecification; 
+        entityName = Occupation; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "affectationAnnuelle.periodes.affectation.individu"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = individu; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dateDebut; 
+                    selectorName = isGreaterThanOrEqualTo; 
+                    value = {"_key" = debut; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dateFin; 
+                    selectorName = isLessThanOrEqualTo; 
+                    value = {"_key" = fin; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = typeOccupation; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = type; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = status; 
+                    selectorName = isNotEqualTo; 
+                    value = 1; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = status; 
+                    selectorName = isNotEqualTo; 
+                    value = 3; 
+                }
+            ); 
+        }; 
+    }; 
+}

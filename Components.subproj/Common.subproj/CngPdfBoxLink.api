@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="CngPdfBoxLink" wocomponentcontent="false">
+
+		<binding name="printTip"/>
+		<binding name="printLabel"/>
+		<binding name="ctrl"/>
+
+		<validation message="&apos;printTip&apos; is a required binding">
+			<unbound name="printTip"/>
+		</validation>
+
+		<validation message="&apos;printLabel&apos; is a required binding">
+			<unbound name="printLabel"/>
+		</validation>
+
+		<validation message="&apos;ctrl&apos; is a required binding">
+			<unbound name="ctrl"/>
+		</validation>
+	</wo>
+</wodefinitions>

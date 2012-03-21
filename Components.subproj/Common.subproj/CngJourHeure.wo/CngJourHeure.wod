@@ -1,0 +1,62 @@
+BtnNeFaitRien: WOSubmitButton {
+	action = neFaitRien;
+	name = neFaitRienBtnName;
+	style = "visibility:hidden;display:none";	
+}
+
+CondIsAffichageMixte: WOConditional {
+	condition = isAffichageMixte;
+}
+
+RadioHeure: WORadioButton {
+	name = "RadioType";
+	selection = typeSelected;
+	value = TYPE_HEURE;
+	onClick = onClickRadio;
+}
+
+CondShowHeures: WOConditional {
+	condition = ^showHeures;
+}
+
+TimeFieldHeures: CRITimeField {
+	fieldName = "TimeFieldHeures";
+	fieldValue = heures;
+	disabled = disabledHeure;
+	limit24h = false;
+}
+
+RadioJour: WORadioButton {
+	name = "RadioType";
+	selection = typeSelected;
+	value = TYPE_JOUR;
+	onClick = onClickRadio;
+}
+
+CondShowJours: WOConditional {
+	condition = ^showJours;
+}
+
+CondIsJourLibre: WOConditional {
+	condition = isJourLibre;
+}
+
+TFJour: WOTextField {
+	value = jour;
+	disabled = disabledJour;
+	size = 2;
+	maxLength = 3;
+	numberformat = "0";
+}
+
+CondNotIsJourLibre: WOConditional {
+	condition = isJourLibre;
+	negate = true;
+}
+
+PopUpJour: WOPopUpButton {
+	list = ^jourList;
+	item = jourItem;
+	selection = jourSelected;
+	disabled = disabledJour;
+}

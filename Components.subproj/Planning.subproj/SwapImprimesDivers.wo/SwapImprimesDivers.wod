@@ -1,0 +1,64 @@
+CondShowImprimeGardeEnfant: WOConditional {
+	condition = showImprimeGardeEnfant;
+}
+
+FormEnfant: WOForm {
+	multipleSubmit = true;
+	name = "FormEnfant";
+}
+
+PopUpEnfant: WOPopUpButton {
+	list = laSession.individuConnecte.tosEnfant;
+	item = enfantItem;
+	selection = enfantSelected;
+	displayString = enfantDisplay;
+	escapeHTML = true;
+}
+
+CRIDatePickerDDeb: CRIDatePicker {
+	dateValue =  dDeb;
+}
+
+PopUpDDebAmPm: WOPopUpButton {
+	list = amPmList;
+	item = amPmItem;
+	selection = amPmDDeb;
+}
+
+CRIDatePickerDFin: CRIDatePicker {
+	dateValue =  dFin;
+}
+
+PopUpDFinAmPm: WOPopUpButton {
+	list = amPmList;
+	item = amPmItem;
+	selection = amPmDFin;
+}
+
+TFMotif: WOTextField {
+	value = motif;
+	size = "40";
+	maxlength = "100";
+}
+
+BtnCalculerDemiJournee: WOSubmitButton {
+	action = doRecalcul;
+	value = "Recalculer / Rafraichir &raquo;";
+	title = "Recalculer le nombre de demi journees / regenerer les donnees de l'edition";
+	class = "bouton";
+	escapeHTML = false;
+}
+
+StrDemiJournees: WOString {
+	value = strDemiJournees;
+}
+
+CondShowCngPdfBoxDemandeGardeEnfant: WOConditional {
+	condition = showCngPdfBoxDemandeGardeEnfant;
+}
+
+CngPdfBoxDemandeGardeEnfant: CngPdfBoxLink {
+	printLabel = "Demande d'autorisation d'absence pour garde d'enfant";
+	printTip = "Generer le fichier PDF a imprimer";
+	ctrl = ctrlDemandeGardeEnfantCtrl;
+}

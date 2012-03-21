@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_ENFANT"; 
+            externalType = NUMBER; 
+            name = noEnfant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noDossierPers, noEnfant); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EORepartEnfant"; 
+    classProperties = (toEnfant); 
+    externalName = "GRHUM.REPART_ENFANT"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartEnfant; 
+    primaryKeyAttributes = (noDossierPers, noEnfant); 
+    relationships = (
+        {
+            destination = Enfant; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noEnfant; sourceAttribute = noEnfant; }); 
+            name = toEnfant; 
+        }
+    ); 
+}

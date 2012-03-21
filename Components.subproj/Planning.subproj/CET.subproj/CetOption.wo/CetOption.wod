@@ -1,0 +1,98 @@
+StrSoldeAvantOption: WOString {
+	value = soldeAvantOption;
+	numberformat = "0.00";
+}
+
+CondHasEpargne: WOConditional {
+	condition = hasEpargne;
+}
+
+StrEpargneJour: WOString {
+	value = epargneJour;
+	numberformat = "0";
+}
+
+StrOptionTotalJour: WOString {
+	value = optionTotalJour;
+}
+
+PopUpMaintienJour: WOPopUpButton {
+	list = optionMaintienJourList;
+	item = optionMaintienJourItem;
+	selection = optionMaintienJourSelected;
+	disabled = disabledPopUpMaintienJour;
+}
+
+CondShowBtnDoSelectMaintien: WOConditional {
+	condition = showBtnDoSelectMaintien;
+}
+
+BtnDoSelectMaintien: WOSubmitButton {
+	action = doSelectMaintien;
+	name = "BtnDoSelectMaintien";
+	value = "VALIDER";
+	title = "Cliquer pour choisir cette valeur de jours &agrave; maintenir dans votre CET";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+CondShowLnkDoUnSelectMaintien: WOConditional {
+	condition = showLnkDoUnSelectMaintien;
+}
+
+LnkDoUnSelectMaintien: WOHyperlink {
+	action = doUnSelectMaintien;
+	string = "modifier";
+	title = "Modifier la valeur des jours a maintenir en CET";
+}
+
+CondIsSelectedOptionMaintien: WOConditional {
+	condition = isSelectedOptionMaintien;
+}
+
+StrSoldeApresOption: WOString {
+	value = soldeApresOption;
+	numberformat = "0.00";
+}
+
+CondShowPopUpIndemnisation: WOConditional {
+	condition = showPopUpIndemnisation;
+}
+
+PopUpIndemnisationJour: WOPopUpButton {
+	list = optionIndemnisationJourList;
+	item = optionIndemnisationJourItem;
+	selection = optionIndemnisationJourSelected;
+	disabled = disabledPopUpIndemnisationJour;
+}
+
+CondShowBtnDoSelectIndemnisation: WOConditional {
+	condition = showBtnDoSelectIndemnisation;
+}
+
+BtnDoSelectIndemnisation: WOSubmitButton {
+	action = doSelectIndemnisation;
+	name = "BtnDoSelectIndemnisation";
+	value = "VALIDER";
+	title = "Cliquer pour choisir cette valeur de jours &agrave; vous faire indemniser";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+CondShowLnkDoUnSelectIndemnisation: WOConditional {
+	condition = showLnkDoUnSelectIndemnisation;
+}
+
+LnkDoUnSelectIndemnisation: WOHyperlink {
+	action = doUnSelectIndemnisation;
+	string = "modifier";
+	title = "Modifier la valeur des jours a se faire indemniser";
+}
+
+CondShowStrRafp: WOConditional {
+	condition = showStrRafp;
+}
+
+StrOptionTransfertRafpJourSelected: WOString {
+	value =  optionTransfertRafpJourSelected;
+}

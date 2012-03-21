@@ -1,0 +1,122 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_AFFECTATION"; 
+            externalType = DATE; 
+            name = dDebAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_AFFECTATION"; 
+            externalType = DATE; 
+            name = dFinAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DEN_QUOT_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = denQuotation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 3; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NUM_QUOT_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = numQuotation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 3; 
+        }, 
+        {
+            columnName = "NO_SEQ_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 8; 
+        }, 
+        {
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOAffectation"; 
+    classProperties = (
+        dDebAffectation, 
+        dFinAffectation, 
+        individu, 
+        structure, 
+        denQuotation, 
+        numQuotation, 
+        toVPersonnelNonEns, 
+        temValide
+    ); 
+    externalName = "GRHUM.AFFECTATION"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            dDebAffectation, 
+            dFinAffectation, 
+            individu, 
+            structure, 
+            denQuotation, 
+            numQuotation
+        ); 
+        "_nameInObjectStore" = AFFECTATION; 
+    }; 
+    name = Affectation; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noDossierPers; }); 
+            name = individu; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = structure; 
+        }, 
+        {
+            destination = VPersonnelNonEns; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noDossierPers; }); 
+            name = toVPersonnelNonEns; 
+        }
+    ); 
+    restrictingQualifier = "temValide = 'O'"; 
+}

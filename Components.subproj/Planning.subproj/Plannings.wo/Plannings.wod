@@ -1,0 +1,284 @@
+ToolTipReliquat: CRIToolTip {
+	htmlText = htmlTextToolTipReliquat;
+}
+
+ToolTipMenu: CRIToolTip {
+	htmlText = unToolTipMenu;
+}
+
+CheckAffHoraire: WOCheckBox {
+	checked = isVisuHoraire;
+	title = "Mettre en evidence les horaires";
+	onClick = lePlanning.textJScriptCheckboxHoraire;
+}
+
+CheckAffOccupation: WOCheckBox {
+	checked = isVisuOccupation;
+	title = "Mettre en evidence les occupations";
+	onClick = lePlanning.textJScriptCheckboxOccupation;
+}
+
+CondIsHoraire: WOConditional {
+	condition=isHoraire;
+}
+
+CondIsNotReliquatNegatif: WOConditional {
+	condition = isReliquatNegatif;
+	negate = true;
+}
+
+CondIsPlanningPrevisionnel: WOConditional {
+	condition=isPagePlanningPrevisionnel;
+}
+
+CondIsPlanningReel: WOConditional {
+	condition=isPlanningReelOuBack;
+}
+
+CondIsPlanningTest: WOConditional {
+	condition=isPagePlanningTest;
+}
+
+CondIsReliquatNegatif: WOConditional {
+	condition = isReliquatNegatif;
+}
+
+CondShowCET: WOConditional {
+	condition = isCET;
+}
+
+CondShowDivNoHoraire: WOConditional {
+	condition = showDivNoHoraire;
+}
+
+CondShowFicheRose: WOConditional {
+	condition = isFicheRose;
+}
+
+CondShowImprimesDivers: WOConditional {
+	condition = isImprimesDivers;
+}
+
+SwapImprimesDivers1: SwapImprimesDivers {
+}
+
+
+CondShowMenu: WOConditional {
+	condition = showMenu;
+}
+
+CondShowPlanning: WOConditional {
+	condition = showPlanning;
+}
+
+CondIsLimiteCongesDepassee: WOConditional {
+	condition = lePlanning.limiteCongesDepassee;
+}
+
+CondIsVisibleLienLegende: WOConditional {
+	condition = isVisibleLienLegende;
+}
+
+CondIsToolTipMenuVisible: WOConditional {
+	condition = isToolTipMenuVisible;
+}
+
+DivCongesInitiauxJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_CONGES_INITIAUX_JOURS;
+}
+
+DivNoHoraire: WOGenericContainer {
+	elementName = "div";
+	class = laSemaine.classeCssNoHoraire;
+	style = laSemaine.styleCssSizeAndOffset;
+}
+
+DivReliquatsRestantsJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_RELIQUATS_RESTANTS_JOURS;
+}
+
+DivSemaine: WOGenericContainer {
+	elementName="div";
+	id = laSemaine.idCss;
+	class = classeSemaineInit;
+	style = laSemaine.styleCssSize;
+}
+
+StrHeuresDues: WOString {
+	value=lePlanning.heuresDues;
+}
+
+StrHeuresMax: WOString {
+	value=lePlanning.heuresMax;
+}
+
+StrCongesDepassement: WOString {
+	value=lePlanning.congesDepassement;
+}
+
+StrMoisHeuresTravaillees: WOString {
+	value=leMois.heuresTravaillees;
+}
+
+LnkOuvrirLegende: WOHyperlink {
+	action = ouvrirLegende;
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=400,rezise=no,menubar=no,toolbar=no,location=no,scrollbars=yes');return false;";
+	target = "_new";
+	title = "Ouvrir la fen&ecirc;tre affichant les codes et couleurs du planning";
+}
+
+LnkDetaillerCalculs: WOHyperlink {
+	action = detaillerCalculs;
+	onClick = "window.open(this.href,'','status=no,top=200,left=400,width=400,height=400,rezise=no,menubar=no,toolbar=no,location=no');return false;";
+	target = "_new";
+	title = "Ouvrir la fen&ecirc;tre d&eacute;taillant le calcul de vos droits &agrave; cong&eacute;s";
+}
+
+ImgImportant: WOImage {
+	framework = "app";
+	filename = "images/important.png";
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+JourPlanningPrev: JourPlanning {
+	isDisabled = isDisabled;
+	isVisuOccupation = isVisuOccupation;
+	laSemaine = laSemaine;
+	leJour = leJour;
+	//isSemainePasModifiable = isSemainePasOuverteALaSaisieDuPrevisionnel;
+	isSemainePasModifiable = isSemainePasModifiable;
+	lePlanning = lePlanning;
+}
+
+JourPlanningReel: JourPlanning {
+	isDisabled = isDisabled;
+	isVisuOccupation = isVisuOccupation;
+	laSemaine = laSemaine;
+	leJour = leJour;
+	isSemainePasModifiable = isSemainePasModifiable;
+	lePlanning = lePlanning;
+}
+
+JourPlanningTest: JourPlanning {
+	isDisabled = isDisabled;
+	isVisuOccupation = isVisuOccupation;
+	laSemaine = laSemaine;
+	leJour = leJour;
+	isSemainePasModifiable = isSemainePasModifiable;
+	lePlanning = lePlanning;
+}
+
+JsConversionChargement: WOJavaScript {
+	scriptString = onBlurInputDuree;
+}
+
+
+StrMoisLibelleAvecAnnee: WOString {
+	value=leMois.libelleAvecAnnee;
+}
+
+LibelleTabMenu: WOString {
+	value = unItemMenu;
+	escapeHTML = false;
+}
+
+LinkMenu: WOHyperlink {
+	action = selectMenu;
+	disabled = laSession.isDisabledMenu;
+	title = "cliquer pour afficher le contenu de cet onglet";
+}
+
+PageCET1: PageCET {
+	lePlanning = lePlanning;
+	isForceSaisieAutorisee = false;
+}
+
+PersoFicheRose1: PersoFicheRose {
+	isDisabled = isDisabled;
+	lePlanning = lePlanning;
+}
+
+PersoHoraires1: PersoHoraires {
+	lePlanning = lePlanning;
+	isDisabled = isDisabled;
+}
+
+RepJours: WORepetition {
+	list=laSemaine.jours;
+	item=leJour;
+}
+
+RepMenu: WORepetition {
+	list=menuItems;
+	item=unItemMenu;
+	index=indexItemMenu;
+}
+
+RepMois: WORepetition {
+	list=lePlanning.mois;
+	item=leMois;
+}
+
+RepSemaines: WORepetition {
+	list=leMois.semaines;
+	item=laSemaine;
+}
+
+StrCongesGlobalRestants: WOString {
+	value=lePlanning.congesGlobalRestants;
+}
+
+StrReliquatInitial: WOString {
+	value = lePlanning.reliquatInitial;
+}
+
+StrCongesInitiauxEnHeures: WOString {
+	value = lePlanning.congesInitiauxEnHeures;
+}
+
+
+DivCongesRestantsJours: WOGenericContainer {
+	elementName = "span";
+	id = LABEL_DIV_CONGES_RESTANTS_JOURS;
+}
+
+
+TabMenu: WOGenericContainer {
+	elementName="td";
+	id=idTabMenu;
+	class=classTabMenu;
+}
+
+TFDureeJournee: WOTextField {
+	maxlength = 5;
+	name = "inputDureeJournee";
+	onblur = onBlurInputDuree;
+	onkeydown = onKeyDownInputDuree;
+	size = 5;
+	value = dureeJournee;
+}
+
+ToolTipBilanHSCC: CRIToolTip {
+	htmlText = htmlTextToolTipBilanHSCC;
+}
+
+StrBilanHSCC: WOString {
+	value=lePlanning.bilanHSCCEnHeures;
+}
+
+StrReliquatRestant: WOString {
+	value=lePlanning.reliquatRestant;
+}
+
+StrHeuresAssociees: WOString {
+	value=lePlanning.heuresAssociees;
+}

@@ -1,0 +1,114 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_VALEUR"; 
+            externalType = DATE; 
+            name = dateValeur; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MINUTES_DEBITEES"; 
+            externalType = NUMBER; 
+            name = minutesDebitees; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = MOTIF; 
+            externalType = VARCHAR2; 
+            name = motif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 250; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_CET"; 
+            externalType = NUMBER; 
+            name = oidCET; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = VALEUR; 
+            externalType = NUMBER; 
+            name = valeur; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOCETTransaction"; 
+    classProperties = (
+        valeur, 
+        motif, 
+        dateValeur, 
+        cet, 
+        dCreation, 
+        dModification, 
+        minutesDebitees, 
+        toAffectationAnnuelle
+    ); 
+    externalName = "CONGES.CNG_CET_TRANSACTION"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (valeur, motif, cet, dateValeur); 
+        "_nameInObjectStore" = "CONGES_NEW.CNG_CET_TRANSACTION"; 
+    }; 
+    name = CETTransaction; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = CET; 
+            internalInfo = {"_nameInObjectStore" = cET; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidCET; }); 
+            name = cet; 
+        }, 
+        {
+            destination = AffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffAnn; }); 
+            name = toAffectationAnnuelle; 
+        }
+    ); 
+}

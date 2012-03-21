@@ -1,0 +1,164 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FLG_NATURE"; 
+            externalType = VARCHAR2; 
+            name = flagNature; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "MINUTES_BILAN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "MINUTES_RELIQUAT_RESTANTES"; }; 
+            name = minutesBilan; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_DECOMPTE_LEGAL"; 
+            externalType = NUMBER; 
+            name = minutesDecompteLegal; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_DUES"; 
+            externalType = NUMBER; 
+            name = minutesDues; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_RELIQUAT_RESTANT"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "MINUTES_RELIQUAT_RESTANTES"; }; 
+            name = minutesReliquatRestantes; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_RESTANTES"; 
+            externalType = NUMBER; 
+            name = minutesRestantes; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_TRAVAILLEES"; 
+            externalType = NUMBER; 
+            name = minutesTravaillees; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "OID_AFF_ANNUELLE"; }; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_SYND_RESTANTES"; 
+            externalType = NUMBER; 
+            name = minutesDechargeSyndicaleRestantes; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_CONGES_CONSOMMEES"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "MINUTES_RELIQUAT_RESTANTES"; }; 
+            name = minutesCongesConsommees; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_CONS_DTE_RELIQUAT"; 
+            externalType = NUMBER; 
+            name = minutesConsommeesDateReliquat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MINUTES_REL_CONS_DTE_RELIQUAT"; 
+            externalType = NUMBER; 
+            name = minutesReliquatConsommeesDateReliquat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOCalculAffectationAnnuelle"; 
+    classProperties = (
+        minutesDues, 
+        minutesRestantes, 
+        minutesTravaillees, 
+        minutesReliquatRestantes, 
+        flagNature, 
+        toAffectationAnnuelle, 
+        minutesBilan, 
+        minutesDecompteLegal, 
+        dCreation, 
+        dModification, 
+        minutesDechargeSyndicaleRestantes, 
+        minutesCongesConsommees, 
+        minutesConsommeesDateReliquat, 
+        minutesReliquatConsommeesDateReliquat
+    ); 
+    externalName = "CONGES.PLNG_CLC_AFF_ANN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            minutesDues, 
+            minutesRestantes, 
+            minutesTravaillees, 
+            minutesReliquatRestantes, 
+            flagNature, 
+            toAffectationAnnuelle, 
+            minutesBilan, 
+            minutesDecompteLegal, 
+            minutesCongesConsommees, 
+            minutesConsommeesDateReliquat, 
+            minutesReliquatConsommeesDateReliquat
+        ); 
+        "_nameInObjectStore" = "PLNG_CLC_AFF_ANN"; 
+    }; 
+    name = CalculAffAnn; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = toAffectationAnnuelle; 
+        }
+    ); 
+}

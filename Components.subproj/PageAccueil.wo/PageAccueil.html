@@ -1,0 +1,73 @@
+<WEBOBJECT NAME="PageTemplate"><BR>
+
+<CENTER>
+
+
+	<webobject name="CngInfoBox1">Cliquez sur le num&eacute;ro pour acc&eacute;der aux demandes</webobject>
+
+	<BR><webobject name="CondIsAffichageSurPlusieursPages"><webobject name="CRINavBarDisplayGroupStructuresDispoParNiveau"/></webobject><BR>
+	
+	<TABLE>
+		<webobject name="RepServices">
+			<TR>
+				<TD align="left"><webobject name="LinkNomService"/>:</TD>
+				<TD>
+					<webobject name="CondHasAlertesAValider"><FONT SIZE="3"><B><webobject name="LinkNombreDemandesAValider"/></B></FONT></webobject>
+					<webobject name="CondNotHasAlertesAValider">0</webobject>
+					<webobject name="CondHasAlertesValidationDRH">
+						&nbsp;<FONT SIZE="3"><B><webobject name="LinkNombreDemandesAValider3">(<webobject name="StrTotalAlertesValidationDRH"/>)</webobject></B></FONT>
+					</webobject>
+				</TD>
+				<TD>&nbsp;demande(s) &agrave; valider</TD>
+				<TD>
+					<webobject name="CondHasAlertesAViser"><FONT SIZE="3"><B><webobject name="LinkNombreDemandesAViser"/></B></FONT></webobject>
+					<webobject name="CondNotHasAlertesAViser">0</webobject>
+					<webobject name="CondHasAlertesVisaDRH">
+						&nbsp;<FONT SIZE="3"><B><webobject name="LinkNombreDemandesAViser3">(<webobject name="StrTotalAlertesVisaDRH"/>)</webobject></B></FONT>
+					</webobject>
+				</TD>
+				<TD>demande(s) &agrave; viser</TD>
+			</TR>
+			<TR><TD COLSPAN="5"><HR/></TD></TR>
+		</webobject>
+	</TABLE>
+
+<!-- interface de recherche -->
+
+<webobject name = "FormSearch">
+<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+	<tr>
+  	<td>
+	  	<table cellpadding="1" cellspacing="0">
+				<tr class="listboxHeader">
+					<td colspan="5" align="left">
+						<font class="textEntry">Recherche d'un planning :</font>
+						<webobject name = "TFSearchString"/>
+						<font class="textNote">
+						parmi les noms et pr&eacute;noms
+						</font>
+					</td>
+				</tr>
+				<webobject name = "CondSearchListCount">
+					<webobject name = "RepSearchList">
+					<tr class="listboxLine">
+						<td align="left" colspan = "5">
+							<webobject name = "LnkSearchItem">
+								&raquo;
+								<webobject name = "StrSearchItemNomComplet"/> 
+								(<webobject name = "StrSearchItemService"/> <webobject name = "StrAffichageListePeriode"/>)
+							</webobject>
+						</td>
+					</tr>
+					</webobject>
+				</webobject>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>
+
+
+</CENTER>
+
+</webobject>

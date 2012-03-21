@@ -1,0 +1,105 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEBUT_REEL"; 
+            externalType = DATE; 
+            name = dteDebutReel; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_FIN_REEL"; 
+            externalType = DATE; 
+            name = dteFinReel; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = MOTIF; 
+            externalType = VARCHAR2; 
+            name = motif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLG_NATURE"; 
+            externalType = VARCHAR2; 
+            name = nature; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = STATUS; 
+            externalType = VARCHAR2; 
+            name = status; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TOCC_LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = toccLibelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TYPE_OCC"; 
+            externalType = NUMBER; 
+            name = typeOcc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOVOccupationsFer"; 
+    classProperties = (
+        oid, 
+        motif, 
+        oidAffAnn, 
+        typeOcc, 
+        status, 
+        dteDebutReel, 
+        dteFinReel, 
+        nature, 
+        noIndividu, 
+        toccLibelleCourt
+    ); 
+    externalName = "CONGES.V_OCCUPATIONS_FER"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VOccupationsFer; 
+    primaryKeyAttributes = (oid); 
+}

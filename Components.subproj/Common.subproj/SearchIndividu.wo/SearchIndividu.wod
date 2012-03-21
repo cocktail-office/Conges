@@ -1,0 +1,35 @@
+BtnDoSearchHidden: WOSubmitButton {
+	name = "BtnDoSearch";
+	action = doSearch;
+	class = "bouton";
+	value = "Rechercher";
+	style = "visibility:hidden;display:none";
+}
+
+BtnDoSearch: WOSubmitButton {
+	name = "BtnDoSearch";
+	action = doSearch;
+	class = "bouton";
+	value = "OK";
+	title = "Lancer la recherche";
+}
+
+TFSearchIndividu: WOTextField {
+	value = strSearch;
+	class = "searchField";
+	name = "TFSearchIndividu";
+	//onKeyDown = "if (event.keyCode==13) { BtnDoSearch.click(); }";
+}
+
+RadioPersonnelActuel: WOCheckBox {
+	checked = isOnlyPersonnelActuel;
+	name = "RadioPersonnelActuel";
+}
+
+
+PopUpIndividu: WOPopUpButton {
+	displayString = individuItem.nomCompletQualite;
+	item = individuItem;
+	list = individuList;
+	selection = individuSelected;
+}

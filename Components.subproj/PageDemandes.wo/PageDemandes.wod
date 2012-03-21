@@ -1,0 +1,167 @@
+PageTemplate: PageTemplate {
+	pageTitle = "Demandes du service";
+	useToolTip = true;
+}
+
+CondIsAfficherAnneeUnivList: WOConditional {
+	condition = isAfficherAnneeUnivList;
+}
+
+FormAnneeUniv: WOForm {
+	action = neFaitRien;
+	name = "FormAnneeUniv";
+}
+
+PopUpAnneeUniv: WOPopUpButton {
+	list = anneeUnivList;
+	item = anneeUnivItem;
+	selection = anneeUnivSelected;
+	noSelectionString = "-- toutes --";
+	onChange = "this.form.submit();";
+}
+
+FormDemandesAValider: WOForm {
+	action = neFaitRien;
+	name = "FormDemandesAValider";
+	multipleSubmit = true;
+}
+
+RepDemandesAValiderPourAnnee: WORepetition {
+	list = lesAlertesAValiderPourAnnee;
+	item = uneAlerte;
+}
+
+TrEtat: WOGenericContainer {
+	elementName="tr";
+	class = bgColorDemande;
+}
+
+AncreOid: WOGenericElement {
+	elementName = "a";
+	name = uneAlerte.oidR;
+}
+
+StrDate: WOString {
+	value = uneAlerte.dCreation;
+	dateformat = "%d/%m/%Y";
+}
+
+StrDemandeur: WOString {
+	value = uneAlerte.affectationAnnuelle.individu.nomComplet;
+}
+
+CondIsAlerteDelegation: WOConditional {
+	condition = isAlerteDelegation;
+}
+
+TipDelegue: CRIToolTip {
+	htmlText = tipDelegue;
+}
+
+ImgDelegue: WOImage {
+	filename = "images/Delegation.png";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+StrService: WOString {
+	value = uneAlerte.affectationAnnuelle.structure.libelleCourt;
+}
+
+LinkDetaillerDemande: WOHyperlink {
+	action = detaillerLaDemande;
+	title = "Cliquer pour detailler cette demande ...";
+}
+
+StrAlerteLibelle: WOString {
+	value = uneAlerte.libelle;
+}
+
+TFAlerteCommentaire: WOTextField {
+	maxlength = 200;
+	size = 30;
+	value = uneAlerte.commentaire;
+}
+
+
+CheckBoxVisee: WOCheckBox {
+	checked = isVisee;
+	disabled = true;
+}
+
+CheckBoxAcceptee: WOCheckBox {
+	checked = isAcceptee;
+	onClick = "this.form.submit();";
+}
+
+CheckBoxRefusee: WOCheckBox {
+	checked = isRefusee;
+	onClick = "this.form.submit();";
+}
+
+BtnSuspendreDemande: WOSubmitButton {
+	action = suspendreDemande;
+	class = "bouton";
+	value = "RAZ";
+	title = "Ne pas prendre de d&eacute;cision";
+	escapeHTML = false;
+}
+
+ButtonValider: WOSubmitButton {
+	action = enregistrerDemandesAValider;
+	value= "APPLIQUER VOS DECISIONS";
+	class = "bouton";
+	title = "Enregistrer vos decisions de validation et envoyer les mails";
+}
+FormDemandesAViser: WOForm {
+	action = neFaitRien;
+	name = "FormDemandesAViser";
+	multipleSubmit = true;
+}
+
+RepDemandesAViser: WORepetition {
+	list = lesAlertesAViser;
+	item = uneAlerte;
+}
+
+BtnEnregistreEtNeFaitRien: WOSubmitButton {
+	action = enregistreEtNeFaitRien;
+	name = "enregistreEtNeFaitRien";
+	style = "visibility:hidden;display:none";
+	value = "BOUTON CACHE";
+}
+
+ButtonValiderDemandesAViser: WOSubmitButton {
+	action = enregistrerDemandesAViser;
+	value= "APPLIQUER VOS DECISIONS";
+	class = "bouton";
+	title = "Enregistrer vos decisions de visa et envoyer les mails";
+}
+
+// classements 
+
+LnkSortDateDemandesAValider: WOHyperlink {
+	action = sortDateDemandesAValider;
+	string = "Date";
+	title = "Trier par la date de creation de l'alerte";
+}
+
+LnkSortDateDemandesAViser: WOHyperlink {
+	action = sortDateDemandesAViser;
+	string = "Date";
+	title = "Trier par la date de creation de l'alerte";
+}
+
+LnkSortDemandeurDemandesAValider: WOHyperlink {
+	action = sortDemandeurDemandesAValider;
+	string = "Demandeur";
+	title = "Trier par le nom du demandeur";
+}
+
+LnkSortDemandeurDemandesAViser: WOHyperlink {
+	action = sortDemandeurDemandesAViser;
+	string = "Demandeur";
+	title = "Trier par le nom du demandeur";
+}

@@ -1,0 +1,55 @@
+<table>
+	<tr>
+	  <td><webobject name = "CompServicesAffAnnsNew1"/></td>
+	</tr>
+	<webobject name = "CondIsAffAnnSelected">
+	<tr>
+		<td align = "center">
+			<br/>
+	  	<webobject name = "FormAdminJrti">
+	  	<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+	  		<tr>
+					<td>
+  			    <table cellpadding="2" cellspacing="0">
+				  		<tr class="listboxHeader">
+								<th>D&eacute;cret</th>
+								<th>Application</th>
+								<th>Nb jours (&agrave; 7h00)</th>
+								<th>Commentaires</th>
+							</tr>
+							<tr class="listboxLine">
+								<td><a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000158508%38dateTexte=" target="_new">2007-1597</a></td>
+								<td>d&eacute;compte sur reliquats/cong&eacute;s annuels (contre indemnisation)</td>
+								<td align="right"><webobject name = "ComboJourJrtiList"/></td>
+								<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									Solde de cong&eacute;s restants au <webobject name = "StrFinAnnee"/> : <b><webobject name = "StrCongesRestant"/></b></td>
+							</tr>
+							<tr class="listboxLine">
+								<td><a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000019723547%38dateTexte=" target="_new">2008-1136</a></td>
+								<td>d&eacute;compte sur CET (contre indemnisation)</td>
+								<td align="right"><webobject name = "TFJourCet"/></td>
+								<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									&Eacute;pargne CET restante au <webobject name = "StrDebutAnnee"/> : <b><webobject name = "StrCetRestant"/></b</td>
+							</tr>
+							<tr class="listboxLine">
+								<td><a href="http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=LEGITEXT000021008239%38dateTexte=" target="_new">2009-1065</a></td>
+								<td>d&eacute;compte sur CET (pour alimentation RAFP)</td>
+								<td align="right"><webobject name = "TFJourBasculeCetVersRafp"/></td>
+								<td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									&Eacute;pargne CET restante au <webobject name = "StrDebutAnnee"/> : <b><webobject name = "StrCetRestant"/></b</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<br/>
+	   	<webobject name = "BtnEnregistrer"/>
+	   	<webobject name = "CondHasError">
+	   		<br/>
+	   		<font class="textError">ERREUR : <webobject name = "StrErrorMessage"/></font>
+	   	</webobject>
+			</webobject>
+		</td>
+	</tr>
+	</webobject>
+</table>

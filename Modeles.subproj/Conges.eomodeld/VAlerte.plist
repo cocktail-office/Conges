@@ -1,0 +1,143 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = VARCHAR2; 
+            name = annee; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 9; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLG_DRH"; 
+            externalType = NUMBER; 
+            name = flagDRH; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OCC_DTE_DEBUT"; 
+            externalType = DATE; 
+            name = occDteDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OCC_DTE_FIN"; 
+            externalType = DATE; 
+            name = occDteFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OCC_STATUS"; 
+            externalType = NUMBER; 
+            name = occStatut; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_OCC"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "OID_ACC"; }; 
+            name = oidOcc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PLG_STATUS"; 
+            externalType = VARCHAR2; 
+            name = plgStatut; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "T_LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = tOcclibelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (annee, oid); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOVAlerte"; 
+    classProperties = (
+        noIndividu, 
+        cStructure, 
+        oid, 
+        oidOcc, 
+        occDteDebut, 
+        occDteFin, 
+        flagDRH, 
+        occStatut, 
+        tOcclibelleCourt, 
+        dCreation, 
+        oidAffAnn, 
+        cStructureComposante, 
+        plgStatut, 
+        annee
+    ); 
+    externalName = "CONGES.V_ALERTE"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VAlerte; 
+    primaryKeyAttributes = (oid); 
+}

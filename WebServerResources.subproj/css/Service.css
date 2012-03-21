@@ -1,0 +1,210 @@
+/* ENSEMBLE DE STYLE POUR LE PLANNING INDIVIDUEL */
+
+body {
+	background-color: white;
+	margin: 0;padding:0;
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center; 
+}
+
+a, div, img {
+	position: relative;
+}
+
+/* conteneur global */
+.planningService {
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+/* la ligne d'entete du tableau */
+.entete {
+	background-color:#C6DEFF; 
+	height:25px; 
+	width: 100%; 
+}
+
+/* la coche [Tous]*/
+.enteteDebut {
+	text-align:left; 
+	color:#c9ffc7; 
+	float:left; 
+	width:178px
+}
+
+/* l'entete du tableau : les noms des jours */
+.divNomJour {
+	text-align:center; 
+	width:26px; 
+	height: 25px;
+	float:left; 
+	font-size:10px;
+	border-left: 1px solid black;
+	vertical-align: middle;
+}
+/* width pour les navigateurs non IE */
+html>body .divNomJour { 
+	width: 25px;
+}
+/* les lignes par individu */
+.divLigneIndividuPair, .divLigneIndividuImpair {
+	clear: both;
+	background-color: #DDDDDD;	
+	height: 20px;
+}
+.divLigneIndividuImpair {
+	background-color: #EEEEEE;
+}
+.planningService div.divLigneIndividuPair:hover, .planningService div.divLigneIndividuImpair:hover {
+	background-color: #90EE90;
+}
+
+/* cadre contenant le nom d'un individu */
+.divNomIndividu  {
+	width:179px; 
+	float:left;
+	height: 30px;
+	text-align: left;
+	border-right: 1px solid black;
+}
+/* width pour les navigateurs non IE */
+html>body .divNomIndividu { 
+	width: 178px;
+	height: 20px;
+}
+
+/*
+  *** POUR LE PLANNING MENSUEL
+  */
+
+ /* width pour IE */
+.divServTPAM, .divServTRAM, .divServNTPAM, .divServNTRAM, .divServAPAM , .divServARAM, .divServAVPAM, .divServAVRAM,
+.divServTPPM, .divServTRPM, .divServNTPPM, .divServNTRPM, .divServAPPM , .divServARPM, .divServAVPPM, .divServAVRPM ,
+.divServCCRAM, .divServCCRPM, .divServCCVRAM, .divServCCVRPM { 
+	height:10px;
+	width:13px;
+	float:left;
+	border-right: 1px solid black;
+
+}
+.divServTPAM, .divServTRAM, .divServNTPAM, .divServNTRAM, .divServAPAM , .divServARAM, .divServAVPAM, .divServAVRAM , .divServCCAM{
+	border-right: 1px dotted black;
+}
+/* width pour les navigateurs non IE */
+html>body .divServTPAM, html>body .divServTRAM, html>body .divServNTPAM, html>body .divServNTRAM, html>body .divServAPAM , html>body .divServARAM, html>body .divServAVPAM, html>body .divServAVRAM,
+html>body .divServTPPM, html>body .divServTRPM, html>body .divServNTPPM, html>body .divServNTRPM, html>body .divServAPPM , html>body .divServARPM, html>body .divServAVPPM, html>body .divServAVRPM,
+html>body .divServCCRAM, html>body .divServCCRPM, html>body .divServCCVRAM, html>body .divServCCVRPM  { 
+	width:12px;
+}
+
+.divServTPAM, .divServTPPM {	/* travail previsionnel */
+	background-color: cornflowerblue;
+}
+.divServNTPAM, .divServNTPPM {/* non travail previsionnel */
+}
+.divServAPAM, .divServAPPM { /* absence previsionnelle */
+	background-color: plum;
+}
+.divServAVPAM, .divServAVPPM { /* absence previsionnelle en cours de validation (il n'y en a jamais normalement ) */
+	background-color: yellow;
+}
+.divServTRAM, .divServTRPM, .divServCCRAM , .divServCCRPM, .divServCCVRAM , .divServCCVRPM  { /* travail reel */
+	background-color: blue;
+}
+.divServNTRAM, .divServNTRPM {/* non travail reel */
+}
+.divServARAM, .divServARPM { /* absence reelle */
+	background-color: deeppink;
+}
+.divServAVRAM, .divServAVRPM{ /* absence reelle en cours de validation */
+	background-color: yellow;
+}
+
+/* on affiche les conges a la minute partout sous IE ... */
+
+html>body .divServCCRAM {	/* conges reel a la minute le matin*/
+	width: 8px;
+	border-right: 5px solid deeppink;
+} 
+html>body .divServCCRPM { /* conges reel a la minute l'aprm*/
+	width: 8px;
+	border-right: 5px solid deeppink;
+}
+html>body .divServCCVRAM {	/* conges reel a la minute le matin*/
+	width: 8px;
+	border-right: 5px solid yellow;
+} 
+html>body .divServCCVRPM { /* conges reel a la minute l'aprm*/
+	width: 8px;
+	border-right: 5px solid yellow;
+}
+
+
+
+/*
+  *** POUR LE PLANNING HEBDOMADAIRE
+  */
+  
+.h0030, .h3059 {
+	height: 10px;
+	width : 28px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	float: left;
+	top: 4px;
+} 
+.h0030 {
+	border-right: 1px dotted black;
+	top: 1px;
+}
+/* top pour les navigateurs non IE */
+html>body .h0030 { 
+	top: 4px;
+}
+.h3059 {
+	border-left: 1px dotted black;
+
+}
+.h0030libelle {
+	top: -16px;
+	left:  -14px;
+	font-size: 10px;
+}
+.h3059libelle {
+	top: -9px;
+	left:  -14px;
+	font-size: 8px;
+}
+
+  
+.divHebTP , .divHebNTP, .divHebAP, .dibHebAVP, 
+.divHebTR , .divHebNTR, .divHebAR, .dibHebAVR { 
+	height: 10px;
+	float: left;
+}
+  
+.divHebTP { /*  travail previsionnel */
+	background-color: cornflowerblue;
+}
+.divHebNTP { /*  non travail previsionnel */
+}
+.divHebAP { /*  absence previsionnel */
+	background-color: plum;
+}
+.dibHebAVP { /* absence previsionnelle en cours de validation (il n'y en a jamais normalement ) */
+	background-color: yellow;
+}
+.divHebTR { /*  travail reel */
+	background-color: blue;
+}
+.divHebNTR { /*  non travail reel */
+}
+.divHebAR { /*  absence reel */
+	background-color: deeppink;
+}
+.dibHebAVR { /* absence reel en cours de validation */
+	background-color: yellow;;
+}
+

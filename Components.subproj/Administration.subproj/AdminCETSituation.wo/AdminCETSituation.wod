@@ -1,0 +1,156 @@
+CRINavBarCet: CRINavigationBar {
+	displayGroup = cetDg;
+	longListLimit = 10;
+}
+
+FormRefreshCetDg: WOForm {
+	name = "FormRefreshCetDg";
+}
+
+BtnDoRefreshCetDg: WOSubmitButton {
+	action = doRefreshCetDg;
+	name = "BtnDoRefreshCetDg";
+	title = "Rafraichir la liste des cet";
+	value = "Actualiser";
+	class = "bouton";
+}
+
+FormOnlyPersonnelActuel: WOForm {
+	name = "FormOnlyPersonnelActuel";
+}
+
+ChkIsOnlyPersonnelActuel: WOCheckBox {
+	checked = isOnlyPersonnelActuel;
+	onClick = "FormOnlyPersonnelActuel.submit();";
+	name = "ChkIsOnlyPersonnelActuel";
+	title = "Cliquer pour conserver ou non uniquement les personnels actuels de l'&eacute;tablissement";
+}
+
+FormSearchSituationCet: WOForm {
+	name = "FormSearchSituationCet";
+	action = neFaitRien;
+}
+
+TFSearchStringSituationCet: WOTextField {
+	value = searchString;
+	class = "searchField";
+	title = "Entrez le nom et/ou pr&eacute;nom d'un agent pour lancer la recherche";
+}
+
+CondHasResult: WOConditional {
+	condition = cetDg.allObjects.@count;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+TipCsv: CRIToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+FormDateArret: WOForm {
+	action = neFaitRien;
+	name = "FormDateArret";
+}
+
+DatePickerArret: CRIDatePicker {
+	dateValue = dateArret;
+	fieldName = "dateArret";
+	formName = "FormDateArret";
+}
+
+BtnEcrireDansLePdf: WOSubmitButton {
+	action = neFaitRien;
+	name = "BtnEcrireDansLePdf";
+	class = "bouton";
+	value = "OK";
+	title = "Cliquer pour modifier la date de la situation imprim&eacute;e dans les document";
+	escapeHTML = "false";
+}
+
+CngPdfBoxSituation: CngPdfBoxLink {
+	printLabel = "Situation de tous les agents";
+	printTip = "Generer le fichier PDF contenant toutes les editions de situation du CET de ces agents";
+	ctrl = ctrlSituationCETAllCet;
+}
+
+ImgWarning: WOImage {
+	framework = "app";
+	filename = "images/important.png";
+	width = "16";
+	height = "16";
+	border = "0";
+}
+
+RepCet: WORepetition {
+	list = cetDg.displayedObjects;
+	item = cetItem;
+}
+
+BoldContainer1: BoldContainer {
+	isBold = isTheSelectedCetItem;
+}
+
+LnkDoSelectCetItem: WOHyperlink {
+	action = doSelectCetItem;
+	title = "Selectionner ce CET";
+	disabled = isTheSelectedCetItem;
+}
+
+StrAgent: WOString {
+	value = cetItem.individu.nomComplet;
+}
+
+StrSoldeAncienRegimeEnHeuresCetItem: WOString {
+	value = soldeAncienRegimeEnHeuresCetItem;
+}
+
+StrSoldeAncienRegimeEnJour7h00CetItem: WOString {
+	value = soldeAncienRegimeEnJour7h00CetItem;
+	numberformat = "0.00";
+}
+
+StrSoldeRegimePerenneDebutAnneeEnJour7h00CetItem: WOString {
+	value = soldeRegimePerenneDebutAnneeEnJour7h00CetItem;
+	numberformat = "0.00";
+}
+
+StrSoldeRegimePerenneDebutAnneeEnHeuresCetItem: WOString {
+	value = soldeRegimePerenneDebutAnneeEnHeuresCetItem;
+}
+
+StrSoldeRegimePerenneFinAnneeEnJour7h00CetItem: WOString {
+	value = soldeRegimePerenneFinAnneeEnJour7h00CetItem;
+	numberformat = "0.00";
+}
+
+StrSoldeRegimePerenneFinAnneeEnHeuresCetItem: WOString {
+	value = soldeRegimePerenneFinAnneeEnHeuresCetItem;
+}
+
+CondIsCetSelected: WOConditional {
+	condition = cetSelected;
+}
+
+StrIndividuSelected: WOString {
+	value = cetSelected.individu.nomComplet;
+}
+
+CetEtat1: CetEtat {
+	individu = cetSelected.individu;
+	isModificationAutorisee =  true;
+	dateDebutAnnee = selectedAnneeUniv;
+}

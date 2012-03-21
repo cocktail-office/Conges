@@ -1,0 +1,121 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            columnName = "CDR_KEY"; 
+            externalType = NUMBER; 
+            name = cdrKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CDR_NIVEAU"; 
+            externalType = NUMBER; 
+            name = cdrNiveau; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CDR_TYPE"; 
+            externalType = VARCHAR2; 
+            name = cdrType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU_RESP"; 
+            externalType = NUMBER; 
+            name = noIndividuResp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cdrKey); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EODroit"; 
+    classProperties = (
+        cdrType, 
+        cdrNiveau, 
+        cStructure, 
+        noIndividuResp, 
+        toIndividuResp, 
+        noIndividu, 
+        toIndividu, 
+        toStructure, 
+        dCreation, 
+        dModification
+    ); 
+    externalName = "CONGES.CNG_DROIT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cdrType, 
+            cdrNiveau, 
+            cStructure, 
+            noIndividuResp, 
+            toIndividuResp, 
+            noIndividu, 
+            toIndividu, 
+            toStructure
+        ); 
+        "_nameInObjectStore" = "CNG_DROIT"; 
+    }; 
+    name = Droit; 
+    primaryKeyAttributes = (cdrKey); 
+    relationships = (
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noIndividuResp; }); 
+            name = toIndividuResp; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }
+    ); 
+}

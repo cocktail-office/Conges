@@ -1,0 +1,241 @@
+FormSuivi: WOForm {
+	name = "FormSuivi";
+	//action = vOccupationsSuiviDg.qualifyDataSource;
+	action = doRefreshDg;
+}
+
+
+BtnQualifyDataSourceHidden: WOSubmitButton {
+	action = doRefreshDg;
+	name = "BtnQualifyDataSourceHidden";
+	style = "visibility:hidden;display:none";	
+}
+
+BtnQualifyDataSource: WOSubmitButton {
+	//action = vOccupationsSuiviDg.qualifyDataSource;
+	action = doRefreshDg;
+	name = "BtnQualifyDataSource";
+	value = "Rafraichir la liste / Appliquer les filtres";
+	class = "bouton";
+	title = "Cliquer pour soumettre vos filtres et recharge la liste des occupations depuis la base de donn&eacute;es";
+	escapeHTML = false;
+}
+
+CondHasResult: WOConditional {
+	condition = vOccupationsSuiviDg.allObjects.@count;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CRIToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+
+PopUpDateDebutAnneeUniv: WOPopUpButton {
+	//noSelectionString = "";
+	list = dateDebutAnneeUnivList;
+	item = dateDebutAnneeUnivItem;
+	selection = vOccupationsSuiviDg.queryBindings.dteDebutAnnee;//VALID
+	displayString = dateDebutAnneeUnivItemDisplay;
+}
+
+TFNomUsuelSearch: WOTextField {
+	value = nomUsuelSearch;
+	name = "TFNomUsuelSearch";
+	size = "15";
+	maxlength = "80";
+	class = "searchField";
+}
+
+TFPrenomSearch: WOTextField {
+	value = prenomSearch;
+	name = "TFPrenomSearch";
+	size = "15";
+	maxlength = "40";
+	class = "searchField";
+}
+
+PopUpComposante: WOPopUpButton {
+	noSelectionString = "";
+	list = composanteList;
+	item = composanteItem;
+	selection = vOccupationsSuiviDg.queryBindings.toComposante;//VALID
+	onChange = "FormSuivi.submit();";
+	displayString = composanteItem.libelleCourt;
+}
+
+PopUpService: WOPopUpButton {
+	noSelectionString = "";
+	list = serviceList;
+	item = serviceItem;
+	selection = vOccupationsSuiviDg.queryBindings.toStructure;//VALID
+	displayString = serviceItem.display;
+}
+
+DatePickerDebut: CRIDatePicker {
+	dateValue = dateDebut;
+}
+
+PopDateDebutAmPm: WOPopUpButton {
+	list = dateDebutAmPmList;
+	item = dateDebutAmPmItem;
+	selection = dateDebutAmPmSelected;
+}
+
+DatePickerFin: CRIDatePicker {
+	dateValue = dateFin;
+}
+
+PopDateFinAmPm: WOPopUpButton {
+	list = dateFinAmPmList;
+	item = dateFinAmPmItem;
+	selection = dateFinAmPmSelected;
+}
+
+RepEtat: WORepetition {
+	list = etatList;
+	item = etatItem;
+}
+
+ChkEtatItem: WOCheckBox {
+	checked = isSelectedEtatItem;
+}
+
+StrEtatItemLibelle: WOString {
+	value = etatItemLibelle;
+}
+
+PopPupAttribute: WOPopUpButton {
+	displayString = attributeItem.name;
+	item = attributeItem;
+	list = attributeList;
+	noSelectionString = "";
+	selection = attributeSelected;
+}
+
+CngInfoBox1: CngInfoBox {
+	
+}
+
+RepTypeOccupationJourNonDrh: WORepetition {
+	list = typeOccupationJourNonDrhList;
+	item = typeOccupationItem;
+}
+
+RepTypeOccupationMinuteNonDrh: WORepetition {
+	list = typeOccupationMinuteNonDrhList;
+	item = typeOccupationItem;
+}
+
+RepTypeOccupationJourDrh: WORepetition {
+	list = typeOccupationJourDrhList;
+	item = typeOccupationItem;
+}
+
+RepTypeOccupationMinuteDrh: WORepetition {
+	list = typeOccupationMinuteDrhList;
+	item = typeOccupationItem;
+}
+
+SpanTypeOccupation: WOGenericContainer {
+	elementName = "span";
+	title = typeOccupationItem.libelle;
+}
+
+ChkTypeOccupationItem: WOCheckBox {
+	checked = isSelectedTypeOccupationItem;
+}
+
+StrTypeOccupationItem: WOString {
+	value = typeOccupationItem.libelleCourt;
+}
+
+PopUpLigneParPage: WOPopUpButton {
+	list = ligneParPageList;
+	item = ligneParPageItem;
+	selection = ligneParPageSelected;
+	noSelectionString = "";
+}
+
+CRINavBarSuivi: CRINavigationBar {
+	displayGroup = vOccupationsSuiviDg;
+	longListLimit = 10;
+}
+
+RepVOccupationSuivi: WORepetition {
+	list = vOccupationsSuiviDg.displayedObjects;
+	item = vOccupationSuiviItem;
+}
+
+StrVOccupationSuiviItemComposante: WOString {
+	value = vOccupationSuiviItem.composante;
+}
+
+StrVOccupationSuiviItemService: WOString {
+	value = vOccupationSuiviItem.service;
+}
+
+StrVOccupationSuiviItemNomUsuel: WOString {
+	value = vOccupationSuiviItem.nomUsuel;
+}
+
+StrVOccupationSuiviItemPrenom: WOString {
+	value = vOccupationSuiviItem.prenom;
+}
+
+StrVOccupationSuiviItemTypeOccupation: WOString {
+	value = vOccupationSuiviItem.typeOccupation;
+}
+
+StrVOccupationSuiviItemDteDebut: WOString {
+	value = vOccupationSuiviItem.dteDebut;
+	dateformat = "%d/%m/%Y %H:%M";
+}
+
+StrVOccupationSuiviItemDteFin: WOString {
+	value = vOccupationSuiviItem.dteFin;
+	dateformat = "%d/%m/%Y %H:%M";
+}
+
+StrVOccupationSuiviItemMotif: WOString {
+	value = vOccupationSuiviItem.motif;
+}
+
+StrVOccupationSuiviItemTempsSurHoraireHeures: WOString {
+	value = vOccupationSuiviLibelleTempsSurHoraireHeures;
+}
+
+StrVOccupationSuiviItemTempsDecompteHeures: WOString {
+	value = vOccupationSuiviLibelleTempsDecompteHeures;
+}
+
+StrVOccupationSuiviDgDisplayedObjectsTempsSurHoraireTotalHeures: WOString {
+	value = vOccupationSuiviDgDisplayedObjectsTempsSurHoraireTotalHeures;
+}
+
+StrVOccupationSuiviDgDisplayedObjectsTempsDecompteTotalHeures: WOString {
+	value = vOccupationSuiviDgDisplayedObjectsTempsDecompteTotalHeures;
+}
+
+StrVOccupationSuiviDgAllObjectsTempsSurHoraireTotalHeures: WOString {
+	value = vOccupationSuiviDgAllObjectsTempsSurHoraireTotalHeures;
+}
+
+StrVOccupationSuiviDgAllObjectsTempsDecompteTotalHeures: WOString {
+	value = vOccupationSuiviDgAllObjectsTempsDecompteTotalHeures;
+}

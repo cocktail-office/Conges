@@ -1,0 +1,222 @@
+{
+    attributes = (
+        {
+            columnName = COMPOSANTE; 
+            externalType = VARCHAR2; 
+            name = composante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DTE_DEBUT"; 
+            externalType = DATE; 
+            name = dteDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DTE_DEBUT_ANNEE"; 
+            externalType = DATE; 
+            name = dteDebutAnnee; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DTE_FIN"; 
+            externalType = DATE; 
+            name = dteFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = MOTIF; 
+            externalType = VARCHAR2; 
+            name = motif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_OCC"; 
+            externalType = NUMBER; 
+            name = oidOcc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_TYP_OCC"; 
+            externalType = NUMBER; 
+            name = oidTypOcc; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            columnName = SERVICE; 
+            externalType = VARCHAR2; 
+            name = service; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = STATUS; 
+            externalType = VARCHAR2; 
+            name = status; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TEMPS_DECOMPTE"; 
+            externalType = NUMBER; 
+            name = tempsDecompte; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TEMPS_SUR_HORAIRE"; 
+            externalType = NUMBER; 
+            name = tempsSurHoraire; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TYPE_OCCUPATION"; 
+            externalType = VARCHAR2; 
+            name = typeOccupation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        composante, 
+        cStructure, 
+        cStructureComposante, 
+        dCreation, 
+        dteDebut, 
+        dteDebutAnnee, 
+        dteFin, 
+        motif, 
+        noIndividu, 
+        nomUsuel, 
+        oidAffAnn, 
+        oidOcc, 
+        oidTypOcc, 
+        prenom, 
+        service, 
+        status, 
+        tempsDecompte, 
+        tempsSurHoraire, 
+        typeOccupation
+    ); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOVOccupationsSuivi"; 
+    classProperties = (
+        composante, 
+        cStructure, 
+        cStructureComposante, 
+        dCreation, 
+        dteDebut, 
+        dteDebutAnnee, 
+        dteFin, 
+        motif, 
+        noIndividu, 
+        nomUsuel, 
+        oidAffAnn, 
+        oidOcc, 
+        oidTypOcc, 
+        prenom, 
+        service, 
+        status, 
+        tempsDecompte, 
+        tempsSurHoraire, 
+        toComposante, 
+        toStructure, 
+        toTypeOccupation, 
+        typeOccupation
+    ); 
+    externalName = "CONGES.V_OCCUPATIONS_SUIVI"; 
+    isReadOnly = Y; 
+    name = VOccupationsSuivi; 
+    primaryKeyAttributes = (oidOcc); 
+    relationships = (
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructureComposante; }); 
+            name = toComposante; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }, 
+        {
+            destination = TypeOccupation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidTypOcc; }); 
+            name = toTypeOccupation; 
+        }
+    ); 
+}

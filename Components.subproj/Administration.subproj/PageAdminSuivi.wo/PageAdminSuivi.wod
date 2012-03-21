@@ -1,0 +1,27 @@
+SubMenu1: SubMenu {
+	ctrl = subMenuCtrl;
+}
+
+CondIsMenuSuiviOccupations: WOConditional {
+	condition = subMenuCtrl.isMenuSuiviOccupations;
+}
+
+AdminSuiviOccupation1: AdminSuiviOccupation {
+	
+}
+
+CondIsMenuSuiviCalculs: WOConditional {
+	condition = subMenuCtrl.isMenuSuiviCalculs;
+}
+
+PageAdminLogs1: PageAdminLogs {
+	
+}
+
+CondIsMenuSuiviPlannings: WOConditional {
+	condition = subMenuCtrl.isMenuSuiviPlannings;
+}
+
+AdminSuiviPlanning1: AdminSuiviPlanning {
+	
+}

@@ -1,0 +1,364 @@
+Template: PageTemplate {
+	pageTitle = "Planning du service";
+}
+
+FormFiltrageCommun: WOForm {
+}
+
+CondIsShowRadioComposante: WOConditional {
+	condition = isShowRadioComposante;
+}
+
+RadioIdStructureService: WORadioButton {
+	value = RADIO_ID_STRUCTURE_SERVICE;
+	selection = radioIdStructure;
+	onClick = "this.form.submit();";
+	name = "RadioIdStructure";
+}
+
+
+CondIsShowRadioPlanningConsultablesParMoi: WOConditional {
+	condition = isShowRadioPlanningConsultablesParMoi;
+}
+
+RadioIdStructurePlanningsVisibles: WORadioButton {
+	value = RADIO_ID_PLANNINGS_CONSULTABLES_PAR_MOI;
+	selection = radioIdStructure;
+	onClick = "this.form.submit();";
+	name = "RadioIdStructure";
+}
+
+
+StrService: WOString {
+	value = strService;
+}
+
+RadioIdStructureComposante: WORadioButton {
+	value = RADIO_ID_STRUCTURE_COMPOSANTE;
+	selection = radioIdStructure;
+	onClick = "this.form.submit();";
+	name = "RadioIdStructure";
+}
+
+StrComposante: WOString {
+	value = strComposante;
+}
+
+PopupAnneeUniv: WOPopUpButton {
+	item = itemAnneeUniv;
+	list = listAnneeUniv;
+	onChange = "this.form.submit();";
+	selection = selectedAnneeUniv;
+}
+
+CheckShowPrevisionnel: WOCheckBox {
+	onChange = "this.form.submit();";
+	checked = showPrevisionnel;
+}
+
+CondVisuDemiJournee: WOConditional {
+	condition = isVisuHoraire;
+	negate = true;
+}
+
+LnkGoPageHoraire: WOHyperlink {
+	action = goPageHoraire;
+}
+
+CngPdfBoxCouleur: CngPdfBoxLink {
+	printLabel = "Plannings sur 2 mois (Couleur)";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF des plannings en couleur";
+	ctrl = ctrlPlanningCouleur;
+}
+
+CngPdfBoxNb: CngPdfBoxLink  {
+	printLabel = "Plannings sur 2 mois (N/B)";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF des plannings en noir et blanc";
+	ctrl = ctrlPlanningNb;
+}
+
+CngPdfBoxHoraires: CngPdfBoxLink  {
+	printLabel = "Horaires des agents";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF contenant les horaires des agents du service. Attention, seuls les plannings avec des horaires associ&eacute;s sortiront dans l'&eacute;dition.";
+	ctrl = ctrlHoraires;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter les plannings sur toute l'ann&eacute; au format CSV (T=Travail, A=Absence, V=Abs. en cours de valid., N=Non Travail)";
+	escapeHTML = "false";
+}
+
+TipCsv: CRIToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br><u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br><u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+FormFiltrage: WOForm {
+	action=filtrer;	
+	name="FormFiltrage";
+}
+
+DivPlanningService: WOGenericContainer {
+	elementName = "div";
+	class = "planningService";
+	style = styleDivPlanningMensuel;
+}
+
+RepMois: WORepetition {
+	list=lesMois;
+	item=leMois;
+}
+
+LinkLibelleMois: WOHyperlink {
+	action = changeMois;
+	title = "Afficher les plannings sur ce mois";
+}
+
+StrLibelleMois: WOString {
+	dateformat = "%b";
+	value = leMois;
+}
+
+CondIsFiltrageAutorise: WOConditional {
+	condition = isFiltrageAutorise;
+}
+
+LinkFiltrer: WOHyperlink {
+	action = filtrer;
+	onClick = "FormFiltrage.submit();return false;";
+	title = "N'afficher que les plannings selectionnes";
+}
+
+ImageFiltrer: WOImage {
+	alt = "Filtrer";
+	filename = "images/valider16.gif";
+	framework = "app";
+}
+
+LinkAnnulerFiltrer: WOHyperlink {
+	action = annulerFiltrer;
+	title = "Re-afficher tous les plannings des agents affectes a ce service";
+}
+RepJours: WORepetition {
+	list=lesJours;
+	item=lesJoursItem;
+}
+StrNomJour: WOString {
+	value=numeroLesJoursItem;
+}
+
+RepIndividu: WORepetition {
+	item = uneAffectationAnnuelleDuService;
+	list = dgAffectationAnnuelle.displayedObjects;
+	index = indexUneAffectationAnnuelleDuService;
+}
+
+DivIndividu: WOGenericContainer {
+	elementName = "div";
+	class = classeDivIndividu;
+}
+
+CheckBoxIndividu: WOCheckBox {
+	name=indexUneAffectationAnnuelleDuService;
+	checked = fakeCheckAgent;
+	disabled = isDisabledChkIndividu;
+}
+
+SpanColorStatus: WOGenericContainer {
+	elementName = "span";
+	style = styleHtmlColorPlanning;
+	title = htmlLabelPlanning;
+}
+
+LinkNomComplet: WOHyperlink {
+	action = detaillerPlanning;
+	string = uneAffectationAnnuelleDuService.individu.nomCompletNomTronque;
+	title = titreForNomIndividu;
+}
+
+RepPresencesHorairesR: WORepetition {
+	list = presencesHorairesR;
+	item = unePresenceHoraire;
+}
+
+divAM: WOGenericContainer {
+	elementName="div"; 
+	class = classAMDemiJ; 
+}
+divPM: WOGenericContainer {
+	elementName="div";
+	class = classPMDemiJ; 
+}
+
+CondShowPrevisionnel: WOConditional {
+	condition = showPrevisionnel;
+}
+
+RepPresencesHorairesP: WORepetition {
+	list = presencesHorairesP;
+	item = unePresenceHoraire;
+}
+
+CondNotShowPrevisionnel: WOConditional {
+	condition = showPrevisionnel;
+	negate = true;
+}
+
+
+CondShowHoraire: WOConditional {
+	condition = isVisuHoraire;
+}
+
+CondShowPause: WOConditional {
+	condition = isShowPause;
+}
+
+
+
+LnkGoPageService: WOHyperlink {
+	action = goPageService;
+}
+
+Form1: WOForm {
+}
+
+CheckShowJourneeComplete: WOCheckBox {
+	onChange = "this.form.submit();";
+	checked = voirJourneeComplete;
+}
+
+PopUpLesSemainesDeLAnnee: WOPopUpButton {
+	item = uneSemaineDeLAnnee;
+	list = lesSemainesDeLAnnee;
+	selection = laSemaineDeLAnneeSelectionnee;
+	displayString = displayUneSemaineDeLAnnee;
+	onChange = "this.form.submit();";
+}
+
+RepLesJoursLibelleLong: WORepetition {
+	item = unJourLibelleLong;
+	list = lesJoursLibelleLong;
+}
+
+TdClassTabMenu: WOGenericContainer {
+	class = classTabMenu;
+	elementName = "TD";
+}
+
+LnkGoJourLibelleLong: WOHyperlink {
+	action = goJourLibelleLong;
+	title = "Afficher les plannings sur ce jour";
+}
+
+StrUnJourLibelleLong: WOString {
+	value = unJourLibelleLong;
+}
+
+DivPlanningHebdo: WOGenericContainer {
+	elementName = "div";
+	class = "planningService";
+	style = styleDivPlanningHebdo;
+}
+
+RepHeures: WORepetition {
+	count = nbItemEchelle;
+}
+
+StrHeure: WOString {
+	value = heuresEchelle;
+}
+
+StrDemiHeure: WOString {
+	value = demiHeuresEchelle;
+}
+
+// les div pour le horaires hebdoReel
+
+DivReelAvtAM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivReelAvtAM;
+	class = classeNonTravail;
+}
+
+DivReelHorAM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivReelHorAM;
+	class = classeAMR;
+}
+
+DivReelMidi: WOGenericContainer {
+	elementName = "div";
+	style = styleDivReelMidi;
+	class = classeNonTravail;
+}
+
+DivReelHorPM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivReelHorPM;
+	class = classePMR;
+}
+
+DivReelAprPM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivReelAprPM;
+	class = classeNonTravail;
+}
+
+CondIsNotIE : WOConditional {
+	condition = isUsingNavigatorIE;
+	negate = true;
+}
+
+DivPause: WOGenericContainer {
+	elementName = "div";
+	style = styleCssDivPause;
+	class = "divPause";
+}
+
+// les div pour le horaires hebdoPrev
+
+DivPrevAvtAM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivPrevAvtAM;
+	class = classeNonTravail;
+}
+
+DivPrevHorAM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivPrevHorAM;
+	class = classeAMP;
+}
+
+DivPrevMidi: WOGenericContainer {
+	elementName = "div";
+	style = styleDivPrevMidi;
+	class = classeNonTravail;
+}
+
+DivPrevHorPM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivPrevHorPM;
+	class = classePMP;
+}
+
+DivPrevAprPM: WOGenericContainer {
+	elementName = "div";
+	style = styleDivPrevAprPM;
+	class = classeNonTravail;
+}
+
+CondIsMultipage: WOConditional {
+	condition = isMultipage;
+}
+
+NavBar: CRINavigationBar {
+	displayGroup = dgAffectationAnnuelle;
+	longListLimit = 10;
+}

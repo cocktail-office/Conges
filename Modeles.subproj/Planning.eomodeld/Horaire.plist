@@ -1,0 +1,156 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = COULEUR; 
+            externalType = VARCHAR2; 
+            name = couleur; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 64; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DUREES; 
+            externalType = VARCHAR2; 
+            name = durees; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DUREES_AM"; 
+            externalType = VARCHAR2; 
+            name = dureesAM; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DUREES_PM"; 
+            externalType = VARCHAR2; 
+            name = dureesPM; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = HORAIRES; 
+            externalType = VARCHAR2; 
+            name = horaires; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NOM; 
+            externalType = VARCHAR2; 
+            name = nom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "OID_AFF_ANNUELLE"; }; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PAUSES; 
+            externalType = VARCHAR2; 
+            name = pauses; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = QUOTITE; 
+            externalType = NUMBER; 
+            name = quotite; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOHoraire"; 
+    classProperties = (
+        horaires, 
+        pauses, 
+        nom, 
+        affectationAnnuelle, 
+        durees, 
+        dureesAM, 
+        dureesPM, 
+        quotite, 
+        planningHebdomadaires, 
+        couleur, 
+        dCreation, 
+        dModification
+    ); 
+    externalName = "CONGES.PLNG_HOR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            horaires, 
+            pauses, 
+            nom, 
+            affectationAnnuelle, 
+            durees, 
+            dureesAM, 
+            dureesPM, 
+            quotite
+        ); 
+        "_nameInObjectStore" = "PLNG_HOR"; 
+    }; 
+    name = Horaire; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = affectationAnnuelle; 
+        }, 
+        {
+            destination = PlanningHebdomadaire; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidHoraire; sourceAttribute = oid; }); 
+            name = planningHebdomadaires; 
+        }
+    ); 
+}

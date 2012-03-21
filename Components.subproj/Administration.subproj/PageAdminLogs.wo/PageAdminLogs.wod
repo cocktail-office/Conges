@@ -1,0 +1,120 @@
+Form1: WOForm {
+	action = leDisplayGroupVueIndividuConges.qualifyDataSource;
+}
+
+PopUpButton2: WOPopUpButton {
+	displayString = displayUneDteDebutAnnee;
+	item = unDteDebutAnnee;
+	list = lesDteDebutAnnee;
+	noSelectionString = "";
+	onChange = "this.form.submit();";
+	selection = leDisplayGroupVueIndividuConges.queryBindings.laDteDebutAnnee; //VALID
+}
+
+TextField1: WOTextField {
+	value = leNomUsuel;
+	class = "searchField";
+}
+
+TextField2: WOTextField {
+	value = lePrenom;
+	class = "searchField";
+}
+
+PopUpButton1: WOPopUpButton {
+	displayString = uneStructure.display;
+	item = uneStructure;
+	list = lesStructure;
+	noSelectionString = "";
+	onChange = "this.form.submit();";
+	selection = leDisplayGroupVueIndividuConges.queryBindings.laStructure;//VALID
+}
+
+SubmitButton1: WOSubmitButton {
+	action = leDisplayGroupVueIndividuConges.qualifyDataSource;
+	style = "visibility:hidden;display:none";
+	value = "BOUTON CACHE";
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+TipCsv: CRIToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+Conditional1: WOConditional {
+	condition = leDisplayGroupVueIndividuConges.allObjects.@count;//VALID
+}
+
+PopUpButton3: WOPopUpButton {
+	displayString = unAttribut.name;
+	item = unAttribut;
+	list = lesAttributs;
+	noSelectionString = "";
+	onChange = "this.form.submit();";
+	selection = lAttributSelectionne;
+}
+
+Repetition1: WORepetition {
+	item = unRecord;
+	list = leDisplayGroupVueIndividuConges.displayedObjects;
+}
+
+String1: WOString {
+	value = unRecord.nomUsuel;
+}
+
+String2: WOString {
+	value = unRecord.prenom;
+}
+
+StrLcStructure: WOString {
+	value = unRecord.lcStructure;
+}
+
+StrAnneeUniv: WOString {
+	value = unRecord.dteDebutAnnee;
+	dateformat = "%d/%m/%Y";
+}
+
+StrAffectationDDebut: WOString {
+	value = unRecord.dDebAffectation;
+	dateformat = "%d/%m/%Y";
+}
+
+StrAffectationDFin: WOString {
+	value = unRecord.dFinAffectation;
+	dateformat = "%d/%m/%Y";
+	valueWhenEmpty = "&nbsp;";
+	escapeHTML = false;
+}
+
+StrRelInit: WOString {
+	value = unRecord.toAffectationAnnuelle.reliquatInitialEnHeures;
+}
+
+StrCngInitial: WOString {
+	value = displayCngInitial;
+}
+
+StrCngFinal: WOString {
+	value = displayCngFinal;
+}
+
+StrRegulation: WOString {
+	value = displayRegulation;
+}

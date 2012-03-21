@@ -1,0 +1,84 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOAffectationAnnuelle"; 
+            name = AffectationAnnuelle; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOAnnulationPeriodeFermeture"; 
+            name = AnnulationPeriodeFermeture; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOCalculAffectationAnnuelle"; 
+            name = CalculAffAnn; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOHoraire"; 
+            name = Horaire; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOOccupation"; 
+            name = Occupation; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOPeriodeAffectationAnnuelle"; 
+            name = PeriodeAffectationAnnuelle; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOPeriodeFermeture"; 
+            name = PeriodeFermeture; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOPlanningHebdomadaire"; 
+            name = PlanningHebdomadaire; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOTypeHoraire"; 
+            name = TypeHoraire; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOTypeOccupation"; 
+            name = TypeOccupation; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVHoraires"; 
+            name = VHoraires; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVIndividuConges"; 
+            name = VIndividuConges; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVOccupationsFer"; 
+            name = VOccupationsFer; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVOccupationsOcc"; 
+            name = VOccupationsOcc; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVacanceScolaire"; 
+            name = VacanceScolaire; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOMouvement"; 
+            name = Mouvement; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVOccupationsSuivi"; 
+            name = VOccupationsSuivi; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOVOccupationsLeg"; 
+            name = VOccupationsLeg; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.planning.EOTypeOccupationParametre"; 
+            name = TypeOccupationParametre; 
+        }
+    ); 
+    userInfo = {modelId = "CONGES_PLANNING"; }; 
+}

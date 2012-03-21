@@ -1,0 +1,83 @@
+Form1: WOForm {
+	name = "FormAdminMessage";
+}
+
+Conditional3: WOConditional {
+	condition = showDetailMessage;
+	negate = true;
+}
+
+Repetition1: WORepetition {
+	item = unMessage;
+	list = lesMessages;
+}
+
+String2: WOString {
+	dateformat = "%d/%m/%y";
+	value = unMessage.mesDateDebut;
+}
+
+String3: WOString {
+	dateformat = "%d/%m/%y";
+	value = unMessage.mesDateFin;
+}
+
+Hyperlink1: WOHyperlink {
+	action = modifierUnMessage;
+}
+
+String1: WOString {
+	value = unMessage.mesTitre;
+}
+
+Hyperlink2: WOHyperlink {
+	action = supprimerUnMessage;
+	title = "Supprimer ce message";
+}
+
+Image1: WOImage {
+	border = 0;
+	filename = "images/moins16.gif";
+	framework = "app";
+}
+
+Hyperlink3: WOHyperlink {
+	action = ajouterUnMessage;
+}
+
+Conditional1: WOConditional {
+	condition = showDetailMessage;
+}
+
+CRINote1: CRINote {
+}
+
+TextField1: WOTextField {
+	maxlength = 50;
+	size = 50;
+	value = leMessageEnCours.mesTitre;
+}
+
+DateDebut: CRIDatePicker {
+	dateValue=leMessageEnCours.mesDateDebut;
+	formName="FormAdminMessage";
+	fieldName="dateDebut";
+}
+
+DateDebut2: CRIDatePicker {
+	dateValue=leMessageEnCours.mesDateFin;
+	formName="FormAdminMessage";
+	fieldName="dateFin";
+}
+
+Text1: WOText {
+	cols = 80;
+	rows = 5;
+	value = leMessageEnCours.mesContenu;
+}
+
+SubmitButton1: WOSubmitButton {
+	action = enregistrer;
+	class = "bouton";
+	value = "Enregistrer";
+}

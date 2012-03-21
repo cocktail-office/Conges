@@ -1,0 +1,37 @@
+PageTemplate: PageTemplate {
+	pageTitle = "Preferences personnelles";
+	useToolTip = true;
+}
+
+BoxPreferences: CngInfoBox {
+	
+}
+
+FormPreferences: WOForm {
+	multipleSubmit = true;
+	name = "FormPreferences";
+	action = neFaitRien;
+}
+
+ChkIsMailRecipisse: WOCheckBox {
+	checked = isMailRecipisse;
+	onChange = "this.form.submit();";
+}
+
+TipRecevoirRecipisse: CRIToolTip {
+	htmlText = "Je souhaite recevoir les mails de r&eacute;cipiss&eacute; des <b>autres</b> 'N+1', concernant<br>\
+		les plannings des agents dont j'ai la reponsabilit&eacute;.<br/><br/>\
+		<i>Par exemple, savoir qu'un visa a &eacute;t&eacute; appos&eacute; ou \
+		qu'un cong&eacute; 'DRH' &agrave; &eacute;t&eacute; accept&eacute; ...</i>";
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	border = "0";
+}
+
+ChkIsMailRecipisseDelegation: WOCheckBox {
+	checked = isMailRecipisseDelegation;
+	onChange = "this.form.submit();";
+}

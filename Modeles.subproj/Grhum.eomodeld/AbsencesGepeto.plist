@@ -1,0 +1,144 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ABS_AMPM_DEBUT"; 
+            externalType = VARCHAR2; 
+            name = absAmpmDebut; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ABS_AMPM_FIN"; 
+            externalType = VARCHAR2; 
+            name = absAmpmFin; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ABS_DEBUT"; 
+            externalType = DATE; 
+            name = absDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ABS_FIN"; 
+            externalType = DATE; 
+            name = absFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ABS_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = absMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "ABS_NUMERO"; 
+            externalType = NUMBER; 
+            name = absNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ABS_TYPE_CODE"; 
+            externalType = VARCHAR2; 
+            name = absTypeCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "ABS_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = absValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (absNumero); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOAbsenceGepeto"; 
+    classProperties = (
+        absDebut, 
+        absFin, 
+        absAmpmDebut, 
+        absAmpmFin, 
+        absMotif, 
+        absValide, 
+        toIndividu, 
+        toTypeAbsenceGepeto, 
+        dCreation, 
+        dModification
+    ); 
+    externalName = "GRHUM.ABSENCES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            absNumero, 
+            absDebut, 
+            absFin, 
+            absAmpmDebut, 
+            absAmpmFin, 
+            absMotif, 
+            absTypeCode, 
+            absValide, 
+            noIndividu
+        ); 
+        "_nameInObjectStore" = ABSENCES; 
+    }; 
+    name = AbsencesGepeto; 
+    primaryKeyAttributes = (absNumero); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = TypeAbsenceGepeto; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = absTypeCode; sourceAttribute = absTypeCode; }); 
+            name = toTypeAbsenceGepeto; 
+        }
+    ); 
+    restrictingQualifier = "absValide = 'O'"; 
+}

@@ -1,0 +1,288 @@
+<table>
+	<tr>
+	  <td rowspan = "2">
+      <webobject name = "CompServicesAffAnnsNew1"/>
+	  </td>
+	  <webobject name = "CondIsAffSelected">
+	  	<td width="10">&nbsp;</td>
+	    <td valign="top">
+	      
+	      	<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+	          <tr>
+	            <td>
+	              <table cellpadding="1" cellspacing="0">
+	                <tr class="listboxHeader">
+	                	<th>Profil de <webobject name = "StrNomComplet"/></th>
+	                </tr>
+	                
+	               	<tr>
+	               		<td>
+	              	    <webobject name = "FormGestionProfil">
+				         				<table border="0" cellpadding="0" cellspacing="0" width = "100%">
+	                
+				                
+				                
+				                
+					        				<webobject name = "BtnEnregistrer"/>
+					                
+					                <tr class="listboxLine">
+					                  <td align="left">
+					                    <webobject name = "ChkSemHautes"/> Plus de semaines hautes <webobject name = "ToolTipSemHautes"><webobject name = "ImgInfo"/></webobject>
+					                  </td>
+					                </tr>
+					                <tr class="listboxLine">
+					                  <td align="left">
+					                    <webobject name = "ChkHorsNormes"/> Hors Normes <webobject name = "ToolTipHorsNormes"><webobject name = "ImgInfo"/></webobject>
+					                  </td>
+					                </tr>
+					                <tr class="listboxLine">
+					                  <td align="left">
+					                    <webobject name = "ChkPasseDroit"/> Passe Droit <webobject name = "ToolTipPasseDroit"><webobject name = "ImgInfo"/></webobject>
+					                  </td>
+					                </tr>
+					                <tr class="listboxLine">
+					                  <td align="left">
+					                      <webobject name = "ChkClcAuto"/> Calcul des cong&eacute;s automatique <webobject name = "ToolTipClcAuto"><webobject name = "ImgInfo"/></webobject>
+					                      <webobject name = "CondIsClcAuto">
+					                        <br />
+					                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&raquo; Cong&eacute;s en heures : <webobject name = "DroitsTimeField"/><br/>
+					                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="textNote">Appuyez sur ENTR&Eacute;E pour valider</font>
+					                      </webobject>
+					                  </td>
+					                </tr>
+					                <tr class="listboxLine">
+					                	<td align="left">
+					                		<webobject name = "ChkTPA"/> Temps partiel annualis&eacute; <webobject name = "ToolTipTPA"><webobject name = "ImgInfo"/></webobject>
+					                	</td>
+					                </tr>
+					                <tr class="listboxLine">
+					                	<td align="left">
+					                		<webobject name = "ChkDep"/> D&eacute;passement de cong&eacute;s <webobject name = "ToolTipDep"><webobject name = "ImgInfo"/></webobject>
+					                	</td>
+					                </tr>
+					                <tr class="listboxLine">
+					                  <td align="left">
+					                      <webobject name = "ChkRelAuto"/> Bascule automatique des reliquats <webobject name = "ToolTipRelAuto"><webobject name = "ImgInfo"/></webobject>
+					                      <webobject name = "CondIsRelAuto">
+					                        <br />
+					                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&raquo; Reliquats en heures : <webobject name = "ReliquatTimeField"/><br/>
+					                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="textNote">Appuyez sur ENTR&Eacute;E pour valider</font>
+					                      </webobject>
+					                  </td>
+					                </tr>
+					                <tr class="listboxLine">
+					                	<td align="left">
+					                      <webobject name = "ChkDechargeSyndicale"/> D&eacute;charge syndicale <webobject name = "ToolTipDechargeSyndicale"><webobject name = "ImgInfo"/></webobject>
+					                      <webobject name = "CondIsDechargeSyndicale">
+					                        <br />
+					                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&raquo; D&eacute;charge syndicale en heures : <webobject name = "DechargeSyndicaleTimeField"/><br/>
+					                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="textNote">Appuyez sur ENTR&Eacute;E pour valider</font>
+					                      </webobject>
+					                  </td>
+					                </tr>
+					                
+				                 
+                 
+		               			</table>
+               			  </webobject>
+                 		</td>
+                 	</tr>
+                 
+	                
+	                 <!-- régularisations de solde -->
+			             <tr class="listboxLine">
+	                	<td align="center">
+	                		 R&eacute;gularisation(s) de solde <webobject name = "ToolTipRegularisation"><webobject name = "ImgInfo"/></webobject><br/>
+	                		<webobject name = "CondHasRegularisation">
+	                			<webobject name = "CondNotIsARegularisationSelected">
+			               			<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+														<tr>
+															<td>
+																<table border="0" cellpadding="2" cellspacing="1" width="100%">						
+																	<tr class="listboxHeader">
+																		<th nowrap>Valeur</th>
+																		<th nowrap>Motif</th>
+																	</tr>
+																	<webobject name = "RepRegularisation">
+																		<tr class = "listboxLine">
+																			<td><webobject name = "LnkDoSelectRegularisationItem"><webobject name = "StrRegularisationValeur"/></webobject></td>
+																			<td><webobject name = "StrRegularisationMotif"/></td>
+																		</tr>
+																	</webobject>
+																</table>
+															</td>
+														</tr>
+													</table>
+												</webobject>
+											</webobject>
+																						
+											<webobject name = "CondNotIsARegularisationSelected">
+												<webobject name = "LnkToAddNewRegularisation"><b>Saisie d'une nouvelle r&eacute;gularisation</b></webobject>
+											</webobject>
+											
+											<webobject name = "CondIsARegularisationSelected">
+									
+												<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+													<tr>
+														<td>
+														
+															<webobject name = "FormRegularisation">
+															
+																<table border="0" cellpadding="2" cellspacing="1" width="100%">					
+																																	
+																	<tr class="listboxLine">
+																		<th width="1%" nowrap align=RIGHT>Valeur(*):</th>
+																		<td><webobject name = "TimeFieldRegularisationSelectedValeur"/></td>
+																	</tr>
+																	
+																	<tr class="listboxLine">
+																		<th width="1%" nowrap align=RIGHT>Motif(*):</th>
+																		<td><webobject name = "TFRegularisationSelectedMotif"/></td>
+																	</tr>
+																	
+																	<tr class="listboxLine">
+																		<td colspan="2" align="center">
+																			<webobject name="BtnDoSaveRegularisation"/>
+																			<webobject name="BtnDoCancelRegularisationSelected"/>
+																			<webobject name="CondNotIsUneNouvelleRegularisation">
+																				&nbsp;&nbsp;&nbsp;
+																				<webobject name="BtnDoDelRegularisationSelected"/>
+																			</webobject>
+																		</td>
+																	</tr>
+																	
+																</table>
+															
+															</webobject>
+															
+														</td>
+													</tr>
+												</table>
+																
+											</webobject>
+											
+	                	</td>
+	                </tr>
+	                
+	                
+	              </table>
+	            </td>
+	          </tr>
+	        </table>
+	     
+	    </td>
+	  </webobject>
+	</tr>
+</table>
+  <webobject name = "CondIsAdminGlobal">
+    <webobject name = "CondIsServAutSelected">
+    
+  		<webobject name = "FormEnvoiMail">
+      	
+      	<input type="hidden" value="bidon"/>
+      	<webobject name = "BtnEnregistrerEnvoiMail"/>
+      
+				<table>     
+	        <tr>
+	          <td>
+	            <table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+	              <tr>
+	                <td>
+	                  <table cellpadding="2" cellspacing="0">
+	                    <tr class="listboxHeader">
+	                    	<th colspan="2">Profil du service : <webobject name = "StrNomService"/></th>
+	                    </tr>
+	                  	<tr class="listboxLine">
+	             	      	<th align = "right">Envoi de mails :</th>
+	                    	<td>
+	                      	<label>
+		                      	<webobject name = "ChkEnvoiMail"/>
+		                      	<webobject name = "ImgMail"/>
+	  	                    	<b><webobject name = "StrNomRespService"/></b> (chef de ce service dans l'annuaire) re&ccedil;oit les demandes par mail
+	  	                    </label>
+	                    	</td>
+	                  	</tr>
+	                   </table>
+	                </td>
+	              </tr>
+	            </table>
+	          </td>
+	        </tr>
+	       </table>
+	       
+     	</webobject>
+     	
+      <webobject name = "FormGestionDroit">
+      <table>
+        <tr>
+          <td>
+ 		      	<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+              <tr>
+              	<td>
+	              	<table cellpadding="1" cellspacing="0">
+                  	<tr class="listboxHeader">
+                			<th>Droits sur <webobject name = "StrCible"/></th>
+			              </tr>
+			              <tr>
+			                <td>
+		                    <table width = "100%" class = "boxContents">
+		                      <tr class="listboxLine">
+		                        <td colspan = "3">
+		                          <table>
+		                            <tr>
+		                              <th align = "right" nowrap>Cible concern&eacute;e :</th>
+		                              <td align = "left" nowrap>
+		                              	<webobject name = "PopupCibleList"/> <webobject name = "TipCibleSelectedComment"><webobject name = "ImgInfo"/></webobject>
+		                              </td>
+		                              <td width="100%"/>
+		                              <th align = "right" nowrap>Niveau du droit:</th>
+		                              <td align = "left" nowrap>
+		                              	<webobject name = "PopupNiveauList"/> <webobject name = "TipNiveauSelectedComment"><webobject name = "ImgInfo"/></webobject>
+		                              </td>
+		                            </tr>
+		                          </table>
+		                        </td>
+		                      </tr>
+		                      <tr class="listboxLine">
+		                        <td align = "CENTER" rowspan = "2" width = "1%" valign = "top">
+		                          <webobject name = "SearchIndividu1"/>
+		                          <webobject name = "BtnAjouterDroit"/>
+		                        </td>
+		                        <td width = "1%" valign = "top">
+		                          <span title = "Les droits directement modifiables">
+		                            <table class = "admBox">
+		                              <tr>
+		                                <th>Droits existants</th>
+		                              </tr>
+		                              <tr>
+		                                <td align="right">
+		                                  <webobject name = "BrowserDroits"/><br />
+		                                  <webobject name = "BtnSupprimerDroit"/>
+		                                </td>
+		                              </tr>
+		                            </table>
+		                          </span>
+		                        </td>
+		                        <td valign = "top">
+		                          <span title = "Les droits indirects : droits p&egrave;res, responsables annuaire ...">
+		                            <table class = "admBox">
+		                              <tr><th>Droits d&eacute;duits</th></tr>
+		                              <tr><td><webobject name = "BrowserRO"/></td></tr>
+		                            </table>
+		                          </span>
+		                        </td>
+		                       </tr>
+		                      </table>
+		                     </td>
+                      </tr>
+                    </table>
+                </td>
+              </tr>
+            </table>
+          	</td>
+        	</tr>
+       	</table>
+     	</webobject>
+    </webobject>
+   </webobject>
+    

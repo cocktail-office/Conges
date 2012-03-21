@@ -1,0 +1,72 @@
+{
+    AlertesDRH = {
+        class = EOFetchSpecification; 
+        entityName = Alerte; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = "occupation.typeOccupation.flagDRH"; 
+            selectorName = isEqualTo; 
+            value = {class = NSNumber; value = 1; }; 
+        }; 
+    }; 
+    AlertesNonDRH = {
+        class = EOFetchSpecification; 
+        entityName = Alerte; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "affectationAnnuelle.periodes.affectation.structure"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = structure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "occupation.typeOccupation.flagDRH"; 
+                    selectorName = isNotEqualTo; 
+                    value = {class = NSNumber; value = 1; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "affectationAnnuelle.periodes.affectation.individu"; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = individu; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+    AlertesPPrev = {
+        class = EOFetchSpecification; 
+        entityName = Alerte; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = occupation; 
+                    selectorName = isEqualTo; 
+                    value = {class = EONull; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "affectationAnnuelle.periodes.affectation.structure"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = structure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "affectationAnnuelle.periodes.affectation.individu"; 
+                    selectorName = isNotEqualTo; 
+                    value = {"_key" = individu; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

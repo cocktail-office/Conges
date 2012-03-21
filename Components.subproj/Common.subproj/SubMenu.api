@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="SubMenu" wocomponentcontent="false">    
+        
+    <binding name="ctrl"/>
+        <validation message="'ctrl' is a required binding.">
+            <unbound name="ctrl"/>
+        </validation>
+    </wo>
+</wodefinitions>

@@ -1,0 +1,261 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toVService.cStructureComposante"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_STRUCTURE"; }; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_TYPE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cTypeStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = isArchive; 
+            definition = "decode(libelleCourt,'ARCH', 1, decode(toStructurePere.libelleCourt, 'ARCH', 1, 0))"; 
+            externalType = VARCHAR2; 
+            name = isArchive; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = ""; 
+            definition = "decode(cTypeStructure,'E', 1, 'C', 1, 'ES', 1, 0)"; 
+            externalType = VARCHAR2; 
+            name = isComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "decode(toVService.cStructure,null,0,1)"; 
+            externalType = VARCHAR2; 
+            name = isService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "decode(toStructureAutorisee.oidStructure,null,0,1)"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "decode(toStructureAutorisee.oidStructure,null,0,1)"; }; 
+            name = isStructureAutorisee; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = libelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = libelleLong; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = oid; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = oidPere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_RESPONSABLE"; 
+            externalType = NUMBER; 
+            name = oidResponsable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOStructure"; 
+    classProperties = (
+        libelleCourt, 
+        libelleLong, 
+        responsable, 
+        repartitions, 
+        individus, 
+        persId, 
+        toStructurePere, 
+        cTypeStructure, 
+        tosStructureFille, 
+        tosRepartPersonneAdresse, 
+        tosAdresse, 
+        cStructure, 
+        toVService, 
+        isService, 
+        toAffectation, 
+        toStructureAutorisee, 
+        isStructureAutorisee, 
+        cStructureComposante, 
+        toComposante, 
+        isComposante, 
+        isArchive, 
+        tosComposanteAnnulationPeriodeFermeture, 
+        tosServiceAnnulationPeriodeFermeture
+    ); 
+    externalName = "GRHUM.STRUCTURE_ULR"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            libelleCourt, 
+            libelleLong, 
+            responsable, 
+            individus, 
+            persId, 
+            toStructurePere, 
+            tosStructureFille, 
+            toVService, 
+            tosAdresse, 
+            tosRepartPersonneAdresse, 
+            toAffectation, 
+            toStructureAutorisee, 
+            toComposante
+        ); 
+        "_nameInObjectStore" = "STRUCTURE_ULR"; 
+    }; 
+    name = Structure; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            definition = "repartitions.individu"; 
+            internalInfo = {"_nameInObjectStore" = "repartitions_individu"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = individus; 
+            numberOfToManyFaultsToBatchFetch = 50; 
+        }, 
+        {
+            destination = Repartition; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidStructure; sourceAttribute = oid; }); 
+            name = repartitions; 
+            ownsDestination = Y; 
+            propagatesPrimaryKey = Y; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidResponsable; }); 
+            name = responsable; 
+        }, 
+        {
+            destination = Affectation; 
+            internalInfo = {"_nameInObjectStore" = toAsffectation; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toAffectation; 
+        }, 
+        {
+            destination = StructureAutorisee; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = oidStructure; sourceAttribute = oid; }); 
+            name = toStructureAutorisee; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidPere; }); 
+            name = toStructurePere; 
+        }, 
+        {
+            destination = VService; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toVService; 
+        }, 
+        {
+            definition = "toVService.toComposante"; 
+            internalInfo = {"_nameInObjectStore" = "toVService_toComposante"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = toComposante; 
+        }, 
+        {
+            definition = "tosRepartPersonneAdresse.toAdresse"; 
+            internalInfo = {"_nameInObjectStore" = "tosRepartPersonneAdresse_toAdresse"; }; 
+            joinSemantic = EOInnerJoin; 
+            name = tosAdresse; 
+        }, 
+        {
+            destination = RepartPersonneAdresse; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = tosRepartPersonneAdresse; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidPere; sourceAttribute = oid; }); 
+            name = tosStructureFille; 
+        }, 
+        {
+            destination = AnnulationPeriodeFermeture; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructureComposante; sourceAttribute = cStructure; }); 
+            name = tosComposanteAnnulationPeriodeFermeture; 
+        }, 
+        {
+            destination = AnnulationPeriodeFermeture; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = tosServiceAnnulationPeriodeFermeture; 
+        }
+    ); 
+}

@@ -1,0 +1,234 @@
+<webobject name="Template">
+
+
+<center>
+
+
+	<webobject name="FormFiltrageCommun">
+		<div valign="middle">
+		<input type="hidden" name="bidon" value="bidon"/>
+		<label><webobject name = "RadioIdStructureService"/> Service (<webobject name = "StrService"/>)</label>
+		<webobject name = "CondIsShowRadioComposante">
+			 &#124; <label><webobject name = "RadioIdStructureComposante"/> Composante (<webobject name = "StrComposante"/>)</label>
+		</webobject>
+		<webobject name = "CondIsShowRadioPlanningConsultablesParMoi">
+			 &#124; <label><webobject name = "RadioIdStructurePlanningsVisibles"/> Plannings consultables par moi</label>
+		</webobject>
+		 &#124;
+		<webobject name="PopupAnneeUniv"/>&nbsp;&#124;&nbsp;<label><webobject name="CheckShowPrevisionnel"/>Voir les plannings pr&eacute;visionnels</label>
+		</div>
+	</webobject>
+	
+	
+	<webobject name="CondVisuDemiJournee">
+	<table border="0" width="100%">
+		<tr>
+			<td align="center">
+				<table cellpadding="5" border="0" width="0%">
+					<tr>
+						<td class="selectedTab"><b>Demi-Journ&eacute;es</b></td>
+						<td class="tab"><webobject name="LnkGoPageHoraire">Horaires</webobject></td>
+						<td>
+							<table>
+								<tr>
+									<td><webobject name="CngPdfBoxNb"/></td>
+									<td><webobject name="CngPdfBoxCouleur"/></td>
+									<td><webobject name="CngPdfBoxHoraires"/></td>
+									<td>
+										<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+										<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<webobject name="FormFiltrage">
+		
+	<webobject name = "CondIsMultipage">
+		<div valign="middle">
+			<webobject name = "NavBar"/>
+		</div>
+	</webobject>
+	
+		<webobject name="DivPlanningService"> <!-- la liste des mois -->
+			<table>
+				<tr>
+				<webobject name="RepMois">
+					<webobject name="TdClassTabMenu">
+						<webobject name="LinkLibelleMois">
+							<webobject name="StrLibelleMois"/>
+						</webobject>
+					</webobject>
+				</webobject>
+				</tr>
+			</table>
+			
+			<div style="clear:both"><!-- l'entete du tableau -->
+				<div class="entete">
+					
+					<div class="enteteDebut">
+						<webobject name = "CondIsFiltrageAutorise">
+							<webobject name="LinkFiltrer"><webobject name="ImageFiltrer"/></webobject>
+							&nbsp;&nbsp;&nbsp;<b><webobject name="LinkAnnulerFiltrer">&nbsp;[TOUS ]</webobject></b>
+						</webobject>
+						&nbsp;
+					</div>
+						<!-- tous les jours du mois -->
+						<webobject name="RepJours"><div class="divNomJour"><webobject name="StrNomJour"/></div></webobject>
+					</div>
+					<!-- la liste des agents -->
+					<webobject name="RepIndividu">
+						<webobject name="DivIndividu"><!-- coche + nom de l'agent -->
+							<div class="divNomIndividu"><webobject name="CheckBoxIndividu"/><webobject name = "SpanColorStatus">&nbsp;&nbsp;</webobject>&nbsp;<b><webobject name="LinkNomComplet"/></b></div>
+							<!-- presence sur le mois -->
+							<div style="float:left"><!-- presence reelle -->
+								<webobject name="RepPresencesHorairesR"><webobject name="divAM"/><webobject name="divPM"/></webobject></div>
+								<div style="float:right">
+								<webobject name="CondShowPrevisionnel"><!-- presence previsionnelle -->
+									<webobject name="RepPresencesHorairesP"><webobject name="divAM"/><webobject name="divPM"/></webobject>
+								</webobject>
+								<webobject name="CondNotShowPrevisionnel"><!-- ou represence reelle -->
+									<webobject name="RepPresencesHorairesR"><webobject name="divAM"/><webobject name="divPM"/></webobject>
+								</webobject>
+							</div>
+						</webobject>
+					</webobject>
+				</div>
+			</webobject>
+		</webobject>
+	</webobject>
+	
+	
+	<webobject name="CondShowHoraire">
+	<table border="0">
+		<tr>
+			<td align="center">
+				<table cellpadding="5" border="0" width="0%">
+					<tr>
+						<td valign="top" class="tab"><webobject name="LnkGoPageService">Demi-Journ&eacute;es</webobject></td>
+						<td class="selectedTab"><b>Horaires</b></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<webobject name="Form1">
+				<table border="0">
+					<tr>
+						<td width="1%" nowrap><label><webobject name="CheckShowJourneeComplete"/>Journ&eacute;e	compl&egrave;te</label></td>
+						<td><webobject name="PopUpLesSemainesDeLAnnee"/></td>
+						<webobject name="RepLesJoursLibelleLong">
+							<webobject name="TdClassTabMenu">
+								<webobject name="LnkGoJourLibelleLong">
+									<webobject name="StrUnJourLibelleLong"/>
+								</webobject>
+							</webobject>
+						</webobject>
+					</tr>
+				</table>
+				</webobject>
+			</td>
+		</tr>
+	</table>
+
+	<webobject name = "CondIsMultipage">
+		<div valign="middle">
+			<webobject name = "NavBar"/>
+		</div>
+	</webobject>
+	
+	<br>
+	
+	<webobject name="DivPlanningHebdo"> <!-- espace -->
+		<div style="width:179px; float:left; ">&nbsp;</div>
+		<div style="float:left">
+			<webobject name="RepHeures">
+				<div class="h0030">
+					<div class="h0030libelle"><webobject name="StrHeure"/></div>
+				</div>
+				<div class="h3059">
+					<div class="h3059libelle"><webobject name="StrDemiHeure"/></div>
+				</div>
+			</webobject>
+		</div>
+		<webobject name="RepIndividu">
+			<webobject name="DivIndividu"><!-- coche + nom de l'agent -->
+				<div class="divNomIndividu"><webobject name="CheckBoxIndividu"/><webobject name = "SpanColorStatus">&nbsp;&nbsp;</webobject>&nbsp;<b><webobject name="LinkNomComplet"/></b></div>
+				<div style="float:left"><!-- presence reelle -->
+					<webobject name="DivReelAvtAM"/>
+					<webobject name="DivReelHorAM"/>
+					<webobject name="DivReelMidi"/>
+					<webobject name="DivReelHorPM"/>
+					<webobject name="DivReelAprPM"/>
+					<webobject name="CondIsNotIE"><!-- on affiche pas la pause sous IE -->
+						<webobject name="DivPause"/>
+					</webobject>
+				</div>
+				<div style="float:right">
+					<webobject name="CondShowPrevisionnel"><!-- presence previsionnelle -->
+						<webobject name="DivPrevAvtAM"/>
+						<webobject name="DivPrevHorAM"/>
+						<webobject name="DivPrevMidi"/>
+						<webobject name="DivPrevHorPM"/>
+						<webobject name="DivPrevAprPM"/>
+						<webobject name="CondIsNotIE"><!-- on affiche pas la pause sous IE -->
+							<webobject name="DivPause"/>
+						</webobject>
+					</webobject>
+					<webobject name="CondNotShowPrevisionnel"><!-- ou represence reelle -->
+						<webobject name="DivReelAvtAM"/>
+						<webobject name="DivReelHorAM"/>
+						<webobject name="DivReelMidi"/>
+						<webobject name="DivReelHorPM"/>
+						<webobject name="DivReelAprPM"/>
+						<webobject name="CondIsNotIE"><!-- on affiche pas la pause sous IE -->
+							<webobject name="DivPause"/>
+						</webobject>
+					</webobject>
+				</div>
+			</webobject>
+		</webobject>
+	</webobject>
+</webobject>
+</center>
+
+<!-- legendre -->
+<table align="center">
+	<tr>
+		<td><div class="divHebTR" style="width:30px"></div></td>
+		<td><b>Travail R&eacute;el</b> -</td>
+		<webobject name="CondShowPrevisionnel">
+			<td><div class="divHebTP" style="width:30px"></div></td>
+			<td><b>Travail Pr&eacute;visionnel</b> -</td>
+		</webobject>
+		<td><div class="divHebAR" style="width:30px"></div></td>
+		<td><b>Absence R&eacute;elle</b> -</td>
+		<webobject name="CondShowPrevisionnel">
+			<td><div class="divHebAP" style="width:30px"></div></td>
+			<td><b>Absence Pr&eacute;visionnelle</b> -</td>
+		</webobject>
+		<td><div class="dibHebAVR" style="width:30px"></div></td>
+		<td><b>Absence R&eacute;elle en cours de validation</b></td>
+		<webobject name="CondShowHoraire">
+			<webobject name="CondShowPause">
+				<webobject name="CondIsNotIE">
+					<td>- [<i>en transparence</i>]</td>
+					<td><b>pause RTT</b></td>
+				</webobject>
+			</webobject>
+		</webobject>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<font class="textNote">Couleur pr&eacute;c&eacute;dent le nom : &eacute;tat du planning (survoler avec la souris pour le d&eacute;tail)</font>
+		</td>
+	</tr>
+</table>
+
+</webobject>

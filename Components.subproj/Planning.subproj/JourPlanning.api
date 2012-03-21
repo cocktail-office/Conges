@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="JourPlanning" wocomponentcontent="false">
+
+		<binding name="isDisabled"/>
+		<binding name="isVisuOccupation"/>
+		<binding name="laSemaine"/>
+		<binding name="leJour"/>
+		<binding name="isSemainePasModifiable"/>
+		<binding name="lePlanning"/>
+
+		<validation message="&apos;lePlanning&apos; is a required binding">
+			<unbound name="lePlanning"/>
+		</validation>
+
+		<validation message="&apos;isSemainePasModifiable&apos; is a required binding">
+			<unbound name="isSemainePasModifiable"/>
+		</validation>
+
+		<validation message="&apos;leJour&apos; is a required binding">
+			<unbound name="leJour"/>
+		</validation>
+
+		<validation message="&apos;laSemaine&apos; is a required binding">
+			<unbound name="laSemaine"/>
+		</validation>
+
+		<validation message="&apos;isVisuOccupation&apos; is a required binding">
+			<unbound name="isVisuOccupation"/>
+		</validation>
+
+		<validation message="&apos;isDisabled&apos; is a required binding">
+			<unbound name="isDisabled"/>
+		</validation>
+	</wo>
+</wodefinitions>

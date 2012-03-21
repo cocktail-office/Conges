@@ -1,0 +1,192 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEBUT"; 
+            externalType = DATE; 
+            name = dateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = DUREE; 
+            externalType = NUMBER; 
+            name = dureeReelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLG_NATURE"; 
+            externalType = VARCHAR2; 
+            name = flagNature; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = MOTIF; 
+            externalType = VARCHAR2; 
+            name = motif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TYPE; 
+            externalType = NUMBER; 
+            name = oidTypeOccupation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = STATUS; 
+            externalType = VARCHAR2; 
+            name = status; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = VALEUR; 
+            externalType = NUMBER; 
+            name = valeurMinutes; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_IND_DEMANDEUR"; 
+            externalType = NUMBER; 
+            name = oidIndDemandeur; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOOccupation"; 
+    classProperties = (
+        dateDebut, 
+        dateFin, 
+        motif, 
+        oidTypeOccupation, 
+        valeurMinutes, 
+        flagNature, 
+        oidAffectationAnnuelle, 
+        affectationAnnuelle, 
+        typeOccupation, 
+        status, 
+        alertes, 
+        repartValidations, 
+        dCreation, 
+        dModification, 
+        dureeReelle, 
+        toIndividuDemandeur
+    ); 
+    externalName = "CONGES.PLNG_OCC"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            dateDebut, 
+            dateFin, 
+            motif, 
+            oidTypeOccupation, 
+            valeurMinutes, 
+            flagNature, 
+            oidAffectationAnnuelle, 
+            affectationAnnuelle, 
+            typeOccupation, 
+            status, 
+            alertes, 
+            repartValidations
+        ); 
+        "_nameInObjectStore" = "PLNG_OCC"; 
+    }; 
+    name = Occupation; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = affectationAnnuelle; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Alerte; 
+            internalInfo = {"_nameInObjectStore" = alerte; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidOccupation; sourceAttribute = oid; }); 
+            name = alertes; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartValidation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidOccupation; sourceAttribute = oid; }); 
+            name = repartValidations; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidIndDemandeur; }); 
+            name = toIndividuDemandeur; 
+        }, 
+        {
+            destination = TypeOccupation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidTypeOccupation; }); 
+            name = typeOccupation; 
+        }
+    ); 
+}

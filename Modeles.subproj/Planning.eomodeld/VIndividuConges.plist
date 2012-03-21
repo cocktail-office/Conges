@@ -1,0 +1,230 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CNG_FINAL"; 
+            externalType = NUMBER; 
+            name = cngFinal; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_AFFECTATION"; 
+            externalType = DATE; 
+            name = dDebAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_AFFECTATION"; 
+            externalType = DATE; 
+            name = dFinAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEBUT_ANNEE"; 
+            externalType = DATE; 
+            name = dteDebutAnnee; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_SEQ_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = noSeqAffectation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_PER_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidPerAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = QUOTITE; 
+            externalType = NUMBER; 
+            name = quotite; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = REGULATION; 
+            externalType = NUMBER; 
+            name = regulation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "REL_INIT"; 
+            externalType = NUMBER; 
+            name = relInit; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CNG_INITIAL"; 
+            externalType = NUMBER; 
+            name = cngInitial; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CNG_CONSOMME"; 
+            externalType = NUMBER; 
+            name = cngConsomme; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEBUT_ANNEE+365"; 
+            definition = "DTE_DEBUT_ANNEE+365"; 
+            externalType = DATE; 
+            name = dteFinAnnee; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }
+    ); 
+    attributesUsedForLocking = (oidPerAffAnn); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOVIndividuConges"; 
+    classProperties = (
+        nomUsuel, 
+        prenom, 
+        dteDebutAnnee, 
+        oidPerAffAnn, 
+        oidAffAnn, 
+        lcStructure, 
+        quotite, 
+        relInit, 
+        cngFinal, 
+        noIndividu, 
+        noSeqAffectation, 
+        dDebAffectation, 
+        dFinAffectation, 
+        toStructure, 
+        cStructure, 
+        tosElementCarriere, 
+        regulation, 
+        toAffectationAnnuelle, 
+        cngInitial, 
+        cngConsomme, 
+        dteFinAnnee
+    ); 
+    externalName = "CONGES.V_INDIVIDU_CONGES"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            nomUsuel, 
+            prenom, 
+            dteDebutAnnee, 
+            oidPerAffAnn, 
+            oidAffAnn, 
+            lcStructure, 
+            cStructure, 
+            quotite, 
+            relInit, 
+            cngFinal, 
+            noIndividu, 
+            noSeqAffectation, 
+            dDebAffectation, 
+            dFinAffectation, 
+            cngInitial, 
+            cngConsomme, 
+            dteFinAnnee
+        ); 
+        "_nameInObjectStore" = "V_INDIVIDU_CONGES"; 
+    }; 
+    isReadOnly = Y; 
+    name = VIndividuConges; 
+    primaryKeyAttributes = (oidPerAffAnn); 
+    relationships = (
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }, 
+        {
+            destination = ElementCarriere; 
+            internalInfo = {"_nameInObjectStore" = elementCarrieres; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noDossierPers; sourceAttribute = noIndividu; }); 
+            name = tosElementCarriere; 
+        }, 
+        {
+            destination = AffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffAnn; }); 
+            name = toAffectationAnnuelle; 
+        }
+    ); 
+}

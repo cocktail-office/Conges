@@ -1,0 +1,94 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        ();
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WEBSERVER_RESOURCES = 
+        (
+           css/Admin.css, 
+           css/Conges.css, 
+           css/Planning.css, 
+           css/Service.css, 
+           images/Chargement.gif, 
+           images/DroitsChefDeService.png, 
+           images/DroitsEnvoiMail.png, 
+           images/DroitsIndividu.png, 
+           images/DroitsService.png, 
+           images/DroitsValidation.gif, 
+           images/DroitsValidation.png, 
+           images/DroitsVisa.gif, 
+           images/DroitsVisa.png, 
+           images/DroitsVisualisation.png, 
+           images/FondPDF.gif, 
+           images/FichierPDF.png, 
+           images/ULRLogo90.gif, 
+           images/annuler16.gif, 
+           images/annuler16_disable.gif, 
+           images/clefs.gif, 
+           images/ProgressBar.gif,
+           images/Delegation.png, 
+           images/Dupliquer.png, 
+           images/envoimail.png, 
+           images/greenled.png, 
+           images/greenled_croix.png, 
+           images/greenled_yellow.png, 
+           images/important.png, 
+           images/info_small.gif, 
+           images/kpaint.png, 
+           images/ligneApplisDegradee.gif, 
+           images/loupe16.gif, 
+           images/modifier16.gif, 
+           images/moins16.gif, 
+           images/noHoraire.gif, 
+           images/planning/aprem.gif, 
+           images/planning/apremleg.gif, 
+           images/planning/cc.gif, 
+           images/planning/firstday.png, 
+           images/planning/lastday.png, 
+           images/planning/matin.gif, 
+           images/planning/matinleg.gif, 
+           images/planning/middleday.png, 
+           images/planning/onlyday.png, 
+           images/planning/today.gif, 
+           images/plus16.gif, 
+           images/printer.gif, 
+           images/same.jpg, 
+           images/valider16.gif, 
+           images/valider16_disable.gif, 
+           images/valise.jpg, 
+           images/why.gif, 
+           images/yellowled.png, 
+           img/CRILayer/CRILayerClose.gif, 
+           img/CRILayer/CRILayerTransparent.gif, 
+           img/CRIPopup/CRIPopupClose.gif, 
+           img/CRIPopup/CRIPopupTransparent.gif, 
+           js/cssUtils.js, 
+           js/filterlist.js, 
+           js/jsTemplate.js, 
+           jscript/CRILayer/CRILayer.js, 
+           jscript/CRIPopup/CRIPopup.js
+        );
+        WOAPP_RESOURCES = 
+        ();
+        WO_COMPONENTS = 
+        ();
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

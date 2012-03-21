@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MES_CONTENU"; 
+            externalType = VARCHAR2; 
+            name = mesContenu; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "MES_DATE_DEBUT"; 
+            externalType = DATE; 
+            name = mesDateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MES_DATE_FIN"; 
+            externalType = DATE; 
+            name = mesDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "MES_KEY"; 
+            externalType = NUMBER; 
+            name = mesKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "MES_TITRE"; 
+            externalType = VARCHAR2; 
+            name = mesTitre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 128; 
+        }
+    ); 
+    attributesUsedForLocking = (mesKey); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOMessage"; 
+    classProperties = (mesDateFin, mesDateDebut, mesContenu, mesTitre, dCreation, dModification); 
+    externalName = "CONGES.CNG_MESSAGE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CONGES_NEW.CNG_MESSAGE"; }; 
+    name = Message; 
+    primaryKeyAttributes = (mesKey); 
+}

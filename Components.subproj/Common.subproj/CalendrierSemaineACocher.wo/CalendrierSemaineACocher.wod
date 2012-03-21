@@ -1,0 +1,29 @@
+RepMois: WORepetition {
+	list = planning.mois;
+	item = moisItem;
+}
+
+MoisItem: WOString {
+	value = moisItem.libelleCourt;
+}
+
+RepSemaines: WORepetition {
+	list = moisItem.semaines;
+	item = semaineItem;
+}
+
+TdSemaineItem: WOGenericContainer {
+	elementName = "td";
+	class = defaultSemaineItemCssClasse;
+}
+
+ChkSemaineItem: WOCheckBox {
+	checked = isCheckedSemaineItem;
+	id = semaineItem.idAssociation;
+	onchange = "cocher(this)";
+	disabled = isDisabledCheckboxSemaineItem;
+}
+
+SemaineItem: WOString {
+	value = semaineItem.numero;
+}

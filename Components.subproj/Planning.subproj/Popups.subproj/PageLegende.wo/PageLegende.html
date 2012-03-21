@@ -1,0 +1,168 @@
+<webobject NAME=PageTemplate1>
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					<tr class="listboxHeader">
+						<th colspan="2">Jours de l'ann&eacute;e</th>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourF">&nbsp;</div>
+						</td>
+						<td>Fermeture</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourC">&nbsp;</div>
+						</td>
+						<td>Cong&eacute;</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCAM">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; (matin&eacute;e)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCPM">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; (apr&egrave;s-midi)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCC">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; compensateur ou autorisation d'absence</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCV">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; en cours de validation</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCAMV">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; en cours de validation (matin&eacute;e)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCPMV">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; en cours de validation (apr&egrave;s-midi)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCCV">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; compensateur ou autorisation d'absence en cours de validation</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCS">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; en cours de suppression</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCAMS">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; en cours de suppression (matin&eacute;e)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCPMS">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; en cours de suppression (apr&egrave;s-midi)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCCS">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; compensateur ou autorisation d'absence en cours de suppression</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCL">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; l&eacute;gal</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCLAM">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; l&eacute;gal (matin&eacute;e)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div class="divJourCLPM">&nbsp;</div>
+						</td>
+						<td>Cong&eacute; l&eacute;gal (apr&egrave;s midi)</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width="75">
+							<div style="width:20px; float:left;">&nbsp;</div>
+							<div class="vac">&nbsp;</div>
+						</td>
+						<td>Vacances scolaires</td>
+					</tr>
+					<tr class="listboxLine">
+						<td>
+							<div class="divJourW">&nbsp;</div>
+						</td>
+						<td>Jour ch&ocirc;m&eacute;</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					<tr class="listboxHeader">
+						<th colspan="2">Horaires Journaliers</th>
+					</tr>
+					<tr class="listboxLine">
+						<td width=20>
+							<div class="dJour">7:40</div>
+						</td>
+						<td>Dur&eacute;e correspondant &agrave; l'horaire pour la journ&eacute;e</td>
+					</tr>
+					<tr class="listboxLine">
+						<td width=20>
+							<div class="dfJour">7:00</div>
+						</td>
+						<td>Dur&eacute;e impos&eacute;e (cas des cong&eacute;s l&eacute;gaux et fermetures)</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					<tr>
+						<th class="listboxHeader" colspan="2">Horaires Hebdomadaires</th>
+					</tr>
+					<webobject name=Repetition1>
+						<tr class="listboxLine">
+							<webobject name=TDHoraire>&nbsp;</webobject>
+							<td><webobject name=String1></webobject></td>
+						</tr>
+					</webobject>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<center>
+		<input type="SUBMIT" class="bouton" value="Fermer la fenêtre" onclick="window.close();">
+	</center>
+</WEBOBJECT>

@@ -1,0 +1,113 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = OID; }; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = oidIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_OCCUPATION"; 
+            externalType = NUMBER; 
+            name = oidOccupation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TYP_VAL"; 
+            externalType = VARCHAR2; 
+            name = type; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EORepartValidation"; 
+    classProperties = (
+        type, 
+        individu, 
+        occupation, 
+        dCreation, 
+        dModification, 
+        affectationAnnuelle, 
+        oidIndividu
+    ); 
+    externalName = "CONGES.CNG_HIST_VAL_VIS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            oidIndividu, 
+            oidOccupation, 
+            type, 
+            individu, 
+            occupation, 
+            dCreation, 
+            dModification, 
+            affectationAnnuelle
+        ); 
+        "_nameInObjectStore" = "CNG_HIST_VAL_VIS"; 
+    }; 
+    name = RepartValidation; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = AffectationAnnuelle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = affectationAnnuelle; 
+        }, 
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidIndividu; }); 
+            name = individu; 
+        }, 
+        {
+            destination = Occupation; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidOccupation; }); 
+            name = occupation; 
+        }
+    ); 
+}

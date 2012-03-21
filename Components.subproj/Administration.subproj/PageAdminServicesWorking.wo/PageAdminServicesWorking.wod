@@ -1,0 +1,7 @@
+CRIDefaultPage1: CRIDefaultPage {
+}
+
+ImgProgressBar: WOImage {
+	filename = "images/ProgressBar.gif";
+	framework = "app";
+}

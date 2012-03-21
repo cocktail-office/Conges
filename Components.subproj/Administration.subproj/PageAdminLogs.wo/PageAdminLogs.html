@@ -1,0 +1,96 @@
+<webobject name = "Form1">
+  <table style = "border-style:solid;border-width:1px" bgcolor = "#e2e2e2">
+    <tr>
+      <td colspan = "2" align = "CENTER">
+        <b>Ann&eacute;e universitaire</b>
+        :
+        <webobject name = "PopUpButton2"></webobject>
+      </td>
+    </tr>
+    <tr>
+      <td align = "RIGHT">
+        <b>Nom</b>
+        :
+        <webobject name = "TextField1"></webobject>
+      </td>
+      <td>
+        &nbsp;
+        <b>Prenom</b>
+        :
+        <webobject name = "TextField2"></webobject>
+      </td>
+    </tr>
+    <tr>
+      <td colspan = "2" align = "CENTER">
+        <b>Service</b>
+        :
+        <webobject name = "PopUpButton1"></webobject>
+      </td>
+    </tr>
+  </table>
+  <webobject name = "SubmitButton1"></webobject>
+  <br>
+    <webobject name = "Conditional1">
+			<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+			<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject><br/>
+      <table border = "0">
+        <tr>
+          <td valign = "TOP">
+            <b>
+              Classement :
+              <webobject name = "PopUpButton3"></webobject>
+            </b>
+          </td>
+          <td>
+            <table border = "1">
+              <tr bgcolor = "#ffffca">
+                <th>Nom</th>
+                <th>Pr&eacute;nom</th>
+                <th>Service</th>
+                <th>Ann&eacute;e univ.</th>
+                <th colspan="2">Affectation RH</th>
+                <th>Reliquat Initial</th>
+                <th>Cong&eacute;s Initiaux</th>
+                <th>Cong&eacute;s Restant</th>
+                <th>R&eacute;gularisation</th>
+              </tr>
+              <webobject name = "Repetition1">
+                <tr>
+                  <td align = "CENTER">
+                    <webobject name = "String1"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "String2"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrLcStructure"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrAnneeUniv"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrAffectationDDebut"/>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrAffectationDFin"/>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrRelInit"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrCngInitial"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrCngFinal"></webobject>
+                  </td>
+                  <td align = "CENTER">
+                    <webobject name = "StrRegulation"></webobject>
+                  </td>
+                </tr>
+              </webobject>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </webobject>
+</webobject>

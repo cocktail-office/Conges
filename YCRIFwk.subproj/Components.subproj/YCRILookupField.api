@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ZCRILookupField" wocomponentcontent="true">
+
+		<binding name="size"/>
+		<binding name="formName"/>
+		<binding name="fieldName"/>
+		<binding name="selectName"/>
+
+		<validation message="&apos;formName&apos; is a required binding">
+			<unbound name="formName"/>
+		</validation>
+
+		<validation message="&apos;fieldName&apos; is a required binding">
+			<unbound name="fieldName"/>
+		</validation>
+
+		<validation message="&apos;selectName&apos; is a required binding">
+			<unbound name="selectName"/>
+		</validation>
+	</wo>
+</wodefinitions>

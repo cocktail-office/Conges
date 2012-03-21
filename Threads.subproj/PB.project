@@ -1,0 +1,36 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/TaskCheckMailOrders.java, 
+           src/fr/univlr/cri/conges/TaskCheckMailOrdersAlerts.java, 
+           src/fr/univlr/cri/conges/TaskCheckTableChanges.java, 
+           src/fr/univlr/cri/conges/TaskCheckTableChangesAffectation.java, 
+           src/fr/univlr/cri/conges/TaskGeneric.java, 
+           src/fr/univlr/cri/conges/TasksLauncher.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        ();
+        WOAPP_RESOURCES = 
+        ();
+        WO_COMPONENTS = 
+        ();
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

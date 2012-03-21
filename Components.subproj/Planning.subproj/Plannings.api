@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="Plannings" wocomponentcontent="false">
+
+		<binding name="lePlanning"/>
+		<binding name="isDisabled"/>
+		<binding name="menuItems"/>
+		<binding name="selectedItemMenu"/>
+		<binding name="showMenu"/>
+
+		<validation message="&apos;lePlanning&apos; is a required binding">
+			<unbound name="lePlanning"/>
+		</validation>
+
+		<validation message="&apos;showMenu&apos; is a required binding">
+			<unbound name="showMenu"/>
+		</validation>
+	</wo>
+</wodefinitions>

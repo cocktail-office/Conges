@@ -1,0 +1,131 @@
+<style type = "text/css">
+.boxComposanteLift {
+	width: 160px; 
+	overflow: auto; 
+	height: 200px;
+}
+
+.boxServiceLift {
+	width: 160px; 
+	overflow: auto; 
+	height: 200px;
+}
+
+.boxAffAnnLift {
+	width: 300px; 
+	overflow: auto; 
+	height: 200px;
+}
+</style>
+<webobject name = "FormCompServicesAffAnnsNew">
+<table class = "listboxBorder" border="0" cellpadding="1" cellspacing="0">
+  <tr>
+		<td>
+      <table cellpadding="2" cellspacing="0">
+				<tr>
+					<th colspan="3"><font class="mainTitleInverse">Ann&eacute;e universitaire :&nbsp;<webobject name="PopUpAnneeUniv"/></font></th>
+				</tr>
+				<tr class="listboxHeader">
+					<th><font class="title">Composantes (<webobject name = "StrComposanteCount"/>)</font></th>
+					<th><font class="title">Services (<webobject name = "StrServiceCount"/>)</font></th>
+					<th><font class="title">Plannings (<webobject name = "StrAffAnnCount"/>)</font></th>
+				</tr>
+				<tr class="listboxLine">
+					<td>
+						<div class="boxComposanteLift">
+							<table>
+							<webobject name = "RepComposante">
+								<tr class="listboxLine">
+									<td align="left"> 
+										<webobject name = "CondIsTheComposanteSelected">
+											<a name="composanteSelected">&nbsp;</a>
+											<webobject name = "StrBaliseSelectedOpen"/>&raquo;
+										</webobject>
+										<webobject name = "LnkComposanteItem"/>
+										<webobject name = "CondIsTheComposanteSelected">
+											<webobject name = "StrBaliseSelectedClose"/>
+										</webobject>
+									</td>
+								</tr>
+							</webobject>
+							</table>
+						</div>
+					</td>
+					<td>
+						<div class="boxServiceLift">
+							<table>
+							<webobject name = "RepService">
+								<tr class="listboxLine">
+									<td align="left"> 
+										<webobject name = "CondIsTheServiceSelected">
+											<a name="serviceSelected">&nbsp;</a>
+											<webobject name = "StrBaliseSelectedOpen"/>&raquo;
+										</webobject>
+										<webobject name = "LnkServiceItem"/>
+										<webobject name = "CondIsTheServiceSelected">
+											<webobject name = "StrBaliseSelectedClose"/>
+										</webobject>
+									</td>
+								</tr>
+							</webobject>
+							</table>
+						</div>
+					</td>
+					<td>
+						<div class="boxAffAnnLift">
+							<table>
+							<webobject name = "RepAffAnn">
+								<tr class="listboxLine">
+									<td align="left">
+										<webobject name = "CondIsTheAffAnnSelected">
+											<a name="affAnnSelected">&nbsp;</a><webobject name = "StrBaliseSelectedOpen"/>&raquo;
+										</webobject>
+										<webobject name = "LnkAffAnnItem"/>
+										<webobject name = "CondIsTheAffAnnSelected">
+											<webobject name = "StrBaliseSelectedClose"/>
+										</webobject>
+									</td>
+								</tr>
+							</webobject>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr class="listboxHeader">
+					<td colspan="3" align="left">
+						<font class="textEntry">Recherche :</font>
+						<webobject name = "TFSearchString"/>
+						<webobject name = "BtnDoSearch"/>
+						<font class="textNote">
+						parmi les noms, prenoms, libell&eacute;s de services long et court
+						</font>
+					</td>
+				</tr>
+				<webobject name = "CondSearchListCount">
+					<webobject name = "RepSearchList">
+					<tr class="listboxLine">
+						<td>
+							<webobject name = "LnkSearchItemComposante">
+								<webobject name = "StrSearchItemComposante"/>
+							</webobject>
+						</td>
+						<td align="left">
+							<webobject name = "LnkSearchItemService">
+								<webobject name = "StrSearchItemService"/>
+							</webobject>
+						</td>
+						<td align="left">
+							<webobject name = "LnkSearchItemAffAnn">
+								<webobject name = "StrSearchItemNomUsuel"/>
+								<webobject name = "StrSearchItemPrenom"/>
+							</webobject>
+						</td>
+					</tr>
+					</webobject>
+				</webobject>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>
+<script type = "text/javascript">document.location="#composanteSelected";document.location="#serviceSelected";document.location="#affAnnSelected";</script>

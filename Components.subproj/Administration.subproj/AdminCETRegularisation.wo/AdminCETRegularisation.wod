@@ -1,0 +1,110 @@
+CngInfoBox1: CngInfoBox {
+	
+}
+
+StrDateCetDebutRegimePerenne: WOString {
+	value = dateCetDebutRegimePerenne;
+}
+
+FormSearchIndividuRegularisation: WOForm {
+	name = "FormSearchIndividuRegularisation";
+}
+
+SearchIndividuRegularisation: SearchIndividu {
+	individuSelected = individuSelected;
+}
+
+BtnSelectIndividuRegularisation: WOSubmitButton {
+	action = neFaitRien;
+	name = "BtnSelectIndividuRegularisation";
+	value = "Saisie d'une r&eacute;gularisation CET pour cet agent";
+	title = "Cliquer pour choisir cet agent";
+	class = "bouton";
+	escapeHTML = false;
+}
+
+CondIsIndividuSelected: WOConditional {
+	condition = individuSelected;
+}
+
+StrIndividuSelected: WOString {
+	value = individuSelected.nomComplet;
+}
+
+CetEtat1: CetEtat {
+	individu = individuSelected;
+	isModificationAutorisee = true;
+	shouldReloadForced = shouldReloadCetEtat;
+	dateDebutAnnee = cetEtatDateDebutAnnee;
+}
+
+CondIsModeSaisieTransaction: WOConditional {
+	condition = isModeSaisieTransaction;
+}
+
+FormSaisieTransaction: WOForm {
+	name = "FormSaisieTransaction";
+	multipleSubmit = true;
+}
+
+CRIDatePickerValeur: CRIDatePicker {
+	dateValue = dateValeur;
+}
+
+TFMotif: WOTextField {
+	value = motif;
+	name = "TFTransactionMotif";
+}
+
+TFValeur: CRITimeField {
+	fieldValue = valeur;
+	limit24h = false;
+	fieldName = "TFTransactionValeur";
+}
+
+BtnDoSaisieNouvelleTransaction: WOImageButton {
+	action = doSaisieNouvelleTransaction;
+	title = "Enregistrer cette nouvelle transaction";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+	name = "BtnDoSaisieNouvelleTransaction";
+}
+
+
+BtnDoAnnulerSaisieNouvelleTransaction: WOImageButton {
+	action = doAnnulerSaisieNouvelleTransaction;
+	title = "Annuler la saisie en cours";	
+	filename = "images/annuler16.gif";
+	framework = "app";
+	escapeHTML = false;
+	name = "BtnDoAnnulerSaisieNouvelleTransaction";
+}
+
+CondNotIsModeSaisieTransaction: WOConditional {
+	condition = isModeSaisieTransaction;
+	negate = true;
+}
+
+LnkSaisieNouvelle: WOHyperlink {
+	action = toSaisieNouvelleTransaction;
+	title = "Saisir une nouvelle transaction CET pour cet agent";
+}
+
+ImgAjout: WOImage {
+	filename = "images/plus16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+	border = "0";
+	alt = "ajout";
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+LayerErrorMessage: CRILayer {
+	text = errorMessage;
+	title = "Erreur";
+}

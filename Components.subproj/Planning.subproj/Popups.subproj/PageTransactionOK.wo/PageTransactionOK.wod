@@ -1,0 +1,31 @@
+PageTemplate1: PageTemplate {
+	isPopup = true;
+	pageTitle = "Op&eacute;ration termin&eacute;e";
+}
+
+FormFermer: WOForm {
+	action=fermerLaFenetre;
+	name="FormFermerLaFenetre";
+	target="pageprincipale";
+}
+
+ButtonFermerFenetre: WOSubmitButton {
+	alt = "Fermer";
+	value = "Fermer la fen&ecirc;tre";
+	action = fermerLaFenetre;
+	class = "bouton";
+	onclick =btnFermerOnClick;
+	name = "BtnFermer";
+	escapeHTML = "false";
+	title = "cliquer ici pour fermer la fen&ecirc;tre et rafraichir le planning en arri&egrave;re plan";
+}
+
+CondIsShowPrintDemandeCongePapier: WOConditional {
+	condition = isShowPrintDemandeCongePapier;
+}
+
+PdfBoxDemandeCongePapierCtrl: CngPdfBoxLink {
+	ctrl = ctrlDemandeCongePapierCtrl;
+	printLabel = "Impression de la demande";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de demande de cong&eacute;";
+}

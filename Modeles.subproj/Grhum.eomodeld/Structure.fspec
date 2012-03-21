@@ -1,0 +1,98 @@
+{
+    fetchComposante = {
+        class = EOFetchSpecification; 
+        entityName = Structure; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isComposante; 
+                    selectorName = "isEqualTo:"; 
+                    value = 1; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isService; 
+                    selectorName = "isEqualTo:"; 
+                    value = 1; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isArchive; 
+                    selectorName = "isEqualTo:"; 
+                    value = 0; 
+                }
+            ); 
+        }; 
+        usesDistinct = YES; 
+    }; 
+    fetchService = {
+        class = EOFetchSpecification; 
+        entityName = Structure; 
+        fetchLimit = 0; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isService; 
+                    selectorName = "isEqualTo:"; 
+                    value = 1; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "toStructureAutorisee.annee"; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = annee; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isStructureAutorisee; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = isStructureAutorisee; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = cStructure; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = cStructureComposante; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = cStructureComposante; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isArchive; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = isArchive; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+        sortOrderings = (
+            {
+                class = EOSortOrdering; 
+                key = libelleLong; 
+                selectorName = "compareAscending:"; 
+            }
+        ); 
+        usesDistinct = YES; 
+    }; 
+    servicesSousLaResponsabiliteDe = {
+        class = EOFetchSpecification; 
+        entityName = Structure; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOKeyValueQualifier; 
+            key = responsable; 
+            selectorName = "isEqualTo:"; 
+            value = {"_key" = individu; class = EOQualifierVariable; }; 
+        }; 
+        usesDistinct = YES; 
+    }; 
+}

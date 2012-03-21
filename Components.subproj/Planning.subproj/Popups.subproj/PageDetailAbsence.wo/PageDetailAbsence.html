@@ -1,0 +1,175 @@
+<WEBOBJECT NAME=PageTemplate1>
+
+	<webobject name="CondHasErreur">
+		<webobject name="CngAvertissement1">
+			<webobject name="StrErreur"/>
+		</webobject>
+	</webobject>
+
+
+	<webobject name="FormAbsence">
+	
+		<table border=0 class="boxTitle" cellpadding="1" cellspacing="0" width=100%>
+			<tr>
+				<th colspan="2"><font class="subTitleInverse">&nbsp;Detail d'une occupation</font></th>
+			</tr>
+			<tr>
+				<td>
+					<table class="boxContents" border="0" cellpadding="2" cellspacing="0" width="100%">
+						<tr>
+							<th align="right" width = "1%" nowrap>Type : </th>
+							<td colspan=2><webobject name="StrTypeAbsence"/></td>
+						</tr>
+						<webobject name="CondNotIsOccupationMinute">
+							<tr>
+								<th align=RIGHT>Du : </th>
+								<td WIDTH=1% NOWRAP>
+									<webobject name="CondNotDisabledElements"><webobject name="DateDebut"/></webobject>
+									<webobject name="CondIsDisabledElements"><webobject name="StrDateDebut"/></webobject>
+									<webobject name="PopUpDateDebutAMPM"/>
+								</td>
+							</tr>
+						</webobject>
+						<webobject name="CondNotIsOccupationMinute">
+							<tr>
+								<th align=RIGHT> au : </th>
+								<td NOWRAP>
+									<webobject name="CondNotDisabledElements"><webobject name="DateFin"/></webobject>
+									<webobject name="CondIsDisabledElements"><webobject name="StrDateFin"/></webobject>
+									<webobject name="PopUpDateFinAMPM"/>
+								</td>
+							</tr>
+						</webobject>
+						<webobject name="CondIsOccupationMinute">
+							<tr>
+								<th align=RIGHT>Le : </th>
+								<td>
+									<table>
+										<tr>
+											<td>
+												<webobject name="CondNotDisabledElements"><webobject name=DateFin2></webobject></webobject>
+												<webobject name="CondIsDisabledElements"><webobject name=TextField3></webobject></webobject></td>
+											<td>de</td>
+											<td><WEBOBJECT NAME=CRITimeField1></WEBOBJECT></td>
+											<td> &agrave;: </td>
+											<td colspan=4><WEBOBJECT NAME=CRITimeField2></WEBOBJECT></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</webobject>
+						<tr>
+							<th align=RIGHT valign="top">Motif : </th>
+							<td>
+								<webobject name="TFMotif"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan=3></td>
+						</tr>
+						<tr>
+							<th align="right" nowrap>D&eacute;tails d&eacute;bits : </th>
+							<td>
+								<table>
+									<tr>
+										<td>Droit &agrave; cong&eacute;s</td>
+										<td>&raquo; <b><webobject name="StrLeDebitConges"/></b></td>
+									</tr>
+									<tr>
+										<td>Reliquats</td>
+										<td>&raquo; <b><webobject name="StrLeDebitReliquat"/></b></td>
+									</tr>
+									<webobject name = "CondIsDechargeSyndicale">
+									<tr>
+										<td>D&eacute;charge syndicale</td>
+										<td>&raquo; <b><webobject name="StrLeDebitDechargeSyndicale"/></b></td>
+									</tr>
+									</webobject>
+									<webobject name = "CondIsAbsenceCET">
+									<tr>
+										<td>CET</td>
+										<td>&raquo; <b><webobject name="StrLeDebitCET"/></b></td>
+									</tr>
+									</webobject>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th align="right">Saisie par : </th>
+							<td>
+								<webobject name = "CondNotIsAbsenceSaisieParRh">
+									<webobject name = "CondHasDelegue"><WEBOBJECT NAME="StrDelegue"/></webobject>
+									<webobject name = "CondNotHasDelegue"><WEBOBJECT NAME="StrIndividuPlanning"/></webobject>
+								</webobject>
+								<webobject name = "CondIsAbsenceSaisieParRh">Service RH</webobject>
+								(le <WEBOBJECT NAME="StrDateCreation"/>)
+							</td>
+						</tr>
+						<webobject name = "CondNotIsAbsenceSaisieParRh">
+						<tr>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<th align="right">Vis&eacute;e par : </th>
+							<td><WEBOBJECT NAME="CondHasViseur"><WEBOBJECT NAME="StrViseur"/> (le <WEBOBJECT NAME="StrDateVisa"/>)</WEBOBJECT><WEBOBJECT NAME="CondNotHasViseur">N/A</WEBOBJECT></td>
+						</tr>
+						<tr>
+							<th align="right">Valid&eacute;e par : </th>
+							<td><WEBOBJECT NAME="CondHasValideur"><webobject name="StrValideur"/> (le <WEBOBJECT NAME="StrDateValidation"/>)</WEBOBJECT><WEBOBJECT NAME="CondNotHasValideur">N/A</WEBOBJECT></td>
+						</tr>
+						</webobject>
+						<tr>
+							<td colspan="2"></td>
+						</tr>
+						<tr>
+							<webobject name="CondIsDemiJournee">
+								<td colspan="2" align="center">
+									<webobject name = "CRINote1">Pour saisir une autre absence sur la 1/2 journ&eacute;e<br/>restante, veuillez passer par la fiche rose</webobject>
+								</td>
+							</webobject>
+						</tr>
+						<webobject name="CondNotIsDemiJournee">
+							<tr>
+								<td colspan=2></td>
+							</tr>
+						</webobject>
+						<webobject name = "CondIsAbsenceEnCoursDeSuppression">
+							<tr>
+								<td colspan="2" align="center">
+									<webobject name = "CRINote1">Cette occupation est en cours de suppression</webobject>
+								</td>
+							</tr>
+						</webobject>
+						<tr>
+							<td align="center" colspan="2">
+								<webobject name="CondIsAbsenceSupprimable">
+									<webobject name = "BtnSupprimer"/>
+								</webobject>
+								<webobject name="CondIsAbsenceModifiable">
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name = "BtnModifier"/>
+								</webobject>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</webobject>
+
+</WEBOBJECT>
+
+	
+
+<webobject name = "CondIsShowPrintDemandeCongePapier">
+<p align="center">
+	<webobject name = "PdfBoxDemandeCongePapierCtrl"/>
+</p>
+</webobject>
+
+
+<webobject name = "CondIsAbsenceEnCoursDeValidation">
+	<p align="center">
+		<webobject name = "CRINote1">Cette occupation est en cours de validation</webobject>
+	</p>
+</webobject>
+		

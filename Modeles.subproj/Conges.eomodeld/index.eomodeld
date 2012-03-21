@@ -1,0 +1,74 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOAlerte"; 
+            name = Alerte; 
+        }, 
+        {className = "fr.univlr.cri.conges.eos.modele.conges.EOCET"; name = CET; }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOCETTransaction"; 
+            name = CETTransaction; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EODbTodo"; 
+            name = DbTodo; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EODbTodoCrash"; 
+            name = DbTodoCrash; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EODbTodoDone"; 
+            name = DbTodoDone; 
+        }, 
+        {className = "fr.univlr.cri.conges.eos.modele.conges.EODroit"; name = Droit; }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EODroitPasDeMailCds"; 
+            name = DroitPasDeMailCds; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOMailTodo"; 
+            name = MailTodo; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOMailTodoCrash"; 
+            name = MailTodoCrash; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOMailTodoDone"; 
+            name = MailTodoDone; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOMessage"; 
+            name = Message; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOParametre"; 
+            name = Parametre; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOPreference"; 
+            name = Preference; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EORepartValidation"; 
+            name = RepartValidation; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOStructureAutorisee"; 
+            name = StructureAutorisee; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOTypeAbsenceGepeto"; 
+            name = TypeAbsenceGepeto; 
+        }, 
+        {
+            className = "fr.univlr.cri.conges.eos.modele.conges.EOVAlerte"; 
+            name = VAlerte; 
+        }
+    ); 
+    userInfo = {modelId = CONGES; }; 
+}

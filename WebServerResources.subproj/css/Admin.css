@@ -1,0 +1,30 @@
+/* ENSEMBLE DE STYLE POUR L'ECRAN D'ADMINISTRATION */
+
+/* un boite entete */
+.admHeaderBox {
+	border:2px solid #777777;
+	font-weight: bold; 
+	background-color: #DDDDDD;
+}
+
+/* une boite classique */
+.admBox {
+	border:1px dotted #999999;
+	background-color: #EEEEEE;
+}
+
+.admBox th {
+	border-bottom: 1px solid #999999;
+	white-space: nowrap;
+}
+
+/** zone de texte dans les parametres*/
+.zoneTexte {
+	border:1px solid #000000;
+	font-family:Arial,Verdana,"Microsoft Sans Serif","MS Sans Serif",Helvetica,sans-serif;
+	font-size:12px;
+	height:100px;
+	margin-bottom:0;
+	margin-top:0;
+	width:600px;
+}

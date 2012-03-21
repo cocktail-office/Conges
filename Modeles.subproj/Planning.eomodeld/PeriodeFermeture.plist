@@ -1,0 +1,121 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEBUT"; 
+            externalType = DATE; 
+            name = dateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_COMPOSANTE"; 
+            externalType = VARCHAR2; 
+            name = cStructureComposante; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            name = oidAffAnn; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOPeriodeFermeture"; 
+    classProperties = (
+        dateDebut, 
+        dateFin, 
+        annulationPeriodeFermetures, 
+        toStructure, 
+        dCreation, 
+        dModification, 
+        toAffectationAnnuelle, 
+        toComposante
+    ); 
+    externalName = "CONGES.PLNG_PER_FER"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dateDebut, dateFin, annulationPeriodeFermetures, toStructure); 
+        "_nameInObjectStore" = "PLNG_PER_FER"; 
+    }; 
+    name = PeriodeFermeture; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AnnulationPeriodeFermeture; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidPeriodeFermeture; sourceAttribute = oid; }); 
+            name = annulationPeriodeFermetures; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = AffectationAnnuelle; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffAnn; }); 
+            name = toAffectationAnnuelle; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructureComposante; }); 
+            name = toComposante; 
+        }, 
+        {
+            destination = Structure; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = cStructure; }); 
+            name = toStructure; 
+        }
+    ); 
+}

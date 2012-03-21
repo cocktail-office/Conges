@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            columnName = "C_GRADE"; 
+            externalType = VARCHAR2; 
+            name = cGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4; 
+        }, 
+        {
+            columnName = "LL_GRADE"; 
+            externalType = VARCHAR2; 
+            name = llGrade; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }
+    ); 
+    attributesUsedForLocking = (cGrade); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOGrade"; 
+    classProperties = (llGrade); 
+    externalName = "GRHUM.GRADE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (cGrade, llGrade); }; 
+    name = Grade; 
+    primaryKeyAttributes = (cGrade); 
+}

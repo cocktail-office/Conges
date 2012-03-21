@@ -1,0 +1,37 @@
+{
+    fetchVIndividuConges = {
+        class = EOFetchSpecification; 
+        entityName = VIndividuConges; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = toStructure; 
+                    selectorName = isLike; 
+                    value = {"_key" = laStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = nomUsuel; 
+                    selectorName = isLike; 
+                    value = {"_key" = leNomUsuel; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = prenom; 
+                    selectorName = isLike; 
+                    value = {"_key" = lePrenom; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = dteDebutAnnee; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = laDteDebutAnnee; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

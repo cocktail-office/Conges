@@ -1,0 +1,107 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_DEBUT"; 
+            externalType = DATE; 
+            name = dateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DTE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "OID_AFFECTATION"; 
+            externalType = NUMBER; 
+            name = oidAffectation; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OID_AFF_ANN"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "OID_AFF_ANNUELLE"; }; 
+            name = oidAffectationAnnuelle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOPeriodeAffectationAnnuelle"; 
+    classProperties = (
+        dateDebut, 
+        dateFin, 
+        planningHebdomadaires, 
+        affectationAnnuelle, 
+        affectation, 
+        dCreation, 
+        dModification
+    ); 
+    externalName = "CONGES.PLNG_PER_AFF_ANN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (dateDebut, dateFin, planningHebdomadaires, affectationAnnuelle, affectation); 
+        "_nameInObjectStore" = "PLNG_PER_AFF_ANN"; 
+    }; 
+    name = PeriodeAffectationAnnuelle; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            destination = Affectation; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectation; }); 
+            name = affectation; 
+        }, 
+        {
+            destination = AffectationAnnuelle; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidAffectationAnnuelle; }); 
+            name = affectationAnnuelle; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PlanningHebdomadaire; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = oidPeriodeAffectationAnnuelle; sourceAttribute = oid; }
+            ); 
+            name = planningHebdomadaires; 
+        }
+    ); 
+}

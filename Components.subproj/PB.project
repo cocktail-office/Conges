@@ -1,0 +1,56 @@
+
+{
+    DYNAMIC_CODE_GEN = YES;
+    English_RESOURCES = 
+    {};
+    FILESTABLE = 
+    {
+        CLASSES = 
+        (
+           src/fr/univlr/cri/conges/Main.java, 
+           src/fr/univlr/cri/conges/PageAccueil.java, 
+           src/fr/univlr/cri/conges/PageChangeIdentite.java, 
+           src/fr/univlr/cri/conges/PageDemandes.java, 
+           src/fr/univlr/cri/conges/PageRecherche.java, 
+           src/fr/univlr/cri/conges/PageService.java
+        );
+        OTHER_LINKED = 
+        ();
+        OTHER_SOURCES = 
+        ();
+        SUBPROJECTS = 
+        (
+           Administration.subproj, 
+           Common.subproj, 
+           Planning.subproj
+        );
+        WEBSERVER_RESOURCES = 
+        ();
+        WOAPP_RESOURCES = 
+        (
+           Main.api, 
+           PageAccueil.api, 
+           PageChangeIdentite.api, 
+           PageDemandes.api, 
+           PageRecherche.api, 
+           PageService.api
+        );
+        WO_COMPONENTS = 
+        (
+           Main.wo, 
+           PageAccueil.wo, 
+           PageChangeIdentite.wo, 
+           PageDemandes.wo, 
+           PageRecherche.wo, 
+           PageService.wo
+        );
+    };
+    FRAMEWORKSEARCH = 
+    (
+       "$(NEXT_ROOT)$(LOCAL_LIBRARY_DIR)/Frameworks"
+    );
+    LANGUAGE = English;
+    PROJECTNAME = Conges;
+    PROJECTTYPE = JavaWebObjectsSubproject;
+    PROJECTVERSION = 2.8;
+}

@@ -1,0 +1,135 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_DEB_PERIODE"; 
+            externalType = DATE; 
+            name = dDebPeriode; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_FIN_PERIODE"; 
+            externalType = DATE; 
+            name = dFinPeriode; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HEURES_DUES"; 
+            externalType = VARCHAR2; 
+            name = heuresDues; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HEURES_IMPUTEES_3112"; 
+            externalType = VARCHAR2; 
+            name = heuresImputees3112; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HEURES_RESTANTES"; 
+            externalType = VARCHAR2; 
+            name = heuresRestantes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HEURES_TRAVAILLEES"; 
+            externalType = VARCHAR2; 
+            name = heuresTravaillees; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LIMITE_BASSE"; 
+            externalType = CHAR; 
+            name = limiteBasse; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, dDebPeriode); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EOIndividuInfosPeriodes"; 
+    classProperties = (
+        noIndividu, 
+        dDebPeriode, 
+        dFinPeriode, 
+        heuresTravaillees, 
+        temValide, 
+        dCreation, 
+        dModification, 
+        heuresDues, 
+        heuresRestantes, 
+        heuresImputees3112, 
+        limiteBasse, 
+        individu
+    ); 
+    externalName = "CONGES.INDIVIDU_INFOS_PERIODES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noIndividu, 
+            dDebPeriode, 
+            dFinPeriode, 
+            heuresTravaillees, 
+            temValide, 
+            dCreation, 
+            dModification
+        ); 
+        "_nameInObjectStore" = "INDIVIDU_INFOS_PERIODES"; 
+    }; 
+    name = IndividuInfosPeriodes; 
+    primaryKeyAttributes = (noIndividu, dDebPeriode); 
+    relationships = (
+        {
+            destination = Individu; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = noIndividu; }); 
+            name = individu; 
+        }
+    ); 
+}

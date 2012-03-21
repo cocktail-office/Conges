@@ -1,0 +1,48 @@
+<WEBOBJECT NAME=FormServicesAutorises>
+	<TABLE ALIGN=center>
+
+		<webobject name = "CondShowLastTotalAffAnn">
+		<!-- le message indiquant le dernier total d'affectation annuelles crees -->
+		<tr>
+			<td align=CENTER colspan=3>
+				<webobject name = "InfoTotalAffAnn">
+					Total affectations annuelles cr&eacute;&eacute;es : <b><webobject name = "StrTotalAffAnn"></webobject></b><br/>
+					Total p&eacute;riodes d'affectations annuelles cr&eacute;&eacute;es : <b><webobject name = "StrTotalPeriode"/></b>
+				</webobject>
+			</td>
+		</tr>
+		</webobject>
+
+		<tr>
+			<td colspan="3" align="center">
+				<span title="Selectionnez l'ann&eacute;e universitaire sur laquelle vous allez faire des modifications">
+				<b>Ann&eacute;e universitaire :	<webobject name="PopUpButton1"/></b>
+				</span>
+			</td>
+		</tr>
+
+		<tr>
+			<td align="center" class="admBox" valign = "top">
+				<span title="Les services qui n'apparaissent pas dans l'application pour cette ann&eacute;e">
+					<b>Services non autoris&eacute;s (<webobject name = "StrLesServiceCount"/>)</b><br>
+					<WEBOBJECT NAME="BrowserServices"/><br>
+					<div style = "text-align: left" title = "HAmAC consid&egrave;re un service comme  &quot;archiv&eacute;&quot; celui qui est fils direct d'un groupe de l'annuaire dont l'attribut LC_STRUCTURE = 'ARCH'	">
+						<webobject name = "ChkIsShowServicesArchives"/> Voir les services archiv&eacute;s<br>
+					</div>
+				</span>
+			</td>
+			<td width="50px" valign=MIDDLE align=CENTER>
+				<WEBOBJECT NAME=BtnAddServices></WEBOBJECT><br><br>
+				<WEBOBJECT NAME=BtnAutoriserIdentiqueAnneeNm1></WEBOBJECT><br><br>
+				<WEBOBJECT NAME=BtnDelService></WEBOBJECT>		
+			</td>
+			<td align="center" class="admBox" valign = "top">
+				<span title="Les services g&eacute;r&eacute;s par l'application pour cette ann&eacute;e">
+					<b>Services autoris&eacute;s (<webobject name = "StrLesServicesAutorisesCount"/>)</b><br>
+					<WEBOBJECT NAME="BrowserServicesAutorises"/>
+				</span>
+			</td>
+		</TR>
+		
+	</TABLE>
+</WEBOBJECT>

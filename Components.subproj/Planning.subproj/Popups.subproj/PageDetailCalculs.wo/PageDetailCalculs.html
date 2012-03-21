@@ -1,0 +1,156 @@
+<WEBOBJECT NAME=PageTemplate1>
+<webobject name = "Form1">
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0"
+	width=100%>
+		<tr>
+			<th colspan=2><font class="subTitleInverse">&nbsp;Planning	en cours : <WEBOBJECT NAME="StrAnnee"></WEBOBJECT> (<WEBOBJECT	NAME="StrType"></WEBOBJECT>)</font></th>
+		</tr>
+		<tr>
+			<td>
+			<table class="boxContents" border="0" cellpadding="5" cellspacing="0"
+				width="100%">
+				<tbody>
+					<tr>
+						<td align="right" width="50%"><font class="textEntry">Agent :</font></td>
+						<td><webobject name=String13></webobject></td>
+					</tr>
+					<tr>
+						<td align="right"><font class="textEntry">Heures dues :</font></td>
+						<td><webobject name=String14></webobject></td>
+					</tr>
+					<tr>
+						<td align="right">
+							<font class="textEntry">Heures r&eacute;alis&eacute;es :</font>
+						</td>
+						<td valign="top"><webobject name=String15></webobject></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+</table>
+<br>
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0"	width="100%">
+	<tbody>
+		<tr>
+			<td>
+				<table border="0" cellpadding="2" cellspacing="1" width="100%">
+					<tr class="listboxHeader">
+						<th align="center"><font class="small_entry">Rubrique</font></th>
+						<th colspan="2" align="center">&nbsp;<font class="small_entry">Initial</font></th>
+						<th colspan="2" align="center"><font class="small_entry">Restant</font></th>
+					</tr>
+					<tr class="listboxLine">
+						<td width="33%">Droits &agrave; cong&eacute;s</td>
+						<td align="center" colspan="2"><webobject name="StrLePlanningCongesInitiauxEnHeures"></webobject>(<webobject name="DivCongesInitiauxJours">#CONGES_INITIAUX_JOURS#</webobject>j)</td>
+						<td colspan="2" align="center"><webobject name="StrLePlanningCongesRestants"></webobject>(<webobject name="DivCongesRestantsJours">#CONGES_RESTANTS_JOURS#</webobject>j)</td>
+					</tr>
+					<webobject NAME="CondHasRegulation">
+					<tr class="listboxLine">
+						<td align="right"><font class="textNote">dont	r&eacute;gularisation de solde</font></td>
+						<td colspan="2" align="center">&nbsp;<webobject name="StrLePlanningRegularistationEnHeures"></webobject>(<webobject name="DivRegularisationJours">#CONGES_REGULARISATION_JOURS#</webobject>j)</td>
+						<td colspan="2" align="center"><font class="textNote">&nbsp;N/A</font></td>
+					</tr>
+					</webobject>
+					<webobject NAME="CondHasJrti">
+					<tr class="listboxLine">
+						<td align="right"><font class="textNote">dont	rachat de cong&eacute;s</font></td>
+						<td colspan="2" align="center">&nbsp;<webobject name="StrLePlanningJrtiEnHeures"></webobject>(<webobject name="DivJrtiJours">#CONGES_JRTI_JOURS#</webobject>j)</td>
+						<td colspan="2" align="center"><font class="textNote">&nbsp;N/A</font></td>
+					</tr>
+					</webobject>
+					<webobject NAME="CondHasBlocageReliquatsCet">
+					<tr class="listboxLine">
+						<td align="right"><font class="textNote">dont	blocage reliquats de cong&eacute;s pour CET</font></td>
+						<td colspan="2" align="center">&nbsp;<webobject name="StrLePlanningBlocageReliquatsCetEnHeures"></webobject>(<webobject name="DivBlocageReliquatsCetJours">#BLOCAGE_RELIQUATS_CET_JOURS#</webobject>j)</td>
+						<td colspan="2" align="center"><font class="textNote">&nbsp;N/A</font></td>
+					</tr>
+					</webobject>
+					<tr class="listboxLine">
+						<webobject name = "CondNotHasReliquatNegatif">
+							<td>Reliquat</td>
+						</webobject>
+						<webobject name = "CondHasReliquatNegatif">
+							<td align="right"><font class="textNote">dont	reliquat n&eacute;gatif</font></td>
+						</webobject>
+						<td align="center" colspan="2"><webobject name="StrLePlanningReliquatInitial"></webobject>(<WEBOBJECT NAME="DivReliquatsInitiauxJours">#RELIQUATS_INITIAUX_JOURS#</WEBOBJECT>j)</td>
+						<td colspan="2" align="center"><webobject name="StrLePlanningReliquatRestant"></webobject>(<WEBOBJECT NAME="DivReliquatsRestantsJours">#RELIQUATS_RESTANTS_JOURS#</WEBOBJECT>j)</td>
+					</tr>
+					<tr class="listboxLine">
+						<th>Totaux</th>
+						<th align="center" colspan="2"><webobject name="StrLePlanningCongesInitiauxSansDecompte"></webobject>(<webobject name="DivCongesTotalInitiauxJours">#CONGES_TOTAL_INITIAUX_JOURS#</webobject>j)</th>
+						<th colspan="2"><webobject name="StrLePlanningTotalRestant"></webobject> (<webobject	name="DivCongesTotalRestantsJours">#CONGES_TOTAL_RESTANTS_JOURS#</webobject>j)</th>
+					</tr>
+					<webobject NAME="CondHasDecompteLegal">
+					<tr class="listboxLine">
+						<td>Cong&eacute;s l&eacute;gaux</td>
+						<td align="center" colspan="2">&nbsp;-<webobject name="StrLePlanningDecompteLegal"></webobject> (<webobject NAME="DivDecompteLegalJours">#DECOMPTE_LEGAL_JOURS#</webobject>j)</td>
+						<td align="center" colspan="2"><font class="textNote">&nbsp;N/A</font></td>
+					</tr>
+					</webobject>
+					<webobject NAME="CondHasDechargeSyndicale">
+					<tr class="listboxLine">
+						<td>+ D&eacute;charge syndicale</td>
+						<td align="center" colspan="2"><webobject name="StrLePlanningDechargeSyndicaleInitiauxEnHeures"/>(<webobject name="DivDechargeSyndicaleInitiauxEnJours">#DECHARGE_SYNDICALE_INITIAUX_JOURS#</webobject>j)</td>
+						<td align="center" colspan="2"><webobject name="StrLePlanningDechargeSyndicaleRestantsEnHeures"/> (<webobject	name="DivDechargeSyndicaleRestantsJours">#DECHARGE_SYNDICALE_RESTANTS_JOURS#</webobject>j)</td>
+					</tr>
+					</webobject>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<br/>
+<table border=0 class="boxTitle" cellpadding="2" cellspacing="0" width="100%">
+		<tr>
+			<th colspan=2><font class="subTitleInverse">&nbsp;Param&egrave;tres</font></th>
+		</tr>
+		<tr>
+			<td>
+			<table class="boxContents" border="0" cellpadding="5" cellspacing="0"
+				width="100%">
+				<tbody>
+					<tr>
+						<td align=RIGHT width=50%><font class="textEntry">Dur&eacute;e d'une journ&eacute;e</font></td>
+						<td><!-- zone de texte contenant la duree type d'un jour --><WEBOBJECT NAME="TxtDureeJournee"></WEBOBJECT></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+</table>
+<br>
+<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0"	width="100%">
+	<tbody>
+		<tr>
+			<td>
+			<table border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tbody>
+					<tr class="listboxHeader">
+						<th align=CENTER><font class=small_entry>Rubrique</font></th>
+						<th colspan=2 align=CENTER>&nbsp;<font class="small_entry">P&eacute;riode</font></th>
+						<th colspan=2 align=CENTER><font class="small_entry">Jours</font></th>
+					</tr>
+					<tr class="listboxLine">
+						<td align=CENTER nowrap>Jours travaill&eacute;s (d&eacute;clar&eacute;s)</td>
+						<td align=CENTER nowrap colspan=2><webobject name=StrDebutAnneUniv></webobject>	au <webobject name=StrFinAnneCivile></webobject></td>
+						<td colspan=2 nowrap align=CENTER><webobject name=StrImpotsPremierePartie></webobject></td>
+					</tr>
+					<tr class="listboxLine">
+						<td align=CENTER nowrap>Jours travaill&eacute;s (d&eacute;clar&eacute;s)</td>
+						<td align=CENTER nowrap colspan=2><webobject name=StrDebutAnneCivile></webobject>	au <webobject name=StrFinAnneeUniv></webobject></td>
+						<td colspan=2 nowrap align=CENTER><webobject name=StrImpotsDeuxiemePartie></webobject></td>
+					</tr>
+					<tr class="listboxLine">
+						<td align=CENTER nowrap>Jours de cong&eacute;s l&eacute;gaux</td>
+						<td align=CENTER nowrap colspan=2><webobject name=StrDebutAnneUniv></webobject> au	<webobject name=StrFinAnneeUniv></webobject></td>
+						<td colspan=2 nowrap align=CENTER><webobject name=StrCongesLegaux></webobject></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</webobject>
+</webobject>

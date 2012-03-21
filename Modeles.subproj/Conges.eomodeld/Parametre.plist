@@ -1,0 +1,48 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "PARAM_KEY"; 
+            externalType = VARCHAR2; 
+            name = paramKey; 
+            valueClassName = NSString; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PARAM_ORDRE"; 
+            externalType = NUMBER; 
+            name = paramOrdre; 
+            valueClassName = NSDecimalNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PARAM_VALUE"; 
+            externalType = VARCHAR2; 
+            name = paramValue; 
+            valueClassName = NSString; 
+            width = 2000; 
+        }
+    ); 
+    attributesUsedForLocking = (paramOrdre); 
+    className = "fr.univlr.cri.conges.eos.modele.conges.EOParametre"; 
+    classProperties = (paramValue, paramKey, dCreation, dModification); 
+    externalName = "CONGES.CNG_PARAMETRE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "CNG_PARAMETRE"; }; 
+    name = Parametre; 
+    primaryKeyAttributes = (paramOrdre); 
+}

@@ -1,0 +1,87 @@
+FormAdminSuiviPlanningAnneeUniv: WOForm {
+	name = "FormAdminSuiviPlanningAnneeUniv";
+	action = neFaitRien;
+}
+
+FormAdminSuiviPlanning: WOForm {
+	name = "FormAdminSuiviPlanning";
+	action = neFaitRien;
+	multipleSubmit = true;
+}
+
+PopUpAnneeUniv: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	onChange = "FormAdminSuiviPlanningAnneeUniv.submit();return false;";
+	selection = lAnneeUnivSelectionnee;
+}
+
+BrowserServicesAutorises: WOBrowser {
+	list = lesServicesAutorises;
+	item = serviceAutoriseItem;
+	selections = lesServicesAutorisesSelected;
+	displayString = serviceAutoriseItem.display;
+	name = "BrowserServicesAutorises";
+	id = "BrowserServicesAutorises";
+	class = "browser";
+	multiple="true"; 
+	size=20;
+}
+
+BtnSelectionner: WOSubmitButton {
+	action = selectionner;
+	value = ">>";
+	class = "bouton";
+}
+
+BtnDeselectionner: WOSubmitButton {
+	action = deselectionner;
+	value = "<<";
+	class = "bouton";
+}
+
+BrowserService: WOBrowser {
+	list = serviceArray;
+	item = serviceItem;
+	selections = serviceArraySelected;
+	displayString = serviceItem.display;
+	name = "BrowserService";
+	id = "BrowserService";
+	class = "browser";
+	multiple="true"; 
+	size=20;
+}
+
+DateDebut: CRIDatePicker {
+	dateValue = dDebut;
+}
+
+DateFin: CRIDatePicker {
+	dateValue = dFin;
+}
+
+BtnPrintCsv: WOSubmitButton {
+	action = printCsv;
+	value = "Générer le fichier CSV";
+	class = "bouton";
+	title = "cliquer pour générer et télécharger le fichier d'export";
+	disabled = disabledBtnPrintCsv;
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+StrErrMsg: WOString {
+	value = errMsg;
+}
+
+CondIsAfficherLnkTelechargerFichierCsv: WOConditional {
+	condition = isAfficherLnkTelechargerFichierCsv;
+}
+
+LnkTelechargerFichierCsv: WOHyperlink {
+	action = adminSuiviPlanningWorkingCtrl.lastCsvResponse;
+	title = "Télécharger le dernier fichier généré";
+}

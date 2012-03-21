@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PersoFicheRose" wocomponentcontent="false">
+
+		<binding name="lePlanning"/>
+		<binding name="isDisabled"/>
+
+		<validation message="&apos;lePlanning&apos; is a required binding">
+			<unbound name="lePlanning"/>
+		</validation>
+
+		<validation message="&apos;isDisabled&apos; is a required binding">
+			<unbound name="isDisabled"/>
+		</validation>
+	</wo>
+</wodefinitions>

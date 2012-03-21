@@ -1,0 +1,269 @@
+
+
+<style type = "text/css">
+.ulRetourLigne li {
+	display: list-item;
+}
+</style>
+
+
+	<table border=0 width=100%>
+
+		<tr>
+			<td align="center">
+				<webobject name="CompServicesAffAnnsNew1"/>
+			</td>
+			<td align="left" valign="top">
+				<table border="0" class="boxTitle" cellpadding="2" cellspacing="0">
+					<tr>
+						<th><font class="subTitleInverse">&Eacute;ditions PDF</font></th>
+					</tr>
+					<tr>
+						<td>
+							<table class="boxContents" border="0" cellpadding="5" cellspacing="0" width="100%">
+								<tr>
+									<td>
+										<webobject name="CngPdfBoxCompte"/>
+										Liste des comptes CET actuellement enregistr&eacute;s dans le syst&egrave;me d'informations<br/><hr/>
+										<webobject name="CngPdfBoxTransaction"/>
+										Liste des cr&eacute;dits/d&eacute;bits CET ayant eu lieu l'ann&eacute;e universitaire <webobject name = "StrSelectedAnneeUniv"/><br/><hr/>
+										<webobject name="CngPdfBoxTransactionAnt"/>
+										Liste des cr&eacute;dits/d&eacute;bits CET ayant eu lieu avant la mise en place de HAmAC
+										<webobject name="CondIsAffAnnSelected">
+											<webobject name="CondHasTransaction">
+												<br/><hr/>
+												<webobject name="CngPdfBoxSituation"/>
+													<webobject name="FormDateArret">
+													Date de situation :
+													<webobject name="DatePickerArret"/> <webobject name="BtnEcrireDansLePdf"/>
+												</webobject>
+												Courrier annuel faisant &eacute;tat de la situation du Compte &Eacute;pargne Temps de <b><webobject name = "StrNomComplet"/></b>
+											</webobject>
+										</webobject>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	
+	<webobject name="CondIsAffAnnSelected">
+	<br/>
+	<table>
+		<tr>
+			<td valign="top" align="center">
+				
+				<webobject name = "CondNotIsUneTransactionSelectionnee">
+					
+					<!-- la demande de bascule ancien régime vers régime pérenne -->
+					<webobject name = "CondIsTransfertCetDemandeEnAttenteDeDecision">
+				 		Demande de transfert de l'ancien syst&egrave;me vers le r&eacute;gime p&eacute;renne
+					</webobject>
+					
+					<!-- les boutons d'ajout d'une nouvelle transaction (epargne) -->
+					<webobject name = "CondIsEpargneCetDemandeEnAttenteDeDecision">
+					
+						<table>
+							<tr>
+								<td>
+					
+									<webobject name="FormAjouterNouveauSysteme">
+										<webobject name = "CngAvertissementDemandeEnAttenteDeDecision">
+											<p align="center">
+											L'agent titulaire de ce planning a fait une demande d'&eacute;pargne.<br/>
+											Cette derni&egrave;re est en attente de d&eacute;cision.<br/><br/>
+											<b>L'&eacute;pargne CET demand&eacute;e est de : <font class="mainTitle"><webobject name = "StrHeuresDemandees"/></font></b><br/>
+											<div align = "left">
+												<ul class="ulRetourLigne">
+													<li>consommation au <webobject name = "StrDateFinReliquat"/> : <b><webobject name = "StrConsommationCongesReliquatPendantValiditeReliquatEnHeures"/></b>
+														<ul>
+															<li>dont reliquats : <b><webobject name = "StrConsommationReliquatPendantValiditeReliquatEnHeures"/></b> 
+																(demande d'&eacute;pargne de <webobject name = "StrHeuresDemandees"/> exclue)</li>
+														</ul>
+													</li>
+													<li>reliquats initiaux au <webobject name = "StrDateDebutAnnee"/> : <b><webobject name = "StrReliquatInitialEnHeures"/></b></li>
+													<li>
+														Consommation de cong&eacute;s sur l'ann&eacute;e N-1 : <b><webobject name = "StrConsommationCongesAnneePrecedenteEnHeures"/></b>
+														<b>
+															<webobject name = "CondHasConsommationCongesAnneePrecedenteMinimumPourEpargneCet"><font color="#099502">OK</font></webobject>
+															<webobject name = "CondNotHasConsommationCongesAnneePrecedenteMinimumPourEpargneCet">
+																<br/>
+																<font color="#bd0c0c">INSUFFISANT (inf&eacute;rieur &agrave; <webobject name = "StrConsommationMinimumCongesEpargneCetJour7h00"/> j. &agrave; 7h00)</font><br/>
+																<font class="textNote">ATTENTION, la cause peut &ecirc;tre d'ordre technique :
+																	<ul>
+																		<li><font class="textNote">Changement de service en cours d'ann&eacute;e universitaire</font></li>
+																		<li><font class="textNote">Mutation (dont pas de planning N-1 !)</font></li>
+																	</ul>
+																 </font>
+															</webobject>
+														</b>
+													</li>
+												</ul>
+											</div>
+											<br/>
+											<webobject name="BtnAjouterNouveauSysteme"/>
+											</p>
+										</webobject>
+									</webobject>
+								
+								</td>
+								<td>
+									
+									<webobject name = "FormDebloquerReliquat">
+										<webobject name = "CngInfoBoxDebloquerReliquat">
+											<b>Note :</b> l'agent a bloqu&eacute; cette valeur, il <u>ne peut plus</u> revenir dessus sans	intervention de votre part.<br/><br/>
+										  Pour d&eacute;bloquer sa reservation afin de lui permettre de saisir	une autre quantit&eacute;, veuillez cliquer sur le bouton suivant :<br/><br/>
+											<webobject name = "BtnDebloquerReliquat"/> <br/>
+																						<webobject name = "BtnTmpDoAccepter"/> 
+										</webobject>
+									</webobject>
+									
+								</td>
+							</tr>
+						</table>
+	
+						<br/>
+	
+					</webobject>
+					
+					<webobject name="FormAjouterAncienSysteme">
+						<table>
+							<tr bgcolor="#ffffff">
+								<td align="center"><webobject name="BtnAjouterAncienSysteme"/></td>
+							</tr>
+						</table>
+					</webobject>
+					
+					<br/>
+				
+				</webobject>
+				
+				
+				<webobject name="FormSaisieTransaction">
+				
+				<webobject name="CondIsUneTransactionSelectionnee">
+					<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+						<tr>
+							<td>
+								<table border="0" cellpadding="2" cellspacing="1" width="100%">						
+									<tr class="listboxHeader">
+										<th colspan="2">Transaction CET</th>
+									</tr>
+									
+									<tr class="listboxLine">
+										<th width=1% nowrap align=RIGHT>Date de valeur:</th>
+										<td>
+											<webobject name = "CondNotIsUneTransactionAutomatique">
+												<webobject name="PickerDateValeur"/>
+											</webobject>
+											<webobject name = "CondIsUneTransactionAutomatique">
+												<webobject name="StrDateValeur"/>
+											</webobject>
+										</td>
+									</tr>
+									<tr class="listboxLine">
+										<th align="right">Motif:</th>
+										<td>
+											<webobject name = "CondNotIsUneTransactionAutomatique">
+												<webobject name="TFMotif"/>
+											</webobject>
+											<webobject name = "CondIsUneTransactionAutomatique">
+												<webobject name="StrMotif"/>
+											</webobject>
+										</td>
+									</tr>
+									<webobject name = "CondNotIsUneTransactionAutomatique">
+									<tr class="listboxLine">
+										<th align="right">Valeur (hh:mm):</th>
+										<td>
+											<webobject name="TimeFieldCET"/>
+										</td>
+									</tr>
+									</webobject>
+									<webobject name = "CondIsUneTransactionAutomatique">
+									<tr class="listboxLine">
+										<th align="right">
+											Demande d'&eacute;pargne<br/><br/>
+											<font class="mainTitle"><webobject name = "StrHeuresDemandees"/></font>
+										</th>
+										<td>
+											<table>
+												<tr class="trDemAcc"><td><webobject name="RadioCetDecisionBasculeIdentique"/> <b>ACCEPT&Eacute;E</b> &agrave; l'identique de la demande</td></tr>
+												<tr class="trDemVis"><td><webobject name="RadioCetDecisionBasculeDifferente"/> <b>ACCEPT&Eacute;E</b> mais pour la valeur suivante : <webobject name = "TFHeuresBasculees"/></td></tr>
+												<tr class="trDemRef"><td><webobject name="RadioCetDecisionBasculeRefusee"/> <b>REFUS&Eacute;E</b> (tous les reliquats sont &agrave; consommer)</td></tr>
+											</table>
+										</td>
+									</tr>
+									</webobject>
+									<tr class="listboxLine">
+										<td colspan="2" align="center">
+											<webobject name = "CondNotIsUneTransactionAutomatique">
+												<webobject name="BtnEnregistrerAncienSysteme"/>
+											</webobject>
+											<webobject name = "CondIsUneTransactionAutomatique">
+												<webobject name="BtnEnregistrerNouveauSysteme"/>
+											</webobject>
+											<webobject name="BtnAnnuler"/>
+											<webobject name="CondNotIsUneNouvelleTransaction">
+												&nbsp;&nbsp;&nbsp;
+												<webobject name="BtnSupprimerTransaction"/>
+											</webobject>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</webobject>
+				
+				
+				</webobject>
+				
+				
+				
+				<br/>
+				<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0">
+					<tr>
+						<td>
+							<table border="0" cellpadding="2" cellspacing="1" width="100%">						
+							<tr class="listboxHeader">
+							<th nowrap>Date op&eacute;ration</th>
+							<th nowrap>Date de valeur</th>
+							<th>Motif</th>
+							<th nowrap>Cr&eacute;dit</th>
+							<TH NOWRAP>D&eacute;bit</TH>
+						</tr>
+						<webobject name="RepLesTransactions">
+							<webobject name = "TrUneTransactionItem">
+								<td align="center"><webobject name="LnkDetaillerTransaction"><webobject name="StrUneTransactionMotifDateCreation"/></webobject></td>
+								<td align="center"><webobject name="StrUneTransactionMotifDateValeur"/></td>
+								<td align="center"><webobject name="StrUneTransactionMotif"/></td>
+								<td align="right"><webobject name="StrUneTransactionCredit"/></td>
+								<TD align="right"><webobject name="StrUneTransactionDebit"/></TD>
+							</webobject>
+						</webobject>
+							<tr class="listboxLine">
+								<td colspan=3>&nbsp;</td>
+								<td align="right"><webobject name="StrTotalCredits"/></td>
+								<TD align="right"><webobject name="StrTotalDebits"/></TD>
+							</tr>
+							<tr class="listboxLine">
+								<td colspan=3 align="center"><b>TOTAL</b></td>
+								<TD align="right" COLSPAN=2><b><webobject name="StrTotalTransactions"/></b></TD>
+							</tr>							
+					</table>
+					</td>
+				</tr>
+				</table>
+			
+		</td>
+		
+		</tr>
+	</table>
+
+	
+	</webobject>

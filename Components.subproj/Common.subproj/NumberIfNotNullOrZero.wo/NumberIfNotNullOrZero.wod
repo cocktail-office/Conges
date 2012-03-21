@@ -1,0 +1,8 @@
+CondNotNullOrZero: WOConditional {
+	condition = showValue;
+}
+
+StrValue: WOString {
+	value = ^value;
+	numberformat = ^numberformat;
+}

@@ -1,0 +1,233 @@
+/* ENSEMBLE DE STYLE POUR LE PLANNING INDIVIDUEL */
+
+body {
+	background-color: white;
+	margin: 0;padding:0;
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center; 
+}
+a, div, img {
+	position: relative;
+
+}
+
+/* le conteneur des chiffres et du calendrier*/
+.planning {
+	margin-left: auto;
+	margin-right: auto;
+	border : 2px solid #aabbff;
+    text-align: center;
+	width: 941px;
+}
+/* width pour les navigateurs non IE */
+html>body .planning { 
+	width: 937px;
+}
+
+
+/** -------------------------------------------
+  * Toutes les objets dans le planning
+  -------------------------------------------  */
+.groupeSemaine {
+	border-top: 1px solid #123fa9;
+	border-left: 1px solid #123fa9;
+	border-right: 1px solid #123fa9;
+}
+.mois {
+	left: 0;
+	height: 505px;
+	top: 0px;
+	background-color: #ddeeff;
+	border-top: 1px solid #ddeeff;
+	border-right: 1px solid #ddeeff;
+	float: left;
+	display: inline;
+}
+.moisTitre {
+	color: #123fa9;
+	font-weight: bold;
+	background-color: #aabbff;
+	text-align: center;
+}
+.moisDuree {
+	color: #123fa9;
+	text-align: center;
+}
+.annee {
+	height: 505px;
+	border-left: 1px solid #ddeeff;
+}
+
+
+/*-------------------------------------------
+  * tous les types de semaines  
+  -------------------------------------------*/
+.divSemaine, .divSemaineInactive , .divSemaineNoHoraire {
+	left: 0;
+	width: 75px;
+	border-bottom: 1px solid #123fa9;
+}
+  
+.divSemaine {
+	top: 0px;
+	background-color: #FFFFFF;
+}
+.divSemaineInactive {
+	top: 0px;
+	background-color: darkgrey;
+}
+.divSemaineNoHoraire {
+	background-image: url(images/planning/noHoraire.gif);
+	background-position:bottom;
+}
+
+/*-------------------------------------------
+  * tous les types de jours possibles (selon l'occupation) 
+  -------------------------------------------*/
+
+.divJour, .divJourW, .divJourF, .divJourC, .divJourCV, .divJourCS, .divJourCAM, .divJourCAMV, .divJourCAMS, 
+.divJourCPM, .divJourCPMV, .divJourCPMS, .divJourCL, .divJourCLAM, .divJourCLPM, .divJourSS , .divJourHA, 
+.divJourCC , .divJourCCV , .divJourCCS {
+	width: 75px;	
+	height: 15px;
+	left: 0;
+	top: 0px;
+}
+  
+.divJour{ /* jour normal */
+}
+.divJourW  {  /* jour chome */
+	background-color: lightgrey;
+}
+.divJourF  { /* jour de fermeture toute le journee*/
+	background-color: #00F600;
+}
+.divJourC  { /* jour conge toute la journee */
+	background-color: mediumspringgreen;
+}
+.divJourCV {	 /* jour conge toute la journee en cours de validation */
+	background-image: url(images/planning/jour_v.gif);
+}
+.divJourCS {	 /* jour conge toute la journee en cours de suppression */
+	background-image: url(images/planning/jour_s.gif);
+}
+.divJourCAM {	 /* jour conges le matin */
+	background-image: url(images/planning/matin.gif);
+}
+.divJourCAMV {	 /* jour conges le matin en cours de validation */
+	background-image: url(images/planning/matin_v.gif);
+}
+.divJourCAMS {	 /* jour conges le matin en cours de suppression */
+	background-image: url(images/planning/matin_s.gif);
+}
+.divJourCPM {	/* jour conges l'apres midi */
+	background-image: url(images/planning/aprem.gif);
+}
+.divJourCPMV {	/* jour conges l'apres midi en cours de validation */
+	background-image: url(images/planning/aprem_v.gif);
+}
+.divJourCPMS {	 /* jour conges l'apres midi en cours de suppression */
+	background-image: url(images/planning/aprem_s.gif);
+}
+.divJourCL {	 /* jour conges legal toute la journee */
+	background-color: #99CC99;
+}
+.divJourCLAM {	 /* jour conges legal le matin */
+	background-image: url(images/planning/matinleg.gif);
+}
+.divJourCLPM {	/* jour conges legal l'apres midi */
+	background-image: url(images/planning/apremleg.gif);
+}
+.divJourSS {	/* jour sans statut (rose qui pete) */
+	background-color: pink;
+}
+.divJourHA {	/* jour hors affectation */
+	background-color: darkgrey;
+}
+.divJourCC  { /* jour contenant un conges comp ou une aut. d'absence */
+	background-image: url(images/planning/cc.gif);
+}
+.divJourCCV  { /* jour contenant un conges comp ou une aut. d'absence en cours de validation */
+	background-image: url(images/planning/cc_v.gif);
+}
+.divJourCCS  { /* jour contenant un conges comp ou une aut. d'absence en cours de suppression */
+	background-image: url(images/planning/cc_s.gif);
+}
+
+
+/**
+ * Highlight des jours speciaux
+ */
+/**********************
+ * STYLES POUR 1 JOUR
+ **********************/
+#divJourToday, #divJourOccFirstDay, #divJourOccMiddleDay, #divJourOccLastDay, #divJourOccOnlyDay {
+	width: 75px;
+	height: 15px
+}
+ 
+#divJourToday { /* aujourd'hui */ 
+	background-image:url(images/planning/today.gif);
+}
+#divJourOccFirstDay { /* validation d'absence : premier jour */ 
+	background-image:url(images/planning/firstday.png);
+}
+#divJourOccMiddleDay { /* validation d'absence : ni premier ni dernier jour */ 
+	background-image:url(images/planning/middleday.png);
+}
+#divJourOccLastDay { /* validation d'absence : dernier jour */ 
+	background-image:url(images/planning/lastday.png);
+}
+#divJourOccOnlyDay { /* validation d'absence : un seul jour */ 
+	background-image:url(images/planning/onlyday.png);
+}
+
+
+/*
+ *details pour 1 jour 
+ */
+ 
+.lJour { /* cellule contenant la lettre du jour*/
+	left: 0;
+	width: 10px;
+	font-size: 12px;
+	float: left;
+	text-align: left;
+	clear: both; /* affichage correct sous FF3 Mac*/
+}
+.nJour { /* cellule contenant le numero du jour*/
+	width: 15px;
+	font-size: 10px;
+	float: left;
+	text-align: right;
+	font-size: 12px;
+}
+.dJour, .dfJour {
+	width: 28px;
+	font-size: 10px;
+	text-align: right;
+	float: left;
+	height: 15px;
+}
+.dJour { /* cellule contenant la duree de travail du jour*/
+	color: #000000;
+}
+.dfJour { /* cellule contenant la duree de travail du jour (force)*/
+	color: #cc0000;
+}
+.nSem { /* numero de la semaine - loupe pour avoir le detail de l'horaire*/ 
+	width: 19px;
+	float: left;
+	text-align: right;
+}
+.vac {	/* liseret des vacances scolaires */
+	width: 3px;
+	background-color: gold;
+	float: left;
+}
+.nvac { 	/* liseret hors vacances scolaires */
+	width: 3px;
+	float: left;
+}
+

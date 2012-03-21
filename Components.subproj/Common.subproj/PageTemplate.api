@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="PageTemplate" wocomponentcontent="true">
+
+		<binding name="pageTitle"/>
+		<binding name="useToolTip"/>
+		<binding name="isPopup"/>
+	
+    </wo>
+</wodefinitions>

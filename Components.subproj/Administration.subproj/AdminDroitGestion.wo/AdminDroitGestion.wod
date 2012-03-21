@@ -1,0 +1,350 @@
+FormGestionProfil: WOForm {
+	name="FormGestionProfil";
+	action = revert;
+	multipleSubmit="true";
+	onSubmit = "formatterDuree(valHeuresManu,false);";
+}
+
+FormRegularisation: WOForm {
+	name="FormRegularisation";
+	action = doSaveRegularisation;
+	multipleSubmit="true";
+}
+
+BtnEnregistrer: WOSubmitButton {
+	value = "BOUTON CACHE ENREGISTRER";
+	action = validerProfil;
+	style = "visibility:hidden;display:none";
+	name = "btnEnregistrer";
+}
+
+CompServicesAffAnnsNew1: CompServicesAffAnns {
+	affAnnSelected = uneAffectationAnnuelleSelectionnee;
+	serviceSelected = leServiceAutoriseSelectionne;
+}
+
+CondIsAffSelected: WOConditional {
+	condition = isUneAffectationSelected;
+}
+
+StrNomComplet: WOString {
+	value = uneAffectationAnnuelleSelectionnee.individu.nomComplet;
+}
+
+ToolTipSemHautes: CRIToolTip {
+	htmlText = htmlTipDepSemHautes;
+}
+
+ImgInfo: WOImage {
+	filename = "images/info_small.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+}
+
+ChkSemHautes: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isDepSemHautes;
+	onClick = "btnEnregistrer.click();";
+}
+
+ToolTipHorsNormes: CRIToolTip {
+	htmlText = htmlTipHorsNorme;
+}
+
+ChkHorsNormes: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isHorsNorme;
+	onClick = "btnEnregistrer.click();";
+}
+
+ToolTipPasseDroit: CRIToolTip {
+	htmlText = htmlTipPasseDroit;
+}
+
+ChkPasseDroit: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isPasseDroit;
+	onClick = "btnEnregistrer.click();";
+}
+
+ToolTipClcAuto: CRIToolTip {
+	htmlText = htmlTipCalculAuto;
+}
+
+ChkClcAuto: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isCalculAutomatique;
+	onClick = "btnEnregistrer.click();";
+}
+
+CondIsClcAuto: WOConditional {
+	condition = uneAffectationAnnuelleSelectionnee.isCalculAutomatique;
+	negate = true;
+}
+
+DroitsTimeField: CRITimeField {
+	fieldValue = uneAffectationAnnuelleSelectionnee.toMouvementDroitsCongesNonAutomatiques.mouvementHeures;
+	fieldName = "DroitsTimeField";
+	limit24h = false;
+	btnEnter = "btnEnregistrer";
+	submitOnPressEnter = true;
+}
+
+ToolTipTPA: CRIToolTip {
+	htmlText = htmlTipTPA;
+}
+
+ChkTPA: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isTempsPartielAnnualise;
+	onClick = "btnEnregistrer.click();";
+}
+
+ToolTipDep: CRIToolTip {
+	htmlText = htmlTipDepConges;
+}
+
+ChkDep: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isDepassementCongesAutorise;
+	onClick = "btnEnregistrer.click();";
+}
+
+
+ChkRelAuto: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isReliquatAutomatique;
+	onClick = "btnEnregistrer.click();";
+}
+
+
+ToolTipRelAuto: CRIToolTip {
+	htmlText = htmlTipRelAuto;
+}
+
+CondIsRelAuto: WOConditional {
+	condition = uneAffectationAnnuelleSelectionnee.isReliquatAutomatique;
+	negate = true;
+}
+
+ReliquatTimeField: CRITimeField {
+	fieldValue = uneAffectationAnnuelleSelectionnee.toMouvementReliquatsNonAutomatiques.mouvementHeures;
+	fieldName = "valHeuresReliquat";
+	limit24h = false;
+	btnEnter = "btnEnregistrer";
+	submitOnPressEnter = true;
+}
+
+
+ChkDechargeSyndicale: WOCheckBox {
+	checked = uneAffectationAnnuelleSelectionnee.isDechargeSyndicale;
+	onClick = "btnEnregistrer.click();";
+}
+
+ToolTipDechargeSyndicale: CRIToolTip {
+	htmlText = htmlTipDechSynd;
+}
+
+CondIsDechargeSyndicale: WOConditional {
+	condition = uneAffectationAnnuelleSelectionnee.isDechargeSyndicale;
+}
+
+DechargeSyndicaleTimeField: CRITimeField {
+	fieldValue = uneAffectationAnnuelleSelectionnee.toMouvementDechargeSyndicale.mouvementHeures;
+	fieldName = "valHeuresDechargeSyndicale";
+	limit24h = false;
+	btnEnter = "btnEnregistrer";
+	submitOnPressEnter = true;
+}
+
+
+ToolTipRegularisation: CRIToolTip {
+	htmlText = "Droit &agrave; cong&eacute;s suppl&eacute;mentaires<br/>(en plus des droits &agrave; cong&eacute;s initiaux)";
+}
+
+CondHasRegularisation: WOConditional {
+	condition = uneAffectationAnnuelleSelectionnee.tosMouvementRegularisationSoldeConges.count;
+}
+
+RepRegularisation: WORepetition {
+	list = uneAffectationAnnuelleSelectionnee.tosMouvementRegularisationSoldeConges;
+	item = regularisationItem;
+}
+
+LnkDoSelectRegularisationItem: WOHyperlink {
+	action = doSelectRegularisationItem;
+	title = "modifier / detailler cette r&eacute;gularisation de solde";
+	escapeHTML = false;
+}
+
+StrRegularisationMotif: WOString {
+	value = regularisationItem.mouvementLibelle;
+}
+
+StrRegularisationValeur: WOString {
+	value = regularisationItem.mouvementHeures;
+}
+
+CondNotIsARegularisationSelected: WOConditional {
+	condition = isARegularisationSelected;
+	negate = true;
+}
+
+LnkToAddNewRegularisation: WOHyperlink {
+	action = toAddNewRegularisation;
+	title = "Saisie d'une nouvelle r&eacute;gularisation de solde de cong&eacute;s pour ce planning";
+	escapeHTML = false;
+}
+
+CondIsARegularisationSelected: WOConditional {
+	condition = isARegularisationSelected;
+}
+
+
+TimeFieldRegularisationSelectedValeur: CRITimeField {
+	fieldValue = regularisationSelected.mouvementHeures;
+	fieldName = "duree";
+	limit24h = false;
+}
+
+TFRegularisationSelectedMotif: WOTextField {
+	value = regularisationSelected.mouvementLibelle;
+	maxlength = 2000;
+	size = 25;
+	name = "TFRegularisationSelectedMotif";
+}
+
+BtnDoSaveRegularisation: WOSubmitButton {
+	action = doSaveRegularisation;
+	value = "Enregistrer";
+	class = "bouton";
+	name = "BtnDoSaveRegularisation";
+}
+
+BtnDoCancelRegularisationSelected: WOSubmitButton {
+	action = doCancelRegularisationSelected;
+	value = "Annuler";
+	class = "bouton";
+	name = "BtnDoCancelRegularisationSelected";
+}
+
+CondNotIsUneNouvelleRegularisation: WOConditional {
+	condition = isUneNouvelleRegularisation;
+	negate = true;
+}
+
+BtnDoDelRegularisationSelected: WOSubmitButton {
+	action = doDelRegularisationSelected;
+	value = "Effacer cette r&eacute;gularisation";
+	class = "bouton";
+	name = "BtnDoDelRegularisationSelected";
+	escapeHTML = false;
+}
+
+
+CondIsServAutSelected: WOConditional {
+	condition = isUnServiceAutoriseSelectionne;
+}
+
+FormEnvoiMail: WOForm {
+	name = "FormEnvoiMail";
+	action = neFaitRien;
+}
+
+BtnEnregistrerEnvoiMail: WOSubmitButton {
+	value = "BOUTON CACHE ENREGISTRER";
+	action = sauvegarde;
+	style = "visibility:hidden;display:none";
+	name = "BtnEnregistrerEnvoiMail";
+}
+
+
+StrNomService: WOString {
+	value = leServiceAutoriseSelectionne.display;
+}
+
+ChkEnvoiMail: WOCheckBox {
+	checked = envoiMail;
+	onclick = "BtnEnregistrerEnvoiMail.click();";
+}
+
+ImgMail: WOImage {
+	border = 0;
+	filename = "images/DroitsEnvoiMail.png";
+	framework = "app";
+}
+
+StrNomRespService: WOString {
+	value = leServiceAutoriseSelectionne.responsable.nomComplet;
+}
+
+CondIsAdminGlobal: WOConditional {
+	condition = isAdminGlobal;
+}
+
+StrCible: WOString {
+	value = cdrCibleTypeDisplay;
+}
+
+SearchIndividu1: SearchIndividu {
+	individuSelected = lIndividuSelectionne;	
+}
+
+BtnAjouterDroit: WOSubmitButton {
+	title = "Ajouter cette personne comme ayant droit";
+	value = "Donner droit &raquo;";
+	action = ajoutDroit;
+	class = "bouton";
+	escapeHTML = false;
+}
+
+BrowserDroits: WOBrowser {
+	list = lesDroitsExistants;
+	item = unDroit;
+	selections = lesDroitsSelectionnes;
+	displayString = unDroit.toIndividuResp.nomComplet;
+	name = "BrowserDroitsExistants";
+}
+
+BtnSupprimerDroit: WOImageButton {
+	title = "Supprimer le droit de cette personne";
+	action = supprimerDroit;
+	class = "bouton";
+	filename = "images/moins16.gif";
+	framework = "app";
+	width = "16";
+	height = "16";
+}
+
+BrowserRO: WOBrowser {
+	list = lesDroitsReadOnly;
+	item = unDroit;
+	displayString = unDroit.toIndividuResp.nomComplet;
+	disabled = true;
+}
+
+FormGestionDroit: WOForm {
+	name="FormGestionDroit";
+	action = revert;
+	multipleSubmit="true";
+}
+
+
+PopupCibleList: WOPopUpButton {
+	list = cibleList;
+	selection = cibleSelected;
+	item = cibleItem;
+	displayString = cibleItemDisplay;
+	onChange = "this.form.submit();";
+}
+
+TipCibleSelectedComment: CRIToolTip {
+	htmlText = cibleSelectedComment;
+}
+
+TipNiveauSelectedComment: CRIToolTip {
+	htmlText = niveauSelectedComment;
+}
+
+PopupNiveauList: WOPopUpButton {
+	list = niveauList;
+	selection = niveauSelected;
+	item = niveauItem;
+	displayString = niveauItemDisplay;
+	onChange = "this.form.submit();";
+	escapeHTML = false;
+}

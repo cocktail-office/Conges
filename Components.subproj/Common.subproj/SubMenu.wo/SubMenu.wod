@@ -1,0 +1,21 @@
+RepMenu: WORepetition {
+	list = ctrl.labelList;
+	item = ctrl.labelItem;
+	index = ctrl.menuIndex;
+}
+
+TdMenu: WOGenericContainer {
+	elementName = "td";
+	id = ctrl.tabMenuCssId;
+	class= ctrl.tabMenuCssClass;
+}
+
+LinkMenu: WOHyperlink {
+	action = ctrl.doSelectLabelItem;
+	title = ctrl.titleItem;
+}
+
+LibelleTabMenu: WOString {
+	value = ctrl.labelItem;
+	escapeHTML = false;
+}

@@ -1,0 +1,101 @@
+<style>
+.tableDroitList tr.listboxLine:hover {
+	background-color: #FFFFFF;
+	color: red;
+}
+</style>
+
+<webobject name = "FormNavBar">
+	<webobject name = "CRINavBarAffAnn"/>
+</webobject>
+
+
+<table class="listboxBorder" width="100%" cellspacing="0" cellpadding="1" border="0">
+	<tr>
+		<td>
+			<table class = border="0" cellpadding="2" cellspacing="1" width="100%">
+				<tr class = "listboxHeader">
+					
+					<th width = "33%">
+
+						<webobject name = "FormSearch">
+							Agent : <webobject name = "TFSearchString"/>
+						</webobject>
+
+					</th>
+					
+					<th width = "33%">
+
+						<webobject name = "FormAdminPasseDroitListAnneeUniv">
+							Ann&eacute;e universitaire : <webobject name = "PopUpLesAnneeUniv"/>
+						</webobject>
+
+					</th>
+			
+					<th width = "33%">
+
+						<webobject name = "FormAdminPasseDroitListFiltre">
+							<input type = "hidden" name = "bidon" value = "bidon"/>
+							<label>
+								<font class="textNote">
+									<webobject name = "ChkIsVoirUniquementAgentPasseDroit"/> 
+									Restreindre la liste &agrave; ceux qui ont au moins 1 passe droit
+								</font>
+							</label>
+						</webobject>
+						
+					</th>
+			
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<br/>
+
+
+<webobject name = "FormAdminPasseDroitList">
+
+	<webobject name = "BtnEnregistrer"/>
+
+
+	<table class="listboxBorder" border="0" cellpadding="1" cellspacing="0" width="100%">
+		<tr>
+			<td>
+				<table class="tableDroitList" border="0" cellpadding="2" cellspacing="1" width="100%">
+						
+					<tr class="listboxHeader">
+		
+						<th>Composante <webobject name = "ToolTipComposante"> <webobject name = "ImgInfo"/></webobject></th>
+						<th>Service <webobject name = "ToolTipService"> <webobject name = "ImgInfo"/></webobject></th>
+						<th>Nom Pr&eacute;nom <webobject name = "ToolTipAgent"><webobject name = "ImgInfo"/></webobject></th>
+						<th>+ de Sem. Hautes <webobject name = "ToolTipSemHautes"><webobject name = "ImgInfo"/></webobject></th>
+						<th>Hors normes <webobject name = "ToolTipHorsNormes"><webobject name = "ImgInfo"/></webobject></th>
+						<th>Passe droit <webobject name = "ToolTipPasseDroit"><webobject name = "ImgInfo"/></webobject></th>
+						<th>D&eacute;p. cong&eacute;s <webobject name = "ToolTipDep"><webobject name = "ImgInfo"/></webobject></th>
+						<th>TPA <webobject name = "ToolTipTPA"><webobject name = "ImgInfo"/></webobject></th>
+						
+					</tr>
+					
+					<webobject name = "RepAffAnn">
+					<tr class="listboxLine">
+					
+						<td align="left"><webobject name = "SpanStrComposante"><webobject name = "StrComposante"/></webobject></td>	
+						<td align="left"><webobject name = "SpanStrService"><webobject name = "StrService"/></webobject></td>	
+						<td align="left"><webobject name = "SpanOidAffAnn"><webobject name = "StrNomComplet"/></webobject></td>	
+						<td align="center"><webobject name = "ChkIsDepSemHautes"/></td>	
+						<td align="center"><webobject name = "ChkIsHorsNorme"/></td>	
+						<td align="center"><webobject name = "ChkIsPasseDroit"/></td>	
+						<td align="center"><webobject name = "ChkIsDepassementCongesAutorise"/></td>	
+						<td align="center"><webobject name = "ChkIsTempsPartielAnnualise"/></td>	
+					
+					</tr>		
+					</webobject>
+					
+				</table>
+			</td>
+		</tr>
+	</table>
+
+</webobject>

@@ -1,0 +1,116 @@
+PageTemplate1: PageTemplate {
+	pageTitle = "Saisie d'une occupation";
+	isPopup = true;
+}
+
+Conditional10: WOConditional {
+	condition = hasErreur;
+}
+
+CngAvertissement1: CngAvertissement {
+}
+
+String2: WOString {
+	escapeHTML = false;
+	value = txtErreur;
+}
+
+Conditional1: WOConditional {
+	condition = isOccupationPrevisionnelle;
+}
+
+CondIsNotOccupationPrevisionnelle: WOConditional {
+	condition = isOccupationPrevisionnelle;
+	negate = true;
+}
+FormSelectTypeOccupation: WOForm {
+	name="formSelectTypeOccupation";
+	action=choisirUnTypeOccupation;
+}
+PopUpTypeOccupation: WOPopUpButton {
+	list=lesTypesOccupations;
+	item=unTypeOccupation;
+	selection=leTypeOccupationSelectionne;
+	noSelectionString="";
+	displayString=unTypeOccupationDisplay;
+	onchange="formSelectTypeOccupation.submit();";
+}
+
+FormSaisieOccupation: WOForm {
+	name="formSaisieOccupation";
+	action=saisirUneOccupation;
+	multipleSubmit=true;
+}
+
+CondIsUnTypeOccupationSelectionne: WOConditional {
+	condition=isUnTypeOccupationSelectionne;
+}
+
+Conditional2: WOConditional {
+	condition = isOccupationMinute;
+	negate = true;
+}
+
+DateDebut: CRIDatePicker {
+	dateValue=dateDebut;
+	formName="formSaisieOccupation";
+	fieldName="dateDebut";
+}
+
+PopUpDateDebutAMPM: WOPopUpButton {
+	list=AMPM;
+	item=dateDebutAMPM;
+	selection=dateDebutAMPMSelection;
+}
+
+DateFin: CRIDatePicker {
+	dateValue=dateFin;
+	formName="formSaisieOccupation";
+	fieldName="dateFin";
+}
+
+PopUpDateFinAMPM: WOPopUpButton {
+	list=AMPM;
+	item=dateFinAMPM;
+	selection=dateFinAMPMSelection;
+}
+
+Conditional3: WOConditional {
+	condition = isOccupationMinute;
+}
+
+DateFin2: CRIDatePicker {
+	dateValue=dateDebut;
+	formName="formSaisieOccupation";
+	fieldName="dateDebut";
+}
+
+CRITimeField1: CRITimeField {
+	fieldName = "h1";
+	fieldValue = hDebut;
+}
+
+CRITimeField2: CRITimeField {
+	fieldName = "h2";
+	fieldValue = hFin;
+}
+
+Text1: WOText {
+	value = leMotif;
+	cols = 35;
+}
+
+BoutonValider2: WOSubmitButton {
+	alt = "Valider";
+	value = "Valider";
+	action = valider;
+	class = "bouton";
+}
+
+BoutonAnnuler2: WOSubmitButton {
+	alt = "Annuler";
+	value = "Annuler";
+	action = annuler;
+	class = "bouton";
+	onclick = "FormAnnuler.submit();window.setTimeout('window.close()',200);return false;";
+}

@@ -1,0 +1,255 @@
+PageTemplate1: PageTemplate {
+	pageTitle = "Detail d'une absence";
+	useToolTip = false;
+	isPopup = true;
+}
+
+FormAbsence: WOForm {
+	name="FormAbsence";
+	action=modifier;
+	multipleSubmit = true;
+}
+
+CondHasErreur: WOConditional {
+	condition = hasErreur;
+}
+
+CngAvertissement1: CngAvertissement {
+}
+
+StrErreur: WOString {
+	escapeHTML = false;
+	value = txtErreur;
+}
+
+StrTypeAbsence: WOString {
+	value = uneAbsence.type;//VALID
+}
+
+CondNotIsOccupationMinute: WOConditional {
+	condition = uneAbsence.isOccupationMinute;
+	negate = true;
+}
+
+CondNotDisabledElements: WOConditional {
+	condition = disabledElements;
+	negate = true;
+}
+DateDebut: CRIDatePicker {
+	dateValue=dateDebut;
+	formName="FormAbsence";
+	fieldName="dateDebut";
+}
+
+CondIsDisabledElements: WOConditional {
+	condition = disabledElements;
+}
+
+StrDateDebut: WOString {
+	dateformat = "%d/%m/%Y";
+	value = dateDebut;
+}
+
+PopUpDateDebutAMPM: WOPopUpButton {
+	list=AMPM;
+	item=dateDebutAMPM;
+	selection=dateDebutAMPMSelection;
+	disabled = disabledElements;
+}
+
+DateFin: CRIDatePicker {
+	dateValue=dateFin;
+	formName="FormAbsence";
+	fieldName="dateFin";
+}
+StrDateFin: WOString {
+	dateformat = "%d/%m/%Y";
+	value = dateFin;
+}
+
+PopUpDateFinAMPM: WOPopUpButton {
+	list=AMPM;
+	item=dateFinAMPM;
+	selection=dateFinAMPMSelection;
+	disabled = disabledElements;
+}
+
+CondIsOccupationMinute: WOConditional {
+	condition = uneAbsence.isOccupationMinute;
+}
+
+DateFin2: CRIDatePicker {
+	dateValue=dateDebut;
+	formName="FormAbsence";
+	fieldName="dateDebut";
+}
+
+TextField3: WOTextField {
+	value = dateDebut;
+	size = 10;
+	maxlength = 10;
+	name = "h1";
+	disabled = true;
+	dateformat = "%d/%m/%Y";
+}
+
+CRITimeField1: CRITimeField {
+	disabled = disabledElements;
+	fieldName = "h1";
+	fieldValue = hDebut;
+}
+
+CRITimeField2: CRITimeField {
+	disabled = disabledElements;
+	fieldName = "h2";
+	fieldValue = hFin;
+}
+
+TFMotif: WOText {
+	value = motif;
+	disabled = disabledElements;
+}
+
+StrLeDebitConges: WOString {
+	value = leDebitConges;
+}
+
+StrLeDebitReliquat: WOString {
+	value = leDebitReliquat;
+}
+
+CondIsDechargeSyndicale: WOConditional {
+	condition = isDechargeSyndicale;
+}
+
+StrLeDebitDechargeSyndicale: WOString {
+	value = leDebitDechargeSyndicale;
+}
+
+CondIsAbsenceCET: WOConditional {
+	condition = isAbsenceCET;
+}
+
+StrLeDebitCET: WOString {
+	value = leDebitCET;
+}
+
+CondHasValideur: WOConditional {
+	condition = hasValideur;
+}
+
+StrValideur: WOString {
+	value = uneAbsence.valideur.nomComplet;//VALID
+}
+
+StrDateValidation: WOString {
+	value = uneAbsence.dateValidation;//VALID
+	dateformat = "%d/%m/%Y";
+}
+
+CondNotHasValideur: WOConditional {
+	condition = hasValideur;
+	negate = true;
+}
+
+CondHasViseur: WOConditional {
+	condition = hasViseur;
+}
+
+StrViseur: WOString {
+	value = uneAbsence.viseur.nomComplet;//VALID
+}
+
+StrDateVisa: WOString {
+	value = uneAbsence.dateVisa;//VALID
+	dateformat = "%d/%m/%Y";
+}
+
+CondNotHasViseur: WOConditional {
+	condition = hasViseur;
+	negate = true;
+}
+
+CondIsAbsenceSaisieParRh: WOConditional {
+	condition = isAbsenceSaisieParRh;
+}
+
+CondNotIsAbsenceSaisieParRh: WOConditional {
+	condition = isAbsenceSaisieParRh;
+	negate = true;
+}
+
+CondHasDelegue: WOConditional {
+	condition = hasDelegue;
+}
+
+StrDelegue: WOString {
+	value = uneAbsence.delegue.nomComplet;//VALID
+}
+
+StrIndividuPlanning: WOString {
+	value = lePlanning.affectationAnnuelle.individu.nomComplet;
+}
+
+StrDateCreation: WOString {
+	value = uneAbsence.dateCreation;//VALID
+	dateformat = "%d/%m/%Y";
+}
+
+CondNotHasDelegue: WOConditional {
+	condition = hasDelegue;
+	negate = true;
+}
+
+CondIsDemiJournee: WOConditional {
+	condition = isDemiJournee;
+}
+
+CRINote1: CRINote {
+	
+}
+
+CondNotIsDemiJournee: WOConditional {
+	condition = isDemiJournee;
+	negate = true;
+} 
+
+CondIsAbsenceSupprimable: WOConditional {
+	condition = isAbsenceSupprimable;
+}
+
+BtnSupprimer: WOSubmitButton {
+	action 	= supprimer;
+	title = "Supprimer cette absence (si elle est vis&eacute;e et/ou valid&eacute;e, alors un responsable devra accepter cette suppression)";	
+	class = "bouton";
+	value = btnSupprimerLabel;
+}
+
+CondIsAbsenceModifiable: WOConditional {
+	condition = isAbsenceModifiable;
+}
+
+BtnModifier: WOSubmitButton {
+	action 	= modifier;
+	title = "Enregistrer les modifications faites sur cette absence";
+	class = "bouton";
+	value = "Appliquer";
+}
+
+CondIsShowPrintDemandeCongePapier: WOConditional {
+	condition = isShowPrintDemandeCongePapier;
+}
+
+PdfBoxDemandeCongePapierCtrl: CngPdfBoxLink {
+	ctrl = ctrlDemandeCongePapierCtrl;
+	printLabel = "Sortie PDF";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF de demande de cong&eacute;";
+}
+
+CondIsAbsenceEnCoursDeSuppression: WOConditional {
+	condition = isAbsenceEnCoursDeSuppression;
+}
+
+CondIsAbsenceEnCoursDeValidation: WOConditional {
+	condition = isAbsenceEnCoursDeValidation;
+}

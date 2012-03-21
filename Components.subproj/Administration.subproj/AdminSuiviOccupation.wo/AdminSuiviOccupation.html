@@ -1,0 +1,165 @@
+<style type="text/css">
+.tableFiltreSuiviTypeOccupation tr td {
+	vertical-align: top;
+	text-align: left;
+}
+
+.tableFiltreSuiviTypeOccupation tr td ul li {
+	display: list-item;
+}
+</style>
+
+<!-- filtres -->
+<webobject name = "FormSuivi">
+
+	<webobject name = "BtnQualifyDataSourceHidden"/>
+
+	<table>
+		<tr>
+
+			<td valign = "top" rowspan = "2" class="admBox">
+	
+				<b>Types d'occupation</b>
+				<table class="tableFiltreSuiviTypeOccupation">
+					<tr>
+						<td nowrap>
+							<i>&raquo; &agrave; la demi-journ&eacute;e non &quot;DRH&quot;</i>
+							<ul>
+								<webobject name = "RepTypeOccupationJourNonDrh">
+									<li>
+										<webobject name = "SpanTypeOccupation"><label><webobject name = "ChkTypeOccupationItem"/><webobject name = "StrTypeOccupationItem"/></label></webobject>
+									</li>
+								</webobject>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td nowrap>
+							<i>&raquo; &agrave; la minute non &quot;DRH&quot;</i>
+							<ul>
+								<webobject name = "RepTypeOccupationMinuteNonDrh">
+									<li>
+										<webobject name = "SpanTypeOccupation"><label><webobject name = "ChkTypeOccupationItem"/><webobject name = "StrTypeOccupationItem"/></label></webobject>
+									</li>
+								</webobject>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td nowrap>
+							<i>&raquo; &agrave; la demi-journ&eacute;e &quot;DRH&quot;</i>
+							<ul>
+								<webobject name = "RepTypeOccupationJourDrh">
+									<li>
+										<webobject name = "SpanTypeOccupation"><label><webobject name = "ChkTypeOccupationItem"/><webobject name = "StrTypeOccupationItem"/></label></webobject>
+									</li>
+								</webobject>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td nowrap>
+							<i>&raquo; &agrave; la minute &quot;DRH&quot;</i>
+							<ul>
+								<webobject name = "RepTypeOccupationMinuteDrh">
+									<li>
+										<webobject name = "SpanTypeOccupation"><label><webobject name = "ChkTypeOccupationItem"/><webobject name = "StrTypeOccupationItem"/></label></webobject>
+									</li>
+								</webobject>
+							</ul>
+						</td>
+					</tr>
+				</table>		
+
+			</td>
+	
+	
+			<td align="center" valign = "top" height = "1%" class="admBox">
+			
+				<b>Ann&eacute;e universitaire : </b><webobject name = "PopUpDateDebutAnneeUniv"/>
+				<b>Nom : </b><webobject name = "TFNomUsuelSearch"/>
+				<b>Pr&eacute;nom : </b><webobject name = "TFPrenomSearch"/><br/>
+				<b>Service : </b><webobject name = "PopUpService"/><br/>
+				<b>D&eacute;but : </b><webobject name = "DatePickerDebut"/><webobject name = "PopDateDebutAmPm"/>
+				<b>Fin : </b><webobject name = "DatePickerFin"/><webobject name = "PopDateFinAmPm"/><br>
+				<b>&Eacute;tat de validation :</b>
+				<webobject name = "RepEtat">
+					<label><webobject name = "ChkEtatItem"/><webobject name = "StrEtatItemLibelle"/></label>
+				</webobject>
+				<b>Classement : </b><webobject name = "PopPupAttribute"/>
+			</td>
+			
+			
+			<td>
+				<webobject name = "CngInfoBox1">
+				<b>Attention !</b><br>
+				les fermetures et les cong&eacute;s l&eacute;gaux<br>
+				issus de l'application de GRH ne sont pas pris<br>
+				en comptes dans cet &eacute;cran !
+				</webobject>
+			</td>
+			
+		</tr>
+		<tr>
+
+			<td valign = "top" colspan = "2">
+
+						
+				<!-- resultats -->
+				<table class="listboxBorder" width="100%" cellspacing="0" cellpadding="1" border="0">
+					<tr>
+						<td>
+							<table class = border="0" cellpadding="2" cellspacing="1" width="100%">
+								<tr class = "listboxHeader">
+									<th width = "33%" align = "center">Lignes par page : <webobject name = "PopUpLigneParPage"/></th>
+									<th width = "33%" align = "center"><webobject name = "CRINavBarSuivi"/></th>
+									<th width = "33%" align = "center">
+										<webobject name = "BtnQualifyDataSource"/>
+										<webobject name = "CondHasResult"><br/>
+											<webobject name = "TipCsv"><webobject name = "ImgInfo"/></webobject>
+											<webobject name = "LnkPrintCsv">&raquo; export CSV &laquo;</webobject>
+										</webobject>
+									</th>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<table width="100%" cellspacing="1" cellpadding="2" border="0">
+					
+								<tr class = "listboxHeader">
+									<th>Comp.</th>
+									<th>Serv.</th>
+									<th>Nom</th>
+									<th>Pr&eacute;nom</th>
+									<th>Type</th>
+									<th>D&eacute;but</th>
+									<th>Fin</th>
+									<th>Motif</th>
+								</tr>
+								
+								<webobject name = "RepVOccupationSuivi">
+									<tr class="listboxLine">
+										<td><webobject name = "StrVOccupationSuiviItemComposante"/></td>	
+										<td><webobject name = "StrVOccupationSuiviItemService"/></td>	
+										<td><webobject name = "StrVOccupationSuiviItemNomUsuel"/></td>	
+										<td><webobject name = "StrVOccupationSuiviItemPrenom"/></td>	
+										<td><webobject name = "StrVOccupationSuiviItemTypeOccupation"/></td>	
+										<td><webobject name = "StrVOccupationSuiviItemDteDebut"/></td>	
+										<td><webobject name = "StrVOccupationSuiviItemDteFin"/></td>	
+										<td align = "center"><webobject name = "StrVOccupationSuiviItemMotif"/></td>	
+									</tr>
+								</webobject>
+								
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</td>
+		</tr>
+	</table>
+
+</webobject>

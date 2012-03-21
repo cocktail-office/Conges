@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+    <wo class="CetEtat" wocomponentcontent="false">    <binding name="individu"/>
+        <validation message="'planning' is a required binding.">
+            <unbound name="individu"/>
+        </validation>
+    
+        
+    <binding defaults="Boolean" name="isModificationAutorisee"/>
+    <binding defaults="Boolean" name="shouldReloadForced"/>
+    <binding name="dateDebutAnnee"/>
+        <validation message="'dateDebutAnnee' is a required binding.">
+            <unbound name="dateDebutAnnee"/>
+        </validation>
+    </wo>
+</wodefinitions>

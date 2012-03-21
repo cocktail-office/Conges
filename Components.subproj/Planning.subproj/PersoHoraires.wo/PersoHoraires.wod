@@ -1,0 +1,396 @@
+RepHorairesHebdomadaires: WORepetition {
+	list = lesHorairesHebdomadaires;
+	item = unHoraireHebdomadaire;
+}
+
+StrUnHoraireHebdomadaireNom: WOString {
+	value = unHoraireHebdomadaire.nom;
+}
+
+BaliseBoldStart: WOString {
+	value = "<b>";
+	escapeHTML = false;
+}
+
+BaliseBoldEnd: WOString {
+	value = "</b>";
+	escapeHTML = false;
+}
+
+CondIsTheHoraireHebdomadaireSelectionne: WOConditional {
+	condition = isTheHoraireHebdomadaireSelectionne;
+}
+
+LnkDoSelectUnHoraireHebdomadaire: WOHyperlink {
+	action = doSelectUnHoraireHebdomadaire;
+	disabled = isDisabledLnkDoSelectHoraire;
+	title = "Cliquer pour voir / modifier cet horaire";
+}
+
+ImgBtnModifHoraire: WOImageButton {
+	action = doModifierUnHoraireHebdomadaire;
+	title = "Modifier l'horaire selection&eacute;";
+	filename = "images/modifier16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondShowBtnModifHoraire: WOConditional {
+	condition = showBtnModifHoraire;
+}
+
+ImgBtnNouvelHoraire: WOImageButton {
+	action = nouvelHoraire;
+	title = "Cr&eacute;er un nouvel horaire";
+	filename = "images/plus16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondShowBtnSuppHoraire: WOConditional {
+	condition = showBtnSuppHoraire;
+}
+
+ImgBtnDupliquerHoraire: WOImageButton {
+	action = dupliquerHoraire;
+	title = "Dupliquer l'horaire selectionn&eacute;";
+	filename = "images/Dupliquer.png";
+	framework = "app";
+	escapeHTML = false;
+}
+
+
+CondShowBtnDupliquerHoraire: WOConditional {
+	condition = showBtnDupliquerHoraire;
+}
+
+ImgBtnSuppHoraire: WOImageButton {
+	action = supprimerHoraireSelectionne;
+	title = "Effacer l'horaire selectionn&eacute;";
+	filename = "images/moins16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+ButtonAnnulerHoraire: WOSubmitButton {
+	action = annulerHoraireHebdomadaire;
+	value="Annuler";
+	class="bouton";
+}
+
+ButtonEnregistrerHoraire: WOSubmitButton {
+	action = enregistrerHoraireHebdomadaire;
+	value="Enregistrer";
+	class="bouton";
+}
+
+CRIColorPicker1: CRIColorPicker {
+	colorValue = laCouleur;
+	disabled = isDisabledBtnModifierCouleur;
+	fieldName = "couleur";
+	formName = "FormCouleur";
+}
+
+CngAvertissement1: CngAvertissement {
+}
+
+CngInfoBox1: CngInfoBox {
+}
+
+CondHasSelectedHoraire: WOConditional {
+	condition = hasSelectedHoraire;
+}
+
+CondIsNotLundi: WOConditional {
+	condition = isLundi;
+	negate = true;
+}
+
+CondIsNotNouvelHoraire: WOConditional {
+	condition=isNouvelHoraire;
+	negate="true";
+}
+
+CondIsNouvelHoraire: WOConditional {
+	condition=isNouvelHoraire;
+}
+
+CondNotIsDisabled: WOConditional {
+	condition = isDisabled;
+	negate = true;
+}
+
+CondNotIsTPA: WOConditional {
+	condition = lePlanning.affectationAnnuelle.isTempsPartielAnnualise;
+	negate = true;
+}
+
+CondShowInfoPrev: WOConditional {
+	condition = showInfoPrev;
+}
+
+CondUnHoraireHebdomadaireSelectionneHasNotCouleur: WOConditional {
+	condition = unHoraireHebdomadaireSelectionne.hasNotCouleur;
+}
+
+CondIsHoraireDejaEnregistre: WOConditional {
+	condition = isHoraireDejaEnregistre;
+}
+
+CondHasErreurHoraire: WOConditional {
+	condition = hasErreurHoraire;
+}
+
+CondShowBtnImportPrevHoraires: WOConditional {
+	condition = showBtnImportPrevHoraires;
+}
+
+CondShowInfoHoraire: WOConditional {
+	condition = showInfoHoraire;
+
+}
+
+CondIsAutoriseeDureeLibre: WOConditional {
+	condition = isAutoriseeDureeLibre;
+}
+
+CondIsVoirHorairesTypes:  WOConditional {
+	condition = isCacherHorairesTypes;
+	negate = true;
+}
+
+CondIsCacherHorairesTypes: WOConditional {
+	condition = isCacherHorairesTypes;
+}
+
+StrDureeHoraire: WOString {
+	value = dureeHoraireARealiser;
+}
+
+FormSaisirUnHoraire: WOForm {
+	action = saisirUnHoraire;
+}
+
+FormCouleur: WOForm {
+	action = enregistrerCouleur;
+	name = "FormCouleur";
+}
+
+FormNouvelHoraire: WOForm {
+	action=nouvelHoraire;	
+	name="FormNouvelHoraire";
+	multipleSubmit=true;
+}
+
+FormEnregistrementHoraire: WOForm {
+	multipleSubmit="true";
+}
+
+FormTypeHoraire: WOForm {
+	name = "FormTypeHoraire";
+	id = "FormTypeHoraire";
+	action = selectionnerUnTypeHoraire;
+	multipleSubmit = true;
+}
+
+FormValiderHoraireJournalier: WOForm {
+	action=validerUnHoraireJournalier;
+}
+
+HeureDebutAM: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.heureDebutAM;
+	maxlength = 5;
+	onchange = onchange;
+	class = "TFCenter";
+	id = heureDebutAMName;
+	disabled=isNotNouvelHoraire;
+}
+
+HeureDebutPM: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.heureDebutPM;
+	maxlength = 5;
+	onchange = onchange;
+	class = "TFCenter";
+	id = heureDebutPMName;
+	disabled=isNotNouvelHoraire;
+}
+
+HeureDebutPause: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.heureDebutPause;
+	maxlength = 5;
+	onchange = onchange;
+	class = heureDebutPauseClassName;
+	id = heureDebutPauseName;
+	disabled=isNotNouvelHoraire;
+}
+
+HeureFinAM: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.heureFinAM;
+	maxlength = 5;
+	onchange = onchange;
+	class = "TFCenter";
+	id = heureFinAMName;
+	disabled=isNotNouvelHoraire;
+}
+
+HeureFinPM: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.heureFinPM;
+	maxlength = 5;
+	onchange = onchange;
+	class = "TFCenter";
+	id = heureFinPMName;
+	disabled=isNotNouvelHoraire;
+}
+
+TFUnHoraireHebdomadaireSelectionneTotal: WOTextField {
+	size = 5;
+	value = unHoraireHebdomadaireSelectionne.total;
+	class = "TFCenter";
+	disabled = "true";
+	id = "HoraireHebdomadaireTotal";
+}
+
+TFUnHoraireHebdomadaireSelectionneTotalBonus: WOTextField {
+	size = 5;
+	value = unHoraireHebdomadaireSelectionne.totalBonus;
+	class = "TFCenter";
+	disabled = "true";
+	id = "HoraireHebdomadaireTotal";
+}
+
+HoraireJournalierTotal: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.horaireJournalierTotal;
+	class = "TFCenter";
+	disabled = "true";
+	id = horaireJournalierTotalName;
+}
+
+ImageCopierHoraire: WOImage {
+	border = "0"; 
+	title = "Recopier horaire journalier precedent";
+	filename = "images/same.jpg";
+	framework = "app";
+}
+
+ImageEffacerHoraire: WOImage {
+	border = "0"; 
+	title = "Effacer horaire journalier";
+	filename = "images/annuler16.gif";
+	framework = "app";
+}
+
+LibelleHoraire: WOTextField {
+	value = leLibelleHoraire;
+	name = "LibelleHoraire";
+	disabled=isNotNouvelHoraire;
+	onBlur = "this.form.submit();";
+	maxlength = 50;
+	size = 30;
+}
+
+LinkCopierHoraire: WOHyperlink {
+	action = copierHoraireJournalierPrecedent;
+}
+
+LinkEffacerHoraire: WOHyperlink {
+	action = effacerHoraireJournalier;
+}
+
+NomJour: WOString {
+	value=unHoraireJournalier.libelleJour;
+}
+
+StrUneQuotiteSelectionnee: WOString {
+	value = uneQuotiteSelectionnee;
+}
+
+PopUpQuotite: WOPopUpButton {
+	list = lesQuotites;
+	item = uneQuotite;
+	selection = uneQuotiteSelectionnee;
+	onchange="FormTypeHoraire.submit()";	
+	name = "PopUpQuotite";
+	id = "PopUpQuotite";
+}
+
+PopUpTypeHoraire: WOPopUpButton {
+	list = lesTypesHoraires;
+	item = unTypeHoraire;
+	selection = unTypeHoraireSelectionne;
+	displayString = unTypeHoraire.duree;
+	onchange="FormTypeHoraire.submit()";	
+	name = "PopUpTypeHoraire";
+	id = "PopUpTypeHoraire";
+	disabled=isNotNouvelHoraire;
+}
+
+RepHorairesJournaliers: WORepetition {
+	list=unHoraireHebdomadaireSelectionne.horairesJournaliers;
+	item=unHoraireJournalier;
+}
+
+StrBonus: WOTextField {
+	size = 5;
+	value = unHoraireJournalier.bonus;
+	maxlength = 5;
+	class = heureDebutPauseClassName;
+	disabled=true;
+}
+
+BtnMasquerHorairesTypes: WOSubmitButton {
+	action = masquerHorairesTypes;
+	class = "bouton";
+	disabled = isNotNouvelHoraire;
+	value = "&laquo; Passer en saisie de dur&eacute;e libre";
+	escapeHTML = false;
+	title = "Saisir une dur&eacute;e libre, entre les intervalles de validit&eacute;";
+}
+
+BtnMontrerHorairesTypes: WOSubmitButton {
+	action = montrerHorairesTypes;
+	class = "bouton";
+	value = "Forcer la saisie sur une dur&eacute;e standard &raquo;";
+	disabled = isNotNouvelHoraire;
+	escapeHTML = false;
+	title = "Contraindre la saisie d'une dur&eacute;e totale pr&eacute;d&eacute;finie";
+}
+
+BtnSelectionnerUnTypeHoraire: WOSubmitButton {
+	action = selectionnerUnTypeHoraire;
+	value = "BOUTON CACHE";
+	style = "visibility:hidden;display:none";
+	disabled = isNotNouvelHoraire;
+}
+
+FormImportPrevHoraires: WOForm {
+	name = "FormImportPrevHoraires";
+	action = importPrevHoraires;
+}
+
+BtnImportPrevHoraires: WOSubmitButton {
+	action = importPrevHoraires;
+	class = "bouton";
+	value = "Importer mes horaires precedents &raquo;";
+	title = "R&eacute;cuperer tous vos horaires de l'ann&eacute;e pass&eacute;e !";
+	escapeHTML = false;
+}
+
+
+erreurHoraire: WOString {
+	value=erreurHoraire;
+}
+
+StrHtmlContraintesEmbaucheDebauche: WOString {
+	value = strHtmlContraintesEmbaucheDebauche;
+	escapeHTML = false;
+}
+
+StrDureePauseRTT: WOString {
+	value = pauseRTTDuree;
+}

@@ -1,0 +1,58 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "DTE_CREATION"; }; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLG_SEMAINE_HAUTE"; 
+            externalType = NUMBER; 
+            name = flagHoraireSemaineHaute; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FLG_HORS_NORME"; 
+            externalType = NUMBER; 
+            name = flagHorsNorme; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TOTAL; 
+            externalType = NUMBER; 
+            name = total; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOTypeHoraire"; 
+    classProperties = (flagHorsNorme, total, dCreation, dModification, flagHoraireSemaineHaute); 
+    externalName = "CONGES.PLNG_TYP_HOR"; 
+    internalInfo = {"_nameInObjectStore" = "PLNG_TYP_HOR"; }; 
+    name = TypeHoraire; 
+    primaryKeyAttributes = (oid); 
+}

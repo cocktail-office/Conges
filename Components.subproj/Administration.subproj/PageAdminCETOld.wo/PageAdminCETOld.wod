@@ -1,0 +1,328 @@
+FormAjouterNouveauSysteme: WOForm {
+	name = "FormAjouterNouveauSysteme";
+}
+
+CngAvertissementDemandeEnAttenteDeDecision: CngAvertissement {
+
+} 
+
+FormAjouterAncienSysteme: WOForm {
+	name = "FormAjouterAncienSysteme";
+}
+
+CompServicesAffAnnsNew1: CompServicesAffAnns {
+	affAnnSelected = selectedAffAnn;
+	serviceSelected = leServiceSelectionne;
+	anneeUnivSelected = selectedAnneeUniv;
+}
+
+StrSelectedAnneeUniv: WOString {
+	value = selectedAnneeUniv;
+}
+
+CngPdfBoxCompte: CngPdfBoxLink  {
+	printLabel = "Comptes CET";
+	printTip = "Generer le fichier PDF de tous les comptes CET";
+	ctrl = ctrlCompteCET;
+}
+
+CngPdfBoxTransaction: CngPdfBoxLink {
+	printLabel = "Transactions annuelles";
+	printTip = "Generer le fichier PDF de toutes les transactions CET de l'annee";
+	ctrl = ctrlTransactionsCET;
+}
+
+CngPdfBoxTransactionAnt: CngPdfBoxLink {
+	printLabel = "Transactions anterieures a l'application";
+	printTip = "Generer le fichier PDF de toutes les transactions CET avant la gestion par HAmAC";
+	ctrl = ctrlTransactionsAntCET;
+}
+
+CondIsAffAnnSelected: WOConditional {
+	condition = isAffAnnSelected;
+}
+
+FormSaisieTransaction: WOForm {
+	multipleSubmit = true;
+	name = "FormSaisieTransaction";
+}
+
+RepLesTransactions: WORepetition {
+	item = uneTransactionItem;
+	list = lesTransactions;
+}
+
+TrUneTransactionItem: WOGenericContainer {
+	elementName = "tr";
+	class = trUneTransactionItemClass;
+}
+
+LnkDetaillerTransaction: WOHyperlink {
+	action = detaillerTransaction;
+	title = "modifier / detailler cette transaction";
+}
+
+StrUneTransactionMotifDateCreation: WOString {
+	value = uneTransactionItem.dCreation;
+	dateformat = "%d/%m/%Y";
+}
+
+StrUneTransactionMotifDateValeur: WOString {
+	value = uneTransactionItem.dateValeur;
+	dateformat = "%d/%m/%Y";
+}
+
+StrUneTransactionMotif: WOString {
+	value = uneTransactionItem.motif;
+}
+
+StrUneTransactionCredit: WOString {
+	value = uneTransactionItem.creditEnHeures;
+}
+
+StrUneTransactionDebit: WOString {
+	value = uneTransactionItem.debitEnHeures;
+}
+
+StrTotalCredits: WOString {
+	value = totalCredits;
+}
+
+StrTotalDebits: WOString {
+	value = totalDebits;
+}
+
+StrTotalTransactions: WOString {
+	value = totalTransactions;
+}
+
+CondIsEpargneCetDemandeEnAttenteDeDecision: WOConditional {
+	condition = selectedAffAnn.cetFactory.isEpargneCetDemandeEnAttenteDeDecision;
+}
+
+BtnAjouterNouveauSysteme: WOSubmitButton {
+	action = ajouterNouveauSysteme;
+	value = "&raquo; Cliquer ici pour traiter cette demande";
+	class = "bouton";
+	name = "BtnAjouterNouveauSysteme";
+	escapeHTML = "false";
+	title = "Prendre la d&eacute;cision relative &agrave; cette demande d'&eacute;pargne";
+}
+
+CngInfoBoxDebloquerReliquat: CngInfoBox {
+	
+}
+
+FormDebloquerReliquat: WOForm {
+	name = "FormDebloquerReliquat";
+	multipleSubmit = true;
+}
+
+BtnDebloquerReliquat: WOSubmitButton {
+	action = doDebloquerReliquat;
+	value = "&raquo; D&eacute;bloquer sa r&eacute;servation de reliquats";
+	class = "bouton";
+	name = "BtnDebloquerReliquat";
+	escapeHTML = "false";
+	title = "Supprimer le blocage pour cet utilisateur.";
+}
+
+BtnTmpDoAccepter: WOSubmitButton {
+	action = doAccepter;
+	value = "&raquo; TEMPORAIRE : ACCEPTER LA DEMANDE";
+	class = "bouton";
+	name = "BtnTmpDoAccepterDemande";
+	escapeHTML = "false";
+}
+
+BtnAjouterAncienSysteme: WOSubmitButton {
+	action = ajouterAncienSysteme;
+	value = "Saisir un credit de CET (sans lien avec les reliquats)";
+	class = "bouton";
+	name = "BtnAjouterAncienSysteme";
+	title = "A n'utiliser qu'&agrave; la marge, pour les situations de r&eacute;gularisation suite &agrave; mutation par exemple ...";
+}
+
+CondIsUneTransactionSelectionnee: WOConditional {
+	condition = isUneTransactionSelectionnee;
+}
+
+CondNotIsUneTransactionSelectionnee: WOConditional {
+	condition = isUneTransactionSelectionnee;
+	negate = true;
+}
+
+PickerDateValeur: CRIDatePicker {
+	dateValue=uneTransactionSelectionnee.dateValeur;
+	formName="formSaisieTransaction";
+	fieldName="PickerDateValeur";
+}
+
+StrDateValeur: WOString {
+	value = uneTransactionSelectionnee.dateValeur;
+	dateformat = "%d/%m/%Y";
+}
+
+TFMotif: WOTextField {
+	value = uneTransactionSelectionnee.motif;
+	maxlength = 200;
+	size = 50;
+	name = "TFMotif";
+}
+
+StrMotif: WOString {
+	value = uneTransactionSelectionnee.motif;
+}
+
+TimeFieldCET: CRITimeField {
+	fieldValue = valeur;
+	fieldName = "duree";
+	limit24h = false;
+}
+
+RadioCetDecisionBasculeIdentique: WORadioButton {
+	value = CET_DECISION_BASCULE_IDENTIQUE;
+	selection = cetDecisionBascule;
+	name = "RadioCetDecisionBascule";
+}
+
+StrHeuresDemandees: WOString {
+	value = selectedAffAnn.toMouvementCetDemandeEpargne.mouvementHeures;
+}
+
+StrDateFinReliquat: WOString {
+	value = selectedAffAnn.dateFinReliquat;
+	dateformat = "%d/%m/%Y";
+}
+
+StrConsommationCongesReliquatPendantValiditeReliquatEnHeures: WOString {
+	value = selectedAffAnn.cetFactory.consommationCongesReliquatPendantValiditeReliquatEnHeures;
+}
+
+StrConsommationReliquatPendantValiditeReliquatEnHeures: WOString {
+	value = selectedAffAnn.cetFactory.consommationReliquatPendantValiditeReliquatEnHeures;
+}
+
+StrDateDebutAnnee: WOString {
+	value = selectedAffAnn.dateDebutAnnee;
+	dateformat = "%d/%m/%Y";
+}
+
+StrReliquatInitialEnHeures: WOString {
+	value = selectedAffAnn.reliquatInitialEnHeures;
+}
+
+StrConsommationCongesAnneePrecedenteEnHeures: WOString {
+	value = selectedAffAnn.cetFactory.consommationCongesAnneePrecedenteEnHeures;
+}
+
+CondHasConsommationCongesAnneePrecedenteMinimumPourEpargneCet: WOConditional {
+	condition = selectedAffAnn.cetFactory.hasConsommationCongesAnneePrecedenteMinimumPourEpargneCet;
+}
+
+CondNotHasConsommationCongesAnneePrecedenteMinimumPourEpargneCet: WOConditional {
+	condition = selectedAffAnn.cetFactory.hasConsommationCongesAnneePrecedenteMinimumPourEpargneCet;
+	negate = true;
+}
+
+StrConsommationMinimumCongesEpargneCetJour7h00: WOString {
+	value = selectedAffAnn.seuilCongesConsommesJour7h00Nm1PourEpargneCet;
+}
+
+RadioCetDecisionBasculeDifferente: WORadioButton {
+	value = CET_DECISION_BASCULE_DIFFERENTE;
+	selection = cetDecisionBascule;
+	name = "RadioCetDecisionBascule";
+}
+
+TFHeuresBasculees: CRITimeField {
+	fieldValue = heuresBasculees;
+	fieldName = "TFHeuresBasculees";
+	limit24h = false;
+}
+
+RadioCetDecisionBasculeRefusee: WORadioButton {
+	value = CET_DECISION_BASCULE_REFUSEE;
+	selection = cetDecisionBascule;
+	name = "RadioCetDecisionBascule";
+}
+
+CondNotIsUneNouvelleTransaction: WOConditional {
+	condition = isUneNouvelleTransaction;
+	negate = true;
+}
+
+BtnSupprimerTransaction: WOSubmitButton {
+	action = supprimerTransaction;
+	value = "Effacer cette transaction";
+	class = "bouton";
+	name = "BtnSupprimerTransaction";
+}
+
+BtnEnregistrerNouveauSysteme: WOSubmitButton {
+	action = enregistrerNouveauSysteme;
+	value = "Enregistrer";
+	class = "bouton";
+	name = "BtnEnregistrerNouveauSysteme";
+}
+
+BtnEnregistrerAncienSysteme: WOSubmitButton {
+	action = enregistrerAncienSysteme;
+	value = "Enregistrer";
+	class = "bouton";
+	name = "BtnEnregistrerAncienSysteme";
+}
+
+BtnAnnuler: WOSubmitButton {
+	action = annuler;
+	value = "Annuler";
+	class = "bouton";
+	name = "BtnAnnuler";
+}
+
+CondHasTransaction: WOConditional {
+	condition = lesTransactions.count;
+}
+
+FormDateArret: WOForm {
+	action = neFaitRien;
+	name = "FormDateArret";
+}
+
+DatePickerArret: CRIDatePicker {
+	dateValue = dateArret;
+	fieldName = "dateArret";
+	formName = "FormDateArret";
+}
+
+BtnEcrireDansLePdf: WOSubmitButton {
+	action = neFaitRien;
+	name = "BtnEcrireDansLePdf";
+	class = "bouton";
+	value = "&raquo; &Eacute;crire dans le PDF" ;
+	title = "Cliquer pour modifier la date de la situation imprim&eacute;e dans le document";
+	escapeHTML = "false";
+}
+
+StrNomComplet: WOString {
+	value = selectedAffAnn.individu.nomComplet;
+}
+
+CngPdfBoxSituation: CngPdfBoxLink {
+	printLabel = "Situation de l'agent";
+	printTip = "Generer le fichier PDF de la situation du CET de cet agent";
+	ctrl = ctrlSituationCET;
+}
+
+CondNotIsUneTransactionAutomatique: WOConditional {
+	condition = uneTransactionSelectionnee.isTransactionAutomatique;
+	negate = true;
+}
+
+CondIsUneTransactionAutomatique: WOConditional {
+	condition = uneTransactionSelectionnee.isTransactionAutomatique;
+}
+
+CondIsTransfertCetDemandeEnAttenteDeDecision: WOConditional {
+	condition = selectedAffAnn.cetFactory.isTransfertCetDemandeEnAttenteDeDecision;
+}

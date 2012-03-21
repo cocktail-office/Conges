@@ -1,0 +1,29 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        repartStructureDg = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = Repartition; 
+                    prefetchingRelationshipKeyPaths = (); 
+                    qualifier = {
+                        class = EOKeyValueQualifier; 
+                        key = oidStructure; 
+                        selectorName = "isEqualTo:"; 
+                        value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                    }; 
+                }; 
+                fetchSpecificationName = FetchRepartStructure; 
+            }; 
+            fetchesOnLoad = NO; 
+            formatForLikeQualifier = "%@*"; 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+        }; 
+    }; 
+}

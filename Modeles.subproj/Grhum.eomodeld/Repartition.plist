@@ -1,0 +1,44 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = oidStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }
+    ); 
+    attributesUsedForLocking = (oidStructure, persId); 
+    className = "fr.univlr.cri.conges.eos.modele.grhum.EORepartition"; 
+    classProperties = (structure, individu); 
+    externalName = "GRHUM.REPART_STRUCTURE"; 
+    internalInfo = {"_nameInObjectStore" = "REPART_STRUCTURE"; }; 
+    name = Repartition; 
+    primaryKeyAttributes = (persId, oidStructure); 
+    relationships = (
+        {
+            destination = IndividuPrsId; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = individu; 
+        }, 
+        {
+            destination = Structure; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidStructure; }); 
+            name = structure; 
+        }
+    ); 
+}

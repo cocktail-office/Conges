@@ -1,0 +1,14 @@
+{
+    FetchAll = {
+        class = EOFetchSpecification; 
+        entityName = StructureAutorisee; 
+        fetchLimit = 0; 
+        sortOrderings = (
+            {
+                class = EOSortOrdering; 
+                key = structure.libelleCourt; 
+                selectorName = "compareAscending:"; 
+            }
+        ); 
+    }; 
+}

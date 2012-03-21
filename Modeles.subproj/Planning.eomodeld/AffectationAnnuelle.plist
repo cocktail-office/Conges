@@ -1,0 +1,227 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = VARCHAR2; 
+            name = annee; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 9; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "DTE_DEBUT_ANNEE"; 
+            externalType = DATE; 
+            name = dateDebutAnnee; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "FLG_DEP_SEM_HAUTES"; 
+            externalType = VARCHAR2; 
+            name = flagDepSemHautes; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FLG_DEP_CONGES"; 
+            externalType = VARCHAR2; 
+            name = flagDepassementCongesAutorise; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FLG_HORS_NORME"; 
+            externalType = VARCHAR2; 
+            name = flagHorsNorme; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FLG_PASSE_DROIT"; 
+            externalType = VARCHAR2; 
+            name = flagPasseDroit; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "FLG_TPA"; 
+            externalType = VARCHAR2; 
+            name = flagTempsPartielAnnualise; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = OID; 
+            externalType = NUMBER; 
+            name = oid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 7; 
+        }, 
+        {
+            columnName = "STS_PLANNING"; 
+            externalType = VARCHAR2; 
+            name = statusPlanning; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OID_IND_DEMANDEUR"; 
+            externalType = NUMBER; 
+            name = oidIndDemandeur; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (oid); 
+    className = "fr.univlr.cri.conges.eos.modele.planning.EOAffectationAnnuelle"; 
+    classProperties = (
+        statusPlanning, 
+        annee, 
+        occupations, 
+        calculAffAnns, 
+        periodes, 
+        dateDebutAnnee, 
+        horaires, 
+        flagHorsNorme, 
+        flagPasseDroit, 
+        annulationPeriodeFermetures, 
+        flagDepSemHautes, 
+        flagTempsPartielAnnualise, 
+        dCreation, 
+        dModification, 
+        flagDepassementCongesAutorise, 
+        tosAlerte, 
+        repartValidations, 
+        toIndividuDemandeur, 
+        tosMouvement, 
+        tosPeriodeFermeture
+    ); 
+    externalName = "CONGES.PLNG_AFF_ANN"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            statusPlanning, 
+            annee, 
+            occupations, 
+            calculAffAnns, 
+            periodes, 
+            dateDebutAnnee, 
+            horaires, 
+            flagHorsNorme, 
+            flagPasseDroit, 
+            annulationPeriodeFermetures, 
+            repartValidations
+        ); 
+        "_nameInObjectStore" = "PLNG_AFF_ANN"; 
+    }; 
+    name = AffectationAnnuelle; 
+    primaryKeyAttributes = (oid); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = AnnulationPeriodeFermeture; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = annulationPeriodeFermetures; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = CalculAffAnn; 
+            internalInfo = {"_nameInObjectStore" = calculAffAnn; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = calculAffAnns; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Horaire; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = horaires; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Occupation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = occupations; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PeriodeAffectationAnnuelle; 
+            internalInfo = {"_nameInObjectStore" = periodes; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = periodes; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = RepartValidation; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = repartValidations; 
+            ownsDestination = Y; 
+        }, 
+        {
+            destination = Individu; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oid; sourceAttribute = oidIndDemandeur; }); 
+            name = toIndividuDemandeur; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Alerte; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffectationAnnuelle; sourceAttribute = oid; }); 
+            name = tosAlerte; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = Mouvement; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffAnn; sourceAttribute = oid; }); 
+            name = tosMouvement; 
+            ownsDestination = Y; 
+        }, 
+        {
+            deleteRule = EODeleteRuleCascade; 
+            destination = PeriodeFermeture; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = oidAffAnn; sourceAttribute = oid; }); 
+            name = tosPeriodeFermeture; 
+        }
+    ); 
+}

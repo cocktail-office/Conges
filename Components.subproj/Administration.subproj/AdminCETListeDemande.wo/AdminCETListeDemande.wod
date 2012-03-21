@@ -1,0 +1,362 @@
+CRINavBarMouvement: CRINavigationBar {
+	displayGroup = mouvementDg;
+	longListLimit = 10;
+}
+
+FormRefreshMouvementDg: WOForm {
+	name = "FormRefreshMouvementDg";
+}
+
+BtnDoRefreshMouvementDg: WOSubmitButton {
+	action = doRefreshMouvementDg;
+	name = "BtnDoRefreshMouvementDg";
+	title = "Rafraichir la liste des demandes";
+	value = "Actualiser";
+	class = "bouton";
+}
+
+FormLesAnneeUniv: WOForm {
+	name = "FormLesAnneeUniv";
+	action = neFaitRien;
+}
+
+PopUpLesAnneeUniv: WOPopUpButton {
+	displayString = uneAnneeUniv;
+	item = uneAnneeUniv;
+	list = lesAnneeUniv;
+	onChange = "FormLesAnneeUniv.submit();";
+	selection = lAnneeUnivSelectionnee;
+}
+
+FormSearch: WOForm {
+	name = "FormSearch";
+	action = neFaitRien;
+}
+
+TFSearchString: WOTextField {
+	value = searchString;
+	class = "searchField";
+	title = "Entrez le nom et/ou pr&eacute;nom d'un agent pour lancer la recherche";
+}
+CondHasResult: WOConditional {
+	condition = mouvementDg.allObjects.@count;
+}
+
+LnkPrintCsv: WOHyperlink {
+	action = printCsv;
+	target = "_new";
+	title = "Exporter la liste au format CSV";
+	escapeHTML = "false";
+}
+
+TipCsv: CRIToolTip {
+	htmlText = "<b>Comment lire ce fichier dans le tableur Office</b>:<br>\
+	<u>S&eacute;lectionnez la premi&egrave;re colonne</u> puis <u>donn&eacute;es</u>,<br>\
+	<u>convertir</u>, suivant, choisir s&eacute;parateur et fin<br><br>\
+	Note : pour faire l'exploitation des nombres, remplacez les points par des virgules";
+}
+
+ImgInfo: WOImage {
+	border = 0;
+	filename = "images/info_small.gif";
+	framework = "app";
+}
+
+FormAdminCETListeDemande: WOForm {
+	name = "FormAdminCETListeDemande";
+	multipleSubmit = true;
+	action = neFaitRien;
+}
+
+RepMouvement: WORepetition {
+	list = mouvementDg.displayedObjects;
+	item = mouvementItem;
+}
+
+TrAffAnnItem: WOGenericContainer {
+	elementName = "tr";
+	class = trAffAnnItemClass;
+}
+
+StrAgentDemandeur: WOString {
+	value = affAnnItem.individu.nomComplet;
+}
+
+StrDateDemande: WOString {
+	value = affAnnItem.toMouvementCetDemandeEpargne.dCreation;
+	dateformat = "%d/%m/%Y";
+}
+
+StrDemandeSoldeAncienRegimeInitial: NumberIfNotNullOrZero {
+	value = affAnnItem.cetFactory.soldeAncienRegimeEnJour7h00;
+	numberformat = "0.00";
+}
+
+StrReliquatInitialEnJour7h00: WOString {
+	value = affAnnItem.reliquatInitialEnJour7h00;
+	numberformat = "0.00";
+}
+
+StrDemandeTransfertRegimePerenne: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeTransfertRegimePerenne.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDemandeMaintienCetAncienRegime: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeMaintienCetAncienRegime.mouvementJoursA7h00;
+	numberformat = "0.00";
+} 
+
+StrDemandeIndemnisationAncienRegime: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeIndemnisationAncienRegime.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDemandeTransfertRafpAncienRegime: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeTransfertRafpAncienRegime.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDemandeSoldeAncienRegimeFinal: WOString {
+	value = affAnnItem.toMouvementCetDemandeMaintienCetAncienRegime.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+
+StrDemandeSoldePerenneInitial: WOString {
+	value = affAnnItem.cetFactory.soldeEnJour7h00;
+	numberformat = "0.00";
+}
+
+CondIsShowDemande: WOConditional {
+	condition = isShowDemandeEpargne;
+}
+
+CondIsShowDemandeDroitOption: WOConditional {
+	condition = isShowDemandeDroitOption;
+}
+
+StrikeDemande: StrikeContainer {
+	isStrike = isShowBarreDemande;
+}
+
+StrDemandeEpargne: WOString {
+	value = affAnnItem.toMouvementCetDemandeEpargne.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+CondIsShowDecisionEpargne: WOConditional {
+	condition = isShowDecisionEpargne;
+}
+
+CondIsShowDecisionDroitOption: WOConditional {
+	condition = isShowDecisionDroitOption;
+}
+
+StrDecisionEpargne: WOString {
+	value = affAnnItem.toMouvementCetDecisionEpargne.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+CondShowBtnToSaisieDecisionAutreEpargne: WOConditional {
+	condition = showBtnToSaisieDecisionAutreEpargne;
+}
+
+BtnToSaisieDecisionAutreEpargne: WOImageButton {
+	action = toSaisieDecisionAutreEpargneAffAnnItem;
+	title = "Modification de la valeur de l'&eacute;pargne demand&eacute;e";	
+	filename = "images/modifier16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondShowTFEpargneDecisionEnJour7h00: WOConditional {
+	condition = showTFEpargneDecisionEnJour7h00;
+}
+
+TFEpargneDecisionEnJour7h00: WOTextField {	
+	value = epargneDecisionEnJour7h00;
+	size = 2;
+	maxLength = 2;
+	numberformat = "0";
+}
+
+BtnDoValiderSaisieDecisionAutreEpargneAffAnnSelected: WOImageButton {
+	action = doValiderSaisieDecisionAutreEpargneAffAnnSelected;
+	title = "Enregistrer cette valeur modifi&eacute;e de l'&eacute;pargne demand&eacute;e";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondShowBtnDoSupprimerDecision: WOConditional {
+	condition = showBtnDoSupprimerDecision;
+}
+
+BtnDoSupprimerDecision: WOImageButton {
+	action = doSupprimerDecisionAffAnnItem;
+	title = "Repasser cette demande en &quot;non trait&eacute;e&quot;";	
+	filename = "images/annuler16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+StrDemandeMaintienCet: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeMaintienCet.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDecisionMaintienCet: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDecisionMaintienCet.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+CondShowTFDroitOptionDecisionEnJour7h00: WOConditional {
+	condition = showTFDroitOptionDecisionEnJour7h00;
+}
+
+StrMaintienDecisionEnJour7h00Max: WOString {
+	value = maintienDecisionMaxAffAnnSelected;
+	numberformat = "0";
+}
+
+TFMaintienDecisionEnJour7h00: WOTextField {	
+	value = maintienDecisionEnJour7h00;
+	size = 2;
+	maxLength = 2;
+	numberformat = "0";
+}
+
+StrDemandeIndemnisation: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeIndemnisation.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDecisionIndemnisation: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDecisionIndemnisation.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+TFIndemnisationDecisionEnJour7h00: WOTextField {	
+	value = indemnisationDecisionEnJour7h00;
+	size = 2;
+	maxLength = 2;
+	numberformat = "0";
+}
+
+StrDemandeTransfertRafp: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDemandeTransfertRafp.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+StrDecisionTransfertRafp: NumberIfNotNullOrZero {
+	value = affAnnItem.toMouvementCetDecisionTransfertRafp.mouvementJoursA7h00;
+	numberformat = "0.00";
+}
+
+TFTransfertRafpDecisionEnJour7h00: WOTextField {	
+	value = transfertRafpDecisionEnJour7h00;
+	size = 2;
+	maxLength = 2;
+	numberformat = "0";
+}
+
+CondShowBtnToSaisieDecisionDroitOption: WOConditional {
+	condition = showBtnToSaisieDecisionAutreDroitOption;
+}
+
+BtnToSaisieDecisionDroitOption: WOImageButton {
+	action = toSaisieDecisionAutreDroitOptionAffAnnItem;
+	title = "Modification de la valeur du droit d'option (suite &agrave; reception de l'imprim&eacute; rempli et sign&eacute; par l'agent)";	
+	filename = "images/modifier16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+StrTotalDecisionDroitOption: WOString {
+	value = totalDecisionDroitOption;
+}
+
+BtnDoValiderSaisieDecisionAutreDroitOptionAffAnnSelected: WOImageButton {
+	action = doValiderSaisieDecisionAutreDroitOptionAffAnnSelected;
+	title = "Enregistrer les nouvelles valeurs du droit d'option d&ecaute;cid&eacute;es par l'agent et finaliser cette demande CET";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+
+BtnDoAnnulerSaisieEnCours: WOImageButton {
+	action = doAnnulerSaisieEnCours;
+	title = "Annuler la saisie en cours";	
+	filename = "images/annuler16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondShowBtnDoValiderSaisieDecisionAutreDroitOptionNonFaisableAffAnnSelected: WOConditional {
+	condition = showBtnDoValiderSaisieDecisionAutreDroitOptionNonFaisableAffAnnSelected;
+}
+
+BtnDoValiderSaisieDecisionAutreDroitOptionNonFaisableAffAnnSelected: WOImageButton {
+	action = doValiderSaisieDecisionAutreDroitOptionNonFaisableAffAnnSelected;
+	title = "Passer la demande comme trait&eacute;e (suite &agrave; acceptation de la d&eacute;cision par l'agent)";	
+	filename = "images/valider16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+StrDemandeSoldePerenneFinal: WOString {
+	value = soldeDemandeFinalEnJour7h00;
+	numberformat = "0.00";
+}
+
+StrDecisionSoldePerenneFinal: WOString {
+	value = soldeDecisionFinalEnJour7h00;
+	numberformat = "0.00";
+}
+
+ChkIsAdminDemandeAccepteeALIdentique: WOCheckBox {
+	checked = affAnnItem.cetFactory.isAdminDemandeAccepteeALIdentique;
+	onClick = "this.form.submit();";
+	title = "Cliquer pour que la d&eacute;cision soit identique &agrave; la demande";
+	disabled = disabledChkIsAdminDemandeAccepteeALIdentique;
+}
+
+CondIsAdminDemandeAutreEpargneSaisie: WOConditional {
+	condition = affAnnItem.cetFactory.isAdminDemandeAutreEpargneSaisie;	
+}
+
+CngPdfBoxReformulation: CngPdfBoxLink  {
+	printLabel = "PDF";
+	printTip = "G&eacute;n&eacute;rer le fichier PDF &agrave; transmettre &agrave; l'agent pour qu'il reformule sa demande";
+	ctrl = ctrlReformulationAffAnnItem;
+}
+
+ChkIsAdminDemandeAccepteeDecisionDifferente: WOCheckBox {
+	checked = affAnnItem.cetFactory.isAdminDemandeAccepteeDecisionDifferente;
+	onClick = "this.form.submit();";
+	title = "Cliquer pour annuler la saisie des valeurs du droit d'option";
+	disabled = disabledChkIsAdminDemandeAccepteeDecisionDifferente;
+}
+
+CondIsShowBtnDoSupprimerDemandeEtDecisionAffAnnItem: WOConditional {
+	condition = isShowBtnDoSupprimerDemandeEtDecisionAffAnnItem;
+}
+
+BtnDoSupprimerDemandeEtDecisionAffAnnItem: WOImageButton {
+	action = doSupprimerDemandeEtDecisionAffAnnItem;
+	title = "Supprimer la demande selectionn&eacute;e";	
+	filename = "images/moins16.gif";
+	framework = "app";
+	escapeHTML = false;
+}
+
+CondHasError: WOConditional {
+	condition = hasError; 
+}
+
+LayerErrorMessage: CRILayer {
+	text = errorMessage;
+	title = "Erreur";
+}

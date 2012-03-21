@@ -1,0 +1,82 @@
+<table>
+
+	<tr>
+		<td colspan = "3" align = "center">
+			<webobject name = "FormAdminSuiviPlanningAnneeUniv">
+				<b>Ann&eacute;e universitaire :	<webobject name="PopUpAnneeUniv"/></b>
+			</webobject>
+		</td>
+	</tr>
+
+	<webobject name = "FormAdminSuiviPlanning">
+
+	<tr>
+	
+		<td><b>Services disponibles</b></td>
+		<td></td>
+		<td><b>Services à exporter</b></td>
+	
+	</tr>
+
+	<tr>
+		
+		<td>
+			<webobject name = "BrowserServicesAutorises"/>
+		</td>	
+
+		<td valign="center">
+			<webobject name = "BtnSelectionner"/><br>
+			<webobject name = "BtnDeselectionner"/>
+		</td>
+		
+		<td>
+			<webobject name = "BrowserService"/>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td colspan = "3">
+			<hr/>
+		</td>
+	</tr>
+	
+	<tr>
+	
+		<td colspan = "2">
+			<font class="textEntry">Période d'interrogation</font><br>
+
+			<font class="textEntry">Début</font> : <webobject name = "DateDebut"/>
+			<font class="textEntry">Fin</font> : <webobject name = "DateFin"/>
+		</td>
+
+		<td align = "center">
+			<webobject name = "CondHasError">
+				<font class="textError">
+					<webobject name = "StrErrMsg"/>
+				</font>
+				<br/>
+			</webobject>
+
+			<webobject name = "BtnPrintCsv"/>
+
+			<webobject name = "CondIsAfficherLnkTelechargerFichierCsv">
+				<br/>
+				<br/>
+				<webobject name = "LnkTelechargerFichierCsv">
+					<b>&raquo; Télécharger le dernier fichier CSV généré</b>
+				</webobject>
+			</webobject>
+				
+		</td>
+
+		
+	</tr>
+	
+
+	
+	</webobject>
+
+</table>
+	
+	
