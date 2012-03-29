@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="Components.subproj/src"/>
-	<classpathentry kind="src" path="Components.subproj/Administration.subproj/src"/>
-	<classpathentry kind="src" path="Components.subproj/Common.subproj/src"/>
-	<classpathentry kind="src" path="Components.subproj/Planning.subproj/src"/>
-	<classpathentry kind="src" path="Components.subproj/Planning.subproj/CET.subproj/src"/>
-	<classpathentry kind="src" path="Components.subproj/Planning.subproj/Popups.subproj/src"/>
-	<classpathentry kind="src" path="CongesDataCenter.subproj/src"/>
-	<classpathentry kind="src" path="Threads.subproj/src"/>
-	<classpathentry kind="src" path="YCRIFwk.subproj/src"/>
-	<classpathentry kind="src" path="YCRIFwk.subproj/Components.subproj/src"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/activation.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/mail.jar"/>
 	<classpathentry kind="var" path="NEXT_LOCAL_ROOT/Library/WebObjects/Extensions/ojdbc14.jar"/>
